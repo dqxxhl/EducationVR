@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_education_vrmain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:visibility="gone"/>
+
+
+    <RelativeLayout
+        android:id="@+id/register_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/register_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="指令：REGISTER"/>
+        <RelativeLayout
+            android:id="@+id/register_event_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register_title">
+            <TextView
+                android:id="@+id/eventid_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Eventid:"/>
+            <TextView
+                android:id="@+id/event_id_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/eventid_title"
+                android:text="REGISTER"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/register_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_below="@+id/register_event_layout"
+            android:text="向服务端发送REGISTER指令"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/connect_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_layout">
+        <TextView
+            android:id="@+id/connect_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="指令：RECONNECT"/>
+        <RelativeLayout
+            android:id="@+id/connect_event_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/connect_title">
+            <TextView
+                android:id="@+id/connect_event_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Eventid:"/>
+            <TextView
+                android:id="@+id/event_id_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/connect_event_title"
+                android:text="RECONNECT"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/connect_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_below="@+id/connect_event_layout"
+            android:text="向服务端发送RECONNECT指令"
+            />
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
