@@ -1,15 +1,17 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 24
     buildToolsVersion "25.0.2"
+
     defaultConfig {
-        applicationId "com.dqxxhl.educationvr"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -25,9 +27,5 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
-    compile project(path: ':vrlib')
     testCompile 'junit:junit:4.12'
-    compile 'io.netty:netty-all:4.1.0.Final'
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.6.0'
-    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.0'
 }

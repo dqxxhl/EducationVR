@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dqxxhl.educationvr">
+    package="com.sd.vr">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -11,8 +11,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".vrplayer.EducationVRApplication">
-        <activity android:name=".vrplayer.EducationVRMainActivity">
+        android:name=".education.VREducationApplication">
+        <activity android:name=".education.VREducationMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
