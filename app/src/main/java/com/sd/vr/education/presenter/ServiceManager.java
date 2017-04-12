@@ -22,6 +22,7 @@ public class ServiceManager {
 
     private NettyClient mClient;
     private ViewAction mAction;
+    private VideoAction mVideoAction;
 
     private ServiceManager(){
         Log.e(TAG, "init ServiceManager");
@@ -51,6 +52,14 @@ public class ServiceManager {
         this.mAction = action;
     }
 
+    public void bindVideoAction(VideoAction action){
+        this.mVideoAction = action;
+    }
+
+    public void unBindVideoAction(){
+        this.mVideoAction = null;
+    }
+
     public class UIhandler extends Handler{
         @Override
         public void handleMessage(Message msg) {
@@ -58,6 +67,13 @@ public class ServiceManager {
             if (msg.obj != null && (msg.obj instanceof MessageProto.MessageResponse)){
                 MessageProto.MessageResponse messageResponse = (MessageProto.MessageResponse) msg.obj;
                 mAction.showToast(messageResponse.toString()+"");
+
+                if (messageResponse.getStatus().equals(MessageProto.RespStatus.SUCCESS)){
+                    switch (messageResponse.getType()){
+                    }
+                }
+
+
             }
         }
     }

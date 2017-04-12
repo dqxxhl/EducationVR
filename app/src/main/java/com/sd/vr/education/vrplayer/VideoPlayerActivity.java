@@ -6,13 +6,13 @@ import com.asha.vrlib.MDVRLibrary;
 import com.asha.vrlib.model.BarrelDistortionConfig;
 import com.asha.vrlib.model.MDPinchConfig;
 import com.sd.vr.R;
+import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.VideoAction;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.Surface;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,7 +24,6 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     private MDVRLibrary mVRLibrary;
     private MediaPlayerWrapper mMediaPlayerWrapper = new MediaPlayerWrapper();
-    private String type = null;
     private String url = null;
 
 
@@ -62,13 +61,14 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
             }
         });
 
+        ServiceManager.getInstance().bindVideoAction(this);
+
         playVideo(url);//播放视频
     }
 
     private void getdate(){
         Intent intent = getIntent();
-        type = intent.getStringExtra("Type");
-
+        url = intent.getStringExtra("URL");
 
 //        url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/F5fly.mp4";
 //        url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/ceshi.mp4";
@@ -132,6 +132,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         super.onDestroy();
         mVRLibrary.onDestroy();
         mMediaPlayerWrapper.destroy();
+        ServiceManager.getInstance().unBindVideoAction();
     }
 
     @Override
