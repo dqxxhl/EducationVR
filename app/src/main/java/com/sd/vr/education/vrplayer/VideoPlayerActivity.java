@@ -68,7 +68,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     private void getdate(){
         Intent intent = getIntent();
-        url = intent.getStringExtra("URL");
+        url = intent.getStringExtra("START");
 
 //        url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/F5fly.mp4";
 //        url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/ceshi.mp4";

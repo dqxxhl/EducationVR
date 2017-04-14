@@ -2,11 +2,14 @@ package com.sd.vr.education;
 
 
 import com.sd.vr.R;
+import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.ViewAction;
 import com.sd.vr.education.utils.Utils;
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
+import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,6 +21,7 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
     ServiceManager serviceManager;
     Button sendConnectButton;
     Button sendRegisterButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,5 +63,13 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
     @Override
     public void showToast(String s) {
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void start(String fileId) {
+        String url = FilesManager.DIRECTORY + fileId;
+        Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
+        intent.putExtra("START",url);
+        startActivity(intent);
     }
 }

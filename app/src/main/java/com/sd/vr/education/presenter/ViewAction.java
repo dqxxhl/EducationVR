@@ -12,5 +12,7 @@ public interface ViewAction {
 
     void showToast(String string);
 
+    void start(String fileId);
+
 
 }
