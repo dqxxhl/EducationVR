@@ -15,6 +15,6 @@ public class VREducationApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        ServiceManager.getInstance();
+        ServiceManager.getInstance().initContext(this);
     }
 }

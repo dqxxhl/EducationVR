@@ -7,9 +7,12 @@ import static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse;
 import static com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus;
 
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
+import com.sd.vr.education.VREducationMainActivity;
 import com.sd.vr.education.entity.FileDownLoad;
 import com.sd.vr.education.network.socket.NettyClient;
+import com.sd.vr.education.utils.Utils;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -35,6 +38,7 @@ public class ServiceManager {
     private NettyClient mClient;
     private ViewAction mAction;
     private VideoAction mVideoAction;
+    private Context mContext;
 
     private ServiceManager(){
         Log.e(TAG, "init ServiceManager");
@@ -47,6 +51,10 @@ public class ServiceManager {
         }
 
         return serviceManager;
+    }
+
+    public void initContext(Context context){
+        this.mContext = context;
     }
 
     //初始化Socket
@@ -72,10 +80,21 @@ public class ServiceManager {
         this.mVideoAction = null;
     }
 
+    /**
+     * 向服务端注册设备
+     */
+    public void register(){
+        MessageProto.ReConnectRequest reConnectRequest = MessageProto.ReConnectRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(mContext)).build();
+        MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.RECONNECT).setReConnectRequest(reConnectRequest).build();
+        System.out.println("发送数据："+request.toString());
+        sendRequest(request);
+    }
+
+
     public class UIhandler extends Handler{
         @Override
         public void handleMessage(Message msg) {
-            System.out.println("收到消息："+msg.obj.toString());
+            Log.e(TAG,"收到消息："+msg.obj.toString());
             if (msg.obj != null && (msg.obj instanceof MessageResponse)){
                 MessageResponse messageResponse = (MessageResponse) msg.obj;
                 mAction.showToast(messageResponse.toString()+"");

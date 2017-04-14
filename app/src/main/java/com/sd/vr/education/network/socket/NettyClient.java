@@ -90,6 +90,13 @@ public class NettyClient {
                 System.out.println(f.isSuccess());
                 if (f.isSuccess()){
                     socketChannel = (SocketChannel) f.channel();
+                    mUIHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            //注册设备
+                            ServiceManager.getInstance().register();
+                        }
+                    },1000);
                 }
                 f.channel().closeFuture().sync();
             } catch (InterruptedException e) {

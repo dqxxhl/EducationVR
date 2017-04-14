@@ -118,10 +118,12 @@ public class FilesManager {
 
         //校验本地是否存在这个文件
         File fileDir = new File(DIRECTORY);
-        for (File file : fileDir.listFiles()) {
-            if (file.getAbsolutePath().endsWith(PATCH_SUFFIX)){
-                if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
-                    return;
+        if (fileDir != null && fileDir.listFiles() != null && fileDir.listFiles().length > 0){
+            for (File file : fileDir.listFiles()) {
+                if (file.getAbsolutePath().endsWith(PATCH_SUFFIX)){
+                    if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
+                        return;
+                    }
                 }
             }
         }

@@ -36,7 +36,7 @@ public class ClientHandler extends SimpleChannelInboundHandler {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("返回数据："+msg.toString());
+//        System.out.println("返回数据："+msg.toString());
 
         mNettyClient.handlerReceiveResponse(msg);
     }
