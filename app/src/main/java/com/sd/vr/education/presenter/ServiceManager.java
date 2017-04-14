@@ -7,12 +7,14 @@ import static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse;
 import static com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus;
 
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
+import com.sd.vr.education.entity.FileDownLoad;
 import com.sd.vr.education.network.socket.NettyClient;
 
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class ServiceManager {
     private static final String TAG = ServiceManager.class.getName();
     private static final String HOST = "115.29.226.88";
     private static final int PORT = 8011;
+    private static final String SPLIT = ",";
 
     private NettyClient mClient;
     private ViewAction mAction;
@@ -87,6 +90,39 @@ public class ServiceManager {
                             break;
                         case DOWNLOAD_NOTICE:
                             MessageProto.DownLoadNotice downLoadNotice = messageResponse.getDownLoadNotice();
+                            String fileIdsDownLoad = downLoadNotice.getFileIds();
+                            if (fileIdsDownLoad == null || fileIdsDownLoad.equals("")){
+                                return;
+                            }
+                            String[] fileIdsTempDownLoad = fileIdsDownLoad.split(SPLIT);
+
+                            String fileSize = downLoadNotice.getFileSize();
+                            if (fileSize == null || fileSize.equals("")){
+                                return;
+                            }
+                            String[] fileSizeDownLoad = fileSize.split(SPLIT);
+
+                            if (fileIdsTempDownLoad.length != fileSizeDownLoad.length){
+                                return;
+                            }
+
+                            if (fileIdsTempDownLoad.length > 0){
+                                List<FileDownLoad> fileIdsList = new ArrayList<>();
+                                for (int i = 0; i < fileIdsTempDownLoad.length; i++){//解析需要下载文件数组
+                                    FileDownLoad temp = new FileDownLoad();
+                                    temp.fileUrl = fileIdsTempDownLoad[i];
+                                    temp.fileSize = Long.valueOf(fileSizeDownLoad[i]);
+                                    if (temp.fileUrl != null && !temp.fileUrl.equals("") && temp.fileUrl.endsWith(FilesManager.PATCH_SUFFIX) && temp.fileSize > 0){
+                                        temp.fileName = null;
+                                        String tempString = "fileId=";
+                                        int index = temp.fileUrl.indexOf(tempString);
+                                        String target = temp.fileUrl.substring(index+tempString.length(), temp.fileUrl.length());
+                                        temp.fileName = target;
+                                        fileIdsList.add(temp);
+                                    }
+                                }
+                                FilesManager.getInstance().downLoad(fileIdsList);
+                            }
 
                             break;
                         case PLAY_PROGRESS_NOTICE://跳转播放器指定位置
@@ -103,7 +139,7 @@ public class ServiceManager {
                             if (fileIds == null || fileIds.equals("")){
                                 return;
                             }
-                            String[] fileIdsTemp = fileIds.split(",");
+                            String[] fileIdsTemp = fileIds.split(SPLIT);
                             if (fileIds.length() > 0 ){
                                 List<String> fileIdsList = Arrays.asList(fileIdsTemp);
                                 FilesManager.getInstance().deleteFiles(fileIdsList);
