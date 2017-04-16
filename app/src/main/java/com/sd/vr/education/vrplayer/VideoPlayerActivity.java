@@ -143,6 +143,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     @Override
     public void start(String url) {
+        this.url = url;
         playVideo(url);
     }
 

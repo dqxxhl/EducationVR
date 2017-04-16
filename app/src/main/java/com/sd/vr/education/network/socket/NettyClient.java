@@ -99,7 +99,7 @@ public class NettyClient {
                     },1000);
                 }
                 f.channel().closeFuture().sync();
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

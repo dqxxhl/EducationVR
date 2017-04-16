@@ -23,7 +23,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".education.vrplayer.VideoPlayerActivity">
+        <activity android:name=".education.vrplayer.VideoPlayerActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="landscape">
 
         </activity>
 

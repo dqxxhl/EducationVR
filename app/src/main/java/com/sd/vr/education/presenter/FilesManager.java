@@ -127,6 +127,8 @@ public class FilesManager {
                 }
             }
         }
+        Log.e(TAG, url);
+
 
         LoaderInfo loaderInfo = (new LoaderInfo.Builder()).dir(DIRECTORY).name(fileName).url(url).splitter(1).build();
         LoaderExecutor.load(loaderInfo, new LoaderListener() {
