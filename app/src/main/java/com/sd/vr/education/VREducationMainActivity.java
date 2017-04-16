@@ -11,6 +11,7 @@ import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -67,7 +68,8 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
 
     @Override
     public void start(String fileId) {
-        String url = FilesManager.DIRECTORY + fileId;
+//        String url = FilesManager.DIRECTORY + fileId;
+        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/F5fly.mp4";
         Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
         intent.putExtra("START",url);
         startActivity(intent);

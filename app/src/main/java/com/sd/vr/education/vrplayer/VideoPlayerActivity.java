@@ -56,8 +56,8 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         mMediaPlayerWrapper.getPlayer().setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(IMediaPlayer iMediaPlayer) {
-                mMediaPlayerWrapper.getPlayer().start();
-                mMediaPlayerWrapper.getPlayer().setLooping(true);
+//                mMediaPlayerWrapper.getPlayer().start();
+//                mMediaPlayerWrapper.getPlayer().setLooping(true);
             }
         });
 

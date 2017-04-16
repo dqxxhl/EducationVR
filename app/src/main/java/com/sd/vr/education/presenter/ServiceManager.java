@@ -107,7 +107,7 @@ public class ServiceManager {
                             CtrlDictateNotice ctrlDictateNotice = messageResponse.getCtrlDictateNotice();
                             handleCtrlDictateNotice(ctrlDictateNotice);
                             break;
-                        case DOWNLOAD_NOTICE:
+                        case DOWNLOAD_NOTICE://下载文件
                             MessageProto.DownLoadNotice downLoadNotice = messageResponse.getDownLoadNotice();
                             String fileIdsDownLoad = downLoadNotice.getFileIds();
                             if (fileIdsDownLoad == null || fileIdsDownLoad.equals("")){
@@ -162,6 +162,17 @@ public class ServiceManager {
                             if (fileIds.length() > 0 ){
                                 List<String> fileIdsList = Arrays.asList(fileIdsTemp);
                                 FilesManager.getInstance().deleteFiles(fileIdsList);
+                            }
+                            break;
+                        case PLAY_PROGRESS:
+                            MessageProto.PlayProgressResponse playProgressResponse = messageResponse.getPlayProgressResponse();
+                            String progress = playProgressResponse.getPosition();
+                            if (progress == null || progress.equals("")){
+                                return;
+                            }
+                            long progressLong = Long.valueOf(progress);
+                            if (progressLong >= 0 && mVideoAction != null){
+                                mVideoAction.seekTo(progressLong);
                             }
                             break;
                         default:
