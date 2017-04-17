@@ -1,5 +1,7 @@
 package com.sd.vr.education.network.socket;
 
+import android.util.Log;
+
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -9,6 +11,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 
 public class ClientHandler extends SimpleChannelInboundHandler {
 
+    private static final String TAG = ClientHandler.class.getName();
+
     private NettyClient mNettyClient;
     public ClientHandler(NettyClient nettyClient){
         this.mNettyClient = nettyClient;
@@ -17,27 +21,25 @@ public class ClientHandler extends SimpleChannelInboundHandler {
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         super.channelInactive(ctx);
-
-        System.out.println("断线了。---------");
+        Log.e(TAG, "断线了");
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         super.exceptionCaught(ctx, cause);
-        System.out.println("出现异常了。。。。。。。。。。。。。");
+        Log.e(TAG, "出现异常了");
         cause.printStackTrace();
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
-
+        Log.e(TAG, "链接成功");
+        mNettyClient.register();
     }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-//        System.out.println("返回数据："+msg.toString());
-
         mNettyClient.handlerReceiveResponse(msg);
     }
 }

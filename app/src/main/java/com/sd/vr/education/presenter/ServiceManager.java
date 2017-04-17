@@ -6,6 +6,10 @@ import static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest;
 import static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse;
 import static com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
 import com.sd.vr.education.VREducationMainActivity;
 import com.sd.vr.education.entity.FileDownLoad;
@@ -16,10 +20,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * 网络请求管理类
@@ -84,12 +84,11 @@ public class ServiceManager {
      * 向服务端注册设备
      */
     public void register(){
-        MessageProto.ReConnectRequest reConnectRequest = MessageProto.ReConnectRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(mContext)).build();
-        MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.RECONNECT).setReConnectRequest(reConnectRequest).build();
-        System.out.println("发送数据："+request.toString());
+        //向服务端发送数据
+        MessageProto.RegisterRequest registerRequest = MessageProto.RegisterRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(mContext)).build();
+        MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.REGISTER).setRegisterRequest(registerRequest).build();
         sendRequest(request);
     }
-
 
     public class UIhandler extends Handler{
         @Override
