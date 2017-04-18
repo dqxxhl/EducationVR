@@ -49,6 +49,19 @@ public class NettyClient {
         mConnectionThread.start();
     }
 
+    /**
+     * 网络恢复后重连服务器
+     */
+    public void notifyNetworkChange(){
+        if (mConnectionThread == null){
+            start();
+        }
+        Thread.State state = mConnectionThread.getState();
+        if (state.equals(Thread.State.TERMINATED)){
+            start();
+        }
+    }
+
     public void sendRequest(MessageProto.MessageRequest request){
 //        mConnectionThread.getSocketChannel().writeAndFlush(request);
         socketChannel.writeAndFlush(request);

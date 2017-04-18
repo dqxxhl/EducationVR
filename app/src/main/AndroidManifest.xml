@@ -39,8 +39,7 @@
 
         <receiver android:name=".education.broadcastreceiver.NetBroadcastReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.CONNECTIVITY_ACTION" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 

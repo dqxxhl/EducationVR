@@ -13,6 +13,8 @@ import com.sd.vr.education.utils.Utils;
  */
 
 public class NetBroadcastReceiver extends BroadcastReceiver {
+
+    private static final String TAG = NetBroadcastReceiver.class.getName();
     @Override
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {

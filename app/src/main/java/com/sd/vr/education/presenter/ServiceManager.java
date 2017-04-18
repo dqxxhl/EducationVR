@@ -81,8 +81,13 @@ public class ServiceManager {
     }
 
     public void onNetChange(int netWorkState){
-        if (netWorkState != Utils.NETWORK_NONE){//切换到网络了
+        Log.e(TAG, "网络状态变化:"+netWorkState);
+        if (netWorkState != Utils.NETWORK_NONE){
             Log.e(TAG, "网络恢复了");
+            //连接服务器
+            if (mClient != null){
+                mClient.notifyNetworkChange();
+            }
         }
     }
 
