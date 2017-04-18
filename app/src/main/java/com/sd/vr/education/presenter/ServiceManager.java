@@ -126,7 +126,9 @@ public class ServiceManager {
             Log.e(TAG,"收到消息："+msg.obj.toString());
             if (msg.obj != null && (msg.obj instanceof MessageResponse)){
                 MessageResponse messageResponse = (MessageResponse) msg.obj;
-                mAction.showToast(messageResponse.toString()+"");
+                if (mAction != null){
+                    mAction.showToast(messageResponse.toString()+"");
+                }
 
                 if (messageResponse.getStatus().equals(RespStatus.SUCCESS)){
                     switch (messageResponse.getType()){
