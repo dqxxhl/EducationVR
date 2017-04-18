@@ -1,5 +1,7 @@
 package com.sd.vr.education.network.socket;
 
+import android.util.Log;
+
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
 import com.sd.vr.education.presenter.ServiceManager;
 
@@ -26,6 +28,7 @@ import io.netty.util.HashedWheelTimer;
 
 public class NettyClient {
 
+    private static final String TAG = NettyClient.class.getName();
     public static final int RECEIVE_RESPONSE = 1;
     private String mHost = null;
     private int mPort;
@@ -63,8 +66,9 @@ public class NettyClient {
     }
 
     public void sendRequest(MessageProto.MessageRequest request){
-//        mConnectionThread.getSocketChannel().writeAndFlush(request);
-        socketChannel.writeAndFlush(request);
+        if (socketChannel != null){
+            socketChannel.writeAndFlush(request);
+        }
     }
 
     public void handlerReceiveResponse(Object msg){
@@ -89,6 +93,7 @@ public class NettyClient {
 
         private String mHost = null;
         private int mPort;
+        private int reconnect;
 
         public ConnectionThread(String host, int port) {
             this.mHost = host;
@@ -124,7 +129,13 @@ public class NettyClient {
                 }
                 f.channel().closeFuture().sync();
             } catch (Exception e) {
+                Log.e(TAG, "连接服务器失败,尝试重连");
                 e.printStackTrace();
+                //连接不成功，继续尝试连接
+                reconnect++;
+                if (reconnect < 20){
+                    run();
+                }
             }
         }
     }
