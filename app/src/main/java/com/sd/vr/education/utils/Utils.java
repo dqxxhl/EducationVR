@@ -4,6 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import android.content.Context;
@@ -20,6 +26,8 @@ import android.util.Log;
  */
 
 public class Utils {
+
+    private static final String TAG = Utils.class.getName();
 
     public static String getDeviceId(Context context) {
         String deviceId = "";
@@ -120,5 +128,43 @@ public class Utils {
         }
         return NETWORK_NONE;
     }
+
+
+    private static InetAddress getIP(byte i){
+        //传进来的i是用来做最后一个段的
+        InetAddress local = null;
+        try {
+            local = InetAddress.getLocalHost();//获得本地ip
+            byte[]addr=local.getAddress(); //将ip转换为字节数组存入addr
+            addr[3]=i;//修改ip的最后一个段
+            local = InetAddress.getByAddress(addr); //将数组转换成IP
+        } catch (UnknownHostException e){
+
+        }
+        return local;
+    }
+
+    /**
+     * 寻找主机
+     */
+    public static List<InetAddress> searchHost(){
+        List<InetAddress> ipList = new ArrayList<>();
+        int PORT=8011;//定义端口
+        for(int i=1;i<=254;i++){
+            try {
+                Socket s=new Socket();
+                s.connect(new InetSocketAddress(getIP((byte)i),PORT), 100);//试着连接每一个ip 每个ip延迟时间为100毫秒
+                Log.e(TAG, "连接成功了:"+getIP((byte)i));
+                ipList.add(getIP((byte)i));
+            } catch (IOException e) {
+                Log.e(TAG, "第 " +i+" 个IP "+(byte)i+"连接尝试失败");
+                continue;
+            }
+        }
+
+        return ipList;
+    }
+
+
 
 }

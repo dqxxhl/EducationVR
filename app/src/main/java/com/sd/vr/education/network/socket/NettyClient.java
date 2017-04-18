@@ -1,5 +1,6 @@
 package com.sd.vr.education.network.socket;
 
+import android.os.Handler;
 import android.util.Log;
 
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
@@ -94,6 +95,7 @@ public class NettyClient {
         private String mHost = null;
         private int mPort;
         private int reconnect;
+        private Handler handler = new Handler();
 
         public ConnectionThread(String host, int port) {
             this.mHost = host;
@@ -133,7 +135,12 @@ public class NettyClient {
                 e.printStackTrace();
                 //连接不成功，继续尝试连接
                 reconnect++;
-                if (reconnect < 20){
+                if (reconnect < 200){
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
                     run();
                 }
             }
