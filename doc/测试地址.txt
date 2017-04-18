@@ -1,0 +1,6 @@
+    1、本地机器测试地址
+    private static final String HOST = "172.17.20.41";
+    private static final int PORT = 8011;
+    2、测试机器测试地址
+     private static final String HOST = "115.29.226.88";
+     private static final int PORT = 8011;

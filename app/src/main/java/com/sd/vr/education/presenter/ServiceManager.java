@@ -80,6 +80,12 @@ public class ServiceManager {
         this.mVideoAction = null;
     }
 
+    public void onNetChange(int netWorkState){
+        if (netWorkState != Utils.NETWORK_NONE){//切换到网络了
+            Log.e(TAG, "网络恢复了");
+        }
+    }
+
     /**
      * 向服务端注册设备
      */
@@ -87,6 +93,25 @@ public class ServiceManager {
         //向服务端发送数据
         MessageProto.RegisterRequest registerRequest = MessageProto.RegisterRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(mContext)).build();
         MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.REGISTER).setRegisterRequest(registerRequest).build();
+        sendRequest(request);
+    }
+
+    /**
+     * 文件下载完接口
+     * @param fileId
+     */
+    public void sendDownloadAck(String fileId){
+        MessageProto.DownloadAck downloadAck = MessageProto.DownloadAck.newBuilder().setEventId("DOWNLOAD_ACK").setEquipmentId(Utils.getDeviceId(mContext)).setFileId(fileId).build();
+        MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.DOWNLOAD_ACK).setDownloadAck(downloadAck).build();
+        sendRequest(request);
+    }
+
+    /**
+     * 向服务器请求当前的播放进度
+     */
+    public void requestProgress(){
+        MessageProto.PlayProgressRequest playProgressRequest = MessageProto.PlayProgressRequest .newBuilder().setEventId("PLAY_PROGRESS").setEquipmentId(Utils.getDeviceId(mContext)).build();
+        MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.PLAY_PROGRESS).setPlayProgressRequest(playProgressRequest).build();
         sendRequest(request);
     }
 
@@ -135,6 +160,7 @@ public class ServiceManager {
                                         String tempString = "fileId=";
                                         int index = temp.fileUrl.indexOf(tempString);
                                         String target = temp.fileUrl.substring(index+tempString.length(), temp.fileUrl.length());
+                                        Log.e(TAG, "待下载的内容0："+target);
                                         temp.fileName = target;
                                         fileIdsList.add(temp);
                                     }
@@ -211,7 +237,11 @@ public class ServiceManager {
                     break;
                 case PLAY:
                     if (mVideoAction != null){
-                        mVideoAction.play();
+                        if (ctrlDictateNotice.getPosition() != null && !ctrlDictateNotice.getPosition().equals("")){
+                            String positionString =  ctrlDictateNotice.getPosition();
+                            long position = Long.valueOf(positionString);
+                            mVideoAction.play(position);
+                        }
                     }
                     break;
                 case END:

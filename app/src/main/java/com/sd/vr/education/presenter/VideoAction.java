@@ -8,7 +8,7 @@ public interface VideoAction {
 
     void start(String url);//开始播放某个视频
 
-    void play();//播放视频
+    void play(long position);//播放视频
 
     void pause();//暂停播放
 

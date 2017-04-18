@@ -13,11 +13,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class VREducationMainActivity extends AppCompatActivity implements ViewAction {
+
+    private static final String TAG = VREducationMainActivity.class.getName();
 
     ServiceManager serviceManager;
     Button sendConnectButton;
@@ -68,8 +71,9 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
 
     @Override
     public void start(String fileId) {
-//        String url = FilesManager.DIRECTORY + fileId;
-        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/F5fly.mp4";
+        String url = FilesManager.DIRECTORY+"/"+ fileId;
+//        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/F5fly.mp4";
+        Log.e(TAG, "URL:"+url);
         Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
         intent.putExtra("START",url);
         startActivity(intent);

@@ -43,6 +43,9 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
                 if (mVRLibrary != null){
                     mVRLibrary.notifyPlayerChanged();
                 }
+
+                // 播放器准备就绪，向服务器请求目前的播放进度
+                ServiceManager.getInstance().requestProgress();
             }
         });
 
@@ -148,7 +151,8 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     }
 
     @Override
-    public void play() {
+    public void play(long position) {
+        seekTo(position);
         if (!mMediaPlayerWrapper.getPlayer().isPlaying()){
             mMediaPlayerWrapper.getPlayer().start();
         }
