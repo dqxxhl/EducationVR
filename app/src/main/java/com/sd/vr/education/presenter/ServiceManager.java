@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
-import com.sd.vr.education.VREducationMainActivity;
 import com.sd.vr.education.entity.FileDownLoad;
 import com.sd.vr.education.network.socket.NettyClient;
 import com.sd.vr.education.utils.Utils;
@@ -176,11 +175,17 @@ public class ServiceManager {
                             }
 
                             break;
-                        case PLAY_PROGRESS_NOTICE://跳转播放器指定位置
+                        case PLAY_PROGRESS_NOTICE://跳转播放器指定位置,通知事件
                             MessageProto.PlayProgressNotice playProgressNotice = messageResponse.getPlayProgressNotice();
                             if (mVideoAction != null){
                                 if (playProgressNotice.getPosition() != null && !playProgressNotice.getPosition().equals("")){
-                                    mVideoAction.seekTo(Long.valueOf(playProgressNotice.getPosition()));
+                                    MessageProto.PlayStatus playStatus = playProgressNotice.getPlayStatus();
+                                    int status = 0;
+                                    if (playStatus != null && playStatus.equals(MessageProto.PlayStatus.PLAYI_ING)){
+                                        status = 1;
+                                    }
+
+                                    mVideoAction.seekTo(Long.valueOf(playProgressNotice.getPosition()), status);
                                 }
                             }
                             break;
@@ -196,7 +201,7 @@ public class ServiceManager {
                                 FilesManager.getInstance().deleteFiles(fileIdsList);
                             }
                             break;
-                        case PLAY_PROGRESS:
+                        case PLAY_PROGRESS://请求的状态
                             MessageProto.PlayProgressResponse playProgressResponse = messageResponse.getPlayProgressResponse();
                             String progress = playProgressResponse.getPosition();
                             if (progress == null || progress.equals("")){
@@ -204,7 +209,7 @@ public class ServiceManager {
                             }
                             long progressLong = Long.valueOf(progress);
                             if (progressLong >= 0 && mVideoAction != null){
-                                mVideoAction.seekTo(progressLong);
+                                mVideoAction.seekTo(progressLong,1);
                             }
                             break;
                         default:

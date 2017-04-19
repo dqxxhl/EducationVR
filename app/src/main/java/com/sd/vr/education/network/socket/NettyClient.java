@@ -68,6 +68,7 @@ public class NettyClient {
 
     public void sendRequest(MessageProto.MessageRequest request){
         if (socketChannel != null){
+            Log.e(TAG, "发送消息:\n"+request.toString());
             socketChannel.writeAndFlush(request);
         }
     }

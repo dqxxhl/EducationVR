@@ -80,9 +80,9 @@ public class FilesManager {
         }
 
         //TO-DO具体的删除逻辑
-        File file = new File(DIRECTORY + fileId);
+        File file = new File(DIRECTORY +"/"+ fileId);
         if (file.delete()){
-            Log.i(TAG, "delete:"+fileId);
+            Log.e(TAG, "delete:"+fileId);
         }
     }
 
@@ -124,6 +124,8 @@ public class FilesManager {
             for (File file : fileDir.listFiles()) {
                 if (file.getAbsolutePath().endsWith(PATCH_SUFFIX)){
                     if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
+                        //文件已下载
+                        ServiceManager.getInstance().sendDownloadAck(fileName);
                         return;
                     }else if (file.getName().equals(fileName) && Utils.getFileSize(file) > size){
                         deleteFile(fileName);
@@ -162,6 +164,8 @@ public class FilesManager {
                 fileDownLoading = null;
                 //移除下载项
                 clearItem(url);
+                //开始下一项
+                startDownLoad();
             }
 
             @Override
@@ -171,6 +175,8 @@ public class FilesManager {
                 fileDownLoading = null;
                 //移除下载项
                 clearItem(url);
+                //开始下一项
+                startDownLoad();
             }
         });
     }
@@ -188,6 +194,7 @@ public class FilesManager {
             while(sListIterator.hasNext()){
                 FileDownLoad file = sListIterator.next();
                 if(url.equals(file.fileUrl)){
+                    Log.e(TAG, "移除下载任务:"+file.fileUrl);
                     sListIterator.remove();
                 }
             }

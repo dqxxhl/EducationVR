@@ -12,7 +12,7 @@ public interface VideoAction {
 
     void pause();//暂停播放
 
-    void seekTo(long position);//跳转到指定位置
+    void seekTo(long position, int status);//跳转到指定位置0：暂停，1：播放。
 
     void stop();//停止播放视频
 

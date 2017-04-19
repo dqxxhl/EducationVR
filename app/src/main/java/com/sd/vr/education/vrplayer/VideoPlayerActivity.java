@@ -6,6 +6,7 @@ import com.asha.vrlib.MDVRLibrary;
 import com.asha.vrlib.model.BarrelDistortionConfig;
 import com.asha.vrlib.model.MDPinchConfig;
 import com.sd.vr.R;
+import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.VideoAction;
 
@@ -13,6 +14,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Surface;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,6 +24,7 @@ import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 public class VideoPlayerActivity extends Activity implements VideoAction {
 
+    private static final String TAG =  VideoPlayerActivity.class.getName();
     private MDVRLibrary mVRLibrary;
     private MediaPlayerWrapper mMediaPlayerWrapper = new MediaPlayerWrapper();
     private String url = null;
@@ -36,15 +39,26 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         getdate();
         initVRLibrary();//初始化VR库
 
+        initMediaPlayer();
+
+        ServiceManager.getInstance().bindVideoAction(this);
+
+        playVideo(url);//播放视频
+    }
+
+
+    private void initMediaPlayer(){
         mMediaPlayerWrapper.init();
         mMediaPlayerWrapper.setPreparedListener(new IMediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(IMediaPlayer mp) {
+                Log.e(TAG,"播放器准备就绪");
                 if (mVRLibrary != null){
                     mVRLibrary.notifyPlayerChanged();
                 }
-
+                mMediaPlayerWrapper.stop();
                 // 播放器准备就绪，向服务器请求目前的播放进度
+                Log.e(TAG,"向服务器请求目前的播放进度");
                 ServiceManager.getInstance().requestProgress();
             }
         });
@@ -63,10 +77,6 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 //                mMediaPlayerWrapper.getPlayer().setLooping(true);
             }
         });
-
-        ServiceManager.getInstance().bindVideoAction(this);
-
-        playVideo(url);//播放视频
     }
 
     private void getdate(){
@@ -146,16 +156,19 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     @Override
     public void start(String url) {
-        this.url = url;
+        this.url = FilesManager.DIRECTORY+"/"+ url;
+        Log.e(TAG, "播放地址:"+this.url);
+        mMediaPlayerWrapper.pause();
+        mMediaPlayerWrapper.destroy();
+        mMediaPlayerWrapper.init();
         playVideo(url);
+        Log.e(TAG,"向服务器请求目前的播放进度");
+        ServiceManager.getInstance().requestProgress();
     }
 
     @Override
     public void play(long position) {
-        seekTo(position);
-        if (!mMediaPlayerWrapper.getPlayer().isPlaying()){
-            mMediaPlayerWrapper.getPlayer().start();
-        }
+        seekTo(position,1);
     }
 
     @Override
@@ -164,8 +177,16 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     }
 
     @Override
-    public void seekTo(long position) {
+    public void seekTo(long position, int status) {
         mMediaPlayerWrapper.getPlayer().seekTo(position);
+        if (status == 1){
+            if (!mMediaPlayerWrapper.getPlayer().isPlaying()){
+                mMediaPlayerWrapper.getPlayer().start();
+            }
+        }else{
+            pause();
+        }
+
     }
 
     @Override
