@@ -14,10 +14,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Surface;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
@@ -28,14 +31,40 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     private MDVRLibrary mVRLibrary;
     private MediaPlayerWrapper mMediaPlayerWrapper = new MediaPlayerWrapper();
     private String url = null;
-
-
+    private Handler handler = new Handler();
+    private Button b;
+    private Button b1;
+    private Button b2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);//无标题
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏幕显示
         setContentView(R.layout.video_player);
+        b= (Button) findViewById(R.id.text1);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                ServiceManager.getInstance().requestProgress();
+                play(123);
+            }
+        });
+
+        b1= (Button) findViewById(R.id.text2);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pause();
+            }
+        });
+
+        b2= (Button) findViewById(R.id.text3);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                seekTo(41000, 1);
+            }
+        });
         getdate();
         initVRLibrary();//初始化VR库
 
@@ -56,10 +85,16 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
                 if (mVRLibrary != null){
                     mVRLibrary.notifyPlayerChanged();
                 }
-                mMediaPlayerWrapper.stop();
+                mMediaPlayerWrapper.pause();
                 // 播放器准备就绪，向服务器请求目前的播放进度
                 Log.e(TAG,"向服务器请求目前的播放进度");
-                ServiceManager.getInstance().requestProgress();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ServiceManager.getInstance().requestProgress();
+                    }
+                },10000);
+
             }
         });
 
@@ -163,7 +198,12 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         mMediaPlayerWrapper.init();
         playVideo(url);
         Log.e(TAG,"向服务器请求目前的播放进度");
-        ServiceManager.getInstance().requestProgress();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ServiceManager.getInstance().requestProgress();
+            }
+        },10000);
     }
 
     @Override
@@ -173,16 +213,17 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     @Override
     public void pause() {
-        mMediaPlayerWrapper.getPlayer().pause();
+        mMediaPlayerWrapper.pause();
     }
 
     @Override
     public void seekTo(long position, int status) {
+        Log.e(TAG, "跳转到："+position+"--------"+"状态："+status);
         mMediaPlayerWrapper.getPlayer().seekTo(position);
+
         if (status == 1){
-            if (!mMediaPlayerWrapper.getPlayer().isPlaying()){
-                mMediaPlayerWrapper.getPlayer().start();
-            }
+            Log.e(TAG, "开始播放");
+            mMediaPlayerWrapper.start();
         }else{
             pause();
         }

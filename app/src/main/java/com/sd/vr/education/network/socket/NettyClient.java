@@ -62,6 +62,7 @@ public class NettyClient {
         }
         Thread.State state = mConnectionThread.getState();
         if (state.equals(Thread.State.TERMINATED)){
+            Log.e(TAG, "mConnectionThread已跑完,新建一个线程");
             start();
         }
     }

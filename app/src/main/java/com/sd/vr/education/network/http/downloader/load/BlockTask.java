@@ -34,11 +34,12 @@ class BlockTask implements Callable<Integer> {
         if (startPos < endPos) {
             BufferedInputStream bis = null;
             try {
+               Log.e("sdadas","dasdasd");
                 HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
                 conn.setConnectTimeout(5 * 1000);
                 conn.setRequestMethod("GET");
                 conn.setRequestProperty("Range", "bytes=" + startPos + "-" + endPos);
-
+                Log.e("BlockTask", "Range:"+ "bytes=" + startPos + "-" + endPos);
                 LoaderUtils.setHeader(conn);
 
                 final int CODE = conn.getResponseCode();

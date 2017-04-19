@@ -38,10 +38,12 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
             public void onClick(View v) {
 
                 //向服务端发送数据
-                MessageProto.ReConnectRequest reConnectRequest = MessageProto.ReConnectRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(VREducationMainActivity.this)).build();
-                MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.RECONNECT).setReConnectRequest(reConnectRequest).build();
-                System.out.println("发送数据："+request.toString());
-                serviceManager.sendRequest(request);
+//                MessageProto.ReConnectRequest reConnectRequest = MessageProto.ReConnectRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(VREducationMainActivity.this)).build();
+//                MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.RECONNECT).setReConnectRequest(reConnectRequest).build();
+//                System.out.println("发送数据："+request.toString());
+//                serviceManager.sendRequest(request);
+
+//                serviceManager.requestProgress();
             }
         });
 
