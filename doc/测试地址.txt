@@ -2,5 +2,12 @@
     private static final String HOST = "172.17.20.41";
     private static final int PORT = 8011;
     2、测试机器测试地址
-     private static final String HOST = "115.29.226.88";
+     private static final String HOST = "120.26.141.161";
      private static final int PORT = 8011;
+
+
+
+     后台地址：
+     http://120.26.141.161:8080/vr-ctrl/page/kzzx/kzzx.html
+     运营管理员3
+     111111
