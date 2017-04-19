@@ -59,6 +59,8 @@ class BlockTask implements Callable<Integer> {
                     return LoaderTask.STATUS_FINISHED;
                 }
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception","异常~");
                 return LoaderTask.STATUS_ERROR;
             } finally {
                 if (accessor != null) {

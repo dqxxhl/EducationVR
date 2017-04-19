@@ -1,5 +1,7 @@
 package com.sd.vr.education.network.http.downloader.load;
 
+import android.util.Log;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -134,6 +136,7 @@ public class LoaderConfig {
         }
 
         public boolean isLoadedOver() {
+            Log.e("isLoadedOver","loadedLength="+loadedLength+"------------"+"fileSize"+fileSize);
             return loadedLength == fileSize;
         }
     }
