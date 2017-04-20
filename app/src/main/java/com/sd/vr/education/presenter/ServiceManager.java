@@ -30,7 +30,7 @@ public class ServiceManager {
 
     private static ServiceManager serviceManager = null;
     private static final String TAG = ServiceManager.class.getName();
-    private static final String HOST = "172.17.20.41";
+    private static final String HOST = "120.26.141.161";
     private static final int PORT = 8011;
     private static final String SPLIT = ",";
 
@@ -87,6 +87,12 @@ public class ServiceManager {
             if (mClient != null){
                 mClient.notifyNetworkChange();
             }
+        }
+    }
+
+    public void updateprocess(String process){
+        if (mAction != null){
+            mAction.updateprocess(process);
         }
     }
 

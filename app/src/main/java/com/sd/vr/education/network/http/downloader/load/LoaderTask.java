@@ -236,7 +236,7 @@ public class LoaderTask implements Runnable, BlockTaskListener {
             URL url = new URL(mInfo.url());
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
-            conn.setRequestProperty("Range", "bytes=" + 0 + "-");
+//            conn.setRequestProperty("Range", "bytes=" + 0 + "-");
             LoaderUtils.setHeader(conn);
             final int stateCode = conn.getResponseCode();
 

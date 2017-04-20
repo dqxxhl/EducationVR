@@ -31,7 +31,6 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     private MDVRLibrary mVRLibrary;
     private MediaPlayerWrapper mMediaPlayerWrapper = new MediaPlayerWrapper();
     private String url = null;
-    private Handler handler = new Handler();
     private Button b;
     private Button b1;
     private Button b2;
@@ -88,12 +87,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
                 mMediaPlayerWrapper.pause();
                 // 播放器准备就绪，向服务器请求目前的播放进度
                 Log.e(TAG,"向服务器请求目前的播放进度");
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        ServiceManager.getInstance().requestProgress();
-                    }
-                },10000);
+                ServiceManager.getInstance().requestProgress();
 
             }
         });
@@ -198,12 +192,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         mMediaPlayerWrapper.init();
         playVideo(url);
         Log.e(TAG,"向服务器请求目前的播放进度");
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                ServiceManager.getInstance().requestProgress();
-            }
-        },10000);
+        ServiceManager.getInstance().requestProgress();
     }
 
     @Override

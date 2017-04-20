@@ -12,10 +12,12 @@ import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class VREducationMainActivity extends AppCompatActivity implements ViewAction {
@@ -25,6 +27,8 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
     ServiceManager serviceManager;
     Button sendConnectButton;
     Button sendRegisterButton;
+    TextView process;
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,8 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
             }
         });
 
+        process = (TextView) findViewById(R.id.process);
+
     }
 
     @Override
@@ -79,5 +85,15 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
         Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
         intent.putExtra("START",url);
         startActivity(intent);
+    }
+
+    @Override
+    public void updateprocess(final String process) {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                VREducationMainActivity.this.process.setText(process);
+            }
+        });
     }
 }

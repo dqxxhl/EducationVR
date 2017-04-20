@@ -136,18 +136,20 @@ public class FilesManager {
         Log.e(TAG, url);
 
 
-        LoaderInfo loaderInfo = (new LoaderInfo.Builder()).dir(DIRECTORY).name(fileName).url(url).splitter(1).build();
+        LoaderInfo loaderInfo = (new LoaderInfo.Builder()).dir(DIRECTORY).name(fileName).url(url).splitter(5).build();
         LoaderExecutor.load(loaderInfo, new LoaderListener() {
             @Override
             public void onLoad(String url, int size, int totalSize) {
                 Log.e(TAG, "开始,下载......");
                 Log.e(TAG, "总大小："+totalSize+"下载大小:"+size+"下载进度："+((float)size/(float) totalSize));
+                ServiceManager.getInstance().updateprocess("总大小："+totalSize+"下载大小:"+size+"下载进度："+((float)size/(float) totalSize));
             }
 
             @Override
             public void onCompleted(String url, String path) {
                 super.onCompleted(url, path);
                 Log.e(TAG, "完成,下载......");
+                ServiceManager.getInstance().updateprocess("完成,下载......");
                 fileDownLoading = null;
                 //移除下载项
                 clearItem(url);
@@ -172,6 +174,7 @@ public class FilesManager {
             public void onError(String url, LoaderError err) {
                 super.onError(url, err);
                 Log.e(TAG, "异常,下载......"+err.getMsg());
+                ServiceManager.getInstance().updateprocess("异常,下载......");
                 fileDownLoading = null;
                 //移除下载项
                 clearItem(url);

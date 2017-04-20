@@ -14,5 +14,6 @@ public interface ViewAction {
 
     void start(String fileId);
 
+    void updateprocess(String process);
 
 }
