@@ -41,7 +41,7 @@ public class ServiceManager {
 
     private ServiceManager(){
         Log.e(TAG, "init ServiceManager");
-        initSocketClient();
+//        initSocketClient();
     }
 
     public static synchronized ServiceManager getInstance(){
@@ -57,8 +57,8 @@ public class ServiceManager {
     }
 
     //初始化Socket
-    private void initSocketClient(){
-        mClient = new NettyClient(HOST, PORT);
+    public void initSocketClient(String host){
+        mClient = new NettyClient(host, PORT);
         mClient.setmUIHandler(new UIhandler());
         mClient.start();
     }

@@ -36,6 +36,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     private Button b2;
     private Button end;
     private Button next;
+    private Handler handler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -216,8 +217,14 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     }
 
     @Override
-    public void play(long position) {
-        seekTo(position,1);
+    public void play(final long position) {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                seekTo(position,1);
+            }
+        });
+//        seekTo(position,1);
     }
 
     @Override
@@ -233,6 +240,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         if (status == 1){
             Log.e(TAG, "开始播放");
             mMediaPlayerWrapper.start();
+//            mMediaPlayerWrapper.start();
         }else{
             pause();
         }

@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,9 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
     Button sendRegisterButton;
     TextView process;
     Handler handler = new Handler();
+    EditText editText;
+    Button lianjie;
+    int temp = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +55,10 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
 //                serviceManager.sendRequest(request);
 
 //                serviceManager.requestProgress();
-//                start("F5fly.mp4",393870878);
-
-                long i = Utils.stringToLong("1223123");
-                Toast.makeText(VREducationMainActivity.this, i+"", Toast.LENGTH_LONG).show();
+                start("yangli.mp4",32349087);
+//
+//                long i = Utils.stringToLong("1223123");
+//                Toast.makeText(VREducationMainActivity.this, i+"", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -71,6 +75,22 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
         });
 
         process = (TextView) findViewById(R.id.process);
+
+        editText = (EditText) findViewById(R.id.ip);
+        lianjie = (Button) findViewById(R.id.lianjie);
+        lianjie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String ip = editText.getText().toString();
+                if (ip == null || ip.equals("")){
+                    Toast.makeText(VREducationMainActivity.this, "ip 格式不正确", Toast.LENGTH_LONG).show();
+                }else {
+                    ServiceManager.getInstance().initSocketClient(ip);
+                }
+
+
+            }
+        });
 
     }
 

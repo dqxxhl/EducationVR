@@ -44,12 +44,7 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
                 return false;
             }
         });
-        mPlayer.setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(IMediaPlayer iMediaPlayer) {
 
-            }
-        });
 
         enableHardwareDecoding();
     }
@@ -128,7 +123,7 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
 
     public void pause(){
         if (mPlayer == null) return;
-        if (mPlayer.isPlaying() && mStatus == STATUS_STARTED) {
+        if ((mPlayer.isPlaying()&& mStatus == STATUS_STARTED) || mStatus == STATUS_COMPLET) {
             mPlayer.pause();
             mStatus = STATUS_PAUSED;
         }
@@ -136,7 +131,7 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
 
     public void start(){
         if (mPlayer == null) return;
-        if (mStatus == STATUS_PREPARED || mStatus == STATUS_PAUSED){
+        if (mStatus == STATUS_PREPARED || mStatus == STATUS_PAUSED ||  mStatus == STATUS_COMPLET){
             mPlayer.start();
             mStatus = STATUS_STARTED;
         }
@@ -150,6 +145,13 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
     @Override
     public void onPrepared(IMediaPlayer mp) {
         mStatus = STATUS_PREPARED;
+        mPlayer.setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(IMediaPlayer iMediaPlayer) {
+                Log.e(TAG, "播放完成");
+                mStatus = STATUS_COMPLET;
+            }
+        });
         start();
         if (mPreparedListener != null) mPreparedListener.onPrepared(mp);
     }
