@@ -10,6 +10,7 @@ import com.sd.vr.ctrl.netty.protobuf.MessageProto;
 import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -51,6 +52,9 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
 
 //                serviceManager.requestProgress();
 //                start("F5fly.mp4",393870878);
+
+                long i = Utils.stringToLong("1223123");
+                Toast.makeText(VREducationMainActivity.this, i+"", Toast.LENGTH_LONG).show();
             }
         });
 

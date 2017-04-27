@@ -158,6 +158,19 @@ public class Utils {
         return ipList;
     }
 
+    public static long stringToLong(String str){
+        if (str == null || str.equals("")){
+            return -1;
+        }
+        int index = str.indexOf(".");
+        if (index != -1){
+            String temp = str.substring(0,index);
+            return Long.valueOf(temp);
+        }else{
+            return Long.valueOf(str);
+        }
+    }
+
 
 
 }

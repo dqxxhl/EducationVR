@@ -44,6 +44,12 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
                 return false;
             }
         });
+        mPlayer.setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(IMediaPlayer iMediaPlayer) {
+
+            }
+        });
 
         enableHardwareDecoding();
     }

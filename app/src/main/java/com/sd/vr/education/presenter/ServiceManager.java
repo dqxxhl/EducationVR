@@ -265,8 +265,10 @@ public class ServiceManager {
                     if (mVideoAction != null){
                         if (ctrlDictateNotice.getPosition() != null && !ctrlDictateNotice.getPosition().equals("")){
                             String positionString =  ctrlDictateNotice.getPosition();
-                            long position = Long.valueOf(positionString);
-                            mVideoAction.play(position);
+                            long position =Utils.stringToLong(positionString);
+                            if (position >= 0){
+                                mVideoAction.play(position);
+                            }
                         }
                     }
                     break;
