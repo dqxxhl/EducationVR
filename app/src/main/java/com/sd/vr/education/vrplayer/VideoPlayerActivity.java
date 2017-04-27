@@ -34,6 +34,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     private Button b;
     private Button b1;
     private Button b2;
+    private Button end;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
             @Override
             public void onClick(View view) {
 //                ServiceManager.getInstance().requestProgress();
-                play(123);
+                play(0);
             }
         });
 
@@ -61,7 +62,15 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                seekTo(41000, 1);
+                seekTo(2000, 1);
+            }
+        });
+
+        end = (Button) findViewById(R.id.end);
+        end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stop();
             }
         });
         getdate();
@@ -208,7 +217,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     @Override
     public void seekTo(long position, int status) {
         Log.e(TAG, "跳转到："+position+"--------"+"状态："+status);
-        mMediaPlayerWrapper.getPlayer().seekTo(position);
+        mMediaPlayerWrapper.seekTo(position);
 
         if (status == 1){
             Log.e(TAG, "开始播放");
@@ -221,6 +230,9 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     @Override
     public void stop() {
-        mMediaPlayerWrapper.getPlayer().pause();
+        Long l = mMediaPlayerWrapper.getPlayer().getDuration();
+        if (l != null && l > 0){
+            mMediaPlayerWrapper.seekTo(l);
+        }
     }
 }

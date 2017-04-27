@@ -48,6 +48,7 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
 //                serviceManager.sendRequest(request);
 
 //                serviceManager.requestProgress();
+                start("dads");
             }
         });
 
@@ -79,8 +80,8 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
 
     @Override
     public void start(String fileId) {
-        String url = FilesManager.DIRECTORY+"/"+ fileId;
-//        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/F5fly.mp4";
+//        String url = FilesManager.DIRECTORY+"/"+ fileId;
+        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/yangli.mp4";
         Log.e(TAG, "URL:"+url);
         Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
         intent.putExtra("START",url);

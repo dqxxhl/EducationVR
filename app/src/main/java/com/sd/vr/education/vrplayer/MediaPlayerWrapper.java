@@ -5,6 +5,7 @@ import java.io.InputStream;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.util.Log;
 import android.view.Surface;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
@@ -19,6 +20,8 @@ import tv.danmaku.ijk.media.player.misc.IMediaDataSource;
  * status
  */
 public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
+
+    private static final String TAG = MediaPlayerWrapper.class.getName();
     protected IMediaPlayer mPlayer;
     private IjkMediaPlayer.OnPreparedListener mPreparedListener;
     private static final int STATUS_IDLE = 0;
@@ -27,6 +30,7 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
     private static final int STATUS_STARTED = 3;
     private static final int STATUS_PAUSED = 4;
     private static final int STATUS_STOPPED = 5;
+    private static final int STATUS_COMPLET = 6;
     private int mStatus = STATUS_IDLE;
     private Surface mSurface;
 
@@ -155,5 +159,10 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
             mPlayer.release();
         }
         mPlayer = null;
+    }
+
+    public void seekTo(Long l){
+        mStatus = STATUS_PAUSED;
+        mPlayer.seekTo(l);
     }
 }

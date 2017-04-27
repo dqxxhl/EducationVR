@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="播放"
         android:textSize="20dp"
-        android:visibility="gone"
+        android:visibility="visible"
         />
     <Button
         android:id="@+id/text2"
@@ -24,7 +24,7 @@
         android:layout_below="@+id/text1"
         android:text="暂停"
         android:textSize="20dp"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
     <Button
         android:id="@+id/text3"
         android:layout_width="wrap_content"
@@ -32,6 +32,14 @@
         android:layout_below="@+id/text2"
         android:text="跳转"
         android:textSize="20dp"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
+    <Button
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text3"
+        android:textSize="20dp"
+        android:text="End"
+        android:visibility="visible"/>
 
 </RelativeLayout>
