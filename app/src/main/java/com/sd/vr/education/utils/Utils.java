@@ -33,13 +33,6 @@ public class Utils {
         String deviceId = "";
         if (deviceId == null || "".equals(deviceId)) {
             try {
-                deviceId = getLocalMac(context).replace(":", "");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        if (deviceId == null || "".equals(deviceId)) {
-            try {
                 deviceId = getAndroidId(context);
             } catch (Exception e) {
                 e.printStackTrace();
