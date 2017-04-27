@@ -53,6 +53,14 @@ public class FilesManager {
         if (downLoadFiles == null){
             downLoadFiles = new ArrayList<>();
         }
+        //如果已存在次下载项不再下载
+        if (downLoadFiles.size() > 0){
+            for (FileDownLoad file:downLoadFiles) {
+                if (file.fileName.equals(fileDownLoad.fileName)){
+                    return;
+                }
+            }
+        }
         downLoadFiles.add(fileDownLoad);
         startDownLoad();
     }
@@ -103,7 +111,7 @@ public class FilesManager {
     /**
      * 启动文件下载
      */
-    private void startDownLoad(){
+    public void startDownLoad(){
 
         if (fileDownLoading != null){
             return;
@@ -173,7 +181,7 @@ public class FilesManager {
             @Override
             public void onError(String url, LoaderError err) {
                 super.onError(url, err);
-                Log.e(TAG, "异常,下载......"+err.getMsg());
+                Log.e(TAG, "异常,下载......"+err.getMsg()+"----错误码:"+err.getCode());
                 ServiceManager.getInstance().updateprocess("异常,下载......");
                 fileDownLoading = null;
                 //移除下载项

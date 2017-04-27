@@ -20,6 +20,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+
 public class VREducationMainActivity extends AppCompatActivity implements ViewAction {
 
     private static final String TAG = VREducationMainActivity.class.getName();
@@ -48,7 +50,7 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
 //                serviceManager.sendRequest(request);
 
 //                serviceManager.requestProgress();
-                start("dads");
+//                start("F5fly.mp4",393870878);
             }
         });
 
@@ -79,13 +81,17 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
     }
 
     @Override
-    public void start(String fileId) {
-//        String url = FilesManager.DIRECTORY+"/"+ fileId;
-        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/yangli.mp4";
+    public void start(String fileId, long size) {
+        String url = FilesManager.DIRECTORY+"/"+ fileId;
+//        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/yangli.mp4";
         Log.e(TAG, "URL:"+url);
-        Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
-        intent.putExtra("START",url);
-        startActivity(intent);
+        if (checkFileDownLoad(fileId,size)){
+            Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
+            intent.putExtra("START",url);
+            startActivity(intent);
+        }else{
+            Toast.makeText(this, "该视频未下载", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -96,5 +102,24 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
                 VREducationMainActivity.this.process.setText(process);
             }
         });
+    }
+
+    private boolean checkFileDownLoad(String fileName, long size){
+        File fileDir = new File(FilesManager.DIRECTORY);
+        if (fileDir != null && fileDir.listFiles() != null && fileDir.listFiles().length > 0){
+            for (File file : fileDir.listFiles()) {
+                if (file.getAbsolutePath().endsWith(FilesManager.PATCH_SUFFIX)){
+                    if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
+                        //文件已下载
+                        ServiceManager.getInstance().sendDownloadAck(fileName);
+                        return true;
+                    }else if (file.getName().equals(fileName) && Utils.getFileSize(file) > size){
+                        deleteFile(fileName);
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }

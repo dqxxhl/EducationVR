@@ -87,6 +87,8 @@ public class ServiceManager {
             if (mClient != null){
                 mClient.notifyNetworkChange();
             }
+            // 启动下载引擎
+            FilesManager.getInstance().startDownLoad();
         }
     }
 
@@ -243,7 +245,13 @@ public class ServiceManager {
                         //打开一个VideoPlayerActivity
                         if (mAction != null){
                             if (ctrlDictateNotice.getFileId() != null && !ctrlDictateNotice.getFileId().equals("")){
-                                mAction.start(ctrlDictateNotice.getFileId());
+                                String sizeString = ctrlDictateNotice.getFileSize();
+                                if (sizeString != null && !sizeString.equals("")){
+                                    long size = Long.valueOf(sizeString);
+                                    if (size > 0){
+                                        mAction.start(ctrlDictateNotice.getFileId(), size);
+                                    }
+                                }
                             }
                         }
                     }

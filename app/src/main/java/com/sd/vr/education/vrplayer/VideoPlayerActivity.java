@@ -35,6 +35,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     private Button b1;
     private Button b2;
     private Button end;
+    private Button next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +74,15 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
                 stop();
             }
         });
+
+        next = (Button) findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start("F5fly.mp4");
+            }
+        });
+
         getdate();
         initVRLibrary();//初始化VR库
 
@@ -93,7 +103,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
                 if (mVRLibrary != null){
                     mVRLibrary.notifyPlayerChanged();
                 }
-                mMediaPlayerWrapper.pause();
+                mMediaPlayerWrapper.seekTo(0);
                 // 播放器准备就绪，向服务器请求目前的播放进度
                 Log.e(TAG,"向服务器请求目前的播放进度");
                 ServiceManager.getInstance().requestProgress();
@@ -193,13 +203,14 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     }
 
     @Override
-    public void start(String url) {
-        this.url = FilesManager.DIRECTORY+"/"+ url;
+    public void start(String fileId) {
+        this.url = FilesManager.DIRECTORY+"/"+ fileId;
         Log.e(TAG, "播放地址:"+this.url);
         mMediaPlayerWrapper.pause();
         mMediaPlayerWrapper.destroy();
         mMediaPlayerWrapper.init();
         playVideo(url);
+        mMediaPlayerWrapper.pause();
         Log.e(TAG,"向服务器请求目前的播放进度");
         ServiceManager.getInstance().requestProgress();
     }

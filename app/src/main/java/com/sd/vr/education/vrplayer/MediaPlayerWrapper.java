@@ -161,8 +161,8 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
         mPlayer = null;
     }
 
-    public void seekTo(Long l){
-        mStatus = STATUS_PAUSED;
+    public void seekTo(long l){
+        pause();
         mPlayer.seekTo(l);
     }
 }

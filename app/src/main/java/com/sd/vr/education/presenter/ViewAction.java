@@ -12,7 +12,7 @@ public interface ViewAction {
 
     void showToast(String string);
 
-    void start(String fileId);
+    void start(String fileId, long size);
 
     void updateprocess(String process);
 
