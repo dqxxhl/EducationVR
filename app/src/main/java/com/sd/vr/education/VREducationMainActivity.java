@@ -34,7 +34,7 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
     TextView process;
     Handler handler = new Handler();
     EditText editText;
-    Button lianjie;
+    Button lianjie; 
     int temp = 0;
 
     @Override
