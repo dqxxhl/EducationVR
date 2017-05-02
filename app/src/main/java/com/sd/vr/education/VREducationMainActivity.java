@@ -9,6 +9,7 @@ import com.sd.vr.education.utils.Utils;
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
 import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,7 +27,7 @@ import android.widget.Toast;
 
 import java.io.File;
 
-public class VREducationMainActivity extends AppCompatActivity implements ViewAction {
+public class VREducationMainActivity extends Activity implements ViewAction {
 
     private static final String TAG = VREducationMainActivity.class.getName();
 
@@ -34,12 +37,14 @@ public class VREducationMainActivity extends AppCompatActivity implements ViewAc
     TextView process;
     Handler handler = new Handler();
     EditText editText;
-    Button lianjie; 
+    Button lianjie;
     int temp = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//无标题
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏幕显示
         setContentView(R.layout.activity_education_vrmain);
         serviceManager = ServiceManager.getInstance();
         serviceManager.bindAction(this);
