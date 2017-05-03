@@ -7,31 +7,46 @@ import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.ViewAction;
 import com.sd.vr.education.utils.Utils;
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
+import com.sd.vr.education.view.VideoGridViewAdapter;
 import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
-public class VREducationMainActivity extends Activity implements ViewAction {
+public class VREducationMainActivity extends Activity implements ViewAction, View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private static final String TAG = VREducationMainActivity.class.getName();
 
     ServiceManager serviceManager;
+
+    //==================测试代码======================================
     Button sendConnectButton;
     Button sendRegisterButton;
     TextView process;
@@ -39,6 +54,26 @@ public class VREducationMainActivity extends Activity implements ViewAction {
     EditText editText;
     Button lianjie;
     int temp = 0;
+
+    //=============================UI实现=================================
+    List<List<String>> pagerList = new ArrayList<>();
+    private ViewPager viewPager;
+    private LinearLayout numsLayout;
+    private int positionSelected;
+    private VideoPagerAdapter adapter;
+    private ImageView pre;
+    private ImageView next;
+    private RelativeLayout homeLayout;
+    private RelativeLayout settingLayout;
+    private RelativeLayout videoLayout;
+    private RelativeLayout mainSetting;
+    private RelativeLayout mainSettingIP;
+    private RelativeLayout showSetting;
+    private RelativeLayout setting_ip;
+    private RelativeLayout setting_cache;
+    private Button save_ip;
+    private Button cancel_ip;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +83,41 @@ public class VREducationMainActivity extends Activity implements ViewAction {
         setContentView(R.layout.activity_education_vrmain);
         serviceManager = ServiceManager.getInstance();
         serviceManager.bindAction(this);
+
+        initDate();
+
+        numsLayout = (LinearLayout) findViewById(R.id.num);
+        homeLayout = (RelativeLayout) findViewById(R.id.image_shouye);
+        settingLayout = (RelativeLayout) findViewById(R.id.image_shezhi);
+        videoLayout = (RelativeLayout) findViewById(R.id.video_main);
+        mainSetting = (RelativeLayout) findViewById(R.id.main_setting);
+        mainSettingIP = (RelativeLayout) findViewById(R.id.main_setting_ip);
+        showSetting = (RelativeLayout) findViewById(R.id.show_setting);
+        setting_ip = (RelativeLayout) findViewById(R.id.setting_ip);
+        setting_cache = (RelativeLayout) findViewById(R.id.setting_cache);
+        save_ip = (Button) findViewById(R.id.save_ip);
+        cancel_ip = (Button) findViewById(R.id.cancel_ip);
+        homeLayout.setOnClickListener(this);
+        settingLayout.setOnClickListener(this);
+        setting_ip.setOnClickListener(this);
+        setting_cache.setOnClickListener(this);
+        save_ip.setOnClickListener(this);
+        cancel_ip.setOnClickListener(this);
+
+
+        pre = (ImageView) findViewById(R.id.pre);
+        next = (ImageView) findViewById(R.id.next);
+        pre.setOnClickListener(this);
+        next.setOnClickListener(this);
+
+        viewPager = (ViewPager) findViewById(R.id.viewpager_test);
+        adapter = new VideoPagerAdapter();
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(this);
+        onPageSelected(0);
+
+
+        //=========================================测试用代码=================================
         sendConnectButton = (Button) findViewById(R.id.connect_send);
         sendConnectButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +166,38 @@ public class VREducationMainActivity extends Activity implements ViewAction {
 
             }
         });
+    }
 
+    public void updateUI(){
+        initDate();
+        adapter.notifyDataSetChanged();
+        updateNum();
+    }
+
+    /**
+     * 准备数据源
+     */
+    private void initDate(){
+        pagerList.clear();
+        List<String> videoList = FilesManager.getInstance().getVideoFiles();
+        if (videoList == null || videoList.size() == 0){
+            //无本地视频
+        }else{
+            float a =(float) videoList.size()/8;
+            Log.e(TAG,"yema  ========="+a);
+            int pageNum = (int) Math.ceil(a);
+            for (int i = 0; i < pageNum; i++ ){
+                List<String> temp = new ArrayList<>();
+                for (int j = i*8; j < (i+1)*8; j++){
+                    if (j < videoList.size()){
+                        temp.add(videoList.get(j));
+                    }
+                }
+                pagerList.add(temp);
+            }
+        }
+
+        Log.e(TAG, pagerList.toString());
     }
 
     @Override
@@ -151,4 +252,115 @@ public class VREducationMainActivity extends Activity implements ViewAction {
 
         return false;
     }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        positionSelected = position;
+        updateNum();
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.pre){
+            viewPager.arrowScroll(1);
+        }else if (v.getId() == R.id.next){
+            viewPager.arrowScroll(2);
+        }else if (v.getId() == R.id.image_shouye){
+            homeLayout.setBackgroundResource(R.drawable.vr_11);
+            settingLayout.setBackgroundResource(R.drawable.vr_10_2);
+            videoLayout.setVisibility(View.VISIBLE);
+            mainSetting.setVisibility(View.GONE);
+        }else if (v.getId() == R.id.image_shezhi){
+            homeLayout.setBackgroundResource(R.drawable.vr_10_2);
+            settingLayout.setBackgroundResource(R.drawable.vr_11);
+            videoLayout.setVisibility(View.GONE);
+            mainSetting.setVisibility(View.VISIBLE);
+        }else if (v.getId() == R.id.setting_ip){
+            showSetting.setVisibility(View.GONE);
+            setting_ip.setVisibility(View.VISIBLE);
+        }else if (v.getId() == R.id.setting_cache){
+            //清楚缓存
+        }else if(v.getId() == R.id.save_ip){
+
+        }else if (v.getId() == R.id.cancel_ip){
+
+        }
+    }
+
+    /**
+     * 更新数字页码
+     */
+    public void updateNum(){
+        numsLayout.removeAllViews();
+
+        int page = adapter.getCount();
+        for (int i =0; i< page; i++){
+            TextView textView = new TextView(VREducationMainActivity.this);
+            textView.setText(i+1+"");
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            textView.setLayoutParams(layoutParams);
+            if (i == page){
+                textView.setPadding(0, 0, 0, 0);
+            }else{
+                textView.setPadding(0, 0, 20, 0);
+            }
+
+            if (i == positionSelected){
+                textView.setTextColor(Color.parseColor("#1a81f4"));
+            }else {
+                textView.setTextColor(Color.parseColor("#FFFFFF"));
+            }
+            numsLayout.addView(textView);
+        }
+    }
+
+
+    /**
+     * ViewPager适配器
+     */
+    private class VideoPagerAdapter extends PagerAdapter {
+
+        @Override
+        public int getCount() {
+            return pagerList.size();
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            (container).removeView((View) object);
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+
+            View view = LayoutInflater.from(VREducationMainActivity.this).inflate(R.layout.pager_item, container, false);
+            GridView gridView = (GridView) view.findViewById(R.id.photo);
+            gridView.setAdapter(new VideoGridViewAdapter(pagerList.get(position), VREducationMainActivity.this));
+            container.addView(view);
+            return view;
+        }
+
+        @Override
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
+        }
+    }
+
+
+
 }

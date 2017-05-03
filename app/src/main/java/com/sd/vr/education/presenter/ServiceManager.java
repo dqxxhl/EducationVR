@@ -64,7 +64,9 @@ public class ServiceManager {
     }
 
     public void sendRequest(MessageRequest request){
-        mClient.sendRequest(request);
+        if (mClient != null){
+            mClient.sendRequest(request);
+        }
     }
 
     public void bindAction(ViewAction action){

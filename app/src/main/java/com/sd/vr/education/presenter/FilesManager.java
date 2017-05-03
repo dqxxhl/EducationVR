@@ -25,6 +25,7 @@ public class FilesManager {
     public static final String TAG = FilesManager.class.getName();
     public static final String DIRECTORY = Environment.getExternalStorageDirectory().getAbsolutePath()+"/com.sd.vr";
     public static final String PATCH_SUFFIX = ".mp4";
+    public static final String TEMP_SUFFIX = ".cfg";
 
     public List<FileDownLoad> downLoadFiles = new ArrayList<>();
     private static FilesManager mFilesManager;
@@ -210,6 +211,37 @@ public class FilesManager {
                 }
             }
         }
+    }
+
+    public List<String> getVideoFiles(){
+        List<String> fileList = new ArrayList<>();
+        List<String> downLoading = new ArrayList<>();
+        File fileDir = new File(DIRECTORY);
+        if (fileDir != null && fileDir.listFiles() != null && fileDir.listFiles().length > 0){
+            for (File file : fileDir.listFiles()) {
+                if (file.getAbsolutePath().endsWith(PATCH_SUFFIX)){
+                    fileList.add(file.getName());
+                }else if (file.getAbsolutePath().endsWith(TEMP_SUFFIX)){
+                    downLoading.add(file.getName());
+                }
+            }
+        }
+
+        //过滤掉正在下载的
+        List<String> list = new ArrayList<>();
+        for (String s:fileList) {
+            boolean is = false;
+            for (String s2:downLoading) {
+                if (s2.equals(s+TEMP_SUFFIX)){
+                    is = true;
+                }
+            }
+            if (is == false){
+                list.add(s);
+            }
+        }
+
+        return list;
     }
 
 
