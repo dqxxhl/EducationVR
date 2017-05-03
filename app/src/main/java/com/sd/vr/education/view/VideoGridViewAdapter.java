@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sd.vr.R;
@@ -48,11 +49,11 @@ public class VideoGridViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, final View convertView, ViewGroup parent) {
-        LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.video_item, parent, false);
-        TextView textView = (TextView) linearLayout.findViewById(R.id.video_title);
+        RelativeLayout relativeLayout = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.video_item, parent, false);
+        TextView textView = (TextView) relativeLayout.findViewById(R.id.video_title);
         final String fileId = listVideo.get(position).toString();
-        ImageView bofang = (ImageView) linearLayout.findViewById(R.id.bofang);
-        ImageView shanchu = (ImageView) linearLayout.findViewById(R.id.shanchu);
+        ImageView bofang = (ImageView) relativeLayout.findViewById(R.id.bofang);
+        ImageView shanchu = (ImageView) relativeLayout.findViewById(R.id.shanchu);
         bofang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +72,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
             }
         });
 
-        linearLayout.setOnClickListener(new View.OnClickListener() {
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String url = FilesManager.DIRECTORY+"/"+ fileId;
@@ -82,6 +83,6 @@ public class VideoGridViewAdapter extends BaseAdapter {
         });
 
         textView.setText(fileId);
-        return linearLayout;
+        return relativeLayout;
     }
 }

@@ -11,6 +11,7 @@ import com.sd.vr.education.view.VideoGridViewAdapter;
 import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
 import android.app.Activity;
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -22,6 +23,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,6 +84,8 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private EditText ip_3;
     private EditText ip_4;
     private TextView text_ip;
+    private RelativeLayout tuichu;
+    private RelativeLayout qiehuan;
 
 
     @Override
@@ -106,6 +111,8 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         save_ip = (Button) findViewById(R.id.save_ip);
         cancel_ip = (Button) findViewById(R.id.cancel_ip);
         text_ip = (TextView) findViewById(R.id.text_ip);
+        tuichu = (RelativeLayout) findViewById(R.id.tuichu);
+        qiehuan = (RelativeLayout) findViewById(R.id.qiehuan);
         ip_1 = (EditText) findViewById(R.id.ip_1);
         ip_2 = (EditText) findViewById(R.id.ip_2);
         ip_3 = (EditText) findViewById(R.id.ip_3);
@@ -330,6 +337,11 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         }else if (v.getId() == R.id.cancel_ip){
             showSetting.setVisibility(View.VISIBLE);
             mainSettingIP.setVisibility(View.GONE);
+        }else if (v.getId() == R.id.tuichu){
+            Instrumentation inst = new Instrumentation();
+            inst.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK);
+        }else if (v.getId() == R.id.qiehuan){
+            //不知道怎么弄
         }
     }
 
@@ -343,12 +355,14 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         for (int i =0; i< page; i++){
             TextView textView = new TextView(VREducationMainActivity.this);
             textView.setText(i+1+"");
+            textView.setTextSize(15);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             textView.setLayoutParams(layoutParams);
+            textView.setGravity(Gravity.CENTER_VERTICAL);
             if (i == page){
                 textView.setPadding(0, 0, 0, 0);
             }else{
-                textView.setPadding(0, 0, 20, 0);
+                textView.setPadding(0, 0, 35, 0);
             }
 
             if (i == positionSelected){
