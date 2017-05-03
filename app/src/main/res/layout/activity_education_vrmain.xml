@@ -413,7 +413,15 @@
                     android:layout_width="85dp"
                     android:layout_height="50dp"
                     android:background="@drawable/t5"
-                    android:layout_marginLeft="100dp"/>
+                    android:layout_marginLeft="100dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:inputType="number"
+                    />
 
                 <EditText
                     android:id="@+id/ip_2"
@@ -421,7 +429,14 @@
                     android:layout_height="50dp"
                     android:background="@drawable/t5"
                     android:layout_toRightOf="@+id/ip_1"
-                    android:layout_marginLeft="43dp"/>
+                    android:layout_marginLeft="43dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:inputType="number"/>
 
                 <EditText
                     android:id="@+id/ip_3"
@@ -429,7 +444,14 @@
                     android:layout_height="50dp"
                     android:background="@drawable/t5"
                     android:layout_toRightOf="@+id/ip_2"
-                    android:layout_marginLeft="43dp"/>
+                    android:layout_marginLeft="43dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:inputType="number"/>
 
                 <EditText
                     android:id="@+id/ip_4"
@@ -437,7 +459,14 @@
                     android:layout_height="50dp"
                     android:background="@drawable/t5"
                     android:layout_toRightOf="@+id/ip_3"
-                    android:layout_marginLeft="43dp"/>
+                    android:layout_marginLeft="43dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:inputType="number"/>
             </RelativeLayout>
 
             <!--Line3 -->

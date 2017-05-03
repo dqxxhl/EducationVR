@@ -45,6 +45,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private static final String TAG = VREducationMainActivity.class.getName();
 
     ServiceManager serviceManager;
+    String separator = ".";
 
     //==================测试代码======================================
     Button sendConnectButton;
@@ -73,6 +74,10 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private RelativeLayout setting_cache;
     private Button save_ip;
     private Button cancel_ip;
+    private EditText ip_1;
+    private EditText ip_2;
+    private EditText ip_3;
+    private EditText ip_4;
 
 
     @Override
@@ -97,6 +102,11 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         setting_cache = (RelativeLayout) findViewById(R.id.setting_cache);
         save_ip = (Button) findViewById(R.id.save_ip);
         cancel_ip = (Button) findViewById(R.id.cancel_ip);
+        ip_1 = (EditText) findViewById(R.id.ip_1);
+        ip_2 = (EditText) findViewById(R.id.ip_2);
+        ip_3 = (EditText) findViewById(R.id.ip_3);
+        ip_4 = (EditText) findViewById(R.id.ip_4);
+
         homeLayout.setOnClickListener(this);
         settingLayout.setOnClickListener(this);
         setting_ip.setOnClickListener(this);
@@ -287,13 +297,25 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             mainSetting.setVisibility(View.VISIBLE);
         }else if (v.getId() == R.id.setting_ip){
             showSetting.setVisibility(View.GONE);
-            setting_ip.setVisibility(View.VISIBLE);
+            mainSettingIP.setVisibility(View.VISIBLE);
         }else if (v.getId() == R.id.setting_cache){
             //清楚缓存
         }else if(v.getId() == R.id.save_ip){
+            //保存ip
+            showSetting.setVisibility(View.VISIBLE);
+            mainSettingIP.setVisibility(View.GONE);
+            //链接网络
+            String ip1 = ip_1.getText().toString();
+            String ip2 = ip_2.getText().toString();
+            String ip3 = ip_3.getText().toString();
+            String ip4 = ip_4.getText().toString();
+
+            String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
+            ServiceManager.getInstance().initSocketClient(ip);
 
         }else if (v.getId() == R.id.cancel_ip){
-
+            showSetting.setVisibility(View.VISIBLE);
+            mainSettingIP.setVisibility(View.GONE);
         }
     }
 
