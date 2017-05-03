@@ -36,6 +36,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +80,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private EditText ip_2;
     private EditText ip_3;
     private EditText ip_4;
+    private TextView text_ip;
 
 
     @Override
@@ -102,6 +105,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         setting_cache = (RelativeLayout) findViewById(R.id.setting_cache);
         save_ip = (Button) findViewById(R.id.save_ip);
         cancel_ip = (Button) findViewById(R.id.cancel_ip);
+        text_ip = (TextView) findViewById(R.id.text_ip);
         ip_1 = (EditText) findViewById(R.id.ip_1);
         ip_2 = (EditText) findViewById(R.id.ip_2);
         ip_3 = (EditText) findViewById(R.id.ip_3);
@@ -310,8 +314,18 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             String ip3 = ip_3.getText().toString();
             String ip4 = ip_4.getText().toString();
 
+            //简单校验
+            if (ip1 == null || ip1.equals("") ||
+                    ip2 == null || ip2.equals("") ||
+                    ip3 == null || ip3.equals("") ||
+                    ip4 == null || ip4.equals("")){
+                return;
+            }
+
             String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
             ServiceManager.getInstance().initSocketClient(ip);
+
+            text_ip.setText(ip);
 
         }else if (v.getId() == R.id.cancel_ip){
             showSetting.setVisibility(View.VISIBLE);
