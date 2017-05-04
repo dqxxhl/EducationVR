@@ -53,7 +53,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
         TextView textView = (TextView) relativeLayout.findViewById(R.id.video_title);
         final String fileId = listVideo.get(position).toString();
         ImageView bofang = (ImageView) relativeLayout.findViewById(R.id.bofang);
-        ImageView shanchu = (ImageView) relativeLayout.findViewById(R.id.shanchu);
+        RelativeLayout shanchu = (RelativeLayout) relativeLayout.findViewById(R.id.layout_shanchu);
         bofang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

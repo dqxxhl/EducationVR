@@ -16,4 +16,6 @@ public interface ViewAction {
 
     void updateprocess(String process);
 
+    void uodateUI();
+
 }

@@ -1,27 +1,17 @@
 package com.sd.vr.education;
 
 
-import com.sd.vr.R;
-import com.sd.vr.education.presenter.FilesManager;
-import com.sd.vr.education.presenter.ServiceManager;
-import com.sd.vr.education.presenter.ViewAction;
-import com.sd.vr.education.utils.Utils;
-import com.sd.vr.ctrl.netty.protobuf.MessageProto;
-import com.sd.vr.education.view.VideoGridViewAdapter;
-import com.sd.vr.education.vrplayer.VideoPlayerActivity;
-
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Instrumentation;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -39,16 +29,25 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.sd.vr.R;
+import com.sd.vr.ctrl.netty.protobuf.MessageProto;
+import com.sd.vr.education.presenter.FilesManager;
+import com.sd.vr.education.presenter.ServiceManager;
+import com.sd.vr.education.presenter.ViewAction;
+import com.sd.vr.education.utils.Utils;
+import com.sd.vr.education.view.VideoGridViewAdapter;
+import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
 import java.io.File;
+import java.net.InetAddress;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class VREducationMainActivity extends Activity implements ViewAction, View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private static final String TAG = VREducationMainActivity.class.getName();
-
+    private static final int MSG_KEY_1 = 1;
     ServiceManager serviceManager;
     String separator = ".";
 
@@ -56,7 +55,31 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     Button sendConnectButton;
     Button sendRegisterButton;
     TextView process;
-    Handler handler = new Handler();
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case MSG_KEY_1:
+                    long time = System.currentTimeMillis();
+                    final Calendar mCalendar = Calendar.getInstance();
+                    mCalendar.setTimeInMillis(time);
+                    int hour = mCalendar.get(Calendar.HOUR);
+                    int min = mCalendar.get(Calendar.MINUTE);
+                    int apm = mCalendar.get(Calendar.AM_PM);
+                    String AM = "AM";
+                    if (apm == 1){
+                        AM = "PM";
+                    }
+
+                    String timeString = hour+":"+min+" "+AM;
+                    top_time.setText(timeString);
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
     EditText editText;
     Button lianjie;
     int temp = 0;
@@ -86,6 +109,13 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private TextView text_ip;
     private RelativeLayout tuichu;
     private RelativeLayout qiehuan;
+    private RelativeLayout layout_pre;
+    private RelativeLayout layout_next;
+    private TextView text_cache;
+    private RelativeLayout layout_null;
+    private RelativeLayout pager_index;
+    private TextView top_time;
+    private Button zidongjiance;
 
 
     @Override
@@ -97,8 +127,9 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         serviceManager = ServiceManager.getInstance();
         serviceManager.bindAction(this);
 
-        initDate();
-
+        layout_null = (RelativeLayout) findViewById(R.id.layout_null);
+        pager_index = (RelativeLayout) findViewById(R.id.pager_index);
+        viewPager = (ViewPager) findViewById(R.id.viewpager_test);
         numsLayout = (LinearLayout) findViewById(R.id.num);
         homeLayout = (RelativeLayout) findViewById(R.id.image_shouye);
         settingLayout = (RelativeLayout) findViewById(R.id.image_shezhi);
@@ -117,6 +148,11 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         ip_2 = (EditText) findViewById(R.id.ip_2);
         ip_3 = (EditText) findViewById(R.id.ip_3);
         ip_4 = (EditText) findViewById(R.id.ip_4);
+        layout_pre = (RelativeLayout) findViewById(R.id.layout_pre);
+        layout_next = (RelativeLayout) findViewById(R.id.layout_next);
+        text_cache = (TextView) findViewById(R.id.text_cache);
+        top_time = (TextView) findViewById(R.id.top_time);
+        zidongjiance = (Button) findViewById(R.id.zidongjiance);
 
         homeLayout.setOnClickListener(this);
         settingLayout.setOnClickListener(this);
@@ -124,18 +160,22 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         setting_cache.setOnClickListener(this);
         save_ip.setOnClickListener(this);
         cancel_ip.setOnClickListener(this);
+        tuichu.setOnClickListener(this);
+        qiehuan.setOnClickListener(this);
+        layout_pre.setOnClickListener(this);
+        layout_next.setOnClickListener(this);
+        zidongjiance.setOnClickListener(this);
 
+        initDate();
 
-        pre = (ImageView) findViewById(R.id.pre);
-        next = (ImageView) findViewById(R.id.next);
-        pre.setOnClickListener(this);
-        next.setOnClickListener(this);
-
-        viewPager = (ViewPager) findViewById(R.id.viewpager_test);
         adapter = new VideoPagerAdapter();
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
         onPageSelected(0);
+
+        initView();
+
+        new TimeThread().start();
 
 
         //=========================================测试用代码=================================
@@ -183,10 +223,29 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
                 }else {
                     ServiceManager.getInstance().initSocketClient(ip);
                 }
-
-
             }
         });
+    }
+
+    public void initView(){
+        //更新文件大小
+        File fileDir = new File(FilesManager.DIRECTORY);
+        long size = Utils.getTotalSizeOfFilesInDir(fileDir);//字节
+        long k = size/1024;
+        long m = k/1024;
+        float g = (float) m/1024;
+        float num = (float)Math.round(g*100)/100;
+        text_cache.setText(num+"GB");
+
+        //设置ip
+        String ip = Utils.readIP(this);
+        if (ip == null || ip.equals("")){
+            return;
+        }
+        text_ip.setText(ip);
+        ServiceManager.getInstance().initSocketClient(ip);
+
+
     }
 
     public void updateUI(){
@@ -203,7 +262,13 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         List<String> videoList = FilesManager.getInstance().getVideoFiles();
         if (videoList == null || videoList.size() == 0){
             //无本地视频
+            layout_null.setVisibility(View.VISIBLE);
+            viewPager.setVisibility(View.INVISIBLE);
+            pager_index.setVisibility(View.INVISIBLE);
         }else{
+            layout_null.setVisibility(View.GONE);
+            viewPager.setVisibility(View.VISIBLE);
+            pager_index.setVisibility(View.VISIBLE);
             float a =(float) videoList.size()/8;
             Log.e(TAG,"yema  ========="+a);
             int pageNum = (int) Math.ceil(a);
@@ -255,6 +320,11 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         });
     }
 
+    @Override
+    public void uodateUI() {
+        updateUI();
+    }
+
     private boolean checkFileDownLoad(String fileName, long size){
         File fileDir = new File(FilesManager.DIRECTORY);
         if (fileDir != null && fileDir.listFiles() != null && fileDir.listFiles().length > 0){
@@ -290,11 +360,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.pre){
-            viewPager.arrowScroll(1);
-        }else if (v.getId() == R.id.next){
-            viewPager.arrowScroll(2);
-        }else if (v.getId() == R.id.image_shouye){
+        if (v.getId() == R.id.image_shouye){
             homeLayout.setBackgroundResource(R.drawable.vr_11);
             settingLayout.setBackgroundResource(R.drawable.vr_10_2);
             videoLayout.setVisibility(View.VISIBLE);
@@ -307,8 +373,39 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         }else if (v.getId() == R.id.setting_ip){
             showSetting.setVisibility(View.GONE);
             mainSettingIP.setVisibility(View.VISIBLE);
+            //同步数据
+            String ip = text_ip.getText().toString();
+            if (ip != null && !ip.equals("")){
+                String[] ipNum = ip.split("\\.");
+                if (ipNum.length == 4){
+                    ip_1.setText(ipNum[0]);
+                    ip_2.setText(ipNum[1]);
+                    ip_3.setText(ipNum[2]);
+                    ip_4.setText(ipNum[3]);
+                }
+            }
         }else if (v.getId() == R.id.setting_cache){
-            //清楚缓存
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("提示"); //设置标题
+            builder.setMessage("是否确认清除所有本地视频?");
+            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() { //设置确定按钮
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    //清楚缓存
+                    File fileDir = new File(FilesManager.DIRECTORY);
+                    Utils.deletCache(fileDir);
+                    text_cache.setText("0.0GB");
+                    updateUI();
+                }
+            });
+            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() { //设置取消按钮
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            builder.create().show();
         }else if(v.getId() == R.id.save_ip){
             //保存ip
             showSetting.setVisibility(View.VISIBLE);
@@ -331,7 +428,6 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             ServiceManager.getInstance().initSocketClient(ip);
 
             text_ip.setText(ip);
-
         }else if (v.getId() == R.id.cancel_ip){
             showSetting.setVisibility(View.VISIBLE);
             mainSettingIP.setVisibility(View.GONE);
@@ -340,6 +436,27 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             inst.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK);
         }else if (v.getId() == R.id.qiehuan){
             //不知道怎么弄
+
+        }else if (v.getId() == R.id.layout_pre){
+            viewPager.arrowScroll(17);
+            Log.e(TAG, "上一页");
+        }else if(v.getId() == R.id.layout_next){
+            viewPager.arrowScroll(66);
+            Log.e(TAG, "下一页");
+        }else if (v.getId() == R.id.zidongjiance){
+            /*List<InetAddress> ipList = Utils.searchHost();
+            if (ipList.size() >= 1){
+                String ip = ipList.get(0).toString();
+                if (ip != null && !ip.equals("")){
+                    String[] ipNum = ip.split("\\.");
+                    if (ipNum.length == 4){
+                        ip_1.setText(ipNum[0]);
+                        ip_2.setText(ipNum[1]);
+                        ip_3.setText(ipNum[2]);
+                        ip_4.setText(ipNum[3]);
+                    }
+                }
+            }*/
         }
     }
 
@@ -357,10 +474,10 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             textView.setLayoutParams(layoutParams);
             textView.setGravity(Gravity.CENTER_VERTICAL);
-            if (i == page){
+            if (i == page-1){
                 textView.setPadding(0, 0, 0, 0);
             }else{
-                textView.setPadding(0, 0, 35, 0);
+                textView.setPadding(0, 0, 70, 0);
             }
 
             if (i == positionSelected){
@@ -406,6 +523,23 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         @Override
         public int getItemPosition(Object object) {
             return POSITION_NONE;
+        }
+    }
+
+    public class TimeThread extends  Thread{
+        @Override
+        public void run() {
+            super.run();
+            do{
+                try {
+                    Message msg = new Message();
+                    msg.what = MSG_KEY_1;
+                    handler.sendMessage(msg);
+                    Thread.sleep(1000 * 60);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }while (true);
         }
     }
 

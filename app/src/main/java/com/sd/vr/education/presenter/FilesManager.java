@@ -165,7 +165,8 @@ public class FilesManager {
                 startDownLoad();
                 //下载完成,发送下载完成指令
                 ServiceManager.getInstance().sendDownloadAck(fileName);
-
+                //刷新UI
+                ServiceManager.getInstance().updateUI();
             }
 
             @Override

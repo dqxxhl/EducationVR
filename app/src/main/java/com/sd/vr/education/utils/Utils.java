@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
@@ -28,6 +29,8 @@ import android.util.Log;
 public class Utils {
 
     private static final String TAG = Utils.class.getName();
+    private static final String SAVE_IP = "save_ip";
+    private static final String IP = "ip";
 
     public static String getDeviceId(Context context) {
         String deviceId = "";
@@ -131,8 +134,8 @@ public class Utils {
             byte[]addr=local.getAddress(); //将ip转换为字节数组存入addr
             addr[3]=i;//修改ip的最后一个段
             local = InetAddress.getByAddress(addr); //将数组转换成IP
-        } catch (UnknownHostException e){
-
+        } catch (Exception e){
+            e.printStackTrace();
         }
         return local;
     }
@@ -158,6 +161,11 @@ public class Utils {
         return ipList;
     }
 
+    /**
+     * 字符串转化为Long类型
+     * @param str
+     * @return
+     */
     public static long stringToLong(String str){
         if (str == null || str.equals("")){
             return -1;
@@ -171,6 +179,56 @@ public class Utils {
         }
     }
 
+    // 递归方式 计算文件的大小
+    public static long getTotalSizeOfFilesInDir(final File file) {
+        if (file.isFile()){
+            return file.length();
 
+        }
+        final File[] children = file.listFiles();
+        long total = 0;
+        if (children != null){
+            for (final File child : children){
+                total += getTotalSizeOfFilesInDir(child);
+            }
+        }
+        return total;
+    }
+
+    /**
+     * 清空文件夹
+     * @param file
+     */
+    public static void deletCache(File file){
+        if(file ==null){
+            return;
+        }
+        final File[] children = file.listFiles();
+        if (children != null){
+            for (File child : children){
+                child.delete();
+            }
+        }
+    }
+
+    /**
+     * 保存ip
+     * @param context
+     * @param ip
+     */
+    public static void saveIP(Context context, String ip){
+        SharedPreferences sp = context.getSharedPreferences(SAVE_IP, Context.MODE_PRIVATE);
+        sp.edit().putString(IP, ip).commit();
+    }
+
+    /**
+     * 读取ip
+     * @return
+     */
+    public static String readIP(Context context){
+        SharedPreferences sp = context.getSharedPreferences(SAVE_IP, Context.MODE_PRIVATE);
+        String ip = sp.getString(IP, null);
+        return ip;
+    }
 
 }

@@ -33,6 +33,7 @@ public class ServiceManager {
     private static final String HOST = "172.17.20.41";
     private static final int PORT = 8011;
     private static final String SPLIT = ",";
+    public static final int SAVE_IP = 101;
 
     private NettyClient mClient;
     private ViewAction mAction;
@@ -100,6 +101,12 @@ public class ServiceManager {
         }
     }
 
+    public void updateUI(){
+        if (mAction != null){
+            mAction.uodateUI();
+        }
+    }
+
     /**
      * 向服务端注册设备
      */
@@ -133,6 +140,11 @@ public class ServiceManager {
         @Override
         public void handleMessage(Message msg) {
             Log.e(TAG,"收到消息："+msg.obj.toString());
+            if (msg.what == SAVE_IP){
+                String ip = (String) msg.obj;
+                Utils.saveIP(mContext, ip);
+            }
+
             if (msg.obj != null && (msg.obj instanceof MessageResponse)){
                 MessageResponse messageResponse = (MessageResponse) msg.obj;
                 if (mAction != null){

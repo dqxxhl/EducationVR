@@ -136,7 +136,7 @@
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/vr_top">
 
         <ImageView
             android:id="@+id/icon_wifi"
@@ -257,6 +257,19 @@
         android:layout_marginLeft="26dp"
         android:layout_marginRight="95dp">
 
+        <RelativeLayout
+            android:id="@+id/layout_null"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:src="@drawable/kongtai"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager_test"
             android:layout_width="match_parent"
@@ -272,33 +285,53 @@
             android:layout_below="@+id/viewpager_test"
             android:layout_centerHorizontal="true">
 
-            <ImageView
-                android:id="@+id/pre"
-                android:layout_width="9dp"
-                android:layout_height="14dp"
-                android:visibility="visible"
-                android:src="@drawable/selector_button_pre"
-                android:layout_marginRight="31dp"/>
+            <RelativeLayout
+                android:id="@+id/layout_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/pre"
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"
+                    android:visibility="visible"
+                    android:src="@drawable/selector_button_pre"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="31dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+            </RelativeLayout>
+
 
             <LinearLayout
                 android:id="@+id/num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_toRightOf="@+id/pre"
+                android:layout_toRightOf="@+id/layout_pre"
                 android:layout_centerVertical="true"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_marginBottom="2dp">
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/next"
-                android:layout_width="9dp"
-                android:layout_height="14dp"
-                android:layout_toRightOf="@+id/num"
-                android:visibility="visible"
-                android:src="@drawable/selector_button_next"
-                android:layout_marginLeft="31dp"/>
+            <RelativeLayout
+                android:id="@+id/layout_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/num">
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"
+                    android:visibility="visible"
+                    android:src="@drawable/selector_button_next"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="31dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+            </RelativeLayout>
         </RelativeLayout>
 
         <!-- 底部按钮 -->
@@ -308,7 +341,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/pager_index"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="27dp">
+            android:layout_marginTop="7dp">
 
             <RelativeLayout
                 android:id="@+id/tuichu"
@@ -397,10 +430,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="21dp"
-                        android:text="192.168.6.1"
+                        android:text="0.0.0.0"
                         android:layout_below="@+id/tip_ip"
                         android:layout_marginTop="42dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
             </RelativeLayout>
 
@@ -430,7 +464,8 @@
                         android:text="4.5GB"
                         android:layout_below="@+id/tip_cache"
                         android:layout_marginTop="42dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
             </RelativeLayout>
         </RelativeLayout>

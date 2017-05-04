@@ -129,6 +129,7 @@ public class NettyClient {
             try {
                 ChannelFuture f = bootstrap.connect(mHost, mPort).sync();
                 if (f.isSuccess()){
+                    mUIHandler.sendMessage(mUIHandler.obtainMessage(ServiceManager.SAVE_IP, mHost));
                     socketChannel = (SocketChannel) f.channel();
                 }
                 f.channel().closeFuture().sync();

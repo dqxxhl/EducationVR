@@ -21,17 +21,22 @@
         android:layout_width="18dp"
         android:layout_height="18dp"
         android:src="@drawable/selector_video_play"
-        android:layout_toLeftOf="@+id/shanchu"
+        android:layout_toLeftOf="@+id/layout_shanchu"
         android:layout_centerVertical="true"/>
 
-    <ImageView
-        android:id="@+id/shanchu"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginLeft="23dp"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/selector_video_delt"
-        android:layout_centerVertical="true"/>
+    <RelativeLayout
+        android:id="@+id/layout_shanchu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+        <ImageView
+            android:id="@+id/shanchu"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/selector_video_delt"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
 
 </RelativeLayout>
