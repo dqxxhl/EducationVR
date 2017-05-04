@@ -261,8 +261,6 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             for (File file : fileDir.listFiles()) {
                 if (file.getAbsolutePath().endsWith(FilesManager.PATCH_SUFFIX)){
                     if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
-                        //文件已下载
-                        ServiceManager.getInstance().sendDownloadAck(fileName);
                         return true;
                     }else if (file.getName().equals(fileName) && Utils.getFileSize(file) > size){
                         deleteFile(fileName);
