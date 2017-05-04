@@ -258,7 +258,7 @@ public final class MessageProto {
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static Types valueOf(int value) {
       return forNumber(value);
     }
@@ -305,7 +305,7 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.getDescriptor().getEnumTypes().get(0);
+      return MessageProto.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Types[] VALUES = values();
@@ -313,7 +313,7 @@ public final class MessageProto {
     public static Types valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       return VALUES[desc.getIndex()];
@@ -396,7 +396,7 @@ public final class MessageProto {
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static PlayStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -432,7 +432,7 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.getDescriptor().getEnumTypes().get(1);
+      return MessageProto.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final PlayStatus[] VALUES = values();
@@ -440,7 +440,7 @@ public final class MessageProto {
     public static PlayStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       return VALUES[desc.getIndex()];
@@ -507,7 +507,7 @@ public final class MessageProto {
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static RespStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -542,7 +542,7 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.getDescriptor().getEnumTypes().get(2);
+      return MessageProto.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final RespStatus[] VALUES = values();
@@ -550,7 +550,7 @@ public final class MessageProto {
     public static RespStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       return VALUES[desc.getIndex()];
@@ -665,7 +665,7 @@ public final class MessageProto {
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static Dictate valueOf(int value) {
       return forNumber(value);
     }
@@ -703,7 +703,7 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.getDescriptor().getEnumTypes().get(3);
+      return MessageProto.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final Dictate[] VALUES = values();
@@ -711,7 +711,7 @@ public final class MessageProto {
     public static Dictate valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       return VALUES[desc.getIndex()];
@@ -745,7 +745,7 @@ public final class MessageProto {
      *
      * <code>required .netty.Types type = 1 [default = HEARTBEAT];</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.Types getType();
+    Types getType();
 
     /**
      * <pre>
@@ -762,7 +762,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest getHeartBeatRequest();
+    HeartBeatRequest getHeartBeatRequest();
     /**
      * <pre>
      *心跳
@@ -770,7 +770,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequestOrBuilder getHeartBeatRequestOrBuilder();
+    HeartBeatRequestOrBuilder getHeartBeatRequestOrBuilder();
 
     /**
      * <pre>
@@ -787,7 +787,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest getRegisterRequest();
+    RegisterRequest getRegisterRequest();
     /**
      * <pre>
      *设备注册
@@ -795,7 +795,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequestOrBuilder getRegisterRequestOrBuilder();
+    RegisterRequestOrBuilder getRegisterRequestOrBuilder();
 
     /**
      * <pre>
@@ -812,7 +812,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest getCtrlDictateRequest();
+    CtrlDictateRequest getCtrlDictateRequest();
     /**
      * <pre>
      *控制指令
@@ -820,7 +820,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequestOrBuilder getCtrlDictateRequestOrBuilder();
+    CtrlDictateRequestOrBuilder getCtrlDictateRequestOrBuilder();
 
     /**
      * <pre>
@@ -837,7 +837,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest getDownLoadRequest();
+    DownLoadRequest getDownLoadRequest();
     /**
      * <pre>
      *下载
@@ -845,7 +845,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequestOrBuilder getDownLoadRequestOrBuilder();
+    DownLoadRequestOrBuilder getDownLoadRequestOrBuilder();
 
     /**
      * <pre>
@@ -862,7 +862,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest getDeleteRequest();
+    DeleteRequest getDeleteRequest();
     /**
      * <pre>
      *删除
@@ -870,7 +870,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequestOrBuilder getDeleteRequestOrBuilder();
+    DeleteRequestOrBuilder getDeleteRequestOrBuilder();
 
     /**
      * <pre>
@@ -887,7 +887,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest getReConnectRequest();
+    ReConnectRequest getReConnectRequest();
     /**
      * <pre>
      *重连
@@ -895,7 +895,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequestOrBuilder getReConnectRequestOrBuilder();
+    ReConnectRequestOrBuilder getReConnectRequestOrBuilder();
 
     /**
      * <pre>
@@ -912,7 +912,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest getPlayProgressRequest();
+    PlayProgressRequest getPlayProgressRequest();
     /**
      * <pre>
      *播放
@@ -920,7 +920,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequestOrBuilder getPlayProgressRequestOrBuilder();
+    PlayProgressRequestOrBuilder getPlayProgressRequestOrBuilder();
 
     /**
      * <pre>
@@ -937,7 +937,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest getSetPlayProgressRequest();
+    SetPlayProgressRequest getSetPlayProgressRequest();
     /**
      * <pre>
      *设置播放进度
@@ -945,7 +945,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequestOrBuilder getSetPlayProgressRequestOrBuilder();
+    SetPlayProgressRequestOrBuilder getSetPlayProgressRequestOrBuilder();
 
     /**
      * <pre>
@@ -962,7 +962,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownloadAck downloadAck = 10;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck getDownloadAck();
+    DownloadAck getDownloadAck();
     /**
      * <pre>
      *下载确认事件
@@ -970,7 +970,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownloadAck downloadAck = 10;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAckOrBuilder getDownloadAckOrBuilder();
+    DownloadAckOrBuilder getDownloadAckOrBuilder();
   }
   /**
    * <pre>
@@ -991,7 +991,7 @@ public final class MessageProto {
       type_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1021,7 +1021,7 @@ public final class MessageProto {
             }
             case 8: {
               int rawValue = input.readEnum();
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.Types value = com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.valueOf(rawValue);
+              Types value = Types.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
@@ -1031,11 +1031,11 @@ public final class MessageProto {
               break;
             }
             case 18: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.Builder subBuilder = null;
+              HeartBeatRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = heartBeatRequest_.toBuilder();
               }
-              heartBeatRequest_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.PARSER, extensionRegistry);
+              heartBeatRequest_ = input.readMessage(HeartBeatRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(heartBeatRequest_);
                 heartBeatRequest_ = subBuilder.buildPartial();
@@ -1044,11 +1044,11 @@ public final class MessageProto {
               break;
             }
             case 26: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.Builder subBuilder = null;
+              RegisterRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = registerRequest_.toBuilder();
               }
-              registerRequest_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.PARSER, extensionRegistry);
+              registerRequest_ = input.readMessage(RegisterRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(registerRequest_);
                 registerRequest_ = subBuilder.buildPartial();
@@ -1057,11 +1057,11 @@ public final class MessageProto {
               break;
             }
             case 34: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.Builder subBuilder = null;
+              CtrlDictateRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 subBuilder = ctrlDictateRequest_.toBuilder();
               }
-              ctrlDictateRequest_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.PARSER, extensionRegistry);
+              ctrlDictateRequest_ = input.readMessage(CtrlDictateRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(ctrlDictateRequest_);
                 ctrlDictateRequest_ = subBuilder.buildPartial();
@@ -1070,11 +1070,11 @@ public final class MessageProto {
               break;
             }
             case 42: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.Builder subBuilder = null;
+              DownLoadRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000010) == 0x00000010)) {
                 subBuilder = downLoadRequest_.toBuilder();
               }
-              downLoadRequest_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.PARSER, extensionRegistry);
+              downLoadRequest_ = input.readMessage(DownLoadRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(downLoadRequest_);
                 downLoadRequest_ = subBuilder.buildPartial();
@@ -1083,11 +1083,11 @@ public final class MessageProto {
               break;
             }
             case 50: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.Builder subBuilder = null;
+              DeleteRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000020) == 0x00000020)) {
                 subBuilder = deleteRequest_.toBuilder();
               }
-              deleteRequest_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.PARSER, extensionRegistry);
+              deleteRequest_ = input.readMessage(DeleteRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(deleteRequest_);
                 deleteRequest_ = subBuilder.buildPartial();
@@ -1096,11 +1096,11 @@ public final class MessageProto {
               break;
             }
             case 58: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.Builder subBuilder = null;
+              ReConnectRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000040) == 0x00000040)) {
                 subBuilder = reConnectRequest_.toBuilder();
               }
-              reConnectRequest_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.PARSER, extensionRegistry);
+              reConnectRequest_ = input.readMessage(ReConnectRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(reConnectRequest_);
                 reConnectRequest_ = subBuilder.buildPartial();
@@ -1109,11 +1109,11 @@ public final class MessageProto {
               break;
             }
             case 66: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.Builder subBuilder = null;
+              PlayProgressRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000080) == 0x00000080)) {
                 subBuilder = playProgressRequest_.toBuilder();
               }
-              playProgressRequest_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.PARSER, extensionRegistry);
+              playProgressRequest_ = input.readMessage(PlayProgressRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(playProgressRequest_);
                 playProgressRequest_ = subBuilder.buildPartial();
@@ -1122,11 +1122,11 @@ public final class MessageProto {
               break;
             }
             case 74: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.Builder subBuilder = null;
+              SetPlayProgressRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000100) == 0x00000100)) {
                 subBuilder = setPlayProgressRequest_.toBuilder();
               }
-              setPlayProgressRequest_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.PARSER, extensionRegistry);
+              setPlayProgressRequest_ = input.readMessage(SetPlayProgressRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(setPlayProgressRequest_);
                 setPlayProgressRequest_ = subBuilder.buildPartial();
@@ -1135,11 +1135,11 @@ public final class MessageProto {
               break;
             }
             case 82: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.Builder subBuilder = null;
+              DownloadAck.Builder subBuilder = null;
               if (((bitField0_ & 0x00000200) == 0x00000200)) {
                 subBuilder = downloadAck_.toBuilder();
               }
-              downloadAck_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.PARSER, extensionRegistry);
+              downloadAck_ = input.readMessage(DownloadAck.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(downloadAck_);
                 downloadAck_ = subBuilder.buildPartial();
@@ -1161,14 +1161,14 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageRequest_descriptor;
+      return MessageProto.internal_static_netty_MessageRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_MessageRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest.Builder.class);
+              MessageRequest.class, Builder.class);
     }
 
     private int bitField0_;
@@ -1191,13 +1191,13 @@ public final class MessageProto {
      *
      * <code>required .netty.Types type = 1 [default = HEARTBEAT];</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.Types getType() {
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.Types result = com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.valueOf(type_);
-      return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.HEARTBEAT : result;
+    public Types getType() {
+      Types result = Types.valueOf(type_);
+      return result == null ? Types.HEARTBEAT : result;
     }
 
     public static final int HEARTBEATREQUEST_FIELD_NUMBER = 2;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest heartBeatRequest_;
+    private HeartBeatRequest heartBeatRequest_;
     /**
      * <pre>
      *心跳
@@ -1215,8 +1215,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest getHeartBeatRequest() {
-      return heartBeatRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.getDefaultInstance() : heartBeatRequest_;
+    public HeartBeatRequest getHeartBeatRequest() {
+      return heartBeatRequest_ == null ? HeartBeatRequest.getDefaultInstance() : heartBeatRequest_;
     }
     /**
      * <pre>
@@ -1225,12 +1225,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequestOrBuilder getHeartBeatRequestOrBuilder() {
-      return heartBeatRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.getDefaultInstance() : heartBeatRequest_;
+    public HeartBeatRequestOrBuilder getHeartBeatRequestOrBuilder() {
+      return heartBeatRequest_ == null ? HeartBeatRequest.getDefaultInstance() : heartBeatRequest_;
     }
 
     public static final int REGISTERREQUEST_FIELD_NUMBER = 3;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest registerRequest_;
+    private RegisterRequest registerRequest_;
     /**
      * <pre>
      *设备注册
@@ -1248,8 +1248,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest getRegisterRequest() {
-      return registerRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.getDefaultInstance() : registerRequest_;
+    public RegisterRequest getRegisterRequest() {
+      return registerRequest_ == null ? RegisterRequest.getDefaultInstance() : registerRequest_;
     }
     /**
      * <pre>
@@ -1258,12 +1258,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequestOrBuilder getRegisterRequestOrBuilder() {
-      return registerRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.getDefaultInstance() : registerRequest_;
+    public RegisterRequestOrBuilder getRegisterRequestOrBuilder() {
+      return registerRequest_ == null ? RegisterRequest.getDefaultInstance() : registerRequest_;
     }
 
     public static final int CTRLDICTATEREQUEST_FIELD_NUMBER = 4;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest ctrlDictateRequest_;
+    private CtrlDictateRequest ctrlDictateRequest_;
     /**
      * <pre>
      *控制指令
@@ -1281,8 +1281,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest getCtrlDictateRequest() {
-      return ctrlDictateRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.getDefaultInstance() : ctrlDictateRequest_;
+    public CtrlDictateRequest getCtrlDictateRequest() {
+      return ctrlDictateRequest_ == null ? CtrlDictateRequest.getDefaultInstance() : ctrlDictateRequest_;
     }
     /**
      * <pre>
@@ -1291,12 +1291,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequestOrBuilder getCtrlDictateRequestOrBuilder() {
-      return ctrlDictateRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.getDefaultInstance() : ctrlDictateRequest_;
+    public CtrlDictateRequestOrBuilder getCtrlDictateRequestOrBuilder() {
+      return ctrlDictateRequest_ == null ? CtrlDictateRequest.getDefaultInstance() : ctrlDictateRequest_;
     }
 
     public static final int DOWNLOADREQUEST_FIELD_NUMBER = 5;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest downLoadRequest_;
+    private DownLoadRequest downLoadRequest_;
     /**
      * <pre>
      *下载
@@ -1314,8 +1314,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest getDownLoadRequest() {
-      return downLoadRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.getDefaultInstance() : downLoadRequest_;
+    public DownLoadRequest getDownLoadRequest() {
+      return downLoadRequest_ == null ? DownLoadRequest.getDefaultInstance() : downLoadRequest_;
     }
     /**
      * <pre>
@@ -1324,12 +1324,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequestOrBuilder getDownLoadRequestOrBuilder() {
-      return downLoadRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.getDefaultInstance() : downLoadRequest_;
+    public DownLoadRequestOrBuilder getDownLoadRequestOrBuilder() {
+      return downLoadRequest_ == null ? DownLoadRequest.getDefaultInstance() : downLoadRequest_;
     }
 
     public static final int DELETEREQUEST_FIELD_NUMBER = 6;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest deleteRequest_;
+    private DeleteRequest deleteRequest_;
     /**
      * <pre>
      *删除
@@ -1347,8 +1347,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest getDeleteRequest() {
-      return deleteRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.getDefaultInstance() : deleteRequest_;
+    public DeleteRequest getDeleteRequest() {
+      return deleteRequest_ == null ? DeleteRequest.getDefaultInstance() : deleteRequest_;
     }
     /**
      * <pre>
@@ -1357,12 +1357,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequestOrBuilder getDeleteRequestOrBuilder() {
-      return deleteRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.getDefaultInstance() : deleteRequest_;
+    public DeleteRequestOrBuilder getDeleteRequestOrBuilder() {
+      return deleteRequest_ == null ? DeleteRequest.getDefaultInstance() : deleteRequest_;
     }
 
     public static final int RECONNECTREQUEST_FIELD_NUMBER = 7;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest reConnectRequest_;
+    private ReConnectRequest reConnectRequest_;
     /**
      * <pre>
      *重连
@@ -1380,8 +1380,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest getReConnectRequest() {
-      return reConnectRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.getDefaultInstance() : reConnectRequest_;
+    public ReConnectRequest getReConnectRequest() {
+      return reConnectRequest_ == null ? ReConnectRequest.getDefaultInstance() : reConnectRequest_;
     }
     /**
      * <pre>
@@ -1390,12 +1390,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequestOrBuilder getReConnectRequestOrBuilder() {
-      return reConnectRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.getDefaultInstance() : reConnectRequest_;
+    public ReConnectRequestOrBuilder getReConnectRequestOrBuilder() {
+      return reConnectRequest_ == null ? ReConnectRequest.getDefaultInstance() : reConnectRequest_;
     }
 
     public static final int PLAYPROGRESSREQUEST_FIELD_NUMBER = 8;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest playProgressRequest_;
+    private PlayProgressRequest playProgressRequest_;
     /**
      * <pre>
      *播放
@@ -1413,8 +1413,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest getPlayProgressRequest() {
-      return playProgressRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.getDefaultInstance() : playProgressRequest_;
+    public PlayProgressRequest getPlayProgressRequest() {
+      return playProgressRequest_ == null ? PlayProgressRequest.getDefaultInstance() : playProgressRequest_;
     }
     /**
      * <pre>
@@ -1423,12 +1423,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequestOrBuilder getPlayProgressRequestOrBuilder() {
-      return playProgressRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.getDefaultInstance() : playProgressRequest_;
+    public PlayProgressRequestOrBuilder getPlayProgressRequestOrBuilder() {
+      return playProgressRequest_ == null ? PlayProgressRequest.getDefaultInstance() : playProgressRequest_;
     }
 
     public static final int SETPLAYPROGRESSREQUEST_FIELD_NUMBER = 9;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest setPlayProgressRequest_;
+    private SetPlayProgressRequest setPlayProgressRequest_;
     /**
      * <pre>
      *设置播放进度
@@ -1446,8 +1446,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest getSetPlayProgressRequest() {
-      return setPlayProgressRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.getDefaultInstance() : setPlayProgressRequest_;
+    public SetPlayProgressRequest getSetPlayProgressRequest() {
+      return setPlayProgressRequest_ == null ? SetPlayProgressRequest.getDefaultInstance() : setPlayProgressRequest_;
     }
     /**
      * <pre>
@@ -1456,12 +1456,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequestOrBuilder getSetPlayProgressRequestOrBuilder() {
-      return setPlayProgressRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.getDefaultInstance() : setPlayProgressRequest_;
+    public SetPlayProgressRequestOrBuilder getSetPlayProgressRequestOrBuilder() {
+      return setPlayProgressRequest_ == null ? SetPlayProgressRequest.getDefaultInstance() : setPlayProgressRequest_;
     }
 
     public static final int DOWNLOADACK_FIELD_NUMBER = 10;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck downloadAck_;
+    private DownloadAck downloadAck_;
     /**
      * <pre>
      *下载确认事件
@@ -1479,8 +1479,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownloadAck downloadAck = 10;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck getDownloadAck() {
-      return downloadAck_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.getDefaultInstance() : downloadAck_;
+    public DownloadAck getDownloadAck() {
+      return downloadAck_ == null ? DownloadAck.getDefaultInstance() : downloadAck_;
     }
     /**
      * <pre>
@@ -1489,8 +1489,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownloadAck downloadAck = 10;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAckOrBuilder getDownloadAckOrBuilder() {
-      return downloadAck_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.getDefaultInstance() : downloadAck_;
+    public DownloadAckOrBuilder getDownloadAckOrBuilder() {
+      return downloadAck_ == null ? DownloadAck.getDefaultInstance() : downloadAck_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1641,15 +1641,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest)) {
+      if (!(obj instanceof MessageRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest) obj;
+      MessageRequest other = (MessageRequest) obj;
 
       boolean result = true;
       result = result && (hasType() == other.hasType());
@@ -1705,7 +1705,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1757,58 +1757,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseFrom(
+    public static MessageRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseFrom(
+    public static MessageRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseFrom(byte[] data)
+    public static MessageRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseFrom(
+    public static MessageRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseFrom(java.io.InputStream input)
+    public static MessageRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseFrom(
+    public static MessageRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseDelimitedFrom(java.io.InputStream input)
+    public static MessageRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseDelimitedFrom(
+    public static MessageRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseFrom(
+    public static MessageRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parseFrom(
+    public static MessageRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1820,7 +1820,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest prototype) {
+    public static Builder newBuilder(MessageRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1828,9 +1828,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1844,17 +1844,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.MessageRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequestOrBuilder {
+        MessageRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageRequest_descriptor;
+        return MessageProto.internal_static_netty_MessageRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_MessageRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest.Builder.class);
+                MessageRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest.newBuilder()
@@ -1863,7 +1863,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1944,23 +1944,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageRequest_descriptor;
+        return MessageProto.internal_static_netty_MessageRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest.getDefaultInstance();
+      public MessageRequest getDefaultInstanceForType() {
+        return MessageRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest result = buildPartial();
+      public MessageRequest build() {
+        MessageRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest(this);
+      public MessageRequest buildPartial() {
+        MessageRequest result = new MessageRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2071,16 +2071,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest)other);
+        if (other instanceof MessageRequest) {
+          return mergeFrom((MessageRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(MessageRequest other) {
+        if (other == MessageRequest.getDefaultInstance()) return this;
         if (other.hasType()) {
           setType(other.getType());
         }
@@ -2167,11 +2167,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest parsedMessage = null;
+        MessageRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest) e.getUnfinishedMessage();
+          parsedMessage = (MessageRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2200,9 +2200,9 @@ public final class MessageProto {
        *
        * <code>required .netty.Types type = 1 [default = HEARTBEAT];</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.Types getType() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.Types result = com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.valueOf(type_);
-        return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.HEARTBEAT : result;
+      public Types getType() {
+        Types result = Types.valueOf(type_);
+        return result == null ? Types.HEARTBEAT : result;
       }
       /**
        * <pre>
@@ -2211,7 +2211,7 @@ public final class MessageProto {
        *
        * <code>required .netty.Types type = 1 [default = HEARTBEAT];</code>
        */
-      public Builder setType(com.sd.vr.ctrl.netty.protobuf.MessageProto.Types value) {
+      public Builder setType(Types value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2234,9 +2234,9 @@ public final class MessageProto {
         return this;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest heartBeatRequest_ = null;
+      private HeartBeatRequest heartBeatRequest_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequestOrBuilder> heartBeatRequestBuilder_;
+          HeartBeatRequest, HeartBeatRequest.Builder, HeartBeatRequestOrBuilder> heartBeatRequestBuilder_;
       /**
        * <pre>
        *心跳
@@ -2254,9 +2254,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest getHeartBeatRequest() {
+      public HeartBeatRequest getHeartBeatRequest() {
         if (heartBeatRequestBuilder_ == null) {
-          return heartBeatRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.getDefaultInstance() : heartBeatRequest_;
+          return heartBeatRequest_ == null ? HeartBeatRequest.getDefaultInstance() : heartBeatRequest_;
         } else {
           return heartBeatRequestBuilder_.getMessage();
         }
@@ -2268,7 +2268,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
        */
-      public Builder setHeartBeatRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest value) {
+      public Builder setHeartBeatRequest(HeartBeatRequest value) {
         if (heartBeatRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2289,7 +2289,7 @@ public final class MessageProto {
        * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
        */
       public Builder setHeartBeatRequest(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.Builder builderForValue) {
+          HeartBeatRequest.Builder builderForValue) {
         if (heartBeatRequestBuilder_ == null) {
           heartBeatRequest_ = builderForValue.build();
           onChanged();
@@ -2306,13 +2306,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
        */
-      public Builder mergeHeartBeatRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest value) {
+      public Builder mergeHeartBeatRequest(HeartBeatRequest value) {
         if (heartBeatRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
               heartBeatRequest_ != null &&
-              heartBeatRequest_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.getDefaultInstance()) {
+              heartBeatRequest_ != HeartBeatRequest.getDefaultInstance()) {
             heartBeatRequest_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.newBuilder(heartBeatRequest_).mergeFrom(value).buildPartial();
+              HeartBeatRequest.newBuilder(heartBeatRequest_).mergeFrom(value).buildPartial();
           } else {
             heartBeatRequest_ = value;
           }
@@ -2347,7 +2347,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.Builder getHeartBeatRequestBuilder() {
+      public HeartBeatRequest.Builder getHeartBeatRequestBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getHeartBeatRequestFieldBuilder().getBuilder();
@@ -2359,12 +2359,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequestOrBuilder getHeartBeatRequestOrBuilder() {
+      public HeartBeatRequestOrBuilder getHeartBeatRequestOrBuilder() {
         if (heartBeatRequestBuilder_ != null) {
           return heartBeatRequestBuilder_.getMessageOrBuilder();
         } else {
           return heartBeatRequest_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.getDefaultInstance() : heartBeatRequest_;
+              HeartBeatRequest.getDefaultInstance() : heartBeatRequest_;
         }
       }
       /**
@@ -2375,11 +2375,11 @@ public final class MessageProto {
        * <code>optional .netty.HeartBeatRequest heartBeatRequest = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequestOrBuilder> 
+          HeartBeatRequest, HeartBeatRequest.Builder, HeartBeatRequestOrBuilder>
           getHeartBeatRequestFieldBuilder() {
         if (heartBeatRequestBuilder_ == null) {
           heartBeatRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequestOrBuilder>(
+              HeartBeatRequest, HeartBeatRequest.Builder, HeartBeatRequestOrBuilder>(
                   getHeartBeatRequest(),
                   getParentForChildren(),
                   isClean());
@@ -2388,9 +2388,9 @@ public final class MessageProto {
         return heartBeatRequestBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest registerRequest_ = null;
+      private RegisterRequest registerRequest_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequestOrBuilder> registerRequestBuilder_;
+          RegisterRequest, RegisterRequest.Builder, RegisterRequestOrBuilder> registerRequestBuilder_;
       /**
        * <pre>
        *设备注册
@@ -2408,9 +2408,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest getRegisterRequest() {
+      public RegisterRequest getRegisterRequest() {
         if (registerRequestBuilder_ == null) {
-          return registerRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.getDefaultInstance() : registerRequest_;
+          return registerRequest_ == null ? RegisterRequest.getDefaultInstance() : registerRequest_;
         } else {
           return registerRequestBuilder_.getMessage();
         }
@@ -2422,7 +2422,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
        */
-      public Builder setRegisterRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest value) {
+      public Builder setRegisterRequest(RegisterRequest value) {
         if (registerRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2443,7 +2443,7 @@ public final class MessageProto {
        * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
        */
       public Builder setRegisterRequest(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.Builder builderForValue) {
+          RegisterRequest.Builder builderForValue) {
         if (registerRequestBuilder_ == null) {
           registerRequest_ = builderForValue.build();
           onChanged();
@@ -2460,13 +2460,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
        */
-      public Builder mergeRegisterRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest value) {
+      public Builder mergeRegisterRequest(RegisterRequest value) {
         if (registerRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
               registerRequest_ != null &&
-              registerRequest_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.getDefaultInstance()) {
+              registerRequest_ != RegisterRequest.getDefaultInstance()) {
             registerRequest_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.newBuilder(registerRequest_).mergeFrom(value).buildPartial();
+              RegisterRequest.newBuilder(registerRequest_).mergeFrom(value).buildPartial();
           } else {
             registerRequest_ = value;
           }
@@ -2501,7 +2501,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.Builder getRegisterRequestBuilder() {
+      public RegisterRequest.Builder getRegisterRequestBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getRegisterRequestFieldBuilder().getBuilder();
@@ -2513,12 +2513,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequestOrBuilder getRegisterRequestOrBuilder() {
+      public RegisterRequestOrBuilder getRegisterRequestOrBuilder() {
         if (registerRequestBuilder_ != null) {
           return registerRequestBuilder_.getMessageOrBuilder();
         } else {
           return registerRequest_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.getDefaultInstance() : registerRequest_;
+              RegisterRequest.getDefaultInstance() : registerRequest_;
         }
       }
       /**
@@ -2529,11 +2529,11 @@ public final class MessageProto {
        * <code>optional .netty.RegisterRequest registerRequest = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequestOrBuilder> 
+          RegisterRequest, RegisterRequest.Builder, RegisterRequestOrBuilder>
           getRegisterRequestFieldBuilder() {
         if (registerRequestBuilder_ == null) {
           registerRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequestOrBuilder>(
+              RegisterRequest, RegisterRequest.Builder, RegisterRequestOrBuilder>(
                   getRegisterRequest(),
                   getParentForChildren(),
                   isClean());
@@ -2542,9 +2542,9 @@ public final class MessageProto {
         return registerRequestBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest ctrlDictateRequest_ = null;
+      private CtrlDictateRequest ctrlDictateRequest_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequestOrBuilder> ctrlDictateRequestBuilder_;
+          CtrlDictateRequest, CtrlDictateRequest.Builder, CtrlDictateRequestOrBuilder> ctrlDictateRequestBuilder_;
       /**
        * <pre>
        *控制指令
@@ -2562,9 +2562,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest getCtrlDictateRequest() {
+      public CtrlDictateRequest getCtrlDictateRequest() {
         if (ctrlDictateRequestBuilder_ == null) {
-          return ctrlDictateRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.getDefaultInstance() : ctrlDictateRequest_;
+          return ctrlDictateRequest_ == null ? CtrlDictateRequest.getDefaultInstance() : ctrlDictateRequest_;
         } else {
           return ctrlDictateRequestBuilder_.getMessage();
         }
@@ -2576,7 +2576,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
        */
-      public Builder setCtrlDictateRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest value) {
+      public Builder setCtrlDictateRequest(CtrlDictateRequest value) {
         if (ctrlDictateRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2597,7 +2597,7 @@ public final class MessageProto {
        * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
        */
       public Builder setCtrlDictateRequest(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.Builder builderForValue) {
+          CtrlDictateRequest.Builder builderForValue) {
         if (ctrlDictateRequestBuilder_ == null) {
           ctrlDictateRequest_ = builderForValue.build();
           onChanged();
@@ -2614,13 +2614,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
        */
-      public Builder mergeCtrlDictateRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest value) {
+      public Builder mergeCtrlDictateRequest(CtrlDictateRequest value) {
         if (ctrlDictateRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
               ctrlDictateRequest_ != null &&
-              ctrlDictateRequest_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.getDefaultInstance()) {
+              ctrlDictateRequest_ != CtrlDictateRequest.getDefaultInstance()) {
             ctrlDictateRequest_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.newBuilder(ctrlDictateRequest_).mergeFrom(value).buildPartial();
+              CtrlDictateRequest.newBuilder(ctrlDictateRequest_).mergeFrom(value).buildPartial();
           } else {
             ctrlDictateRequest_ = value;
           }
@@ -2655,7 +2655,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.Builder getCtrlDictateRequestBuilder() {
+      public CtrlDictateRequest.Builder getCtrlDictateRequestBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return getCtrlDictateRequestFieldBuilder().getBuilder();
@@ -2667,12 +2667,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequestOrBuilder getCtrlDictateRequestOrBuilder() {
+      public CtrlDictateRequestOrBuilder getCtrlDictateRequestOrBuilder() {
         if (ctrlDictateRequestBuilder_ != null) {
           return ctrlDictateRequestBuilder_.getMessageOrBuilder();
         } else {
           return ctrlDictateRequest_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.getDefaultInstance() : ctrlDictateRequest_;
+              CtrlDictateRequest.getDefaultInstance() : ctrlDictateRequest_;
         }
       }
       /**
@@ -2683,11 +2683,11 @@ public final class MessageProto {
        * <code>optional .netty.CtrlDictateRequest ctrlDictateRequest = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequestOrBuilder> 
+          CtrlDictateRequest, CtrlDictateRequest.Builder, CtrlDictateRequestOrBuilder>
           getCtrlDictateRequestFieldBuilder() {
         if (ctrlDictateRequestBuilder_ == null) {
           ctrlDictateRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequestOrBuilder>(
+              CtrlDictateRequest, CtrlDictateRequest.Builder, CtrlDictateRequestOrBuilder>(
                   getCtrlDictateRequest(),
                   getParentForChildren(),
                   isClean());
@@ -2696,9 +2696,9 @@ public final class MessageProto {
         return ctrlDictateRequestBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest downLoadRequest_ = null;
+      private DownLoadRequest downLoadRequest_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequestOrBuilder> downLoadRequestBuilder_;
+          DownLoadRequest, DownLoadRequest.Builder, DownLoadRequestOrBuilder> downLoadRequestBuilder_;
       /**
        * <pre>
        *下载
@@ -2716,9 +2716,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest getDownLoadRequest() {
+      public DownLoadRequest getDownLoadRequest() {
         if (downLoadRequestBuilder_ == null) {
-          return downLoadRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.getDefaultInstance() : downLoadRequest_;
+          return downLoadRequest_ == null ? DownLoadRequest.getDefaultInstance() : downLoadRequest_;
         } else {
           return downLoadRequestBuilder_.getMessage();
         }
@@ -2730,7 +2730,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
        */
-      public Builder setDownLoadRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest value) {
+      public Builder setDownLoadRequest(DownLoadRequest value) {
         if (downLoadRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2751,7 +2751,7 @@ public final class MessageProto {
        * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
        */
       public Builder setDownLoadRequest(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.Builder builderForValue) {
+          DownLoadRequest.Builder builderForValue) {
         if (downLoadRequestBuilder_ == null) {
           downLoadRequest_ = builderForValue.build();
           onChanged();
@@ -2768,13 +2768,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
        */
-      public Builder mergeDownLoadRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest value) {
+      public Builder mergeDownLoadRequest(DownLoadRequest value) {
         if (downLoadRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000010) == 0x00000010) &&
               downLoadRequest_ != null &&
-              downLoadRequest_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.getDefaultInstance()) {
+              downLoadRequest_ != DownLoadRequest.getDefaultInstance()) {
             downLoadRequest_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.newBuilder(downLoadRequest_).mergeFrom(value).buildPartial();
+              DownLoadRequest.newBuilder(downLoadRequest_).mergeFrom(value).buildPartial();
           } else {
             downLoadRequest_ = value;
           }
@@ -2809,7 +2809,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.Builder getDownLoadRequestBuilder() {
+      public DownLoadRequest.Builder getDownLoadRequestBuilder() {
         bitField0_ |= 0x00000010;
         onChanged();
         return getDownLoadRequestFieldBuilder().getBuilder();
@@ -2821,12 +2821,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequestOrBuilder getDownLoadRequestOrBuilder() {
+      public DownLoadRequestOrBuilder getDownLoadRequestOrBuilder() {
         if (downLoadRequestBuilder_ != null) {
           return downLoadRequestBuilder_.getMessageOrBuilder();
         } else {
           return downLoadRequest_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.getDefaultInstance() : downLoadRequest_;
+              DownLoadRequest.getDefaultInstance() : downLoadRequest_;
         }
       }
       /**
@@ -2837,11 +2837,11 @@ public final class MessageProto {
        * <code>optional .netty.DownLoadRequest downLoadRequest = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequestOrBuilder> 
+          DownLoadRequest, DownLoadRequest.Builder, DownLoadRequestOrBuilder>
           getDownLoadRequestFieldBuilder() {
         if (downLoadRequestBuilder_ == null) {
           downLoadRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequestOrBuilder>(
+              DownLoadRequest, DownLoadRequest.Builder, DownLoadRequestOrBuilder>(
                   getDownLoadRequest(),
                   getParentForChildren(),
                   isClean());
@@ -2850,9 +2850,9 @@ public final class MessageProto {
         return downLoadRequestBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest deleteRequest_ = null;
+      private DeleteRequest deleteRequest_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequestOrBuilder> deleteRequestBuilder_;
+          DeleteRequest, DeleteRequest.Builder, DeleteRequestOrBuilder> deleteRequestBuilder_;
       /**
        * <pre>
        *删除
@@ -2870,9 +2870,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest getDeleteRequest() {
+      public DeleteRequest getDeleteRequest() {
         if (deleteRequestBuilder_ == null) {
-          return deleteRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.getDefaultInstance() : deleteRequest_;
+          return deleteRequest_ == null ? DeleteRequest.getDefaultInstance() : deleteRequest_;
         } else {
           return deleteRequestBuilder_.getMessage();
         }
@@ -2884,7 +2884,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
        */
-      public Builder setDeleteRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest value) {
+      public Builder setDeleteRequest(DeleteRequest value) {
         if (deleteRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2905,7 +2905,7 @@ public final class MessageProto {
        * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
        */
       public Builder setDeleteRequest(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.Builder builderForValue) {
+          DeleteRequest.Builder builderForValue) {
         if (deleteRequestBuilder_ == null) {
           deleteRequest_ = builderForValue.build();
           onChanged();
@@ -2922,13 +2922,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
        */
-      public Builder mergeDeleteRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest value) {
+      public Builder mergeDeleteRequest(DeleteRequest value) {
         if (deleteRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000020) == 0x00000020) &&
               deleteRequest_ != null &&
-              deleteRequest_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.getDefaultInstance()) {
+              deleteRequest_ != DeleteRequest.getDefaultInstance()) {
             deleteRequest_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.newBuilder(deleteRequest_).mergeFrom(value).buildPartial();
+              DeleteRequest.newBuilder(deleteRequest_).mergeFrom(value).buildPartial();
           } else {
             deleteRequest_ = value;
           }
@@ -2963,7 +2963,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.Builder getDeleteRequestBuilder() {
+      public DeleteRequest.Builder getDeleteRequestBuilder() {
         bitField0_ |= 0x00000020;
         onChanged();
         return getDeleteRequestFieldBuilder().getBuilder();
@@ -2975,12 +2975,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequestOrBuilder getDeleteRequestOrBuilder() {
+      public DeleteRequestOrBuilder getDeleteRequestOrBuilder() {
         if (deleteRequestBuilder_ != null) {
           return deleteRequestBuilder_.getMessageOrBuilder();
         } else {
           return deleteRequest_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.getDefaultInstance() : deleteRequest_;
+              DeleteRequest.getDefaultInstance() : deleteRequest_;
         }
       }
       /**
@@ -2991,11 +2991,11 @@ public final class MessageProto {
        * <code>optional .netty.DeleteRequest deleteRequest = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequestOrBuilder> 
+          DeleteRequest, DeleteRequest.Builder, DeleteRequestOrBuilder>
           getDeleteRequestFieldBuilder() {
         if (deleteRequestBuilder_ == null) {
           deleteRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequestOrBuilder>(
+              DeleteRequest, DeleteRequest.Builder, DeleteRequestOrBuilder>(
                   getDeleteRequest(),
                   getParentForChildren(),
                   isClean());
@@ -3004,9 +3004,9 @@ public final class MessageProto {
         return deleteRequestBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest reConnectRequest_ = null;
+      private ReConnectRequest reConnectRequest_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequestOrBuilder> reConnectRequestBuilder_;
+          ReConnectRequest, ReConnectRequest.Builder, ReConnectRequestOrBuilder> reConnectRequestBuilder_;
       /**
        * <pre>
        *重连
@@ -3024,9 +3024,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest getReConnectRequest() {
+      public ReConnectRequest getReConnectRequest() {
         if (reConnectRequestBuilder_ == null) {
-          return reConnectRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.getDefaultInstance() : reConnectRequest_;
+          return reConnectRequest_ == null ? ReConnectRequest.getDefaultInstance() : reConnectRequest_;
         } else {
           return reConnectRequestBuilder_.getMessage();
         }
@@ -3038,7 +3038,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
        */
-      public Builder setReConnectRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest value) {
+      public Builder setReConnectRequest(ReConnectRequest value) {
         if (reConnectRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3059,7 +3059,7 @@ public final class MessageProto {
        * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
        */
       public Builder setReConnectRequest(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.Builder builderForValue) {
+          ReConnectRequest.Builder builderForValue) {
         if (reConnectRequestBuilder_ == null) {
           reConnectRequest_ = builderForValue.build();
           onChanged();
@@ -3076,13 +3076,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
        */
-      public Builder mergeReConnectRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest value) {
+      public Builder mergeReConnectRequest(ReConnectRequest value) {
         if (reConnectRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000040) == 0x00000040) &&
               reConnectRequest_ != null &&
-              reConnectRequest_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.getDefaultInstance()) {
+              reConnectRequest_ != ReConnectRequest.getDefaultInstance()) {
             reConnectRequest_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.newBuilder(reConnectRequest_).mergeFrom(value).buildPartial();
+              ReConnectRequest.newBuilder(reConnectRequest_).mergeFrom(value).buildPartial();
           } else {
             reConnectRequest_ = value;
           }
@@ -3117,7 +3117,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.Builder getReConnectRequestBuilder() {
+      public ReConnectRequest.Builder getReConnectRequestBuilder() {
         bitField0_ |= 0x00000040;
         onChanged();
         return getReConnectRequestFieldBuilder().getBuilder();
@@ -3129,12 +3129,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequestOrBuilder getReConnectRequestOrBuilder() {
+      public ReConnectRequestOrBuilder getReConnectRequestOrBuilder() {
         if (reConnectRequestBuilder_ != null) {
           return reConnectRequestBuilder_.getMessageOrBuilder();
         } else {
           return reConnectRequest_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.getDefaultInstance() : reConnectRequest_;
+              ReConnectRequest.getDefaultInstance() : reConnectRequest_;
         }
       }
       /**
@@ -3145,11 +3145,11 @@ public final class MessageProto {
        * <code>optional .netty.ReConnectRequest reConnectRequest = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequestOrBuilder> 
+          ReConnectRequest, ReConnectRequest.Builder, ReConnectRequestOrBuilder>
           getReConnectRequestFieldBuilder() {
         if (reConnectRequestBuilder_ == null) {
           reConnectRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequestOrBuilder>(
+              ReConnectRequest, ReConnectRequest.Builder, ReConnectRequestOrBuilder>(
                   getReConnectRequest(),
                   getParentForChildren(),
                   isClean());
@@ -3158,9 +3158,9 @@ public final class MessageProto {
         return reConnectRequestBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest playProgressRequest_ = null;
+      private PlayProgressRequest playProgressRequest_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequestOrBuilder> playProgressRequestBuilder_;
+          PlayProgressRequest, PlayProgressRequest.Builder, PlayProgressRequestOrBuilder> playProgressRequestBuilder_;
       /**
        * <pre>
        *播放
@@ -3178,9 +3178,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest getPlayProgressRequest() {
+      public PlayProgressRequest getPlayProgressRequest() {
         if (playProgressRequestBuilder_ == null) {
-          return playProgressRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.getDefaultInstance() : playProgressRequest_;
+          return playProgressRequest_ == null ? PlayProgressRequest.getDefaultInstance() : playProgressRequest_;
         } else {
           return playProgressRequestBuilder_.getMessage();
         }
@@ -3192,7 +3192,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
        */
-      public Builder setPlayProgressRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest value) {
+      public Builder setPlayProgressRequest(PlayProgressRequest value) {
         if (playProgressRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3213,7 +3213,7 @@ public final class MessageProto {
        * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
        */
       public Builder setPlayProgressRequest(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.Builder builderForValue) {
+          PlayProgressRequest.Builder builderForValue) {
         if (playProgressRequestBuilder_ == null) {
           playProgressRequest_ = builderForValue.build();
           onChanged();
@@ -3230,13 +3230,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
        */
-      public Builder mergePlayProgressRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest value) {
+      public Builder mergePlayProgressRequest(PlayProgressRequest value) {
         if (playProgressRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000080) == 0x00000080) &&
               playProgressRequest_ != null &&
-              playProgressRequest_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.getDefaultInstance()) {
+              playProgressRequest_ != PlayProgressRequest.getDefaultInstance()) {
             playProgressRequest_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.newBuilder(playProgressRequest_).mergeFrom(value).buildPartial();
+              PlayProgressRequest.newBuilder(playProgressRequest_).mergeFrom(value).buildPartial();
           } else {
             playProgressRequest_ = value;
           }
@@ -3271,7 +3271,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.Builder getPlayProgressRequestBuilder() {
+      public PlayProgressRequest.Builder getPlayProgressRequestBuilder() {
         bitField0_ |= 0x00000080;
         onChanged();
         return getPlayProgressRequestFieldBuilder().getBuilder();
@@ -3283,12 +3283,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequestOrBuilder getPlayProgressRequestOrBuilder() {
+      public PlayProgressRequestOrBuilder getPlayProgressRequestOrBuilder() {
         if (playProgressRequestBuilder_ != null) {
           return playProgressRequestBuilder_.getMessageOrBuilder();
         } else {
           return playProgressRequest_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.getDefaultInstance() : playProgressRequest_;
+              PlayProgressRequest.getDefaultInstance() : playProgressRequest_;
         }
       }
       /**
@@ -3299,11 +3299,11 @@ public final class MessageProto {
        * <code>optional .netty.PlayProgressRequest playProgressRequest = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequestOrBuilder> 
+          PlayProgressRequest, PlayProgressRequest.Builder, PlayProgressRequestOrBuilder>
           getPlayProgressRequestFieldBuilder() {
         if (playProgressRequestBuilder_ == null) {
           playProgressRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequestOrBuilder>(
+              PlayProgressRequest, PlayProgressRequest.Builder, PlayProgressRequestOrBuilder>(
                   getPlayProgressRequest(),
                   getParentForChildren(),
                   isClean());
@@ -3312,9 +3312,9 @@ public final class MessageProto {
         return playProgressRequestBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest setPlayProgressRequest_ = null;
+      private SetPlayProgressRequest setPlayProgressRequest_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequestOrBuilder> setPlayProgressRequestBuilder_;
+          SetPlayProgressRequest, SetPlayProgressRequest.Builder, SetPlayProgressRequestOrBuilder> setPlayProgressRequestBuilder_;
       /**
        * <pre>
        *设置播放进度
@@ -3332,9 +3332,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest getSetPlayProgressRequest() {
+      public SetPlayProgressRequest getSetPlayProgressRequest() {
         if (setPlayProgressRequestBuilder_ == null) {
-          return setPlayProgressRequest_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.getDefaultInstance() : setPlayProgressRequest_;
+          return setPlayProgressRequest_ == null ? SetPlayProgressRequest.getDefaultInstance() : setPlayProgressRequest_;
         } else {
           return setPlayProgressRequestBuilder_.getMessage();
         }
@@ -3346,7 +3346,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
        */
-      public Builder setSetPlayProgressRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest value) {
+      public Builder setSetPlayProgressRequest(SetPlayProgressRequest value) {
         if (setPlayProgressRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3367,7 +3367,7 @@ public final class MessageProto {
        * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
        */
       public Builder setSetPlayProgressRequest(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.Builder builderForValue) {
+          SetPlayProgressRequest.Builder builderForValue) {
         if (setPlayProgressRequestBuilder_ == null) {
           setPlayProgressRequest_ = builderForValue.build();
           onChanged();
@@ -3384,13 +3384,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
        */
-      public Builder mergeSetPlayProgressRequest(com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest value) {
+      public Builder mergeSetPlayProgressRequest(SetPlayProgressRequest value) {
         if (setPlayProgressRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000100) == 0x00000100) &&
               setPlayProgressRequest_ != null &&
-              setPlayProgressRequest_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.getDefaultInstance()) {
+              setPlayProgressRequest_ != SetPlayProgressRequest.getDefaultInstance()) {
             setPlayProgressRequest_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.newBuilder(setPlayProgressRequest_).mergeFrom(value).buildPartial();
+              SetPlayProgressRequest.newBuilder(setPlayProgressRequest_).mergeFrom(value).buildPartial();
           } else {
             setPlayProgressRequest_ = value;
           }
@@ -3425,7 +3425,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.Builder getSetPlayProgressRequestBuilder() {
+      public SetPlayProgressRequest.Builder getSetPlayProgressRequestBuilder() {
         bitField0_ |= 0x00000100;
         onChanged();
         return getSetPlayProgressRequestFieldBuilder().getBuilder();
@@ -3437,12 +3437,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequestOrBuilder getSetPlayProgressRequestOrBuilder() {
+      public SetPlayProgressRequestOrBuilder getSetPlayProgressRequestOrBuilder() {
         if (setPlayProgressRequestBuilder_ != null) {
           return setPlayProgressRequestBuilder_.getMessageOrBuilder();
         } else {
           return setPlayProgressRequest_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.getDefaultInstance() : setPlayProgressRequest_;
+              SetPlayProgressRequest.getDefaultInstance() : setPlayProgressRequest_;
         }
       }
       /**
@@ -3453,11 +3453,11 @@ public final class MessageProto {
        * <code>optional .netty.SetPlayProgressRequest setPlayProgressRequest = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequestOrBuilder> 
+          SetPlayProgressRequest, SetPlayProgressRequest.Builder, SetPlayProgressRequestOrBuilder>
           getSetPlayProgressRequestFieldBuilder() {
         if (setPlayProgressRequestBuilder_ == null) {
           setPlayProgressRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest, com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequestOrBuilder>(
+              SetPlayProgressRequest, SetPlayProgressRequest.Builder, SetPlayProgressRequestOrBuilder>(
                   getSetPlayProgressRequest(),
                   getParentForChildren(),
                   isClean());
@@ -3466,9 +3466,9 @@ public final class MessageProto {
         return setPlayProgressRequestBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck downloadAck_ = null;
+      private DownloadAck downloadAck_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAckOrBuilder> downloadAckBuilder_;
+          DownloadAck, DownloadAck.Builder, DownloadAckOrBuilder> downloadAckBuilder_;
       /**
        * <pre>
        *下载确认事件
@@ -3486,9 +3486,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownloadAck downloadAck = 10;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck getDownloadAck() {
+      public DownloadAck getDownloadAck() {
         if (downloadAckBuilder_ == null) {
-          return downloadAck_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.getDefaultInstance() : downloadAck_;
+          return downloadAck_ == null ? DownloadAck.getDefaultInstance() : downloadAck_;
         } else {
           return downloadAckBuilder_.getMessage();
         }
@@ -3500,7 +3500,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownloadAck downloadAck = 10;</code>
        */
-      public Builder setDownloadAck(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck value) {
+      public Builder setDownloadAck(DownloadAck value) {
         if (downloadAckBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3521,7 +3521,7 @@ public final class MessageProto {
        * <code>optional .netty.DownloadAck downloadAck = 10;</code>
        */
       public Builder setDownloadAck(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.Builder builderForValue) {
+          DownloadAck.Builder builderForValue) {
         if (downloadAckBuilder_ == null) {
           downloadAck_ = builderForValue.build();
           onChanged();
@@ -3538,13 +3538,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownloadAck downloadAck = 10;</code>
        */
-      public Builder mergeDownloadAck(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck value) {
+      public Builder mergeDownloadAck(DownloadAck value) {
         if (downloadAckBuilder_ == null) {
           if (((bitField0_ & 0x00000200) == 0x00000200) &&
               downloadAck_ != null &&
-              downloadAck_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.getDefaultInstance()) {
+              downloadAck_ != DownloadAck.getDefaultInstance()) {
             downloadAck_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.newBuilder(downloadAck_).mergeFrom(value).buildPartial();
+              DownloadAck.newBuilder(downloadAck_).mergeFrom(value).buildPartial();
           } else {
             downloadAck_ = value;
           }
@@ -3579,7 +3579,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownloadAck downloadAck = 10;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.Builder getDownloadAckBuilder() {
+      public DownloadAck.Builder getDownloadAckBuilder() {
         bitField0_ |= 0x00000200;
         onChanged();
         return getDownloadAckFieldBuilder().getBuilder();
@@ -3591,12 +3591,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownloadAck downloadAck = 10;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAckOrBuilder getDownloadAckOrBuilder() {
+      public DownloadAckOrBuilder getDownloadAckOrBuilder() {
         if (downloadAckBuilder_ != null) {
           return downloadAckBuilder_.getMessageOrBuilder();
         } else {
           return downloadAck_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.getDefaultInstance() : downloadAck_;
+              DownloadAck.getDefaultInstance() : downloadAck_;
         }
       }
       /**
@@ -3607,11 +3607,11 @@ public final class MessageProto {
        * <code>optional .netty.DownloadAck downloadAck = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAckOrBuilder> 
+          DownloadAck, DownloadAck.Builder, DownloadAckOrBuilder>
           getDownloadAckFieldBuilder() {
         if (downloadAckBuilder_ == null) {
           downloadAckBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAckOrBuilder>(
+              DownloadAck, DownloadAck.Builder, DownloadAckOrBuilder>(
                   getDownloadAck(),
                   getParentForChildren(),
                   isClean());
@@ -3634,16 +3634,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.MessageRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest DEFAULT_INSTANCE;
+    private static final MessageRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest();
+      DEFAULT_INSTANCE = new MessageRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest getDefaultInstance() {
+    public static MessageRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MessageRequest>
+    @Deprecated public static final com.google.protobuf.Parser<MessageRequest>
         PARSER = new com.google.protobuf.AbstractParser<MessageRequest>() {
       public MessageRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -3657,12 +3657,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<MessageRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest getDefaultInstanceForType() {
+    public MessageRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3690,7 +3690,7 @@ public final class MessageProto {
     private HeartBeatRequest() {
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3731,14 +3731,14 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_HeartBeatRequest_descriptor;
+      return MessageProto.internal_static_netty_HeartBeatRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_HeartBeatRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_HeartBeatRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.Builder.class);
+              HeartBeatRequest.class, Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3767,22 +3767,22 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest)) {
+      if (!(obj instanceof HeartBeatRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest) obj;
+      HeartBeatRequest other = (HeartBeatRequest) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -3794,58 +3794,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseFrom(
+    public static HeartBeatRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseFrom(
+    public static HeartBeatRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseFrom(byte[] data)
+    public static HeartBeatRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseFrom(
+    public static HeartBeatRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseFrom(java.io.InputStream input)
+    public static HeartBeatRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseFrom(
+    public static HeartBeatRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseDelimitedFrom(java.io.InputStream input)
+    public static HeartBeatRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseDelimitedFrom(
+    public static HeartBeatRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseFrom(
+    public static HeartBeatRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parseFrom(
+    public static HeartBeatRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3857,7 +3857,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest prototype) {
+    public static Builder newBuilder(HeartBeatRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3865,9 +3865,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -3881,17 +3881,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.HeartBeatRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequestOrBuilder {
+        HeartBeatRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_HeartBeatRequest_descriptor;
+        return MessageProto.internal_static_netty_HeartBeatRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_HeartBeatRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_HeartBeatRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.Builder.class);
+                HeartBeatRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.newBuilder()
@@ -3900,7 +3900,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3916,23 +3916,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_HeartBeatRequest_descriptor;
+        return MessageProto.internal_static_netty_HeartBeatRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.getDefaultInstance();
+      public HeartBeatRequest getDefaultInstanceForType() {
+        return HeartBeatRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest result = buildPartial();
+      public HeartBeatRequest build() {
+        HeartBeatRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest(this);
+      public HeartBeatRequest buildPartial() {
+        HeartBeatRequest result = new HeartBeatRequest(this);
         onBuilt();
         return result;
       }
@@ -3964,16 +3964,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest)other);
+        if (other instanceof HeartBeatRequest) {
+          return mergeFrom((HeartBeatRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(HeartBeatRequest other) {
+        if (other == HeartBeatRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3987,11 +3987,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest parsedMessage = null;
+        HeartBeatRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest) e.getUnfinishedMessage();
+          parsedMessage = (HeartBeatRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4015,16 +4015,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.HeartBeatRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest DEFAULT_INSTANCE;
+    private static final HeartBeatRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest();
+      DEFAULT_INSTANCE = new HeartBeatRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest getDefaultInstance() {
+    public static HeartBeatRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<HeartBeatRequest>
+    @Deprecated public static final com.google.protobuf.Parser<HeartBeatRequest>
         PARSER = new com.google.protobuf.AbstractParser<HeartBeatRequest>() {
       public HeartBeatRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -4038,12 +4038,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<HeartBeatRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.HeartBeatRequest getDefaultInstanceForType() {
+    public HeartBeatRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4068,7 +4068,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -4094,7 +4094,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -4120,7 +4120,7 @@ public final class MessageProto {
      *
      * <code>optional string registerType = 3;</code>
      */
-    java.lang.String getRegisterType();
+    String getRegisterType();
     /**
      * <pre>
      *注册类型
@@ -4152,7 +4152,7 @@ public final class MessageProto {
       registerType_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -4212,19 +4212,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterRequest_descriptor;
+      return MessageProto.internal_static_netty_RegisterRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_RegisterRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.Builder.class);
+              RegisterRequest.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -4242,14 +4242,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -4265,11 +4265,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -4278,7 +4278,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -4296,14 +4296,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -4319,11 +4319,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -4332,7 +4332,7 @@ public final class MessageProto {
     }
 
     public static final int REGISTERTYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object registerType_;
+    private volatile Object registerType_;
     /**
      * <pre>
      *注册类型
@@ -4350,14 +4350,14 @@ public final class MessageProto {
      *
      * <code>optional string registerType = 3;</code>
      */
-    public java.lang.String getRegisterType() {
-      java.lang.Object ref = registerType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getRegisterType() {
+      Object ref = registerType_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           registerType_ = s;
         }
@@ -4373,11 +4373,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getRegisterTypeBytes() {
-      java.lang.Object ref = registerType_;
-      if (ref instanceof java.lang.String) {
+      Object ref = registerType_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         registerType_ = b;
         return b;
       } else {
@@ -4437,15 +4437,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest)) {
+      if (!(obj instanceof RegisterRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest) obj;
+      RegisterRequest other = (RegisterRequest) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -4467,7 +4467,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -4491,58 +4491,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseFrom(
+    public static RegisterRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseFrom(
+    public static RegisterRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseFrom(byte[] data)
+    public static RegisterRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseFrom(
+    public static RegisterRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseFrom(java.io.InputStream input)
+    public static RegisterRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseFrom(
+    public static RegisterRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseDelimitedFrom(java.io.InputStream input)
+    public static RegisterRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseDelimitedFrom(
+    public static RegisterRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseFrom(
+    public static RegisterRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parseFrom(
+    public static RegisterRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4554,7 +4554,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest prototype) {
+    public static Builder newBuilder(RegisterRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4562,9 +4562,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4578,17 +4578,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.RegisterRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequestOrBuilder {
+        RegisterRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterRequest_descriptor;
+        return MessageProto.internal_static_netty_RegisterRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_RegisterRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.Builder.class);
+                RegisterRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.newBuilder()
@@ -4597,7 +4597,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4619,23 +4619,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterRequest_descriptor;
+        return MessageProto.internal_static_netty_RegisterRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.getDefaultInstance();
+      public RegisterRequest getDefaultInstanceForType() {
+        return RegisterRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest result = buildPartial();
+      public RegisterRequest build() {
+        RegisterRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest(this);
+      public RegisterRequest buildPartial() {
+        RegisterRequest result = new RegisterRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4682,16 +4682,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest)other);
+        if (other instanceof RegisterRequest) {
+          return mergeFrom((RegisterRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(RegisterRequest other) {
+        if (other == RegisterRequest.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -4726,11 +4726,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest parsedMessage = null;
+        RegisterRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest) e.getUnfinishedMessage();
+          parsedMessage = (RegisterRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4741,7 +4741,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -4759,18 +4759,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -4782,11 +4782,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -4801,7 +4801,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4841,7 +4841,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -4859,18 +4859,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -4882,11 +4882,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -4901,7 +4901,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4941,7 +4941,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object registerType_ = "";
+      private Object registerType_ = "";
       /**
        * <pre>
        *注册类型
@@ -4959,18 +4959,18 @@ public final class MessageProto {
        *
        * <code>optional string registerType = 3;</code>
        */
-      public java.lang.String getRegisterType() {
-        java.lang.Object ref = registerType_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getRegisterType() {
+        Object ref = registerType_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             registerType_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -4982,11 +4982,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getRegisterTypeBytes() {
-        java.lang.Object ref = registerType_;
+        Object ref = registerType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           registerType_ = b;
           return b;
         } else {
@@ -5001,7 +5001,7 @@ public final class MessageProto {
        * <code>optional string registerType = 3;</code>
        */
       public Builder setRegisterType(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5055,16 +5055,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.RegisterRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest DEFAULT_INSTANCE;
+    private static final RegisterRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest();
+      DEFAULT_INSTANCE = new RegisterRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest getDefaultInstance() {
+    public static RegisterRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<RegisterRequest>
+    @Deprecated public static final com.google.protobuf.Parser<RegisterRequest>
         PARSER = new com.google.protobuf.AbstractParser<RegisterRequest>() {
       public RegisterRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -5078,12 +5078,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<RegisterRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterRequest getDefaultInstanceForType() {
+    public RegisterRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5108,7 +5108,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -5134,7 +5134,7 @@ public final class MessageProto {
      *
      * <code>required .netty.Dictate dictate = 2;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate getDictate();
+    Dictate getDictate();
 
     /**
      * <pre>
@@ -5151,7 +5151,7 @@ public final class MessageProto {
      *
      * <code>required string position = 3;</code>
      */
-    java.lang.String getPosition();
+    String getPosition();
     /**
      * <pre>
      *文件时间位置
@@ -5177,7 +5177,7 @@ public final class MessageProto {
      *
      * <code>required string fileId = 4;</code>
      */
-    java.lang.String getFileId();
+    String getFileId();
     /**
      * <pre>
      *文件ID
@@ -5210,7 +5210,7 @@ public final class MessageProto {
       fileId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -5246,7 +5246,7 @@ public final class MessageProto {
             }
             case 16: {
               int rawValue = input.readEnum();
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate value = com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.valueOf(rawValue);
+              Dictate value = Dictate.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
               } else {
@@ -5281,19 +5281,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateRequest_descriptor;
+      return MessageProto.internal_static_netty_CtrlDictateRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_CtrlDictateRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.Builder.class);
+              CtrlDictateRequest.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -5311,14 +5311,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -5334,11 +5334,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -5365,13 +5365,13 @@ public final class MessageProto {
      *
      * <code>required .netty.Dictate dictate = 2;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate getDictate() {
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate result = com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.valueOf(dictate_);
-      return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.START : result;
+    public Dictate getDictate() {
+      Dictate result = Dictate.valueOf(dictate_);
+      return result == null ? Dictate.START : result;
     }
 
     public static final int POSITION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object position_;
+    private volatile Object position_;
     /**
      * <pre>
      *文件时间位置
@@ -5389,14 +5389,14 @@ public final class MessageProto {
      *
      * <code>required string position = 3;</code>
      */
-    public java.lang.String getPosition() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getPosition() {
+      Object ref = position_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           position_ = s;
         }
@@ -5412,11 +5412,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getPositionBytes() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
+      Object ref = position_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         position_ = b;
         return b;
       } else {
@@ -5425,7 +5425,7 @@ public final class MessageProto {
     }
 
     public static final int FILEID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object fileId_;
+    private volatile Object fileId_;
     /**
      * <pre>
      *文件ID
@@ -5443,14 +5443,14 @@ public final class MessageProto {
      *
      * <code>required string fileId = 4;</code>
      */
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileId() {
+      Object ref = fileId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileId_ = s;
         }
@@ -5466,11 +5466,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileId_ = b;
         return b;
       } else {
@@ -5545,15 +5545,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest)) {
+      if (!(obj instanceof CtrlDictateRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest) obj;
+      CtrlDictateRequest other = (CtrlDictateRequest) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -5579,7 +5579,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -5607,58 +5607,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseFrom(
+    public static CtrlDictateRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseFrom(
+    public static CtrlDictateRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseFrom(byte[] data)
+    public static CtrlDictateRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseFrom(
+    public static CtrlDictateRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseFrom(java.io.InputStream input)
+    public static CtrlDictateRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseFrom(
+    public static CtrlDictateRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseDelimitedFrom(java.io.InputStream input)
+    public static CtrlDictateRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseDelimitedFrom(
+    public static CtrlDictateRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseFrom(
+    public static CtrlDictateRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parseFrom(
+    public static CtrlDictateRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5670,7 +5670,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest prototype) {
+    public static Builder newBuilder(CtrlDictateRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -5678,9 +5678,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -5694,17 +5694,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.CtrlDictateRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequestOrBuilder {
+        CtrlDictateRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateRequest_descriptor;
+        return MessageProto.internal_static_netty_CtrlDictateRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_CtrlDictateRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.Builder.class);
+                CtrlDictateRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.newBuilder()
@@ -5713,7 +5713,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5737,23 +5737,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateRequest_descriptor;
+        return MessageProto.internal_static_netty_CtrlDictateRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.getDefaultInstance();
+      public CtrlDictateRequest getDefaultInstanceForType() {
+        return CtrlDictateRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest result = buildPartial();
+      public CtrlDictateRequest build() {
+        CtrlDictateRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest(this);
+      public CtrlDictateRequest buildPartial() {
+        CtrlDictateRequest result = new CtrlDictateRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5804,16 +5804,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest)other);
+        if (other instanceof CtrlDictateRequest) {
+          return mergeFrom((CtrlDictateRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(CtrlDictateRequest other) {
+        if (other == CtrlDictateRequest.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -5857,11 +5857,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest parsedMessage = null;
+        CtrlDictateRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest) e.getUnfinishedMessage();
+          parsedMessage = (CtrlDictateRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5872,7 +5872,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -5890,18 +5890,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -5913,11 +5913,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -5932,7 +5932,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5990,9 +5990,9 @@ public final class MessageProto {
        *
        * <code>required .netty.Dictate dictate = 2;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate getDictate() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate result = com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.valueOf(dictate_);
-        return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.START : result;
+      public Dictate getDictate() {
+        Dictate result = Dictate.valueOf(dictate_);
+        return result == null ? Dictate.START : result;
       }
       /**
        * <pre>
@@ -6001,7 +6001,7 @@ public final class MessageProto {
        *
        * <code>required .netty.Dictate dictate = 2;</code>
        */
-      public Builder setDictate(com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate value) {
+      public Builder setDictate(Dictate value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -6024,7 +6024,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object position_ = "";
+      private Object position_ = "";
       /**
        * <pre>
        *文件时间位置
@@ -6042,18 +6042,18 @@ public final class MessageProto {
        *
        * <code>required string position = 3;</code>
        */
-      public java.lang.String getPosition() {
-        java.lang.Object ref = position_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getPosition() {
+        Object ref = position_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             position_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -6065,11 +6065,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getPositionBytes() {
-        java.lang.Object ref = position_;
+        Object ref = position_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           position_ = b;
           return b;
         } else {
@@ -6084,7 +6084,7 @@ public final class MessageProto {
        * <code>required string position = 3;</code>
        */
       public Builder setPosition(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6124,7 +6124,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileId_ = "";
+      private Object fileId_ = "";
       /**
        * <pre>
        *文件ID
@@ -6142,18 +6142,18 @@ public final class MessageProto {
        *
        * <code>required string fileId = 4;</code>
        */
-      public java.lang.String getFileId() {
-        java.lang.Object ref = fileId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileId() {
+        Object ref = fileId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -6165,11 +6165,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdBytes() {
-        java.lang.Object ref = fileId_;
+        Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileId_ = b;
           return b;
         } else {
@@ -6184,7 +6184,7 @@ public final class MessageProto {
        * <code>required string fileId = 4;</code>
        */
       public Builder setFileId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6238,16 +6238,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.CtrlDictateRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest DEFAULT_INSTANCE;
+    private static final CtrlDictateRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest();
+      DEFAULT_INSTANCE = new CtrlDictateRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest getDefaultInstance() {
+    public static CtrlDictateRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<CtrlDictateRequest>
+    @Deprecated public static final com.google.protobuf.Parser<CtrlDictateRequest>
         PARSER = new com.google.protobuf.AbstractParser<CtrlDictateRequest>() {
       public CtrlDictateRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -6261,12 +6261,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<CtrlDictateRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateRequest getDefaultInstanceForType() {
+    public CtrlDictateRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6291,7 +6291,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -6317,7 +6317,7 @@ public final class MessageProto {
      *
      * <code>required string fileIds = 2;</code>
      */
-    java.lang.String getFileIds();
+    String getFileIds();
     /**
      * <pre>
      *文件IDS
@@ -6343,7 +6343,7 @@ public final class MessageProto {
      *
      * <code>required string fileSize = 3;</code>
      */
-    java.lang.String getFileSize();
+    String getFileSize();
     /**
      * <pre>
      *文件大小
@@ -6375,7 +6375,7 @@ public final class MessageProto {
       fileSize_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -6435,19 +6435,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadRequest_descriptor;
+      return MessageProto.internal_static_netty_DownLoadRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_DownLoadRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.Builder.class);
+              DownLoadRequest.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -6465,14 +6465,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -6488,11 +6488,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -6501,7 +6501,7 @@ public final class MessageProto {
     }
 
     public static final int FILEIDS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fileIds_;
+    private volatile Object fileIds_;
     /**
      * <pre>
      *文件IDS
@@ -6519,14 +6519,14 @@ public final class MessageProto {
      *
      * <code>required string fileIds = 2;</code>
      */
-    public java.lang.String getFileIds() {
-      java.lang.Object ref = fileIds_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileIds() {
+      Object ref = fileIds_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileIds_ = s;
         }
@@ -6542,11 +6542,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdsBytes() {
-      java.lang.Object ref = fileIds_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileIds_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileIds_ = b;
         return b;
       } else {
@@ -6555,7 +6555,7 @@ public final class MessageProto {
     }
 
     public static final int FILESIZE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object fileSize_;
+    private volatile Object fileSize_;
     /**
      * <pre>
      *文件大小
@@ -6573,14 +6573,14 @@ public final class MessageProto {
      *
      * <code>required string fileSize = 3;</code>
      */
-    public java.lang.String getFileSize() {
-      java.lang.Object ref = fileSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileSize() {
+      Object ref = fileSize_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileSize_ = s;
         }
@@ -6596,11 +6596,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileSizeBytes() {
-      java.lang.Object ref = fileSize_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileSize_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileSize_ = b;
         return b;
       } else {
@@ -6664,15 +6664,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest)) {
+      if (!(obj instanceof DownLoadRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest) obj;
+      DownLoadRequest other = (DownLoadRequest) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -6694,7 +6694,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -6718,58 +6718,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseFrom(
+    public static DownLoadRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseFrom(
+    public static DownLoadRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseFrom(byte[] data)
+    public static DownLoadRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseFrom(
+    public static DownLoadRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseFrom(java.io.InputStream input)
+    public static DownLoadRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseFrom(
+    public static DownLoadRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseDelimitedFrom(java.io.InputStream input)
+    public static DownLoadRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseDelimitedFrom(
+    public static DownLoadRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseFrom(
+    public static DownLoadRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parseFrom(
+    public static DownLoadRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6781,7 +6781,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest prototype) {
+    public static Builder newBuilder(DownLoadRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -6789,9 +6789,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6805,17 +6805,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.DownLoadRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequestOrBuilder {
+        DownLoadRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadRequest_descriptor;
+        return MessageProto.internal_static_netty_DownLoadRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_DownLoadRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.Builder.class);
+                DownLoadRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.newBuilder()
@@ -6824,7 +6824,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -6846,23 +6846,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadRequest_descriptor;
+        return MessageProto.internal_static_netty_DownLoadRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.getDefaultInstance();
+      public DownLoadRequest getDefaultInstanceForType() {
+        return DownLoadRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest result = buildPartial();
+      public DownLoadRequest build() {
+        DownLoadRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest(this);
+      public DownLoadRequest buildPartial() {
+        DownLoadRequest result = new DownLoadRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6909,16 +6909,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest)other);
+        if (other instanceof DownLoadRequest) {
+          return mergeFrom((DownLoadRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(DownLoadRequest other) {
+        if (other == DownLoadRequest.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -6956,11 +6956,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest parsedMessage = null;
+        DownLoadRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest) e.getUnfinishedMessage();
+          parsedMessage = (DownLoadRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6971,7 +6971,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -6989,18 +6989,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7012,11 +7012,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -7031,7 +7031,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7071,7 +7071,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileIds_ = "";
+      private Object fileIds_ = "";
       /**
        * <pre>
        *文件IDS
@@ -7089,18 +7089,18 @@ public final class MessageProto {
        *
        * <code>required string fileIds = 2;</code>
        */
-      public java.lang.String getFileIds() {
-        java.lang.Object ref = fileIds_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileIds() {
+        Object ref = fileIds_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileIds_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7112,11 +7112,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdsBytes() {
-        java.lang.Object ref = fileIds_;
+        Object ref = fileIds_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileIds_ = b;
           return b;
         } else {
@@ -7131,7 +7131,7 @@ public final class MessageProto {
        * <code>required string fileIds = 2;</code>
        */
       public Builder setFileIds(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7171,7 +7171,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileSize_ = "";
+      private Object fileSize_ = "";
       /**
        * <pre>
        *文件大小
@@ -7189,18 +7189,18 @@ public final class MessageProto {
        *
        * <code>required string fileSize = 3;</code>
        */
-      public java.lang.String getFileSize() {
-        java.lang.Object ref = fileSize_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileSize() {
+        Object ref = fileSize_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileSize_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7212,11 +7212,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileSizeBytes() {
-        java.lang.Object ref = fileSize_;
+        Object ref = fileSize_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileSize_ = b;
           return b;
         } else {
@@ -7231,7 +7231,7 @@ public final class MessageProto {
        * <code>required string fileSize = 3;</code>
        */
       public Builder setFileSize(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7285,16 +7285,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.DownLoadRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest DEFAULT_INSTANCE;
+    private static final DownLoadRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest();
+      DEFAULT_INSTANCE = new DownLoadRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest getDefaultInstance() {
+    public static DownLoadRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DownLoadRequest>
+    @Deprecated public static final com.google.protobuf.Parser<DownLoadRequest>
         PARSER = new com.google.protobuf.AbstractParser<DownLoadRequest>() {
       public DownLoadRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -7308,12 +7308,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<DownLoadRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadRequest getDefaultInstanceForType() {
+    public DownLoadRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7338,7 +7338,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -7364,7 +7364,7 @@ public final class MessageProto {
      *
      * <code>required string fileName = 2;</code>
      */
-    java.lang.String getFileName();
+    String getFileName();
     /**
      * <pre>
      *文件名
@@ -7390,7 +7390,7 @@ public final class MessageProto {
      *
      * <code>required string fileId = 3;</code>
      */
-    java.lang.String getFileId();
+    String getFileId();
     /**
      * <pre>
      *文件ID
@@ -7422,7 +7422,7 @@ public final class MessageProto {
       fileId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -7482,19 +7482,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteRequest_descriptor;
+      return MessageProto.internal_static_netty_DeleteRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_DeleteRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.Builder.class);
+              DeleteRequest.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -7512,14 +7512,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -7535,11 +7535,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -7548,7 +7548,7 @@ public final class MessageProto {
     }
 
     public static final int FILENAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fileName_;
+    private volatile Object fileName_;
     /**
      * <pre>
      *文件名
@@ -7566,14 +7566,14 @@ public final class MessageProto {
      *
      * <code>required string fileName = 2;</code>
      */
-    public java.lang.String getFileName() {
-      java.lang.Object ref = fileName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileName() {
+      Object ref = fileName_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileName_ = s;
         }
@@ -7589,11 +7589,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileNameBytes() {
-      java.lang.Object ref = fileName_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileName_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileName_ = b;
         return b;
       } else {
@@ -7602,7 +7602,7 @@ public final class MessageProto {
     }
 
     public static final int FILEID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object fileId_;
+    private volatile Object fileId_;
     /**
      * <pre>
      *文件ID
@@ -7620,14 +7620,14 @@ public final class MessageProto {
      *
      * <code>required string fileId = 3;</code>
      */
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileId() {
+      Object ref = fileId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileId_ = s;
         }
@@ -7643,11 +7643,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileId_ = b;
         return b;
       } else {
@@ -7711,15 +7711,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest)) {
+      if (!(obj instanceof DeleteRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest) obj;
+      DeleteRequest other = (DeleteRequest) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -7741,7 +7741,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -7765,58 +7765,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseFrom(
+    public static DeleteRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseFrom(
+    public static DeleteRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseFrom(byte[] data)
+    public static DeleteRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseFrom(
+    public static DeleteRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseFrom(java.io.InputStream input)
+    public static DeleteRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseFrom(
+    public static DeleteRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseDelimitedFrom(java.io.InputStream input)
+    public static DeleteRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseDelimitedFrom(
+    public static DeleteRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseFrom(
+    public static DeleteRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parseFrom(
+    public static DeleteRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7828,7 +7828,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest prototype) {
+    public static Builder newBuilder(DeleteRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -7836,9 +7836,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -7852,17 +7852,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.DeleteRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequestOrBuilder {
+        DeleteRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteRequest_descriptor;
+        return MessageProto.internal_static_netty_DeleteRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_DeleteRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.Builder.class);
+                DeleteRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.newBuilder()
@@ -7871,7 +7871,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -7893,23 +7893,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteRequest_descriptor;
+        return MessageProto.internal_static_netty_DeleteRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.getDefaultInstance();
+      public DeleteRequest getDefaultInstanceForType() {
+        return DeleteRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest result = buildPartial();
+      public DeleteRequest build() {
+        DeleteRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest(this);
+      public DeleteRequest buildPartial() {
+        DeleteRequest result = new DeleteRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -7956,16 +7956,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest)other);
+        if (other instanceof DeleteRequest) {
+          return mergeFrom((DeleteRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(DeleteRequest other) {
+        if (other == DeleteRequest.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -8003,11 +8003,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest parsedMessage = null;
+        DeleteRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest) e.getUnfinishedMessage();
+          parsedMessage = (DeleteRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8018,7 +8018,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -8036,18 +8036,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -8059,11 +8059,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -8078,7 +8078,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8118,7 +8118,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileName_ = "";
+      private Object fileName_ = "";
       /**
        * <pre>
        *文件名
@@ -8136,18 +8136,18 @@ public final class MessageProto {
        *
        * <code>required string fileName = 2;</code>
        */
-      public java.lang.String getFileName() {
-        java.lang.Object ref = fileName_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileName() {
+        Object ref = fileName_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileName_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -8159,11 +8159,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileNameBytes() {
-        java.lang.Object ref = fileName_;
+        Object ref = fileName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileName_ = b;
           return b;
         } else {
@@ -8178,7 +8178,7 @@ public final class MessageProto {
        * <code>required string fileName = 2;</code>
        */
       public Builder setFileName(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8218,7 +8218,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileId_ = "";
+      private Object fileId_ = "";
       /**
        * <pre>
        *文件ID
@@ -8236,18 +8236,18 @@ public final class MessageProto {
        *
        * <code>required string fileId = 3;</code>
        */
-      public java.lang.String getFileId() {
-        java.lang.Object ref = fileId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileId() {
+        Object ref = fileId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -8259,11 +8259,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdBytes() {
-        java.lang.Object ref = fileId_;
+        Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileId_ = b;
           return b;
         } else {
@@ -8278,7 +8278,7 @@ public final class MessageProto {
        * <code>required string fileId = 3;</code>
        */
       public Builder setFileId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8332,16 +8332,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.DeleteRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest DEFAULT_INSTANCE;
+    private static final DeleteRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest();
+      DEFAULT_INSTANCE = new DeleteRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest getDefaultInstance() {
+    public static DeleteRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DeleteRequest>
+    @Deprecated public static final com.google.protobuf.Parser<DeleteRequest>
         PARSER = new com.google.protobuf.AbstractParser<DeleteRequest>() {
       public DeleteRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -8355,12 +8355,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<DeleteRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteRequest getDefaultInstanceForType() {
+    public DeleteRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8385,7 +8385,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -8411,7 +8411,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -8442,7 +8442,7 @@ public final class MessageProto {
       equipmentId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -8496,19 +8496,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectRequest_descriptor;
+      return MessageProto.internal_static_netty_ReConnectRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_ReConnectRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.Builder.class);
+              ReConnectRequest.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -8526,14 +8526,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -8549,11 +8549,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -8562,7 +8562,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -8580,14 +8580,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -8603,11 +8603,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -8661,15 +8661,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest)) {
+      if (!(obj instanceof ReConnectRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest) obj;
+      ReConnectRequest other = (ReConnectRequest) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -8686,7 +8686,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -8706,58 +8706,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseFrom(
+    public static ReConnectRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseFrom(
+    public static ReConnectRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseFrom(byte[] data)
+    public static ReConnectRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseFrom(
+    public static ReConnectRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseFrom(java.io.InputStream input)
+    public static ReConnectRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseFrom(
+    public static ReConnectRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseDelimitedFrom(java.io.InputStream input)
+    public static ReConnectRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseDelimitedFrom(
+    public static ReConnectRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseFrom(
+    public static ReConnectRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parseFrom(
+    public static ReConnectRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8769,7 +8769,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest prototype) {
+    public static Builder newBuilder(ReConnectRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -8777,9 +8777,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -8793,17 +8793,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.ReConnectRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequestOrBuilder {
+        ReConnectRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectRequest_descriptor;
+        return MessageProto.internal_static_netty_ReConnectRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_ReConnectRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.Builder.class);
+                ReConnectRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.newBuilder()
@@ -8812,7 +8812,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -8832,23 +8832,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectRequest_descriptor;
+        return MessageProto.internal_static_netty_ReConnectRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.getDefaultInstance();
+      public ReConnectRequest getDefaultInstanceForType() {
+        return ReConnectRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest result = buildPartial();
+      public ReConnectRequest build() {
+        ReConnectRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest(this);
+      public ReConnectRequest buildPartial() {
+        ReConnectRequest result = new ReConnectRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8891,16 +8891,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest)other);
+        if (other instanceof ReConnectRequest) {
+          return mergeFrom((ReConnectRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(ReConnectRequest other) {
+        if (other == ReConnectRequest.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -8930,11 +8930,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest parsedMessage = null;
+        ReConnectRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest) e.getUnfinishedMessage();
+          parsedMessage = (ReConnectRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8945,7 +8945,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -8963,18 +8963,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -8986,11 +8986,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -9005,7 +9005,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -9045,7 +9045,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -9063,18 +9063,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -9086,11 +9086,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -9105,7 +9105,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -9159,16 +9159,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.ReConnectRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest DEFAULT_INSTANCE;
+    private static final ReConnectRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest();
+      DEFAULT_INSTANCE = new ReConnectRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest getDefaultInstance() {
+    public static ReConnectRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReConnectRequest>
+    @Deprecated public static final com.google.protobuf.Parser<ReConnectRequest>
         PARSER = new com.google.protobuf.AbstractParser<ReConnectRequest>() {
       public ReConnectRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -9182,12 +9182,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<ReConnectRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectRequest getDefaultInstanceForType() {
+    public ReConnectRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9212,7 +9212,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -9238,7 +9238,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -9269,7 +9269,7 @@ public final class MessageProto {
       equipmentId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -9323,19 +9323,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressRequest_descriptor;
+      return MessageProto.internal_static_netty_PlayProgressRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_PlayProgressRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.Builder.class);
+              PlayProgressRequest.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -9353,14 +9353,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -9376,11 +9376,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -9389,7 +9389,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -9407,14 +9407,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -9430,11 +9430,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -9488,15 +9488,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest)) {
+      if (!(obj instanceof PlayProgressRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest) obj;
+      PlayProgressRequest other = (PlayProgressRequest) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -9513,7 +9513,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -9533,58 +9533,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseFrom(
+    public static PlayProgressRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseFrom(
+    public static PlayProgressRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseFrom(byte[] data)
+    public static PlayProgressRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseFrom(
+    public static PlayProgressRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseFrom(java.io.InputStream input)
+    public static PlayProgressRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseFrom(
+    public static PlayProgressRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseDelimitedFrom(java.io.InputStream input)
+    public static PlayProgressRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseDelimitedFrom(
+    public static PlayProgressRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseFrom(
+    public static PlayProgressRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parseFrom(
+    public static PlayProgressRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9596,7 +9596,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest prototype) {
+    public static Builder newBuilder(PlayProgressRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -9604,9 +9604,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -9620,17 +9620,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.PlayProgressRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequestOrBuilder {
+        PlayProgressRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressRequest_descriptor;
+        return MessageProto.internal_static_netty_PlayProgressRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_PlayProgressRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.Builder.class);
+                PlayProgressRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.newBuilder()
@@ -9639,7 +9639,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -9659,23 +9659,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressRequest_descriptor;
+        return MessageProto.internal_static_netty_PlayProgressRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.getDefaultInstance();
+      public PlayProgressRequest getDefaultInstanceForType() {
+        return PlayProgressRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest result = buildPartial();
+      public PlayProgressRequest build() {
+        PlayProgressRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest(this);
+      public PlayProgressRequest buildPartial() {
+        PlayProgressRequest result = new PlayProgressRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -9718,16 +9718,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest)other);
+        if (other instanceof PlayProgressRequest) {
+          return mergeFrom((PlayProgressRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(PlayProgressRequest other) {
+        if (other == PlayProgressRequest.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -9757,11 +9757,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest parsedMessage = null;
+        PlayProgressRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest) e.getUnfinishedMessage();
+          parsedMessage = (PlayProgressRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9772,7 +9772,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -9790,18 +9790,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -9813,11 +9813,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -9832,7 +9832,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -9872,7 +9872,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -9890,18 +9890,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -9913,11 +9913,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -9932,7 +9932,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -9986,16 +9986,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.PlayProgressRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest DEFAULT_INSTANCE;
+    private static final PlayProgressRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest();
+      DEFAULT_INSTANCE = new PlayProgressRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest getDefaultInstance() {
+    public static PlayProgressRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayProgressRequest>
+    @Deprecated public static final com.google.protobuf.Parser<PlayProgressRequest>
         PARSER = new com.google.protobuf.AbstractParser<PlayProgressRequest>() {
       public PlayProgressRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -10009,12 +10009,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<PlayProgressRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressRequest getDefaultInstanceForType() {
+    public PlayProgressRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10039,7 +10039,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -10065,7 +10065,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -10091,7 +10091,7 @@ public final class MessageProto {
      *
      * <code>required string position = 3;</code>
      */
-    java.lang.String getPosition();
+    String getPosition();
     /**
      * <pre>
      *文件时间位置
@@ -10117,7 +10117,7 @@ public final class MessageProto {
      *
      * <code>required string fileId = 4;</code>
      */
-    java.lang.String getFileId();
+    String getFileId();
     /**
      * <pre>
      *文件ID
@@ -10150,7 +10150,7 @@ public final class MessageProto {
       fileId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -10216,19 +10216,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_SetPlayProgressRequest_descriptor;
+      return MessageProto.internal_static_netty_SetPlayProgressRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_SetPlayProgressRequest_fieldAccessorTable
+      return MessageProto.internal_static_netty_SetPlayProgressRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.Builder.class);
+              SetPlayProgressRequest.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -10246,14 +10246,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -10269,11 +10269,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -10282,7 +10282,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -10300,14 +10300,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -10323,11 +10323,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -10336,7 +10336,7 @@ public final class MessageProto {
     }
 
     public static final int POSITION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object position_;
+    private volatile Object position_;
     /**
      * <pre>
      *文件时间位置
@@ -10354,14 +10354,14 @@ public final class MessageProto {
      *
      * <code>required string position = 3;</code>
      */
-    public java.lang.String getPosition() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getPosition() {
+      Object ref = position_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           position_ = s;
         }
@@ -10377,11 +10377,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getPositionBytes() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
+      Object ref = position_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         position_ = b;
         return b;
       } else {
@@ -10390,7 +10390,7 @@ public final class MessageProto {
     }
 
     public static final int FILEID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object fileId_;
+    private volatile Object fileId_;
     /**
      * <pre>
      *文件ID
@@ -10408,14 +10408,14 @@ public final class MessageProto {
      *
      * <code>required string fileId = 4;</code>
      */
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileId() {
+      Object ref = fileId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileId_ = s;
         }
@@ -10431,11 +10431,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileId_ = b;
         return b;
       } else {
@@ -10509,15 +10509,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest)) {
+      if (!(obj instanceof SetPlayProgressRequest)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest) obj;
+      SetPlayProgressRequest other = (SetPlayProgressRequest) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -10544,7 +10544,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -10572,58 +10572,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseFrom(
+    public static SetPlayProgressRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseFrom(
+    public static SetPlayProgressRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseFrom(byte[] data)
+    public static SetPlayProgressRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseFrom(
+    public static SetPlayProgressRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseFrom(java.io.InputStream input)
+    public static SetPlayProgressRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseFrom(
+    public static SetPlayProgressRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseDelimitedFrom(java.io.InputStream input)
+    public static SetPlayProgressRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseDelimitedFrom(
+    public static SetPlayProgressRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseFrom(
+    public static SetPlayProgressRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parseFrom(
+    public static SetPlayProgressRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10635,7 +10635,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest prototype) {
+    public static Builder newBuilder(SetPlayProgressRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -10643,9 +10643,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -10659,17 +10659,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.SetPlayProgressRequest)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequestOrBuilder {
+        SetPlayProgressRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_SetPlayProgressRequest_descriptor;
+        return MessageProto.internal_static_netty_SetPlayProgressRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_SetPlayProgressRequest_fieldAccessorTable
+        return MessageProto.internal_static_netty_SetPlayProgressRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.Builder.class);
+                SetPlayProgressRequest.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.newBuilder()
@@ -10678,7 +10678,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -10702,23 +10702,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_SetPlayProgressRequest_descriptor;
+        return MessageProto.internal_static_netty_SetPlayProgressRequest_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.getDefaultInstance();
+      public SetPlayProgressRequest getDefaultInstanceForType() {
+        return SetPlayProgressRequest.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest result = buildPartial();
+      public SetPlayProgressRequest build() {
+        SetPlayProgressRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest(this);
+      public SetPlayProgressRequest buildPartial() {
+        SetPlayProgressRequest result = new SetPlayProgressRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -10769,16 +10769,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest)other);
+        if (other instanceof SetPlayProgressRequest) {
+          return mergeFrom((SetPlayProgressRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(SetPlayProgressRequest other) {
+        if (other == SetPlayProgressRequest.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -10824,11 +10824,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest parsedMessage = null;
+        SetPlayProgressRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest) e.getUnfinishedMessage();
+          parsedMessage = (SetPlayProgressRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10839,7 +10839,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -10857,18 +10857,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -10880,11 +10880,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -10899,7 +10899,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -10939,7 +10939,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -10957,18 +10957,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -10980,11 +10980,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -10999,7 +10999,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -11039,7 +11039,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object position_ = "";
+      private Object position_ = "";
       /**
        * <pre>
        *文件时间位置
@@ -11057,18 +11057,18 @@ public final class MessageProto {
        *
        * <code>required string position = 3;</code>
        */
-      public java.lang.String getPosition() {
-        java.lang.Object ref = position_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getPosition() {
+        Object ref = position_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             position_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -11080,11 +11080,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getPositionBytes() {
-        java.lang.Object ref = position_;
+        Object ref = position_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           position_ = b;
           return b;
         } else {
@@ -11099,7 +11099,7 @@ public final class MessageProto {
        * <code>required string position = 3;</code>
        */
       public Builder setPosition(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -11139,7 +11139,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileId_ = "";
+      private Object fileId_ = "";
       /**
        * <pre>
        *文件ID
@@ -11157,18 +11157,18 @@ public final class MessageProto {
        *
        * <code>required string fileId = 4;</code>
        */
-      public java.lang.String getFileId() {
-        java.lang.Object ref = fileId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileId() {
+        Object ref = fileId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -11180,11 +11180,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdBytes() {
-        java.lang.Object ref = fileId_;
+        Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileId_ = b;
           return b;
         } else {
@@ -11199,7 +11199,7 @@ public final class MessageProto {
        * <code>required string fileId = 4;</code>
        */
       public Builder setFileId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -11253,16 +11253,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.SetPlayProgressRequest)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest DEFAULT_INSTANCE;
+    private static final SetPlayProgressRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest();
+      DEFAULT_INSTANCE = new SetPlayProgressRequest();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest getDefaultInstance() {
+    public static SetPlayProgressRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<SetPlayProgressRequest>
+    @Deprecated public static final com.google.protobuf.Parser<SetPlayProgressRequest>
         PARSER = new com.google.protobuf.AbstractParser<SetPlayProgressRequest>() {
       public SetPlayProgressRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -11276,12 +11276,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<SetPlayProgressRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.SetPlayProgressRequest getDefaultInstanceForType() {
+    public SetPlayProgressRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11306,7 +11306,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -11332,7 +11332,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -11358,7 +11358,7 @@ public final class MessageProto {
      *
      * <code>required string fileId = 3;</code>
      */
-    java.lang.String getFileId();
+    String getFileId();
     /**
      * <pre>
      *文件ID
@@ -11390,7 +11390,7 @@ public final class MessageProto {
       fileId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -11450,19 +11450,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownloadAck_descriptor;
+      return MessageProto.internal_static_netty_DownloadAck_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownloadAck_fieldAccessorTable
+      return MessageProto.internal_static_netty_DownloadAck_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.Builder.class);
+              DownloadAck.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -11480,14 +11480,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -11503,11 +11503,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -11516,7 +11516,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -11534,14 +11534,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -11557,11 +11557,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -11570,7 +11570,7 @@ public final class MessageProto {
     }
 
     public static final int FILEID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object fileId_;
+    private volatile Object fileId_;
     /**
      * <pre>
      *文件ID
@@ -11588,14 +11588,14 @@ public final class MessageProto {
      *
      * <code>required string fileId = 3;</code>
      */
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileId() {
+      Object ref = fileId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileId_ = s;
         }
@@ -11611,11 +11611,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileId_ = b;
         return b;
       } else {
@@ -11679,15 +11679,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck)) {
+      if (!(obj instanceof DownloadAck)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck) obj;
+      DownloadAck other = (DownloadAck) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -11709,7 +11709,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -11733,58 +11733,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseFrom(
+    public static DownloadAck parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseFrom(
+    public static DownloadAck parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseFrom(byte[] data)
+    public static DownloadAck parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseFrom(
+    public static DownloadAck parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseFrom(java.io.InputStream input)
+    public static DownloadAck parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseFrom(
+    public static DownloadAck parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseDelimitedFrom(java.io.InputStream input)
+    public static DownloadAck parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseDelimitedFrom(
+    public static DownloadAck parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseFrom(
+    public static DownloadAck parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parseFrom(
+    public static DownloadAck parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11796,7 +11796,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck prototype) {
+    public static Builder newBuilder(DownloadAck prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -11804,9 +11804,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -11820,17 +11820,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.DownloadAck)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAckOrBuilder {
+        DownloadAckOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownloadAck_descriptor;
+        return MessageProto.internal_static_netty_DownloadAck_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownloadAck_fieldAccessorTable
+        return MessageProto.internal_static_netty_DownloadAck_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.Builder.class);
+                DownloadAck.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.newBuilder()
@@ -11839,7 +11839,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -11861,23 +11861,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownloadAck_descriptor;
+        return MessageProto.internal_static_netty_DownloadAck_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.getDefaultInstance();
+      public DownloadAck getDefaultInstanceForType() {
+        return DownloadAck.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck result = buildPartial();
+      public DownloadAck build() {
+        DownloadAck result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck(this);
+      public DownloadAck buildPartial() {
+        DownloadAck result = new DownloadAck(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -11924,16 +11924,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck)other);
+        if (other instanceof DownloadAck) {
+          return mergeFrom((DownloadAck)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck.getDefaultInstance()) return this;
+      public Builder mergeFrom(DownloadAck other) {
+        if (other == DownloadAck.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -11971,11 +11971,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck parsedMessage = null;
+        DownloadAck parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck) e.getUnfinishedMessage();
+          parsedMessage = (DownloadAck) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11986,7 +11986,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -12004,18 +12004,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -12027,11 +12027,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -12046,7 +12046,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -12086,7 +12086,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -12104,18 +12104,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -12127,11 +12127,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -12146,7 +12146,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -12186,7 +12186,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileId_ = "";
+      private Object fileId_ = "";
       /**
        * <pre>
        *文件ID
@@ -12204,18 +12204,18 @@ public final class MessageProto {
        *
        * <code>required string fileId = 3;</code>
        */
-      public java.lang.String getFileId() {
-        java.lang.Object ref = fileId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileId() {
+        Object ref = fileId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -12227,11 +12227,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdBytes() {
-        java.lang.Object ref = fileId_;
+        Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileId_ = b;
           return b;
         } else {
@@ -12246,7 +12246,7 @@ public final class MessageProto {
        * <code>required string fileId = 3;</code>
        */
       public Builder setFileId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -12300,16 +12300,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.DownloadAck)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck DEFAULT_INSTANCE;
+    private static final DownloadAck DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck();
+      DEFAULT_INSTANCE = new DownloadAck();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck getDefaultInstance() {
+    public static DownloadAck getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DownloadAck>
+    @Deprecated public static final com.google.protobuf.Parser<DownloadAck>
         PARSER = new com.google.protobuf.AbstractParser<DownloadAck>() {
       public DownloadAck parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -12323,12 +12323,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<DownloadAck> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownloadAck getDefaultInstanceForType() {
+    public DownloadAck getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12353,7 +12353,7 @@ public final class MessageProto {
      *
      * <code>required .netty.Types type = 1;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.Types getType();
+    Types getType();
 
     /**
      * <pre>
@@ -12370,7 +12370,7 @@ public final class MessageProto {
      *
      * <code>required .netty.RespStatus status = 2;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus getStatus();
+    RespStatus getStatus();
 
     /**
      * <pre>
@@ -12387,7 +12387,7 @@ public final class MessageProto {
      *
      * <code>optional string statusCode = 3;</code>
      */
-    java.lang.String getStatusCode();
+    String getStatusCode();
     /**
      * <pre>
      * 返回相应状态码
@@ -12413,7 +12413,7 @@ public final class MessageProto {
      *
      * <code>optional string statusDesc = 4;</code>
      */
-    java.lang.String getStatusDesc();
+    String getStatusDesc();
     /**
      * <pre>
      * 返回响应提示信息
@@ -12439,7 +12439,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse getRegisterResponse();
+    RegisterResponse getRegisterResponse();
     /**
      * <pre>
      *设备注册
@@ -12447,7 +12447,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponseOrBuilder getRegisterResponseOrBuilder();
+    RegisterResponseOrBuilder getRegisterResponseOrBuilder();
 
     /**
      * <pre>
@@ -12464,7 +12464,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse getCtrlDictateResponse();
+    CtrlDictateResponse getCtrlDictateResponse();
     /**
      * <pre>
      *控制指令
@@ -12472,7 +12472,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponseOrBuilder getCtrlDictateResponseOrBuilder();
+    CtrlDictateResponseOrBuilder getCtrlDictateResponseOrBuilder();
 
     /**
      * <pre>
@@ -12489,7 +12489,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse getDownLoadResponse();
+    DownLoadResponse getDownLoadResponse();
     /**
      * <pre>
      *下载
@@ -12497,7 +12497,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponseOrBuilder getDownLoadResponseOrBuilder();
+    DownLoadResponseOrBuilder getDownLoadResponseOrBuilder();
 
     /**
      * <pre>
@@ -12514,7 +12514,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse getDeleteResponse();
+    DeleteResponse getDeleteResponse();
     /**
      * <pre>
      *删除
@@ -12522,7 +12522,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponseOrBuilder getDeleteResponseOrBuilder();
+    DeleteResponseOrBuilder getDeleteResponseOrBuilder();
 
     /**
      * <pre>
@@ -12539,7 +12539,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse getReConnectResponse();
+    ReConnectResponse getReConnectResponse();
     /**
      * <pre>
      *重连响应
@@ -12547,7 +12547,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponseOrBuilder getReConnectResponseOrBuilder();
+    ReConnectResponseOrBuilder getReConnectResponseOrBuilder();
 
     /**
      * <pre>
@@ -12564,7 +12564,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse getPlayProgressResponse();
+    PlayProgressResponse getPlayProgressResponse();
     /**
      * <pre>
      *播放进度响应
@@ -12572,7 +12572,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponseOrBuilder getPlayProgressResponseOrBuilder();
+    PlayProgressResponseOrBuilder getPlayProgressResponseOrBuilder();
 
     /**
      * <pre>
@@ -12589,7 +12589,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice getCtrlDictateNotice();
+    CtrlDictateNotice getCtrlDictateNotice();
     /**
      * <pre>
      *控制指令通知
@@ -12597,7 +12597,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNoticeOrBuilder getCtrlDictateNoticeOrBuilder();
+    CtrlDictateNoticeOrBuilder getCtrlDictateNoticeOrBuilder();
 
     /**
      * <pre>
@@ -12614,7 +12614,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice getDownLoadNotice();
+    DownLoadNotice getDownLoadNotice();
     /**
      * <pre>
      *下载通知
@@ -12622,7 +12622,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNoticeOrBuilder getDownLoadNoticeOrBuilder();
+    DownLoadNoticeOrBuilder getDownLoadNoticeOrBuilder();
 
     /**
      * <pre>
@@ -12639,7 +12639,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice getDeleteNotice();
+    DeleteNotice getDeleteNotice();
     /**
      * <pre>
      *删除通知
@@ -12647,7 +12647,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNoticeOrBuilder getDeleteNoticeOrBuilder();
+    DeleteNoticeOrBuilder getDeleteNoticeOrBuilder();
 
     /**
      * <pre>
@@ -12664,7 +12664,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice getPlayProgressNotice();
+    PlayProgressNotice getPlayProgressNotice();
     /**
      * <pre>
      *播放通知
@@ -12672,7 +12672,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNoticeOrBuilder getPlayProgressNoticeOrBuilder();
+    PlayProgressNoticeOrBuilder getPlayProgressNoticeOrBuilder();
 
     /**
      * <pre>
@@ -12689,7 +12689,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice getGetPlayProgressNotice();
+    GetPlayProgressNotice getGetPlayProgressNotice();
     /**
      * <pre>
      *获取播放通知
@@ -12697,7 +12697,7 @@ public final class MessageProto {
      *
      * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNoticeOrBuilder getGetPlayProgressNoticeOrBuilder();
+    GetPlayProgressNoticeOrBuilder getGetPlayProgressNoticeOrBuilder();
   }
   /**
    * <pre>
@@ -12721,7 +12721,7 @@ public final class MessageProto {
       statusDesc_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -12751,7 +12751,7 @@ public final class MessageProto {
             }
             case 8: {
               int rawValue = input.readEnum();
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.Types value = com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.valueOf(rawValue);
+              Types value = Types.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
@@ -12762,7 +12762,7 @@ public final class MessageProto {
             }
             case 16: {
               int rawValue = input.readEnum();
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus value = com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus.valueOf(rawValue);
+              RespStatus value = RespStatus.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
               } else {
@@ -12784,11 +12784,11 @@ public final class MessageProto {
               break;
             }
             case 42: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.Builder subBuilder = null;
+              RegisterResponse.Builder subBuilder = null;
               if (((bitField0_ & 0x00000010) == 0x00000010)) {
                 subBuilder = registerResponse_.toBuilder();
               }
-              registerResponse_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.PARSER, extensionRegistry);
+              registerResponse_ = input.readMessage(RegisterResponse.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(registerResponse_);
                 registerResponse_ = subBuilder.buildPartial();
@@ -12797,11 +12797,11 @@ public final class MessageProto {
               break;
             }
             case 50: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.Builder subBuilder = null;
+              CtrlDictateResponse.Builder subBuilder = null;
               if (((bitField0_ & 0x00000020) == 0x00000020)) {
                 subBuilder = ctrlDictateResponse_.toBuilder();
               }
-              ctrlDictateResponse_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.PARSER, extensionRegistry);
+              ctrlDictateResponse_ = input.readMessage(CtrlDictateResponse.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(ctrlDictateResponse_);
                 ctrlDictateResponse_ = subBuilder.buildPartial();
@@ -12810,11 +12810,11 @@ public final class MessageProto {
               break;
             }
             case 58: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.Builder subBuilder = null;
+              DownLoadResponse.Builder subBuilder = null;
               if (((bitField0_ & 0x00000040) == 0x00000040)) {
                 subBuilder = downLoadResponse_.toBuilder();
               }
-              downLoadResponse_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.PARSER, extensionRegistry);
+              downLoadResponse_ = input.readMessage(DownLoadResponse.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(downLoadResponse_);
                 downLoadResponse_ = subBuilder.buildPartial();
@@ -12823,11 +12823,11 @@ public final class MessageProto {
               break;
             }
             case 66: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.Builder subBuilder = null;
+              DeleteResponse.Builder subBuilder = null;
               if (((bitField0_ & 0x00000080) == 0x00000080)) {
                 subBuilder = deleteResponse_.toBuilder();
               }
-              deleteResponse_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.PARSER, extensionRegistry);
+              deleteResponse_ = input.readMessage(DeleteResponse.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(deleteResponse_);
                 deleteResponse_ = subBuilder.buildPartial();
@@ -12836,11 +12836,11 @@ public final class MessageProto {
               break;
             }
             case 74: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.Builder subBuilder = null;
+              ReConnectResponse.Builder subBuilder = null;
               if (((bitField0_ & 0x00000100) == 0x00000100)) {
                 subBuilder = reConnectResponse_.toBuilder();
               }
-              reConnectResponse_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.PARSER, extensionRegistry);
+              reConnectResponse_ = input.readMessage(ReConnectResponse.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(reConnectResponse_);
                 reConnectResponse_ = subBuilder.buildPartial();
@@ -12849,11 +12849,11 @@ public final class MessageProto {
               break;
             }
             case 82: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.Builder subBuilder = null;
+              PlayProgressResponse.Builder subBuilder = null;
               if (((bitField0_ & 0x00000200) == 0x00000200)) {
                 subBuilder = playProgressResponse_.toBuilder();
               }
-              playProgressResponse_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.PARSER, extensionRegistry);
+              playProgressResponse_ = input.readMessage(PlayProgressResponse.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(playProgressResponse_);
                 playProgressResponse_ = subBuilder.buildPartial();
@@ -12862,11 +12862,11 @@ public final class MessageProto {
               break;
             }
             case 90: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.Builder subBuilder = null;
+              CtrlDictateNotice.Builder subBuilder = null;
               if (((bitField0_ & 0x00000400) == 0x00000400)) {
                 subBuilder = ctrlDictateNotice_.toBuilder();
               }
-              ctrlDictateNotice_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.PARSER, extensionRegistry);
+              ctrlDictateNotice_ = input.readMessage(CtrlDictateNotice.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(ctrlDictateNotice_);
                 ctrlDictateNotice_ = subBuilder.buildPartial();
@@ -12875,11 +12875,11 @@ public final class MessageProto {
               break;
             }
             case 98: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.Builder subBuilder = null;
+              DownLoadNotice.Builder subBuilder = null;
               if (((bitField0_ & 0x00000800) == 0x00000800)) {
                 subBuilder = downLoadNotice_.toBuilder();
               }
-              downLoadNotice_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.PARSER, extensionRegistry);
+              downLoadNotice_ = input.readMessage(DownLoadNotice.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(downLoadNotice_);
                 downLoadNotice_ = subBuilder.buildPartial();
@@ -12888,11 +12888,11 @@ public final class MessageProto {
               break;
             }
             case 106: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.Builder subBuilder = null;
+              DeleteNotice.Builder subBuilder = null;
               if (((bitField0_ & 0x00001000) == 0x00001000)) {
                 subBuilder = deleteNotice_.toBuilder();
               }
-              deleteNotice_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.PARSER, extensionRegistry);
+              deleteNotice_ = input.readMessage(DeleteNotice.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(deleteNotice_);
                 deleteNotice_ = subBuilder.buildPartial();
@@ -12901,11 +12901,11 @@ public final class MessageProto {
               break;
             }
             case 114: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.Builder subBuilder = null;
+              PlayProgressNotice.Builder subBuilder = null;
               if (((bitField0_ & 0x00002000) == 0x00002000)) {
                 subBuilder = playProgressNotice_.toBuilder();
               }
-              playProgressNotice_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.PARSER, extensionRegistry);
+              playProgressNotice_ = input.readMessage(PlayProgressNotice.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(playProgressNotice_);
                 playProgressNotice_ = subBuilder.buildPartial();
@@ -12914,11 +12914,11 @@ public final class MessageProto {
               break;
             }
             case 122: {
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.Builder subBuilder = null;
+              GetPlayProgressNotice.Builder subBuilder = null;
               if (((bitField0_ & 0x00004000) == 0x00004000)) {
                 subBuilder = getPlayProgressNotice_.toBuilder();
               }
-              getPlayProgressNotice_ = input.readMessage(com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.PARSER, extensionRegistry);
+              getPlayProgressNotice_ = input.readMessage(GetPlayProgressNotice.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(getPlayProgressNotice_);
                 getPlayProgressNotice_ = subBuilder.buildPartial();
@@ -12940,14 +12940,14 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageResponse_descriptor;
+      return MessageProto.internal_static_netty_MessageResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageResponse_fieldAccessorTable
+      return MessageProto.internal_static_netty_MessageResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse.Builder.class);
+              MessageResponse.class, Builder.class);
     }
 
     private int bitField0_;
@@ -12970,9 +12970,9 @@ public final class MessageProto {
      *
      * <code>required .netty.Types type = 1;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.Types getType() {
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.Types result = com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.valueOf(type_);
-      return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.HEARTBEAT : result;
+    public Types getType() {
+      Types result = Types.valueOf(type_);
+      return result == null ? Types.HEARTBEAT : result;
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
@@ -12994,13 +12994,13 @@ public final class MessageProto {
      *
      * <code>required .netty.RespStatus status = 2;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus getStatus() {
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus result = com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus.valueOf(status_);
-      return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus.SUCCESS : result;
+    public RespStatus getStatus() {
+      RespStatus result = RespStatus.valueOf(status_);
+      return result == null ? RespStatus.SUCCESS : result;
     }
 
     public static final int STATUSCODE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object statusCode_;
+    private volatile Object statusCode_;
     /**
      * <pre>
      * 返回相应状态码
@@ -13018,14 +13018,14 @@ public final class MessageProto {
      *
      * <code>optional string statusCode = 3;</code>
      */
-    public java.lang.String getStatusCode() {
-      java.lang.Object ref = statusCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getStatusCode() {
+      Object ref = statusCode_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           statusCode_ = s;
         }
@@ -13041,11 +13041,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getStatusCodeBytes() {
-      java.lang.Object ref = statusCode_;
-      if (ref instanceof java.lang.String) {
+      Object ref = statusCode_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         statusCode_ = b;
         return b;
       } else {
@@ -13054,7 +13054,7 @@ public final class MessageProto {
     }
 
     public static final int STATUSDESC_FIELD_NUMBER = 4;
-    private volatile java.lang.Object statusDesc_;
+    private volatile Object statusDesc_;
     /**
      * <pre>
      * 返回响应提示信息
@@ -13072,14 +13072,14 @@ public final class MessageProto {
      *
      * <code>optional string statusDesc = 4;</code>
      */
-    public java.lang.String getStatusDesc() {
-      java.lang.Object ref = statusDesc_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getStatusDesc() {
+      Object ref = statusDesc_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           statusDesc_ = s;
         }
@@ -13095,11 +13095,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getStatusDescBytes() {
-      java.lang.Object ref = statusDesc_;
-      if (ref instanceof java.lang.String) {
+      Object ref = statusDesc_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         statusDesc_ = b;
         return b;
       } else {
@@ -13108,7 +13108,7 @@ public final class MessageProto {
     }
 
     public static final int REGISTERRESPONSE_FIELD_NUMBER = 5;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse registerResponse_;
+    private RegisterResponse registerResponse_;
     /**
      * <pre>
      *设备注册
@@ -13126,8 +13126,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse getRegisterResponse() {
-      return registerResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.getDefaultInstance() : registerResponse_;
+    public RegisterResponse getRegisterResponse() {
+      return registerResponse_ == null ? RegisterResponse.getDefaultInstance() : registerResponse_;
     }
     /**
      * <pre>
@@ -13136,12 +13136,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponseOrBuilder getRegisterResponseOrBuilder() {
-      return registerResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.getDefaultInstance() : registerResponse_;
+    public RegisterResponseOrBuilder getRegisterResponseOrBuilder() {
+      return registerResponse_ == null ? RegisterResponse.getDefaultInstance() : registerResponse_;
     }
 
     public static final int CTRLDICTATERESPONSE_FIELD_NUMBER = 6;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse ctrlDictateResponse_;
+    private CtrlDictateResponse ctrlDictateResponse_;
     /**
      * <pre>
      *控制指令
@@ -13159,8 +13159,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse getCtrlDictateResponse() {
-      return ctrlDictateResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.getDefaultInstance() : ctrlDictateResponse_;
+    public CtrlDictateResponse getCtrlDictateResponse() {
+      return ctrlDictateResponse_ == null ? CtrlDictateResponse.getDefaultInstance() : ctrlDictateResponse_;
     }
     /**
      * <pre>
@@ -13169,12 +13169,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponseOrBuilder getCtrlDictateResponseOrBuilder() {
-      return ctrlDictateResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.getDefaultInstance() : ctrlDictateResponse_;
+    public CtrlDictateResponseOrBuilder getCtrlDictateResponseOrBuilder() {
+      return ctrlDictateResponse_ == null ? CtrlDictateResponse.getDefaultInstance() : ctrlDictateResponse_;
     }
 
     public static final int DOWNLOADRESPONSE_FIELD_NUMBER = 7;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse downLoadResponse_;
+    private DownLoadResponse downLoadResponse_;
     /**
      * <pre>
      *下载
@@ -13192,8 +13192,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse getDownLoadResponse() {
-      return downLoadResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.getDefaultInstance() : downLoadResponse_;
+    public DownLoadResponse getDownLoadResponse() {
+      return downLoadResponse_ == null ? DownLoadResponse.getDefaultInstance() : downLoadResponse_;
     }
     /**
      * <pre>
@@ -13202,12 +13202,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponseOrBuilder getDownLoadResponseOrBuilder() {
-      return downLoadResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.getDefaultInstance() : downLoadResponse_;
+    public DownLoadResponseOrBuilder getDownLoadResponseOrBuilder() {
+      return downLoadResponse_ == null ? DownLoadResponse.getDefaultInstance() : downLoadResponse_;
     }
 
     public static final int DELETERESPONSE_FIELD_NUMBER = 8;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse deleteResponse_;
+    private DeleteResponse deleteResponse_;
     /**
      * <pre>
      *删除
@@ -13225,8 +13225,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse getDeleteResponse() {
-      return deleteResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.getDefaultInstance() : deleteResponse_;
+    public DeleteResponse getDeleteResponse() {
+      return deleteResponse_ == null ? DeleteResponse.getDefaultInstance() : deleteResponse_;
     }
     /**
      * <pre>
@@ -13235,12 +13235,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponseOrBuilder getDeleteResponseOrBuilder() {
-      return deleteResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.getDefaultInstance() : deleteResponse_;
+    public DeleteResponseOrBuilder getDeleteResponseOrBuilder() {
+      return deleteResponse_ == null ? DeleteResponse.getDefaultInstance() : deleteResponse_;
     }
 
     public static final int RECONNECTRESPONSE_FIELD_NUMBER = 9;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse reConnectResponse_;
+    private ReConnectResponse reConnectResponse_;
     /**
      * <pre>
      *重连响应
@@ -13258,8 +13258,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse getReConnectResponse() {
-      return reConnectResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.getDefaultInstance() : reConnectResponse_;
+    public ReConnectResponse getReConnectResponse() {
+      return reConnectResponse_ == null ? ReConnectResponse.getDefaultInstance() : reConnectResponse_;
     }
     /**
      * <pre>
@@ -13268,12 +13268,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponseOrBuilder getReConnectResponseOrBuilder() {
-      return reConnectResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.getDefaultInstance() : reConnectResponse_;
+    public ReConnectResponseOrBuilder getReConnectResponseOrBuilder() {
+      return reConnectResponse_ == null ? ReConnectResponse.getDefaultInstance() : reConnectResponse_;
     }
 
     public static final int PLAYPROGRESSRESPONSE_FIELD_NUMBER = 10;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse playProgressResponse_;
+    private PlayProgressResponse playProgressResponse_;
     /**
      * <pre>
      *播放进度响应
@@ -13291,8 +13291,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse getPlayProgressResponse() {
-      return playProgressResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.getDefaultInstance() : playProgressResponse_;
+    public PlayProgressResponse getPlayProgressResponse() {
+      return playProgressResponse_ == null ? PlayProgressResponse.getDefaultInstance() : playProgressResponse_;
     }
     /**
      * <pre>
@@ -13301,12 +13301,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponseOrBuilder getPlayProgressResponseOrBuilder() {
-      return playProgressResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.getDefaultInstance() : playProgressResponse_;
+    public PlayProgressResponseOrBuilder getPlayProgressResponseOrBuilder() {
+      return playProgressResponse_ == null ? PlayProgressResponse.getDefaultInstance() : playProgressResponse_;
     }
 
     public static final int CTRLDICTATENOTICE_FIELD_NUMBER = 11;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice ctrlDictateNotice_;
+    private CtrlDictateNotice ctrlDictateNotice_;
     /**
      * <pre>
      *控制指令通知
@@ -13324,8 +13324,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice getCtrlDictateNotice() {
-      return ctrlDictateNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.getDefaultInstance() : ctrlDictateNotice_;
+    public CtrlDictateNotice getCtrlDictateNotice() {
+      return ctrlDictateNotice_ == null ? CtrlDictateNotice.getDefaultInstance() : ctrlDictateNotice_;
     }
     /**
      * <pre>
@@ -13334,12 +13334,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNoticeOrBuilder getCtrlDictateNoticeOrBuilder() {
-      return ctrlDictateNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.getDefaultInstance() : ctrlDictateNotice_;
+    public CtrlDictateNoticeOrBuilder getCtrlDictateNoticeOrBuilder() {
+      return ctrlDictateNotice_ == null ? CtrlDictateNotice.getDefaultInstance() : ctrlDictateNotice_;
     }
 
     public static final int DOWNLOADNOTICE_FIELD_NUMBER = 12;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice downLoadNotice_;
+    private DownLoadNotice downLoadNotice_;
     /**
      * <pre>
      *下载通知
@@ -13357,8 +13357,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice getDownLoadNotice() {
-      return downLoadNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.getDefaultInstance() : downLoadNotice_;
+    public DownLoadNotice getDownLoadNotice() {
+      return downLoadNotice_ == null ? DownLoadNotice.getDefaultInstance() : downLoadNotice_;
     }
     /**
      * <pre>
@@ -13367,12 +13367,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNoticeOrBuilder getDownLoadNoticeOrBuilder() {
-      return downLoadNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.getDefaultInstance() : downLoadNotice_;
+    public DownLoadNoticeOrBuilder getDownLoadNoticeOrBuilder() {
+      return downLoadNotice_ == null ? DownLoadNotice.getDefaultInstance() : downLoadNotice_;
     }
 
     public static final int DELETENOTICE_FIELD_NUMBER = 13;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice deleteNotice_;
+    private DeleteNotice deleteNotice_;
     /**
      * <pre>
      *删除通知
@@ -13390,8 +13390,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice getDeleteNotice() {
-      return deleteNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.getDefaultInstance() : deleteNotice_;
+    public DeleteNotice getDeleteNotice() {
+      return deleteNotice_ == null ? DeleteNotice.getDefaultInstance() : deleteNotice_;
     }
     /**
      * <pre>
@@ -13400,12 +13400,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNoticeOrBuilder getDeleteNoticeOrBuilder() {
-      return deleteNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.getDefaultInstance() : deleteNotice_;
+    public DeleteNoticeOrBuilder getDeleteNoticeOrBuilder() {
+      return deleteNotice_ == null ? DeleteNotice.getDefaultInstance() : deleteNotice_;
     }
 
     public static final int PLAYPROGRESSNOTICE_FIELD_NUMBER = 14;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice playProgressNotice_;
+    private PlayProgressNotice playProgressNotice_;
     /**
      * <pre>
      *播放通知
@@ -13423,8 +13423,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice getPlayProgressNotice() {
-      return playProgressNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.getDefaultInstance() : playProgressNotice_;
+    public PlayProgressNotice getPlayProgressNotice() {
+      return playProgressNotice_ == null ? PlayProgressNotice.getDefaultInstance() : playProgressNotice_;
     }
     /**
      * <pre>
@@ -13433,12 +13433,12 @@ public final class MessageProto {
      *
      * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNoticeOrBuilder getPlayProgressNoticeOrBuilder() {
-      return playProgressNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.getDefaultInstance() : playProgressNotice_;
+    public PlayProgressNoticeOrBuilder getPlayProgressNoticeOrBuilder() {
+      return playProgressNotice_ == null ? PlayProgressNotice.getDefaultInstance() : playProgressNotice_;
     }
 
     public static final int GETPLAYPROGRESSNOTICE_FIELD_NUMBER = 15;
-    private com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice getPlayProgressNotice_;
+    private GetPlayProgressNotice getPlayProgressNotice_;
     /**
      * <pre>
      *获取播放通知
@@ -13456,8 +13456,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice getGetPlayProgressNotice() {
-      return getPlayProgressNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.getDefaultInstance() : getPlayProgressNotice_;
+    public GetPlayProgressNotice getGetPlayProgressNotice() {
+      return getPlayProgressNotice_ == null ? GetPlayProgressNotice.getDefaultInstance() : getPlayProgressNotice_;
     }
     /**
      * <pre>
@@ -13466,8 +13466,8 @@ public final class MessageProto {
      *
      * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNoticeOrBuilder getGetPlayProgressNoticeOrBuilder() {
-      return getPlayProgressNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.getDefaultInstance() : getPlayProgressNotice_;
+    public GetPlayProgressNoticeOrBuilder getGetPlayProgressNoticeOrBuilder() {
+      return getPlayProgressNotice_ == null ? GetPlayProgressNotice.getDefaultInstance() : getPlayProgressNotice_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -13673,15 +13673,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse)) {
+      if (!(obj instanceof MessageResponse)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse) obj;
+      MessageResponse other = (MessageResponse) obj;
 
       boolean result = true;
       result = result && (hasType() == other.hasType());
@@ -13761,7 +13761,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -13833,58 +13833,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseFrom(
+    public static MessageResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseFrom(
+    public static MessageResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseFrom(byte[] data)
+    public static MessageResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseFrom(
+    public static MessageResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseFrom(java.io.InputStream input)
+    public static MessageResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseFrom(
+    public static MessageResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseDelimitedFrom(java.io.InputStream input)
+    public static MessageResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseDelimitedFrom(
+    public static MessageResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseFrom(
+    public static MessageResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parseFrom(
+    public static MessageResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13896,7 +13896,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse prototype) {
+    public static Builder newBuilder(MessageResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -13904,9 +13904,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -13920,17 +13920,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.MessageResponse)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponseOrBuilder {
+        MessageResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageResponse_descriptor;
+        return MessageProto.internal_static_netty_MessageResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageResponse_fieldAccessorTable
+        return MessageProto.internal_static_netty_MessageResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse.Builder.class);
+                MessageResponse.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse.newBuilder()
@@ -13939,7 +13939,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -14040,23 +14040,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_MessageResponse_descriptor;
+        return MessageProto.internal_static_netty_MessageResponse_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse.getDefaultInstance();
+      public MessageResponse getDefaultInstanceForType() {
+        return MessageResponse.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse result = buildPartial();
+      public MessageResponse build() {
+        MessageResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse(this);
+      public MessageResponse buildPartial() {
+        MessageResponse result = new MessageResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -14195,16 +14195,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse)other);
+        if (other instanceof MessageResponse) {
+          return mergeFrom((MessageResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(MessageResponse other) {
+        if (other == MessageResponse.getDefaultInstance()) return this;
         if (other.hasType()) {
           setType(other.getType());
         }
@@ -14328,11 +14328,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse parsedMessage = null;
+        MessageResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse) e.getUnfinishedMessage();
+          parsedMessage = (MessageResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -14361,9 +14361,9 @@ public final class MessageProto {
        *
        * <code>required .netty.Types type = 1;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.Types getType() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.Types result = com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.valueOf(type_);
-        return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.Types.HEARTBEAT : result;
+      public Types getType() {
+        Types result = Types.valueOf(type_);
+        return result == null ? Types.HEARTBEAT : result;
       }
       /**
        * <pre>
@@ -14372,7 +14372,7 @@ public final class MessageProto {
        *
        * <code>required .netty.Types type = 1;</code>
        */
-      public Builder setType(com.sd.vr.ctrl.netty.protobuf.MessageProto.Types value) {
+      public Builder setType(Types value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -14413,9 +14413,9 @@ public final class MessageProto {
        *
        * <code>required .netty.RespStatus status = 2;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus getStatus() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus result = com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus.valueOf(status_);
-        return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus.SUCCESS : result;
+      public RespStatus getStatus() {
+        RespStatus result = RespStatus.valueOf(status_);
+        return result == null ? RespStatus.SUCCESS : result;
       }
       /**
        * <pre>
@@ -14424,7 +14424,7 @@ public final class MessageProto {
        *
        * <code>required .netty.RespStatus status = 2;</code>
        */
-      public Builder setStatus(com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus value) {
+      public Builder setStatus(RespStatus value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -14447,7 +14447,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object statusCode_ = "";
+      private Object statusCode_ = "";
       /**
        * <pre>
        * 返回相应状态码
@@ -14465,18 +14465,18 @@ public final class MessageProto {
        *
        * <code>optional string statusCode = 3;</code>
        */
-      public java.lang.String getStatusCode() {
-        java.lang.Object ref = statusCode_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getStatusCode() {
+        Object ref = statusCode_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             statusCode_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -14488,11 +14488,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getStatusCodeBytes() {
-        java.lang.Object ref = statusCode_;
+        Object ref = statusCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           statusCode_ = b;
           return b;
         } else {
@@ -14507,7 +14507,7 @@ public final class MessageProto {
        * <code>optional string statusCode = 3;</code>
        */
       public Builder setStatusCode(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -14547,7 +14547,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object statusDesc_ = "";
+      private Object statusDesc_ = "";
       /**
        * <pre>
        * 返回响应提示信息
@@ -14565,18 +14565,18 @@ public final class MessageProto {
        *
        * <code>optional string statusDesc = 4;</code>
        */
-      public java.lang.String getStatusDesc() {
-        java.lang.Object ref = statusDesc_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getStatusDesc() {
+        Object ref = statusDesc_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             statusDesc_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -14588,11 +14588,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getStatusDescBytes() {
-        java.lang.Object ref = statusDesc_;
+        Object ref = statusDesc_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           statusDesc_ = b;
           return b;
         } else {
@@ -14607,7 +14607,7 @@ public final class MessageProto {
        * <code>optional string statusDesc = 4;</code>
        */
       public Builder setStatusDesc(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -14647,9 +14647,9 @@ public final class MessageProto {
         return this;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse registerResponse_ = null;
+      private RegisterResponse registerResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponseOrBuilder> registerResponseBuilder_;
+          RegisterResponse, RegisterResponse.Builder, RegisterResponseOrBuilder> registerResponseBuilder_;
       /**
        * <pre>
        *设备注册
@@ -14667,9 +14667,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse getRegisterResponse() {
+      public RegisterResponse getRegisterResponse() {
         if (registerResponseBuilder_ == null) {
-          return registerResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.getDefaultInstance() : registerResponse_;
+          return registerResponse_ == null ? RegisterResponse.getDefaultInstance() : registerResponse_;
         } else {
           return registerResponseBuilder_.getMessage();
         }
@@ -14681,7 +14681,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
        */
-      public Builder setRegisterResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse value) {
+      public Builder setRegisterResponse(RegisterResponse value) {
         if (registerResponseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14702,7 +14702,7 @@ public final class MessageProto {
        * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
        */
       public Builder setRegisterResponse(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.Builder builderForValue) {
+          RegisterResponse.Builder builderForValue) {
         if (registerResponseBuilder_ == null) {
           registerResponse_ = builderForValue.build();
           onChanged();
@@ -14719,13 +14719,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
        */
-      public Builder mergeRegisterResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse value) {
+      public Builder mergeRegisterResponse(RegisterResponse value) {
         if (registerResponseBuilder_ == null) {
           if (((bitField0_ & 0x00000010) == 0x00000010) &&
               registerResponse_ != null &&
-              registerResponse_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.getDefaultInstance()) {
+              registerResponse_ != RegisterResponse.getDefaultInstance()) {
             registerResponse_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.newBuilder(registerResponse_).mergeFrom(value).buildPartial();
+              RegisterResponse.newBuilder(registerResponse_).mergeFrom(value).buildPartial();
           } else {
             registerResponse_ = value;
           }
@@ -14760,7 +14760,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.Builder getRegisterResponseBuilder() {
+      public RegisterResponse.Builder getRegisterResponseBuilder() {
         bitField0_ |= 0x00000010;
         onChanged();
         return getRegisterResponseFieldBuilder().getBuilder();
@@ -14772,12 +14772,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponseOrBuilder getRegisterResponseOrBuilder() {
+      public RegisterResponseOrBuilder getRegisterResponseOrBuilder() {
         if (registerResponseBuilder_ != null) {
           return registerResponseBuilder_.getMessageOrBuilder();
         } else {
           return registerResponse_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.getDefaultInstance() : registerResponse_;
+              RegisterResponse.getDefaultInstance() : registerResponse_;
         }
       }
       /**
@@ -14788,11 +14788,11 @@ public final class MessageProto {
        * <code>optional .netty.RegisterResponse registerResponse = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponseOrBuilder> 
+          RegisterResponse, RegisterResponse.Builder, RegisterResponseOrBuilder>
           getRegisterResponseFieldBuilder() {
         if (registerResponseBuilder_ == null) {
           registerResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponseOrBuilder>(
+              RegisterResponse, RegisterResponse.Builder, RegisterResponseOrBuilder>(
                   getRegisterResponse(),
                   getParentForChildren(),
                   isClean());
@@ -14801,9 +14801,9 @@ public final class MessageProto {
         return registerResponseBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse ctrlDictateResponse_ = null;
+      private CtrlDictateResponse ctrlDictateResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponseOrBuilder> ctrlDictateResponseBuilder_;
+          CtrlDictateResponse, CtrlDictateResponse.Builder, CtrlDictateResponseOrBuilder> ctrlDictateResponseBuilder_;
       /**
        * <pre>
        *控制指令
@@ -14821,9 +14821,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse getCtrlDictateResponse() {
+      public CtrlDictateResponse getCtrlDictateResponse() {
         if (ctrlDictateResponseBuilder_ == null) {
-          return ctrlDictateResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.getDefaultInstance() : ctrlDictateResponse_;
+          return ctrlDictateResponse_ == null ? CtrlDictateResponse.getDefaultInstance() : ctrlDictateResponse_;
         } else {
           return ctrlDictateResponseBuilder_.getMessage();
         }
@@ -14835,7 +14835,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
        */
-      public Builder setCtrlDictateResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse value) {
+      public Builder setCtrlDictateResponse(CtrlDictateResponse value) {
         if (ctrlDictateResponseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14856,7 +14856,7 @@ public final class MessageProto {
        * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
        */
       public Builder setCtrlDictateResponse(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.Builder builderForValue) {
+          CtrlDictateResponse.Builder builderForValue) {
         if (ctrlDictateResponseBuilder_ == null) {
           ctrlDictateResponse_ = builderForValue.build();
           onChanged();
@@ -14873,13 +14873,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
        */
-      public Builder mergeCtrlDictateResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse value) {
+      public Builder mergeCtrlDictateResponse(CtrlDictateResponse value) {
         if (ctrlDictateResponseBuilder_ == null) {
           if (((bitField0_ & 0x00000020) == 0x00000020) &&
               ctrlDictateResponse_ != null &&
-              ctrlDictateResponse_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.getDefaultInstance()) {
+              ctrlDictateResponse_ != CtrlDictateResponse.getDefaultInstance()) {
             ctrlDictateResponse_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.newBuilder(ctrlDictateResponse_).mergeFrom(value).buildPartial();
+              CtrlDictateResponse.newBuilder(ctrlDictateResponse_).mergeFrom(value).buildPartial();
           } else {
             ctrlDictateResponse_ = value;
           }
@@ -14914,7 +14914,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.Builder getCtrlDictateResponseBuilder() {
+      public CtrlDictateResponse.Builder getCtrlDictateResponseBuilder() {
         bitField0_ |= 0x00000020;
         onChanged();
         return getCtrlDictateResponseFieldBuilder().getBuilder();
@@ -14926,12 +14926,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponseOrBuilder getCtrlDictateResponseOrBuilder() {
+      public CtrlDictateResponseOrBuilder getCtrlDictateResponseOrBuilder() {
         if (ctrlDictateResponseBuilder_ != null) {
           return ctrlDictateResponseBuilder_.getMessageOrBuilder();
         } else {
           return ctrlDictateResponse_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.getDefaultInstance() : ctrlDictateResponse_;
+              CtrlDictateResponse.getDefaultInstance() : ctrlDictateResponse_;
         }
       }
       /**
@@ -14942,11 +14942,11 @@ public final class MessageProto {
        * <code>optional .netty.CtrlDictateResponse ctrlDictateResponse = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponseOrBuilder> 
+          CtrlDictateResponse, CtrlDictateResponse.Builder, CtrlDictateResponseOrBuilder>
           getCtrlDictateResponseFieldBuilder() {
         if (ctrlDictateResponseBuilder_ == null) {
           ctrlDictateResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponseOrBuilder>(
+              CtrlDictateResponse, CtrlDictateResponse.Builder, CtrlDictateResponseOrBuilder>(
                   getCtrlDictateResponse(),
                   getParentForChildren(),
                   isClean());
@@ -14955,9 +14955,9 @@ public final class MessageProto {
         return ctrlDictateResponseBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse downLoadResponse_ = null;
+      private DownLoadResponse downLoadResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponseOrBuilder> downLoadResponseBuilder_;
+          DownLoadResponse, DownLoadResponse.Builder, DownLoadResponseOrBuilder> downLoadResponseBuilder_;
       /**
        * <pre>
        *下载
@@ -14975,9 +14975,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse getDownLoadResponse() {
+      public DownLoadResponse getDownLoadResponse() {
         if (downLoadResponseBuilder_ == null) {
-          return downLoadResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.getDefaultInstance() : downLoadResponse_;
+          return downLoadResponse_ == null ? DownLoadResponse.getDefaultInstance() : downLoadResponse_;
         } else {
           return downLoadResponseBuilder_.getMessage();
         }
@@ -14989,7 +14989,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
        */
-      public Builder setDownLoadResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse value) {
+      public Builder setDownLoadResponse(DownLoadResponse value) {
         if (downLoadResponseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15010,7 +15010,7 @@ public final class MessageProto {
        * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
        */
       public Builder setDownLoadResponse(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.Builder builderForValue) {
+          DownLoadResponse.Builder builderForValue) {
         if (downLoadResponseBuilder_ == null) {
           downLoadResponse_ = builderForValue.build();
           onChanged();
@@ -15027,13 +15027,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
        */
-      public Builder mergeDownLoadResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse value) {
+      public Builder mergeDownLoadResponse(DownLoadResponse value) {
         if (downLoadResponseBuilder_ == null) {
           if (((bitField0_ & 0x00000040) == 0x00000040) &&
               downLoadResponse_ != null &&
-              downLoadResponse_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.getDefaultInstance()) {
+              downLoadResponse_ != DownLoadResponse.getDefaultInstance()) {
             downLoadResponse_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.newBuilder(downLoadResponse_).mergeFrom(value).buildPartial();
+              DownLoadResponse.newBuilder(downLoadResponse_).mergeFrom(value).buildPartial();
           } else {
             downLoadResponse_ = value;
           }
@@ -15068,7 +15068,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.Builder getDownLoadResponseBuilder() {
+      public DownLoadResponse.Builder getDownLoadResponseBuilder() {
         bitField0_ |= 0x00000040;
         onChanged();
         return getDownLoadResponseFieldBuilder().getBuilder();
@@ -15080,12 +15080,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponseOrBuilder getDownLoadResponseOrBuilder() {
+      public DownLoadResponseOrBuilder getDownLoadResponseOrBuilder() {
         if (downLoadResponseBuilder_ != null) {
           return downLoadResponseBuilder_.getMessageOrBuilder();
         } else {
           return downLoadResponse_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.getDefaultInstance() : downLoadResponse_;
+              DownLoadResponse.getDefaultInstance() : downLoadResponse_;
         }
       }
       /**
@@ -15096,11 +15096,11 @@ public final class MessageProto {
        * <code>optional .netty.DownLoadResponse downLoadResponse = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponseOrBuilder> 
+          DownLoadResponse, DownLoadResponse.Builder, DownLoadResponseOrBuilder>
           getDownLoadResponseFieldBuilder() {
         if (downLoadResponseBuilder_ == null) {
           downLoadResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponseOrBuilder>(
+              DownLoadResponse, DownLoadResponse.Builder, DownLoadResponseOrBuilder>(
                   getDownLoadResponse(),
                   getParentForChildren(),
                   isClean());
@@ -15109,9 +15109,9 @@ public final class MessageProto {
         return downLoadResponseBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse deleteResponse_ = null;
+      private DeleteResponse deleteResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponseOrBuilder> deleteResponseBuilder_;
+          DeleteResponse, DeleteResponse.Builder, DeleteResponseOrBuilder> deleteResponseBuilder_;
       /**
        * <pre>
        *删除
@@ -15129,9 +15129,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse getDeleteResponse() {
+      public DeleteResponse getDeleteResponse() {
         if (deleteResponseBuilder_ == null) {
-          return deleteResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.getDefaultInstance() : deleteResponse_;
+          return deleteResponse_ == null ? DeleteResponse.getDefaultInstance() : deleteResponse_;
         } else {
           return deleteResponseBuilder_.getMessage();
         }
@@ -15143,7 +15143,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
        */
-      public Builder setDeleteResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse value) {
+      public Builder setDeleteResponse(DeleteResponse value) {
         if (deleteResponseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15164,7 +15164,7 @@ public final class MessageProto {
        * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
        */
       public Builder setDeleteResponse(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.Builder builderForValue) {
+          DeleteResponse.Builder builderForValue) {
         if (deleteResponseBuilder_ == null) {
           deleteResponse_ = builderForValue.build();
           onChanged();
@@ -15181,13 +15181,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
        */
-      public Builder mergeDeleteResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse value) {
+      public Builder mergeDeleteResponse(DeleteResponse value) {
         if (deleteResponseBuilder_ == null) {
           if (((bitField0_ & 0x00000080) == 0x00000080) &&
               deleteResponse_ != null &&
-              deleteResponse_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.getDefaultInstance()) {
+              deleteResponse_ != DeleteResponse.getDefaultInstance()) {
             deleteResponse_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.newBuilder(deleteResponse_).mergeFrom(value).buildPartial();
+              DeleteResponse.newBuilder(deleteResponse_).mergeFrom(value).buildPartial();
           } else {
             deleteResponse_ = value;
           }
@@ -15222,7 +15222,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.Builder getDeleteResponseBuilder() {
+      public DeleteResponse.Builder getDeleteResponseBuilder() {
         bitField0_ |= 0x00000080;
         onChanged();
         return getDeleteResponseFieldBuilder().getBuilder();
@@ -15234,12 +15234,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponseOrBuilder getDeleteResponseOrBuilder() {
+      public DeleteResponseOrBuilder getDeleteResponseOrBuilder() {
         if (deleteResponseBuilder_ != null) {
           return deleteResponseBuilder_.getMessageOrBuilder();
         } else {
           return deleteResponse_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.getDefaultInstance() : deleteResponse_;
+              DeleteResponse.getDefaultInstance() : deleteResponse_;
         }
       }
       /**
@@ -15250,11 +15250,11 @@ public final class MessageProto {
        * <code>optional .netty.DeleteResponse deleteResponse = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponseOrBuilder> 
+          DeleteResponse, DeleteResponse.Builder, DeleteResponseOrBuilder>
           getDeleteResponseFieldBuilder() {
         if (deleteResponseBuilder_ == null) {
           deleteResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponseOrBuilder>(
+              DeleteResponse, DeleteResponse.Builder, DeleteResponseOrBuilder>(
                   getDeleteResponse(),
                   getParentForChildren(),
                   isClean());
@@ -15263,9 +15263,9 @@ public final class MessageProto {
         return deleteResponseBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse reConnectResponse_ = null;
+      private ReConnectResponse reConnectResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponseOrBuilder> reConnectResponseBuilder_;
+          ReConnectResponse, ReConnectResponse.Builder, ReConnectResponseOrBuilder> reConnectResponseBuilder_;
       /**
        * <pre>
        *重连响应
@@ -15283,9 +15283,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse getReConnectResponse() {
+      public ReConnectResponse getReConnectResponse() {
         if (reConnectResponseBuilder_ == null) {
-          return reConnectResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.getDefaultInstance() : reConnectResponse_;
+          return reConnectResponse_ == null ? ReConnectResponse.getDefaultInstance() : reConnectResponse_;
         } else {
           return reConnectResponseBuilder_.getMessage();
         }
@@ -15297,7 +15297,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
        */
-      public Builder setReConnectResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse value) {
+      public Builder setReConnectResponse(ReConnectResponse value) {
         if (reConnectResponseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15318,7 +15318,7 @@ public final class MessageProto {
        * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
        */
       public Builder setReConnectResponse(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.Builder builderForValue) {
+          ReConnectResponse.Builder builderForValue) {
         if (reConnectResponseBuilder_ == null) {
           reConnectResponse_ = builderForValue.build();
           onChanged();
@@ -15335,13 +15335,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
        */
-      public Builder mergeReConnectResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse value) {
+      public Builder mergeReConnectResponse(ReConnectResponse value) {
         if (reConnectResponseBuilder_ == null) {
           if (((bitField0_ & 0x00000100) == 0x00000100) &&
               reConnectResponse_ != null &&
-              reConnectResponse_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.getDefaultInstance()) {
+              reConnectResponse_ != ReConnectResponse.getDefaultInstance()) {
             reConnectResponse_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.newBuilder(reConnectResponse_).mergeFrom(value).buildPartial();
+              ReConnectResponse.newBuilder(reConnectResponse_).mergeFrom(value).buildPartial();
           } else {
             reConnectResponse_ = value;
           }
@@ -15376,7 +15376,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.Builder getReConnectResponseBuilder() {
+      public ReConnectResponse.Builder getReConnectResponseBuilder() {
         bitField0_ |= 0x00000100;
         onChanged();
         return getReConnectResponseFieldBuilder().getBuilder();
@@ -15388,12 +15388,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponseOrBuilder getReConnectResponseOrBuilder() {
+      public ReConnectResponseOrBuilder getReConnectResponseOrBuilder() {
         if (reConnectResponseBuilder_ != null) {
           return reConnectResponseBuilder_.getMessageOrBuilder();
         } else {
           return reConnectResponse_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.getDefaultInstance() : reConnectResponse_;
+              ReConnectResponse.getDefaultInstance() : reConnectResponse_;
         }
       }
       /**
@@ -15404,11 +15404,11 @@ public final class MessageProto {
        * <code>optional .netty.ReConnectResponse reConnectResponse = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponseOrBuilder> 
+          ReConnectResponse, ReConnectResponse.Builder, ReConnectResponseOrBuilder>
           getReConnectResponseFieldBuilder() {
         if (reConnectResponseBuilder_ == null) {
           reConnectResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponseOrBuilder>(
+              ReConnectResponse, ReConnectResponse.Builder, ReConnectResponseOrBuilder>(
                   getReConnectResponse(),
                   getParentForChildren(),
                   isClean());
@@ -15417,9 +15417,9 @@ public final class MessageProto {
         return reConnectResponseBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse playProgressResponse_ = null;
+      private PlayProgressResponse playProgressResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponseOrBuilder> playProgressResponseBuilder_;
+          PlayProgressResponse, PlayProgressResponse.Builder, PlayProgressResponseOrBuilder> playProgressResponseBuilder_;
       /**
        * <pre>
        *播放进度响应
@@ -15437,9 +15437,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse getPlayProgressResponse() {
+      public PlayProgressResponse getPlayProgressResponse() {
         if (playProgressResponseBuilder_ == null) {
-          return playProgressResponse_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.getDefaultInstance() : playProgressResponse_;
+          return playProgressResponse_ == null ? PlayProgressResponse.getDefaultInstance() : playProgressResponse_;
         } else {
           return playProgressResponseBuilder_.getMessage();
         }
@@ -15451,7 +15451,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
        */
-      public Builder setPlayProgressResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse value) {
+      public Builder setPlayProgressResponse(PlayProgressResponse value) {
         if (playProgressResponseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15472,7 +15472,7 @@ public final class MessageProto {
        * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
        */
       public Builder setPlayProgressResponse(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.Builder builderForValue) {
+          PlayProgressResponse.Builder builderForValue) {
         if (playProgressResponseBuilder_ == null) {
           playProgressResponse_ = builderForValue.build();
           onChanged();
@@ -15489,13 +15489,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
        */
-      public Builder mergePlayProgressResponse(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse value) {
+      public Builder mergePlayProgressResponse(PlayProgressResponse value) {
         if (playProgressResponseBuilder_ == null) {
           if (((bitField0_ & 0x00000200) == 0x00000200) &&
               playProgressResponse_ != null &&
-              playProgressResponse_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.getDefaultInstance()) {
+              playProgressResponse_ != PlayProgressResponse.getDefaultInstance()) {
             playProgressResponse_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.newBuilder(playProgressResponse_).mergeFrom(value).buildPartial();
+              PlayProgressResponse.newBuilder(playProgressResponse_).mergeFrom(value).buildPartial();
           } else {
             playProgressResponse_ = value;
           }
@@ -15530,7 +15530,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.Builder getPlayProgressResponseBuilder() {
+      public PlayProgressResponse.Builder getPlayProgressResponseBuilder() {
         bitField0_ |= 0x00000200;
         onChanged();
         return getPlayProgressResponseFieldBuilder().getBuilder();
@@ -15542,12 +15542,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponseOrBuilder getPlayProgressResponseOrBuilder() {
+      public PlayProgressResponseOrBuilder getPlayProgressResponseOrBuilder() {
         if (playProgressResponseBuilder_ != null) {
           return playProgressResponseBuilder_.getMessageOrBuilder();
         } else {
           return playProgressResponse_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.getDefaultInstance() : playProgressResponse_;
+              PlayProgressResponse.getDefaultInstance() : playProgressResponse_;
         }
       }
       /**
@@ -15558,11 +15558,11 @@ public final class MessageProto {
        * <code>optional .netty.PlayProgressResponse playProgressResponse = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponseOrBuilder> 
+          PlayProgressResponse, PlayProgressResponse.Builder, PlayProgressResponseOrBuilder>
           getPlayProgressResponseFieldBuilder() {
         if (playProgressResponseBuilder_ == null) {
           playProgressResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponseOrBuilder>(
+              PlayProgressResponse, PlayProgressResponse.Builder, PlayProgressResponseOrBuilder>(
                   getPlayProgressResponse(),
                   getParentForChildren(),
                   isClean());
@@ -15571,9 +15571,9 @@ public final class MessageProto {
         return playProgressResponseBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice ctrlDictateNotice_ = null;
+      private CtrlDictateNotice ctrlDictateNotice_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNoticeOrBuilder> ctrlDictateNoticeBuilder_;
+          CtrlDictateNotice, CtrlDictateNotice.Builder, CtrlDictateNoticeOrBuilder> ctrlDictateNoticeBuilder_;
       /**
        * <pre>
        *控制指令通知
@@ -15591,9 +15591,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice getCtrlDictateNotice() {
+      public CtrlDictateNotice getCtrlDictateNotice() {
         if (ctrlDictateNoticeBuilder_ == null) {
-          return ctrlDictateNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.getDefaultInstance() : ctrlDictateNotice_;
+          return ctrlDictateNotice_ == null ? CtrlDictateNotice.getDefaultInstance() : ctrlDictateNotice_;
         } else {
           return ctrlDictateNoticeBuilder_.getMessage();
         }
@@ -15605,7 +15605,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
        */
-      public Builder setCtrlDictateNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice value) {
+      public Builder setCtrlDictateNotice(CtrlDictateNotice value) {
         if (ctrlDictateNoticeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15626,7 +15626,7 @@ public final class MessageProto {
        * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
        */
       public Builder setCtrlDictateNotice(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.Builder builderForValue) {
+          CtrlDictateNotice.Builder builderForValue) {
         if (ctrlDictateNoticeBuilder_ == null) {
           ctrlDictateNotice_ = builderForValue.build();
           onChanged();
@@ -15643,13 +15643,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
        */
-      public Builder mergeCtrlDictateNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice value) {
+      public Builder mergeCtrlDictateNotice(CtrlDictateNotice value) {
         if (ctrlDictateNoticeBuilder_ == null) {
           if (((bitField0_ & 0x00000400) == 0x00000400) &&
               ctrlDictateNotice_ != null &&
-              ctrlDictateNotice_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.getDefaultInstance()) {
+              ctrlDictateNotice_ != CtrlDictateNotice.getDefaultInstance()) {
             ctrlDictateNotice_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.newBuilder(ctrlDictateNotice_).mergeFrom(value).buildPartial();
+              CtrlDictateNotice.newBuilder(ctrlDictateNotice_).mergeFrom(value).buildPartial();
           } else {
             ctrlDictateNotice_ = value;
           }
@@ -15684,7 +15684,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.Builder getCtrlDictateNoticeBuilder() {
+      public CtrlDictateNotice.Builder getCtrlDictateNoticeBuilder() {
         bitField0_ |= 0x00000400;
         onChanged();
         return getCtrlDictateNoticeFieldBuilder().getBuilder();
@@ -15696,12 +15696,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNoticeOrBuilder getCtrlDictateNoticeOrBuilder() {
+      public CtrlDictateNoticeOrBuilder getCtrlDictateNoticeOrBuilder() {
         if (ctrlDictateNoticeBuilder_ != null) {
           return ctrlDictateNoticeBuilder_.getMessageOrBuilder();
         } else {
           return ctrlDictateNotice_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.getDefaultInstance() : ctrlDictateNotice_;
+              CtrlDictateNotice.getDefaultInstance() : ctrlDictateNotice_;
         }
       }
       /**
@@ -15712,11 +15712,11 @@ public final class MessageProto {
        * <code>optional .netty.CtrlDictateNotice ctrlDictateNotice = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNoticeOrBuilder> 
+          CtrlDictateNotice, CtrlDictateNotice.Builder, CtrlDictateNoticeOrBuilder>
           getCtrlDictateNoticeFieldBuilder() {
         if (ctrlDictateNoticeBuilder_ == null) {
           ctrlDictateNoticeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNoticeOrBuilder>(
+              CtrlDictateNotice, CtrlDictateNotice.Builder, CtrlDictateNoticeOrBuilder>(
                   getCtrlDictateNotice(),
                   getParentForChildren(),
                   isClean());
@@ -15725,9 +15725,9 @@ public final class MessageProto {
         return ctrlDictateNoticeBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice downLoadNotice_ = null;
+      private DownLoadNotice downLoadNotice_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNoticeOrBuilder> downLoadNoticeBuilder_;
+          DownLoadNotice, DownLoadNotice.Builder, DownLoadNoticeOrBuilder> downLoadNoticeBuilder_;
       /**
        * <pre>
        *下载通知
@@ -15745,9 +15745,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice getDownLoadNotice() {
+      public DownLoadNotice getDownLoadNotice() {
         if (downLoadNoticeBuilder_ == null) {
-          return downLoadNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.getDefaultInstance() : downLoadNotice_;
+          return downLoadNotice_ == null ? DownLoadNotice.getDefaultInstance() : downLoadNotice_;
         } else {
           return downLoadNoticeBuilder_.getMessage();
         }
@@ -15759,7 +15759,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
        */
-      public Builder setDownLoadNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice value) {
+      public Builder setDownLoadNotice(DownLoadNotice value) {
         if (downLoadNoticeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15780,7 +15780,7 @@ public final class MessageProto {
        * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
        */
       public Builder setDownLoadNotice(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.Builder builderForValue) {
+          DownLoadNotice.Builder builderForValue) {
         if (downLoadNoticeBuilder_ == null) {
           downLoadNotice_ = builderForValue.build();
           onChanged();
@@ -15797,13 +15797,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
        */
-      public Builder mergeDownLoadNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice value) {
+      public Builder mergeDownLoadNotice(DownLoadNotice value) {
         if (downLoadNoticeBuilder_ == null) {
           if (((bitField0_ & 0x00000800) == 0x00000800) &&
               downLoadNotice_ != null &&
-              downLoadNotice_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.getDefaultInstance()) {
+              downLoadNotice_ != DownLoadNotice.getDefaultInstance()) {
             downLoadNotice_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.newBuilder(downLoadNotice_).mergeFrom(value).buildPartial();
+              DownLoadNotice.newBuilder(downLoadNotice_).mergeFrom(value).buildPartial();
           } else {
             downLoadNotice_ = value;
           }
@@ -15838,7 +15838,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.Builder getDownLoadNoticeBuilder() {
+      public DownLoadNotice.Builder getDownLoadNoticeBuilder() {
         bitField0_ |= 0x00000800;
         onChanged();
         return getDownLoadNoticeFieldBuilder().getBuilder();
@@ -15850,12 +15850,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNoticeOrBuilder getDownLoadNoticeOrBuilder() {
+      public DownLoadNoticeOrBuilder getDownLoadNoticeOrBuilder() {
         if (downLoadNoticeBuilder_ != null) {
           return downLoadNoticeBuilder_.getMessageOrBuilder();
         } else {
           return downLoadNotice_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.getDefaultInstance() : downLoadNotice_;
+              DownLoadNotice.getDefaultInstance() : downLoadNotice_;
         }
       }
       /**
@@ -15866,11 +15866,11 @@ public final class MessageProto {
        * <code>optional .netty.DownLoadNotice downLoadNotice = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNoticeOrBuilder> 
+          DownLoadNotice, DownLoadNotice.Builder, DownLoadNoticeOrBuilder>
           getDownLoadNoticeFieldBuilder() {
         if (downLoadNoticeBuilder_ == null) {
           downLoadNoticeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNoticeOrBuilder>(
+              DownLoadNotice, DownLoadNotice.Builder, DownLoadNoticeOrBuilder>(
                   getDownLoadNotice(),
                   getParentForChildren(),
                   isClean());
@@ -15879,9 +15879,9 @@ public final class MessageProto {
         return downLoadNoticeBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice deleteNotice_ = null;
+      private DeleteNotice deleteNotice_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNoticeOrBuilder> deleteNoticeBuilder_;
+          DeleteNotice, DeleteNotice.Builder, DeleteNoticeOrBuilder> deleteNoticeBuilder_;
       /**
        * <pre>
        *删除通知
@@ -15899,9 +15899,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice getDeleteNotice() {
+      public DeleteNotice getDeleteNotice() {
         if (deleteNoticeBuilder_ == null) {
-          return deleteNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.getDefaultInstance() : deleteNotice_;
+          return deleteNotice_ == null ? DeleteNotice.getDefaultInstance() : deleteNotice_;
         } else {
           return deleteNoticeBuilder_.getMessage();
         }
@@ -15913,7 +15913,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
        */
-      public Builder setDeleteNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice value) {
+      public Builder setDeleteNotice(DeleteNotice value) {
         if (deleteNoticeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15934,7 +15934,7 @@ public final class MessageProto {
        * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
        */
       public Builder setDeleteNotice(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.Builder builderForValue) {
+          DeleteNotice.Builder builderForValue) {
         if (deleteNoticeBuilder_ == null) {
           deleteNotice_ = builderForValue.build();
           onChanged();
@@ -15951,13 +15951,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
        */
-      public Builder mergeDeleteNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice value) {
+      public Builder mergeDeleteNotice(DeleteNotice value) {
         if (deleteNoticeBuilder_ == null) {
           if (((bitField0_ & 0x00001000) == 0x00001000) &&
               deleteNotice_ != null &&
-              deleteNotice_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.getDefaultInstance()) {
+              deleteNotice_ != DeleteNotice.getDefaultInstance()) {
             deleteNotice_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.newBuilder(deleteNotice_).mergeFrom(value).buildPartial();
+              DeleteNotice.newBuilder(deleteNotice_).mergeFrom(value).buildPartial();
           } else {
             deleteNotice_ = value;
           }
@@ -15992,7 +15992,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.Builder getDeleteNoticeBuilder() {
+      public DeleteNotice.Builder getDeleteNoticeBuilder() {
         bitField0_ |= 0x00001000;
         onChanged();
         return getDeleteNoticeFieldBuilder().getBuilder();
@@ -16004,12 +16004,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNoticeOrBuilder getDeleteNoticeOrBuilder() {
+      public DeleteNoticeOrBuilder getDeleteNoticeOrBuilder() {
         if (deleteNoticeBuilder_ != null) {
           return deleteNoticeBuilder_.getMessageOrBuilder();
         } else {
           return deleteNotice_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.getDefaultInstance() : deleteNotice_;
+              DeleteNotice.getDefaultInstance() : deleteNotice_;
         }
       }
       /**
@@ -16020,11 +16020,11 @@ public final class MessageProto {
        * <code>optional .netty.DeleteNotice deleteNotice = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNoticeOrBuilder> 
+          DeleteNotice, DeleteNotice.Builder, DeleteNoticeOrBuilder>
           getDeleteNoticeFieldBuilder() {
         if (deleteNoticeBuilder_ == null) {
           deleteNoticeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNoticeOrBuilder>(
+              DeleteNotice, DeleteNotice.Builder, DeleteNoticeOrBuilder>(
                   getDeleteNotice(),
                   getParentForChildren(),
                   isClean());
@@ -16033,9 +16033,9 @@ public final class MessageProto {
         return deleteNoticeBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice playProgressNotice_ = null;
+      private PlayProgressNotice playProgressNotice_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNoticeOrBuilder> playProgressNoticeBuilder_;
+          PlayProgressNotice, PlayProgressNotice.Builder, PlayProgressNoticeOrBuilder> playProgressNoticeBuilder_;
       /**
        * <pre>
        *播放通知
@@ -16053,9 +16053,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice getPlayProgressNotice() {
+      public PlayProgressNotice getPlayProgressNotice() {
         if (playProgressNoticeBuilder_ == null) {
-          return playProgressNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.getDefaultInstance() : playProgressNotice_;
+          return playProgressNotice_ == null ? PlayProgressNotice.getDefaultInstance() : playProgressNotice_;
         } else {
           return playProgressNoticeBuilder_.getMessage();
         }
@@ -16067,7 +16067,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
        */
-      public Builder setPlayProgressNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice value) {
+      public Builder setPlayProgressNotice(PlayProgressNotice value) {
         if (playProgressNoticeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16088,7 +16088,7 @@ public final class MessageProto {
        * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
        */
       public Builder setPlayProgressNotice(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.Builder builderForValue) {
+          PlayProgressNotice.Builder builderForValue) {
         if (playProgressNoticeBuilder_ == null) {
           playProgressNotice_ = builderForValue.build();
           onChanged();
@@ -16105,13 +16105,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
        */
-      public Builder mergePlayProgressNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice value) {
+      public Builder mergePlayProgressNotice(PlayProgressNotice value) {
         if (playProgressNoticeBuilder_ == null) {
           if (((bitField0_ & 0x00002000) == 0x00002000) &&
               playProgressNotice_ != null &&
-              playProgressNotice_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.getDefaultInstance()) {
+              playProgressNotice_ != PlayProgressNotice.getDefaultInstance()) {
             playProgressNotice_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.newBuilder(playProgressNotice_).mergeFrom(value).buildPartial();
+              PlayProgressNotice.newBuilder(playProgressNotice_).mergeFrom(value).buildPartial();
           } else {
             playProgressNotice_ = value;
           }
@@ -16146,7 +16146,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.Builder getPlayProgressNoticeBuilder() {
+      public PlayProgressNotice.Builder getPlayProgressNoticeBuilder() {
         bitField0_ |= 0x00002000;
         onChanged();
         return getPlayProgressNoticeFieldBuilder().getBuilder();
@@ -16158,12 +16158,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNoticeOrBuilder getPlayProgressNoticeOrBuilder() {
+      public PlayProgressNoticeOrBuilder getPlayProgressNoticeOrBuilder() {
         if (playProgressNoticeBuilder_ != null) {
           return playProgressNoticeBuilder_.getMessageOrBuilder();
         } else {
           return playProgressNotice_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.getDefaultInstance() : playProgressNotice_;
+              PlayProgressNotice.getDefaultInstance() : playProgressNotice_;
         }
       }
       /**
@@ -16174,11 +16174,11 @@ public final class MessageProto {
        * <code>optional .netty.PlayProgressNotice playProgressNotice = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNoticeOrBuilder> 
+          PlayProgressNotice, PlayProgressNotice.Builder, PlayProgressNoticeOrBuilder>
           getPlayProgressNoticeFieldBuilder() {
         if (playProgressNoticeBuilder_ == null) {
           playProgressNoticeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNoticeOrBuilder>(
+              PlayProgressNotice, PlayProgressNotice.Builder, PlayProgressNoticeOrBuilder>(
                   getPlayProgressNotice(),
                   getParentForChildren(),
                   isClean());
@@ -16187,9 +16187,9 @@ public final class MessageProto {
         return playProgressNoticeBuilder_;
       }
 
-      private com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice getPlayProgressNotice_ = null;
+      private GetPlayProgressNotice getPlayProgressNotice_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNoticeOrBuilder> getPlayProgressNoticeBuilder_;
+          GetPlayProgressNotice, GetPlayProgressNotice.Builder, GetPlayProgressNoticeOrBuilder> getPlayProgressNoticeBuilder_;
       /**
        * <pre>
        *获取播放通知
@@ -16207,9 +16207,9 @@ public final class MessageProto {
        *
        * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice getGetPlayProgressNotice() {
+      public GetPlayProgressNotice getGetPlayProgressNotice() {
         if (getPlayProgressNoticeBuilder_ == null) {
-          return getPlayProgressNotice_ == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.getDefaultInstance() : getPlayProgressNotice_;
+          return getPlayProgressNotice_ == null ? GetPlayProgressNotice.getDefaultInstance() : getPlayProgressNotice_;
         } else {
           return getPlayProgressNoticeBuilder_.getMessage();
         }
@@ -16221,7 +16221,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
        */
-      public Builder setGetPlayProgressNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice value) {
+      public Builder setGetPlayProgressNotice(GetPlayProgressNotice value) {
         if (getPlayProgressNoticeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16242,7 +16242,7 @@ public final class MessageProto {
        * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
        */
       public Builder setGetPlayProgressNotice(
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.Builder builderForValue) {
+          GetPlayProgressNotice.Builder builderForValue) {
         if (getPlayProgressNoticeBuilder_ == null) {
           getPlayProgressNotice_ = builderForValue.build();
           onChanged();
@@ -16259,13 +16259,13 @@ public final class MessageProto {
        *
        * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
        */
-      public Builder mergeGetPlayProgressNotice(com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice value) {
+      public Builder mergeGetPlayProgressNotice(GetPlayProgressNotice value) {
         if (getPlayProgressNoticeBuilder_ == null) {
           if (((bitField0_ & 0x00004000) == 0x00004000) &&
               getPlayProgressNotice_ != null &&
-              getPlayProgressNotice_ != com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.getDefaultInstance()) {
+              getPlayProgressNotice_ != GetPlayProgressNotice.getDefaultInstance()) {
             getPlayProgressNotice_ =
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.newBuilder(getPlayProgressNotice_).mergeFrom(value).buildPartial();
+              GetPlayProgressNotice.newBuilder(getPlayProgressNotice_).mergeFrom(value).buildPartial();
           } else {
             getPlayProgressNotice_ = value;
           }
@@ -16300,7 +16300,7 @@ public final class MessageProto {
        *
        * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.Builder getGetPlayProgressNoticeBuilder() {
+      public GetPlayProgressNotice.Builder getGetPlayProgressNoticeBuilder() {
         bitField0_ |= 0x00004000;
         onChanged();
         return getGetPlayProgressNoticeFieldBuilder().getBuilder();
@@ -16312,12 +16312,12 @@ public final class MessageProto {
        *
        * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNoticeOrBuilder getGetPlayProgressNoticeOrBuilder() {
+      public GetPlayProgressNoticeOrBuilder getGetPlayProgressNoticeOrBuilder() {
         if (getPlayProgressNoticeBuilder_ != null) {
           return getPlayProgressNoticeBuilder_.getMessageOrBuilder();
         } else {
           return getPlayProgressNotice_ == null ?
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.getDefaultInstance() : getPlayProgressNotice_;
+              GetPlayProgressNotice.getDefaultInstance() : getPlayProgressNotice_;
         }
       }
       /**
@@ -16328,11 +16328,11 @@ public final class MessageProto {
        * <code>optional .netty.GetPlayProgressNotice getPlayProgressNotice = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNoticeOrBuilder> 
+          GetPlayProgressNotice, GetPlayProgressNotice.Builder, GetPlayProgressNoticeOrBuilder>
           getGetPlayProgressNoticeFieldBuilder() {
         if (getPlayProgressNoticeBuilder_ == null) {
           getPlayProgressNoticeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice, com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.Builder, com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNoticeOrBuilder>(
+              GetPlayProgressNotice, GetPlayProgressNotice.Builder, GetPlayProgressNoticeOrBuilder>(
                   getGetPlayProgressNotice(),
                   getParentForChildren(),
                   isClean());
@@ -16355,16 +16355,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.MessageResponse)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse DEFAULT_INSTANCE;
+    private static final MessageResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse();
+      DEFAULT_INSTANCE = new MessageResponse();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse getDefaultInstance() {
+    public static MessageResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MessageResponse>
+    @Deprecated public static final com.google.protobuf.Parser<MessageResponse>
         PARSER = new com.google.protobuf.AbstractParser<MessageResponse>() {
       public MessageResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -16378,12 +16378,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<MessageResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse getDefaultInstanceForType() {
+    public MessageResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16408,7 +16408,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件类型Id
@@ -16434,7 +16434,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -16465,7 +16465,7 @@ public final class MessageProto {
       equipmentId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -16519,19 +16519,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterResponse_descriptor;
+      return MessageProto.internal_static_netty_RegisterResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterResponse_fieldAccessorTable
+      return MessageProto.internal_static_netty_RegisterResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.Builder.class);
+              RegisterResponse.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件类型Id
@@ -16549,14 +16549,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -16572,11 +16572,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -16585,7 +16585,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -16603,14 +16603,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -16626,11 +16626,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -16684,15 +16684,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse)) {
+      if (!(obj instanceof RegisterResponse)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse) obj;
+      RegisterResponse other = (RegisterResponse) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -16709,7 +16709,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -16729,58 +16729,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseFrom(
+    public static RegisterResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseFrom(
+    public static RegisterResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseFrom(byte[] data)
+    public static RegisterResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseFrom(
+    public static RegisterResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseFrom(java.io.InputStream input)
+    public static RegisterResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseFrom(
+    public static RegisterResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseDelimitedFrom(java.io.InputStream input)
+    public static RegisterResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseDelimitedFrom(
+    public static RegisterResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseFrom(
+    public static RegisterResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parseFrom(
+    public static RegisterResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16792,7 +16792,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse prototype) {
+    public static Builder newBuilder(RegisterResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -16800,9 +16800,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -16816,17 +16816,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.RegisterResponse)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponseOrBuilder {
+        RegisterResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterResponse_descriptor;
+        return MessageProto.internal_static_netty_RegisterResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterResponse_fieldAccessorTable
+        return MessageProto.internal_static_netty_RegisterResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.Builder.class);
+                RegisterResponse.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.newBuilder()
@@ -16835,7 +16835,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -16855,23 +16855,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_RegisterResponse_descriptor;
+        return MessageProto.internal_static_netty_RegisterResponse_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.getDefaultInstance();
+      public RegisterResponse getDefaultInstanceForType() {
+        return RegisterResponse.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse result = buildPartial();
+      public RegisterResponse build() {
+        RegisterResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse(this);
+      public RegisterResponse buildPartial() {
+        RegisterResponse result = new RegisterResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -16914,16 +16914,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse)other);
+        if (other instanceof RegisterResponse) {
+          return mergeFrom((RegisterResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(RegisterResponse other) {
+        if (other == RegisterResponse.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -16953,11 +16953,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse parsedMessage = null;
+        RegisterResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse) e.getUnfinishedMessage();
+          parsedMessage = (RegisterResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -16968,7 +16968,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件类型Id
@@ -16986,18 +16986,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -17009,11 +17009,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -17028,7 +17028,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -17068,7 +17068,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -17086,18 +17086,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -17109,11 +17109,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -17128,7 +17128,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -17182,16 +17182,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.RegisterResponse)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse DEFAULT_INSTANCE;
+    private static final RegisterResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse();
+      DEFAULT_INSTANCE = new RegisterResponse();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse getDefaultInstance() {
+    public static RegisterResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<RegisterResponse>
+    @Deprecated public static final com.google.protobuf.Parser<RegisterResponse>
         PARSER = new com.google.protobuf.AbstractParser<RegisterResponse>() {
       public RegisterResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -17205,12 +17205,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<RegisterResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.RegisterResponse getDefaultInstanceForType() {
+    public RegisterResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -17235,7 +17235,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件类型Id
@@ -17265,7 +17265,7 @@ public final class MessageProto {
       eventId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -17313,19 +17313,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateResponse_descriptor;
+      return MessageProto.internal_static_netty_CtrlDictateResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateResponse_fieldAccessorTable
+      return MessageProto.internal_static_netty_CtrlDictateResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.Builder.class);
+              CtrlDictateResponse.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件类型Id
@@ -17343,14 +17343,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -17366,11 +17366,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -17414,15 +17414,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse)) {
+      if (!(obj instanceof CtrlDictateResponse)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse) obj;
+      CtrlDictateResponse other = (CtrlDictateResponse) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -17434,7 +17434,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -17450,58 +17450,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseFrom(
+    public static CtrlDictateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseFrom(
+    public static CtrlDictateResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseFrom(byte[] data)
+    public static CtrlDictateResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseFrom(
+    public static CtrlDictateResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseFrom(java.io.InputStream input)
+    public static CtrlDictateResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseFrom(
+    public static CtrlDictateResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseDelimitedFrom(java.io.InputStream input)
+    public static CtrlDictateResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseDelimitedFrom(
+    public static CtrlDictateResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseFrom(
+    public static CtrlDictateResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parseFrom(
+    public static CtrlDictateResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17513,7 +17513,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse prototype) {
+    public static Builder newBuilder(CtrlDictateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -17521,9 +17521,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -17537,17 +17537,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.CtrlDictateResponse)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponseOrBuilder {
+        CtrlDictateResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateResponse_descriptor;
+        return MessageProto.internal_static_netty_CtrlDictateResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateResponse_fieldAccessorTable
+        return MessageProto.internal_static_netty_CtrlDictateResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.Builder.class);
+                CtrlDictateResponse.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.newBuilder()
@@ -17556,7 +17556,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -17574,23 +17574,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateResponse_descriptor;
+        return MessageProto.internal_static_netty_CtrlDictateResponse_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.getDefaultInstance();
+      public CtrlDictateResponse getDefaultInstanceForType() {
+        return CtrlDictateResponse.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse result = buildPartial();
+      public CtrlDictateResponse build() {
+        CtrlDictateResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse(this);
+      public CtrlDictateResponse buildPartial() {
+        CtrlDictateResponse result = new CtrlDictateResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -17629,16 +17629,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse)other);
+        if (other instanceof CtrlDictateResponse) {
+          return mergeFrom((CtrlDictateResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(CtrlDictateResponse other) {
+        if (other == CtrlDictateResponse.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -17660,11 +17660,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse parsedMessage = null;
+        CtrlDictateResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse) e.getUnfinishedMessage();
+          parsedMessage = (CtrlDictateResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -17675,7 +17675,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件类型Id
@@ -17693,18 +17693,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -17716,11 +17716,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -17735,7 +17735,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -17789,16 +17789,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.CtrlDictateResponse)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse DEFAULT_INSTANCE;
+    private static final CtrlDictateResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse();
+      DEFAULT_INSTANCE = new CtrlDictateResponse();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse getDefaultInstance() {
+    public static CtrlDictateResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<CtrlDictateResponse>
+    @Deprecated public static final com.google.protobuf.Parser<CtrlDictateResponse>
         PARSER = new com.google.protobuf.AbstractParser<CtrlDictateResponse>() {
       public CtrlDictateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -17812,12 +17812,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<CtrlDictateResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateResponse getDefaultInstanceForType() {
+    public CtrlDictateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -17842,7 +17842,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件类型Id
@@ -17872,7 +17872,7 @@ public final class MessageProto {
       eventId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -17920,19 +17920,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadResponse_descriptor;
+      return MessageProto.internal_static_netty_DownLoadResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadResponse_fieldAccessorTable
+      return MessageProto.internal_static_netty_DownLoadResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.Builder.class);
+              DownLoadResponse.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件类型Id
@@ -17950,14 +17950,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -17973,11 +17973,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -18021,15 +18021,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse)) {
+      if (!(obj instanceof DownLoadResponse)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse) obj;
+      DownLoadResponse other = (DownLoadResponse) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -18041,7 +18041,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -18057,58 +18057,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseFrom(
+    public static DownLoadResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseFrom(
+    public static DownLoadResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseFrom(byte[] data)
+    public static DownLoadResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseFrom(
+    public static DownLoadResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseFrom(java.io.InputStream input)
+    public static DownLoadResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseFrom(
+    public static DownLoadResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseDelimitedFrom(java.io.InputStream input)
+    public static DownLoadResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseDelimitedFrom(
+    public static DownLoadResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseFrom(
+    public static DownLoadResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parseFrom(
+    public static DownLoadResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18120,7 +18120,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse prototype) {
+    public static Builder newBuilder(DownLoadResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -18128,9 +18128,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -18144,17 +18144,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.DownLoadResponse)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponseOrBuilder {
+        DownLoadResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadResponse_descriptor;
+        return MessageProto.internal_static_netty_DownLoadResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadResponse_fieldAccessorTable
+        return MessageProto.internal_static_netty_DownLoadResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.Builder.class);
+                DownLoadResponse.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.newBuilder()
@@ -18163,7 +18163,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -18181,23 +18181,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadResponse_descriptor;
+        return MessageProto.internal_static_netty_DownLoadResponse_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.getDefaultInstance();
+      public DownLoadResponse getDefaultInstanceForType() {
+        return DownLoadResponse.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse result = buildPartial();
+      public DownLoadResponse build() {
+        DownLoadResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse(this);
+      public DownLoadResponse buildPartial() {
+        DownLoadResponse result = new DownLoadResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -18236,16 +18236,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse)other);
+        if (other instanceof DownLoadResponse) {
+          return mergeFrom((DownLoadResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(DownLoadResponse other) {
+        if (other == DownLoadResponse.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -18267,11 +18267,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse parsedMessage = null;
+        DownLoadResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse) e.getUnfinishedMessage();
+          parsedMessage = (DownLoadResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -18282,7 +18282,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件类型Id
@@ -18300,18 +18300,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -18323,11 +18323,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -18342,7 +18342,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -18396,16 +18396,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.DownLoadResponse)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse DEFAULT_INSTANCE;
+    private static final DownLoadResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse();
+      DEFAULT_INSTANCE = new DownLoadResponse();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse getDefaultInstance() {
+    public static DownLoadResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DownLoadResponse>
+    @Deprecated public static final com.google.protobuf.Parser<DownLoadResponse>
         PARSER = new com.google.protobuf.AbstractParser<DownLoadResponse>() {
       public DownLoadResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -18419,12 +18419,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<DownLoadResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadResponse getDefaultInstanceForType() {
+    public DownLoadResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -18449,7 +18449,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件类型Id
@@ -18479,7 +18479,7 @@ public final class MessageProto {
       eventId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -18527,19 +18527,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteResponse_descriptor;
+      return MessageProto.internal_static_netty_DeleteResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteResponse_fieldAccessorTable
+      return MessageProto.internal_static_netty_DeleteResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.Builder.class);
+              DeleteResponse.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件类型Id
@@ -18557,14 +18557,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -18580,11 +18580,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -18628,15 +18628,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse)) {
+      if (!(obj instanceof DeleteResponse)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse) obj;
+      DeleteResponse other = (DeleteResponse) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -18648,7 +18648,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -18664,58 +18664,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseFrom(
+    public static DeleteResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseFrom(
+    public static DeleteResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseFrom(byte[] data)
+    public static DeleteResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseFrom(
+    public static DeleteResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseFrom(java.io.InputStream input)
+    public static DeleteResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseFrom(
+    public static DeleteResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseDelimitedFrom(java.io.InputStream input)
+    public static DeleteResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseDelimitedFrom(
+    public static DeleteResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseFrom(
+    public static DeleteResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parseFrom(
+    public static DeleteResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18727,7 +18727,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse prototype) {
+    public static Builder newBuilder(DeleteResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -18735,9 +18735,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -18751,17 +18751,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.DeleteResponse)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponseOrBuilder {
+        DeleteResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteResponse_descriptor;
+        return MessageProto.internal_static_netty_DeleteResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteResponse_fieldAccessorTable
+        return MessageProto.internal_static_netty_DeleteResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.Builder.class);
+                DeleteResponse.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.newBuilder()
@@ -18770,7 +18770,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -18788,23 +18788,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteResponse_descriptor;
+        return MessageProto.internal_static_netty_DeleteResponse_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.getDefaultInstance();
+      public DeleteResponse getDefaultInstanceForType() {
+        return DeleteResponse.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse result = buildPartial();
+      public DeleteResponse build() {
+        DeleteResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse(this);
+      public DeleteResponse buildPartial() {
+        DeleteResponse result = new DeleteResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -18843,16 +18843,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse)other);
+        if (other instanceof DeleteResponse) {
+          return mergeFrom((DeleteResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(DeleteResponse other) {
+        if (other == DeleteResponse.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -18874,11 +18874,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse parsedMessage = null;
+        DeleteResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse) e.getUnfinishedMessage();
+          parsedMessage = (DeleteResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -18889,7 +18889,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件类型Id
@@ -18907,18 +18907,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -18930,11 +18930,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -18949,7 +18949,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -19003,16 +19003,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.DeleteResponse)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse DEFAULT_INSTANCE;
+    private static final DeleteResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse();
+      DEFAULT_INSTANCE = new DeleteResponse();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse getDefaultInstance() {
+    public static DeleteResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DeleteResponse>
+    @Deprecated public static final com.google.protobuf.Parser<DeleteResponse>
         PARSER = new com.google.protobuf.AbstractParser<DeleteResponse>() {
       public DeleteResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -19026,12 +19026,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<DeleteResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteResponse getDefaultInstanceForType() {
+    public DeleteResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -19056,7 +19056,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件类型Id
@@ -19082,7 +19082,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -19113,7 +19113,7 @@ public final class MessageProto {
       equipmentId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -19167,19 +19167,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectResponse_descriptor;
+      return MessageProto.internal_static_netty_ReConnectResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectResponse_fieldAccessorTable
+      return MessageProto.internal_static_netty_ReConnectResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.Builder.class);
+              ReConnectResponse.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件类型Id
@@ -19197,14 +19197,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -19220,11 +19220,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -19233,7 +19233,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -19251,14 +19251,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -19274,11 +19274,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -19332,15 +19332,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse)) {
+      if (!(obj instanceof ReConnectResponse)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse) obj;
+      ReConnectResponse other = (ReConnectResponse) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -19357,7 +19357,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -19377,58 +19377,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseFrom(
+    public static ReConnectResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseFrom(
+    public static ReConnectResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseFrom(byte[] data)
+    public static ReConnectResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseFrom(
+    public static ReConnectResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseFrom(java.io.InputStream input)
+    public static ReConnectResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseFrom(
+    public static ReConnectResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseDelimitedFrom(java.io.InputStream input)
+    public static ReConnectResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseDelimitedFrom(
+    public static ReConnectResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseFrom(
+    public static ReConnectResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parseFrom(
+    public static ReConnectResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -19440,7 +19440,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse prototype) {
+    public static Builder newBuilder(ReConnectResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -19448,9 +19448,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -19464,17 +19464,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.ReConnectResponse)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponseOrBuilder {
+        ReConnectResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectResponse_descriptor;
+        return MessageProto.internal_static_netty_ReConnectResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectResponse_fieldAccessorTable
+        return MessageProto.internal_static_netty_ReConnectResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.Builder.class);
+                ReConnectResponse.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.newBuilder()
@@ -19483,7 +19483,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -19503,23 +19503,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_ReConnectResponse_descriptor;
+        return MessageProto.internal_static_netty_ReConnectResponse_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.getDefaultInstance();
+      public ReConnectResponse getDefaultInstanceForType() {
+        return ReConnectResponse.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse result = buildPartial();
+      public ReConnectResponse build() {
+        ReConnectResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse(this);
+      public ReConnectResponse buildPartial() {
+        ReConnectResponse result = new ReConnectResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -19562,16 +19562,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse)other);
+        if (other instanceof ReConnectResponse) {
+          return mergeFrom((ReConnectResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(ReConnectResponse other) {
+        if (other == ReConnectResponse.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -19601,11 +19601,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse parsedMessage = null;
+        ReConnectResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse) e.getUnfinishedMessage();
+          parsedMessage = (ReConnectResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -19616,7 +19616,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件类型Id
@@ -19634,18 +19634,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -19657,11 +19657,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -19676,7 +19676,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -19716,7 +19716,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -19734,18 +19734,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -19757,11 +19757,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -19776,7 +19776,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -19830,16 +19830,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.ReConnectResponse)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse DEFAULT_INSTANCE;
+    private static final ReConnectResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse();
+      DEFAULT_INSTANCE = new ReConnectResponse();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse getDefaultInstance() {
+    public static ReConnectResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReConnectResponse>
+    @Deprecated public static final com.google.protobuf.Parser<ReConnectResponse>
         PARSER = new com.google.protobuf.AbstractParser<ReConnectResponse>() {
       public ReConnectResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -19853,12 +19853,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<ReConnectResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.ReConnectResponse getDefaultInstanceForType() {
+    public ReConnectResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -19883,7 +19883,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -19909,7 +19909,7 @@ public final class MessageProto {
      *
      * <code>required string fileId = 2;</code>
      */
-    java.lang.String getFileId();
+    String getFileId();
     /**
      * <pre>
      *文件ID
@@ -19935,7 +19935,7 @@ public final class MessageProto {
      *
      * <code>required string position = 3;</code>
      */
-    java.lang.String getPosition();
+    String getPosition();
     /**
      * <pre>
      *文件时间位置
@@ -19967,7 +19967,7 @@ public final class MessageProto {
       position_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -20027,19 +20027,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressResponse_descriptor;
+      return MessageProto.internal_static_netty_PlayProgressResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressResponse_fieldAccessorTable
+      return MessageProto.internal_static_netty_PlayProgressResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.Builder.class);
+              PlayProgressResponse.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -20057,14 +20057,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -20080,11 +20080,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -20093,7 +20093,7 @@ public final class MessageProto {
     }
 
     public static final int FILEID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fileId_;
+    private volatile Object fileId_;
     /**
      * <pre>
      *文件ID
@@ -20111,14 +20111,14 @@ public final class MessageProto {
      *
      * <code>required string fileId = 2;</code>
      */
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileId() {
+      Object ref = fileId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileId_ = s;
         }
@@ -20134,11 +20134,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileId_ = b;
         return b;
       } else {
@@ -20147,7 +20147,7 @@ public final class MessageProto {
     }
 
     public static final int POSITION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object position_;
+    private volatile Object position_;
     /**
      * <pre>
      *文件时间位置
@@ -20165,14 +20165,14 @@ public final class MessageProto {
      *
      * <code>required string position = 3;</code>
      */
-    public java.lang.String getPosition() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getPosition() {
+      Object ref = position_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           position_ = s;
         }
@@ -20188,11 +20188,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getPositionBytes() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
+      Object ref = position_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         position_ = b;
         return b;
       } else {
@@ -20256,15 +20256,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse)) {
+      if (!(obj instanceof PlayProgressResponse)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse) obj;
+      PlayProgressResponse other = (PlayProgressResponse) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -20286,7 +20286,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -20310,58 +20310,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseFrom(
+    public static PlayProgressResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseFrom(
+    public static PlayProgressResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseFrom(byte[] data)
+    public static PlayProgressResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseFrom(
+    public static PlayProgressResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseFrom(java.io.InputStream input)
+    public static PlayProgressResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseFrom(
+    public static PlayProgressResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseDelimitedFrom(java.io.InputStream input)
+    public static PlayProgressResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseDelimitedFrom(
+    public static PlayProgressResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseFrom(
+    public static PlayProgressResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parseFrom(
+    public static PlayProgressResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -20373,7 +20373,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse prototype) {
+    public static Builder newBuilder(PlayProgressResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -20381,9 +20381,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -20397,17 +20397,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.PlayProgressResponse)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponseOrBuilder {
+        PlayProgressResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressResponse_descriptor;
+        return MessageProto.internal_static_netty_PlayProgressResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressResponse_fieldAccessorTable
+        return MessageProto.internal_static_netty_PlayProgressResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.Builder.class);
+                PlayProgressResponse.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.newBuilder()
@@ -20416,7 +20416,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -20438,23 +20438,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressResponse_descriptor;
+        return MessageProto.internal_static_netty_PlayProgressResponse_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.getDefaultInstance();
+      public PlayProgressResponse getDefaultInstanceForType() {
+        return PlayProgressResponse.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse result = buildPartial();
+      public PlayProgressResponse build() {
+        PlayProgressResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse(this);
+      public PlayProgressResponse buildPartial() {
+        PlayProgressResponse result = new PlayProgressResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -20501,16 +20501,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse)other);
+        if (other instanceof PlayProgressResponse) {
+          return mergeFrom((PlayProgressResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(PlayProgressResponse other) {
+        if (other == PlayProgressResponse.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -20548,11 +20548,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse parsedMessage = null;
+        PlayProgressResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse) e.getUnfinishedMessage();
+          parsedMessage = (PlayProgressResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -20563,7 +20563,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -20581,18 +20581,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -20604,11 +20604,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -20623,7 +20623,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -20663,7 +20663,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileId_ = "";
+      private Object fileId_ = "";
       /**
        * <pre>
        *文件ID
@@ -20681,18 +20681,18 @@ public final class MessageProto {
        *
        * <code>required string fileId = 2;</code>
        */
-      public java.lang.String getFileId() {
-        java.lang.Object ref = fileId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileId() {
+        Object ref = fileId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -20704,11 +20704,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdBytes() {
-        java.lang.Object ref = fileId_;
+        Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileId_ = b;
           return b;
         } else {
@@ -20723,7 +20723,7 @@ public final class MessageProto {
        * <code>required string fileId = 2;</code>
        */
       public Builder setFileId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -20763,7 +20763,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object position_ = "";
+      private Object position_ = "";
       /**
        * <pre>
        *文件时间位置
@@ -20781,18 +20781,18 @@ public final class MessageProto {
        *
        * <code>required string position = 3;</code>
        */
-      public java.lang.String getPosition() {
-        java.lang.Object ref = position_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getPosition() {
+        Object ref = position_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             position_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -20804,11 +20804,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getPositionBytes() {
-        java.lang.Object ref = position_;
+        Object ref = position_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           position_ = b;
           return b;
         } else {
@@ -20823,7 +20823,7 @@ public final class MessageProto {
        * <code>required string position = 3;</code>
        */
       public Builder setPosition(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -20877,16 +20877,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.PlayProgressResponse)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse DEFAULT_INSTANCE;
+    private static final PlayProgressResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse();
+      DEFAULT_INSTANCE = new PlayProgressResponse();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse getDefaultInstance() {
+    public static PlayProgressResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayProgressResponse>
+    @Deprecated public static final com.google.protobuf.Parser<PlayProgressResponse>
         PARSER = new com.google.protobuf.AbstractParser<PlayProgressResponse>() {
       public PlayProgressResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -20900,12 +20900,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<PlayProgressResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressResponse getDefaultInstanceForType() {
+    public PlayProgressResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -20930,7 +20930,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -20956,7 +20956,7 @@ public final class MessageProto {
      *
      * <code>required .netty.Dictate dictate = 2;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate getDictate();
+    Dictate getDictate();
 
     /**
      * <pre>
@@ -20973,7 +20973,7 @@ public final class MessageProto {
      *
      * <code>required string position = 3;</code>
      */
-    java.lang.String getPosition();
+    String getPosition();
     /**
      * <pre>
      *文件时间位置
@@ -20999,7 +20999,7 @@ public final class MessageProto {
      *
      * <code>required string fileId = 4;</code>
      */
-    java.lang.String getFileId();
+    String getFileId();
     /**
      * <pre>
      *文件ID
@@ -21025,7 +21025,7 @@ public final class MessageProto {
      *
      * <code>optional string fileSize = 5;</code>
      */
-    java.lang.String getFileSize();
+    String getFileSize();
     /**
      * <pre>
      *文件大小
@@ -21059,7 +21059,7 @@ public final class MessageProto {
       fileSize_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -21095,7 +21095,7 @@ public final class MessageProto {
             }
             case 16: {
               int rawValue = input.readEnum();
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate value = com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.valueOf(rawValue);
+              Dictate value = Dictate.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
               } else {
@@ -21136,19 +21136,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateNotice_descriptor;
+      return MessageProto.internal_static_netty_CtrlDictateNotice_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateNotice_fieldAccessorTable
+      return MessageProto.internal_static_netty_CtrlDictateNotice_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.Builder.class);
+              CtrlDictateNotice.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -21166,14 +21166,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -21189,11 +21189,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -21220,13 +21220,13 @@ public final class MessageProto {
      *
      * <code>required .netty.Dictate dictate = 2;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate getDictate() {
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate result = com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.valueOf(dictate_);
-      return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.START : result;
+    public Dictate getDictate() {
+      Dictate result = Dictate.valueOf(dictate_);
+      return result == null ? Dictate.START : result;
     }
 
     public static final int POSITION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object position_;
+    private volatile Object position_;
     /**
      * <pre>
      *文件时间位置
@@ -21244,14 +21244,14 @@ public final class MessageProto {
      *
      * <code>required string position = 3;</code>
      */
-    public java.lang.String getPosition() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getPosition() {
+      Object ref = position_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           position_ = s;
         }
@@ -21267,11 +21267,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getPositionBytes() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
+      Object ref = position_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         position_ = b;
         return b;
       } else {
@@ -21280,7 +21280,7 @@ public final class MessageProto {
     }
 
     public static final int FILEID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object fileId_;
+    private volatile Object fileId_;
     /**
      * <pre>
      *文件ID
@@ -21298,14 +21298,14 @@ public final class MessageProto {
      *
      * <code>required string fileId = 4;</code>
      */
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileId() {
+      Object ref = fileId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileId_ = s;
         }
@@ -21321,11 +21321,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileId_ = b;
         return b;
       } else {
@@ -21334,7 +21334,7 @@ public final class MessageProto {
     }
 
     public static final int FILESIZE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object fileSize_;
+    private volatile Object fileSize_;
     /**
      * <pre>
      *文件大小
@@ -21352,14 +21352,14 @@ public final class MessageProto {
      *
      * <code>optional string fileSize = 5;</code>
      */
-    public java.lang.String getFileSize() {
-      java.lang.Object ref = fileSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileSize() {
+      Object ref = fileSize_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileSize_ = s;
         }
@@ -21375,11 +21375,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileSizeBytes() {
-      java.lang.Object ref = fileSize_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileSize_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileSize_ = b;
         return b;
       } else {
@@ -21460,15 +21460,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice)) {
+      if (!(obj instanceof CtrlDictateNotice)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice) obj;
+      CtrlDictateNotice other = (CtrlDictateNotice) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -21499,7 +21499,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -21531,58 +21531,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseFrom(
+    public static CtrlDictateNotice parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseFrom(
+    public static CtrlDictateNotice parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseFrom(byte[] data)
+    public static CtrlDictateNotice parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseFrom(
+    public static CtrlDictateNotice parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseFrom(java.io.InputStream input)
+    public static CtrlDictateNotice parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseFrom(
+    public static CtrlDictateNotice parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseDelimitedFrom(java.io.InputStream input)
+    public static CtrlDictateNotice parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseDelimitedFrom(
+    public static CtrlDictateNotice parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseFrom(
+    public static CtrlDictateNotice parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parseFrom(
+    public static CtrlDictateNotice parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -21594,7 +21594,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice prototype) {
+    public static Builder newBuilder(CtrlDictateNotice prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -21602,9 +21602,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -21618,17 +21618,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.CtrlDictateNotice)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNoticeOrBuilder {
+        CtrlDictateNoticeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateNotice_descriptor;
+        return MessageProto.internal_static_netty_CtrlDictateNotice_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateNotice_fieldAccessorTable
+        return MessageProto.internal_static_netty_CtrlDictateNotice_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.Builder.class);
+                CtrlDictateNotice.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.newBuilder()
@@ -21637,7 +21637,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -21663,23 +21663,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_CtrlDictateNotice_descriptor;
+        return MessageProto.internal_static_netty_CtrlDictateNotice_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.getDefaultInstance();
+      public CtrlDictateNotice getDefaultInstanceForType() {
+        return CtrlDictateNotice.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice result = buildPartial();
+      public CtrlDictateNotice build() {
+        CtrlDictateNotice result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice(this);
+      public CtrlDictateNotice buildPartial() {
+        CtrlDictateNotice result = new CtrlDictateNotice(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -21734,16 +21734,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice)other);
+        if (other instanceof CtrlDictateNotice) {
+          return mergeFrom((CtrlDictateNotice)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice.getDefaultInstance()) return this;
+      public Builder mergeFrom(CtrlDictateNotice other) {
+        if (other == CtrlDictateNotice.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -21792,11 +21792,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice parsedMessage = null;
+        CtrlDictateNotice parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice) e.getUnfinishedMessage();
+          parsedMessage = (CtrlDictateNotice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -21807,7 +21807,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -21825,18 +21825,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -21848,11 +21848,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -21867,7 +21867,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -21925,9 +21925,9 @@ public final class MessageProto {
        *
        * <code>required .netty.Dictate dictate = 2;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate getDictate() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate result = com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.valueOf(dictate_);
-        return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate.START : result;
+      public Dictate getDictate() {
+        Dictate result = Dictate.valueOf(dictate_);
+        return result == null ? Dictate.START : result;
       }
       /**
        * <pre>
@@ -21936,7 +21936,7 @@ public final class MessageProto {
        *
        * <code>required .netty.Dictate dictate = 2;</code>
        */
-      public Builder setDictate(com.sd.vr.ctrl.netty.protobuf.MessageProto.Dictate value) {
+      public Builder setDictate(Dictate value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -21959,7 +21959,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object position_ = "";
+      private Object position_ = "";
       /**
        * <pre>
        *文件时间位置
@@ -21977,18 +21977,18 @@ public final class MessageProto {
        *
        * <code>required string position = 3;</code>
        */
-      public java.lang.String getPosition() {
-        java.lang.Object ref = position_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getPosition() {
+        Object ref = position_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             position_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -22000,11 +22000,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getPositionBytes() {
-        java.lang.Object ref = position_;
+        Object ref = position_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           position_ = b;
           return b;
         } else {
@@ -22019,7 +22019,7 @@ public final class MessageProto {
        * <code>required string position = 3;</code>
        */
       public Builder setPosition(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -22059,7 +22059,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileId_ = "";
+      private Object fileId_ = "";
       /**
        * <pre>
        *文件ID
@@ -22077,18 +22077,18 @@ public final class MessageProto {
        *
        * <code>required string fileId = 4;</code>
        */
-      public java.lang.String getFileId() {
-        java.lang.Object ref = fileId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileId() {
+        Object ref = fileId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -22100,11 +22100,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdBytes() {
-        java.lang.Object ref = fileId_;
+        Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileId_ = b;
           return b;
         } else {
@@ -22119,7 +22119,7 @@ public final class MessageProto {
        * <code>required string fileId = 4;</code>
        */
       public Builder setFileId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -22159,7 +22159,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileSize_ = "";
+      private Object fileSize_ = "";
       /**
        * <pre>
        *文件大小
@@ -22177,18 +22177,18 @@ public final class MessageProto {
        *
        * <code>optional string fileSize = 5;</code>
        */
-      public java.lang.String getFileSize() {
-        java.lang.Object ref = fileSize_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileSize() {
+        Object ref = fileSize_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileSize_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -22200,11 +22200,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileSizeBytes() {
-        java.lang.Object ref = fileSize_;
+        Object ref = fileSize_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileSize_ = b;
           return b;
         } else {
@@ -22219,7 +22219,7 @@ public final class MessageProto {
        * <code>optional string fileSize = 5;</code>
        */
       public Builder setFileSize(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -22273,16 +22273,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.CtrlDictateNotice)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice DEFAULT_INSTANCE;
+    private static final CtrlDictateNotice DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice();
+      DEFAULT_INSTANCE = new CtrlDictateNotice();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice getDefaultInstance() {
+    public static CtrlDictateNotice getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<CtrlDictateNotice>
+    @Deprecated public static final com.google.protobuf.Parser<CtrlDictateNotice>
         PARSER = new com.google.protobuf.AbstractParser<CtrlDictateNotice>() {
       public CtrlDictateNotice parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -22296,12 +22296,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<CtrlDictateNotice> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.CtrlDictateNotice getDefaultInstanceForType() {
+    public CtrlDictateNotice getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -22326,7 +22326,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -22352,7 +22352,7 @@ public final class MessageProto {
      *
      * <code>required string fileIds = 2;</code>
      */
-    java.lang.String getFileIds();
+    String getFileIds();
     /**
      * <pre>
      *文件IDS
@@ -22378,7 +22378,7 @@ public final class MessageProto {
      *
      * <code>required string fileSize = 3;</code>
      */
-    java.lang.String getFileSize();
+    String getFileSize();
     /**
      * <pre>
      *文件大小
@@ -22404,7 +22404,7 @@ public final class MessageProto {
      *
      * <code>optional string fileNames = 4;</code>
      */
-    java.lang.String getFileNames();
+    String getFileNames();
     /**
      * <pre>
      *文件名称
@@ -22437,7 +22437,7 @@ public final class MessageProto {
       fileNames_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -22503,19 +22503,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadNotice_descriptor;
+      return MessageProto.internal_static_netty_DownLoadNotice_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadNotice_fieldAccessorTable
+      return MessageProto.internal_static_netty_DownLoadNotice_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.Builder.class);
+              DownLoadNotice.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -22533,14 +22533,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -22556,11 +22556,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -22569,7 +22569,7 @@ public final class MessageProto {
     }
 
     public static final int FILEIDS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fileIds_;
+    private volatile Object fileIds_;
     /**
      * <pre>
      *文件IDS
@@ -22587,14 +22587,14 @@ public final class MessageProto {
      *
      * <code>required string fileIds = 2;</code>
      */
-    public java.lang.String getFileIds() {
-      java.lang.Object ref = fileIds_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileIds() {
+      Object ref = fileIds_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileIds_ = s;
         }
@@ -22610,11 +22610,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdsBytes() {
-      java.lang.Object ref = fileIds_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileIds_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileIds_ = b;
         return b;
       } else {
@@ -22623,7 +22623,7 @@ public final class MessageProto {
     }
 
     public static final int FILESIZE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object fileSize_;
+    private volatile Object fileSize_;
     /**
      * <pre>
      *文件大小
@@ -22641,14 +22641,14 @@ public final class MessageProto {
      *
      * <code>required string fileSize = 3;</code>
      */
-    public java.lang.String getFileSize() {
-      java.lang.Object ref = fileSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileSize() {
+      Object ref = fileSize_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileSize_ = s;
         }
@@ -22664,11 +22664,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileSizeBytes() {
-      java.lang.Object ref = fileSize_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileSize_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileSize_ = b;
         return b;
       } else {
@@ -22677,7 +22677,7 @@ public final class MessageProto {
     }
 
     public static final int FILENAMES_FIELD_NUMBER = 4;
-    private volatile java.lang.Object fileNames_;
+    private volatile Object fileNames_;
     /**
      * <pre>
      *文件名称
@@ -22695,14 +22695,14 @@ public final class MessageProto {
      *
      * <code>optional string fileNames = 4;</code>
      */
-    public java.lang.String getFileNames() {
-      java.lang.Object ref = fileNames_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileNames() {
+      Object ref = fileNames_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileNames_ = s;
         }
@@ -22718,11 +22718,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileNamesBytes() {
-      java.lang.Object ref = fileNames_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileNames_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileNames_ = b;
         return b;
       } else {
@@ -22792,15 +22792,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice)) {
+      if (!(obj instanceof DownLoadNotice)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice) obj;
+      DownLoadNotice other = (DownLoadNotice) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -22827,7 +22827,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -22855,58 +22855,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseFrom(
+    public static DownLoadNotice parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseFrom(
+    public static DownLoadNotice parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseFrom(byte[] data)
+    public static DownLoadNotice parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseFrom(
+    public static DownLoadNotice parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseFrom(java.io.InputStream input)
+    public static DownLoadNotice parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseFrom(
+    public static DownLoadNotice parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseDelimitedFrom(java.io.InputStream input)
+    public static DownLoadNotice parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseDelimitedFrom(
+    public static DownLoadNotice parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseFrom(
+    public static DownLoadNotice parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parseFrom(
+    public static DownLoadNotice parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -22918,7 +22918,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice prototype) {
+    public static Builder newBuilder(DownLoadNotice prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -22926,9 +22926,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -22942,17 +22942,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.DownLoadNotice)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNoticeOrBuilder {
+        DownLoadNoticeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadNotice_descriptor;
+        return MessageProto.internal_static_netty_DownLoadNotice_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadNotice_fieldAccessorTable
+        return MessageProto.internal_static_netty_DownLoadNotice_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.Builder.class);
+                DownLoadNotice.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.newBuilder()
@@ -22961,7 +22961,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -22985,23 +22985,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DownLoadNotice_descriptor;
+        return MessageProto.internal_static_netty_DownLoadNotice_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.getDefaultInstance();
+      public DownLoadNotice getDefaultInstanceForType() {
+        return DownLoadNotice.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice result = buildPartial();
+      public DownLoadNotice build() {
+        DownLoadNotice result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice(this);
+      public DownLoadNotice buildPartial() {
+        DownLoadNotice result = new DownLoadNotice(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -23052,16 +23052,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice)other);
+        if (other instanceof DownLoadNotice) {
+          return mergeFrom((DownLoadNotice)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice.getDefaultInstance()) return this;
+      public Builder mergeFrom(DownLoadNotice other) {
+        if (other == DownLoadNotice.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -23104,11 +23104,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice parsedMessage = null;
+        DownLoadNotice parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice) e.getUnfinishedMessage();
+          parsedMessage = (DownLoadNotice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -23119,7 +23119,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -23137,18 +23137,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -23160,11 +23160,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -23179,7 +23179,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -23219,7 +23219,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileIds_ = "";
+      private Object fileIds_ = "";
       /**
        * <pre>
        *文件IDS
@@ -23237,18 +23237,18 @@ public final class MessageProto {
        *
        * <code>required string fileIds = 2;</code>
        */
-      public java.lang.String getFileIds() {
-        java.lang.Object ref = fileIds_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileIds() {
+        Object ref = fileIds_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileIds_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -23260,11 +23260,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdsBytes() {
-        java.lang.Object ref = fileIds_;
+        Object ref = fileIds_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileIds_ = b;
           return b;
         } else {
@@ -23279,7 +23279,7 @@ public final class MessageProto {
        * <code>required string fileIds = 2;</code>
        */
       public Builder setFileIds(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -23319,7 +23319,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileSize_ = "";
+      private Object fileSize_ = "";
       /**
        * <pre>
        *文件大小
@@ -23337,18 +23337,18 @@ public final class MessageProto {
        *
        * <code>required string fileSize = 3;</code>
        */
-      public java.lang.String getFileSize() {
-        java.lang.Object ref = fileSize_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileSize() {
+        Object ref = fileSize_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileSize_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -23360,11 +23360,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileSizeBytes() {
-        java.lang.Object ref = fileSize_;
+        Object ref = fileSize_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileSize_ = b;
           return b;
         } else {
@@ -23379,7 +23379,7 @@ public final class MessageProto {
        * <code>required string fileSize = 3;</code>
        */
       public Builder setFileSize(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -23419,7 +23419,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileNames_ = "";
+      private Object fileNames_ = "";
       /**
        * <pre>
        *文件名称
@@ -23437,18 +23437,18 @@ public final class MessageProto {
        *
        * <code>optional string fileNames = 4;</code>
        */
-      public java.lang.String getFileNames() {
-        java.lang.Object ref = fileNames_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileNames() {
+        Object ref = fileNames_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileNames_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -23460,11 +23460,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileNamesBytes() {
-        java.lang.Object ref = fileNames_;
+        Object ref = fileNames_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileNames_ = b;
           return b;
         } else {
@@ -23479,7 +23479,7 @@ public final class MessageProto {
        * <code>optional string fileNames = 4;</code>
        */
       public Builder setFileNames(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -23533,16 +23533,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.DownLoadNotice)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice DEFAULT_INSTANCE;
+    private static final DownLoadNotice DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice();
+      DEFAULT_INSTANCE = new DownLoadNotice();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice getDefaultInstance() {
+    public static DownLoadNotice getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DownLoadNotice>
+    @Deprecated public static final com.google.protobuf.Parser<DownLoadNotice>
         PARSER = new com.google.protobuf.AbstractParser<DownLoadNotice>() {
       public DownLoadNotice parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -23556,12 +23556,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<DownLoadNotice> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DownLoadNotice getDefaultInstanceForType() {
+    public DownLoadNotice getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -23586,7 +23586,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -23612,7 +23612,7 @@ public final class MessageProto {
      *
      * <code>required string fileIds = 2;</code>
      */
-    java.lang.String getFileIds();
+    String getFileIds();
     /**
      * <pre>
      *文件IDs
@@ -23643,7 +23643,7 @@ public final class MessageProto {
       fileIds_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -23697,19 +23697,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteNotice_descriptor;
+      return MessageProto.internal_static_netty_DeleteNotice_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteNotice_fieldAccessorTable
+      return MessageProto.internal_static_netty_DeleteNotice_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.Builder.class);
+              DeleteNotice.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -23727,14 +23727,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -23750,11 +23750,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -23763,7 +23763,7 @@ public final class MessageProto {
     }
 
     public static final int FILEIDS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fileIds_;
+    private volatile Object fileIds_;
     /**
      * <pre>
      *文件IDs
@@ -23781,14 +23781,14 @@ public final class MessageProto {
      *
      * <code>required string fileIds = 2;</code>
      */
-    public java.lang.String getFileIds() {
-      java.lang.Object ref = fileIds_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileIds() {
+      Object ref = fileIds_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileIds_ = s;
         }
@@ -23804,11 +23804,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdsBytes() {
-      java.lang.Object ref = fileIds_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileIds_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileIds_ = b;
         return b;
       } else {
@@ -23862,15 +23862,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice)) {
+      if (!(obj instanceof DeleteNotice)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice) obj;
+      DeleteNotice other = (DeleteNotice) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -23887,7 +23887,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -23907,58 +23907,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseFrom(
+    public static DeleteNotice parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseFrom(
+    public static DeleteNotice parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseFrom(byte[] data)
+    public static DeleteNotice parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseFrom(
+    public static DeleteNotice parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseFrom(java.io.InputStream input)
+    public static DeleteNotice parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseFrom(
+    public static DeleteNotice parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseDelimitedFrom(java.io.InputStream input)
+    public static DeleteNotice parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseDelimitedFrom(
+    public static DeleteNotice parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseFrom(
+    public static DeleteNotice parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parseFrom(
+    public static DeleteNotice parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -23970,7 +23970,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice prototype) {
+    public static Builder newBuilder(DeleteNotice prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -23978,9 +23978,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -23994,17 +23994,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.DeleteNotice)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNoticeOrBuilder {
+        DeleteNoticeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteNotice_descriptor;
+        return MessageProto.internal_static_netty_DeleteNotice_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteNotice_fieldAccessorTable
+        return MessageProto.internal_static_netty_DeleteNotice_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.Builder.class);
+                DeleteNotice.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.newBuilder()
@@ -24013,7 +24013,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -24033,23 +24033,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_DeleteNotice_descriptor;
+        return MessageProto.internal_static_netty_DeleteNotice_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.getDefaultInstance();
+      public DeleteNotice getDefaultInstanceForType() {
+        return DeleteNotice.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice result = buildPartial();
+      public DeleteNotice build() {
+        DeleteNotice result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice(this);
+      public DeleteNotice buildPartial() {
+        DeleteNotice result = new DeleteNotice(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -24092,16 +24092,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice)other);
+        if (other instanceof DeleteNotice) {
+          return mergeFrom((DeleteNotice)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice.getDefaultInstance()) return this;
+      public Builder mergeFrom(DeleteNotice other) {
+        if (other == DeleteNotice.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -24131,11 +24131,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice parsedMessage = null;
+        DeleteNotice parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice) e.getUnfinishedMessage();
+          parsedMessage = (DeleteNotice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -24146,7 +24146,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -24164,18 +24164,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -24187,11 +24187,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -24206,7 +24206,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -24246,7 +24246,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileIds_ = "";
+      private Object fileIds_ = "";
       /**
        * <pre>
        *文件IDs
@@ -24264,18 +24264,18 @@ public final class MessageProto {
        *
        * <code>required string fileIds = 2;</code>
        */
-      public java.lang.String getFileIds() {
-        java.lang.Object ref = fileIds_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileIds() {
+        Object ref = fileIds_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileIds_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -24287,11 +24287,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdsBytes() {
-        java.lang.Object ref = fileIds_;
+        Object ref = fileIds_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileIds_ = b;
           return b;
         } else {
@@ -24306,7 +24306,7 @@ public final class MessageProto {
        * <code>required string fileIds = 2;</code>
        */
       public Builder setFileIds(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -24360,16 +24360,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.DeleteNotice)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice DEFAULT_INSTANCE;
+    private static final DeleteNotice DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice();
+      DEFAULT_INSTANCE = new DeleteNotice();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice getDefaultInstance() {
+    public static DeleteNotice getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DeleteNotice>
+    @Deprecated public static final com.google.protobuf.Parser<DeleteNotice>
         PARSER = new com.google.protobuf.AbstractParser<DeleteNotice>() {
       public DeleteNotice parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -24383,12 +24383,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<DeleteNotice> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.DeleteNotice getDefaultInstanceForType() {
+    public DeleteNotice getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -24413,7 +24413,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -24439,7 +24439,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -24465,7 +24465,7 @@ public final class MessageProto {
      *
      * <code>required string fileId = 3;</code>
      */
-    java.lang.String getFileId();
+    String getFileId();
     /**
      * <pre>
      *文件ID
@@ -24491,7 +24491,7 @@ public final class MessageProto {
      *
      * <code>required string position = 4;</code>
      */
-    java.lang.String getPosition();
+    String getPosition();
     /**
      * <pre>
      *文件时间位置
@@ -24517,7 +24517,7 @@ public final class MessageProto {
      *
      * <code>required .netty.PlayStatus playStatus = 5;</code>
      */
-    com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus getPlayStatus();
+    PlayStatus getPlayStatus();
   }
   /**
    * <pre>
@@ -24542,7 +24542,7 @@ public final class MessageProto {
       playStatus_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -24596,7 +24596,7 @@ public final class MessageProto {
             }
             case 40: {
               int rawValue = input.readEnum();
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus value = com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus.valueOf(rawValue);
+              PlayStatus value = PlayStatus.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(5, rawValue);
               } else {
@@ -24619,19 +24619,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressNotice_descriptor;
+      return MessageProto.internal_static_netty_PlayProgressNotice_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressNotice_fieldAccessorTable
+      return MessageProto.internal_static_netty_PlayProgressNotice_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.Builder.class);
+              PlayProgressNotice.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -24649,14 +24649,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -24672,11 +24672,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -24685,7 +24685,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -24703,14 +24703,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -24726,11 +24726,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -24739,7 +24739,7 @@ public final class MessageProto {
     }
 
     public static final int FILEID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object fileId_;
+    private volatile Object fileId_;
     /**
      * <pre>
      *文件ID
@@ -24757,14 +24757,14 @@ public final class MessageProto {
      *
      * <code>required string fileId = 3;</code>
      */
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileId() {
+      Object ref = fileId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileId_ = s;
         }
@@ -24780,11 +24780,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileId_ = b;
         return b;
       } else {
@@ -24793,7 +24793,7 @@ public final class MessageProto {
     }
 
     public static final int POSITION_FIELD_NUMBER = 4;
-    private volatile java.lang.Object position_;
+    private volatile Object position_;
     /**
      * <pre>
      *文件时间位置
@@ -24811,14 +24811,14 @@ public final class MessageProto {
      *
      * <code>required string position = 4;</code>
      */
-    public java.lang.String getPosition() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getPosition() {
+      Object ref = position_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           position_ = s;
         }
@@ -24834,11 +24834,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getPositionBytes() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
+      Object ref = position_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         position_ = b;
         return b;
       } else {
@@ -24865,9 +24865,9 @@ public final class MessageProto {
      *
      * <code>required .netty.PlayStatus playStatus = 5;</code>
      */
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus getPlayStatus() {
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus result = com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus.valueOf(playStatus_);
-      return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus.PLAYI_ING : result;
+    public PlayStatus getPlayStatus() {
+      PlayStatus result = PlayStatus.valueOf(playStatus_);
+      return result == null ? PlayStatus.PLAYI_ING : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -24947,15 +24947,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice)) {
+      if (!(obj instanceof PlayProgressNotice)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice) obj;
+      PlayProgressNotice other = (PlayProgressNotice) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -24986,7 +24986,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -25018,58 +25018,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseFrom(
+    public static PlayProgressNotice parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseFrom(
+    public static PlayProgressNotice parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseFrom(byte[] data)
+    public static PlayProgressNotice parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseFrom(
+    public static PlayProgressNotice parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseFrom(java.io.InputStream input)
+    public static PlayProgressNotice parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseFrom(
+    public static PlayProgressNotice parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseDelimitedFrom(java.io.InputStream input)
+    public static PlayProgressNotice parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseDelimitedFrom(
+    public static PlayProgressNotice parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseFrom(
+    public static PlayProgressNotice parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parseFrom(
+    public static PlayProgressNotice parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -25081,7 +25081,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice prototype) {
+    public static Builder newBuilder(PlayProgressNotice prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -25089,9 +25089,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -25105,17 +25105,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.PlayProgressNotice)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNoticeOrBuilder {
+        PlayProgressNoticeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressNotice_descriptor;
+        return MessageProto.internal_static_netty_PlayProgressNotice_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressNotice_fieldAccessorTable
+        return MessageProto.internal_static_netty_PlayProgressNotice_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.Builder.class);
+                PlayProgressNotice.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.newBuilder()
@@ -25124,7 +25124,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -25150,23 +25150,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_PlayProgressNotice_descriptor;
+        return MessageProto.internal_static_netty_PlayProgressNotice_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.getDefaultInstance();
+      public PlayProgressNotice getDefaultInstanceForType() {
+        return PlayProgressNotice.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice result = buildPartial();
+      public PlayProgressNotice build() {
+        PlayProgressNotice result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice(this);
+      public PlayProgressNotice buildPartial() {
+        PlayProgressNotice result = new PlayProgressNotice(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -25221,16 +25221,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice)other);
+        if (other instanceof PlayProgressNotice) {
+          return mergeFrom((PlayProgressNotice)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice.getDefaultInstance()) return this;
+      public Builder mergeFrom(PlayProgressNotice other) {
+        if (other == PlayProgressNotice.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -25282,11 +25282,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice parsedMessage = null;
+        PlayProgressNotice parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice) e.getUnfinishedMessage();
+          parsedMessage = (PlayProgressNotice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -25297,7 +25297,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -25315,18 +25315,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -25338,11 +25338,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -25357,7 +25357,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -25397,7 +25397,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -25415,18 +25415,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -25438,11 +25438,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -25457,7 +25457,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -25497,7 +25497,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileId_ = "";
+      private Object fileId_ = "";
       /**
        * <pre>
        *文件ID
@@ -25515,18 +25515,18 @@ public final class MessageProto {
        *
        * <code>required string fileId = 3;</code>
        */
-      public java.lang.String getFileId() {
-        java.lang.Object ref = fileId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileId() {
+        Object ref = fileId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -25538,11 +25538,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdBytes() {
-        java.lang.Object ref = fileId_;
+        Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileId_ = b;
           return b;
         } else {
@@ -25557,7 +25557,7 @@ public final class MessageProto {
        * <code>required string fileId = 3;</code>
        */
       public Builder setFileId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -25597,7 +25597,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object position_ = "";
+      private Object position_ = "";
       /**
        * <pre>
        *文件时间位置
@@ -25615,18 +25615,18 @@ public final class MessageProto {
        *
        * <code>required string position = 4;</code>
        */
-      public java.lang.String getPosition() {
-        java.lang.Object ref = position_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getPosition() {
+        Object ref = position_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             position_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -25638,11 +25638,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getPositionBytes() {
-        java.lang.Object ref = position_;
+        Object ref = position_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           position_ = b;
           return b;
         } else {
@@ -25657,7 +25657,7 @@ public final class MessageProto {
        * <code>required string position = 4;</code>
        */
       public Builder setPosition(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -25715,9 +25715,9 @@ public final class MessageProto {
        *
        * <code>required .netty.PlayStatus playStatus = 5;</code>
        */
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus getPlayStatus() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus result = com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus.valueOf(playStatus_);
-        return result == null ? com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus.PLAYI_ING : result;
+      public PlayStatus getPlayStatus() {
+        PlayStatus result = PlayStatus.valueOf(playStatus_);
+        return result == null ? PlayStatus.PLAYI_ING : result;
       }
       /**
        * <pre>
@@ -25726,7 +25726,7 @@ public final class MessageProto {
        *
        * <code>required .netty.PlayStatus playStatus = 5;</code>
        */
-      public Builder setPlayStatus(com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayStatus value) {
+      public Builder setPlayStatus(PlayStatus value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -25763,16 +25763,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.PlayProgressNotice)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice DEFAULT_INSTANCE;
+    private static final PlayProgressNotice DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice();
+      DEFAULT_INSTANCE = new PlayProgressNotice();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice getDefaultInstance() {
+    public static PlayProgressNotice getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayProgressNotice>
+    @Deprecated public static final com.google.protobuf.Parser<PlayProgressNotice>
         PARSER = new com.google.protobuf.AbstractParser<PlayProgressNotice>() {
       public PlayProgressNotice parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -25786,12 +25786,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<PlayProgressNotice> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.PlayProgressNotice getDefaultInstanceForType() {
+    public PlayProgressNotice getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -25816,7 +25816,7 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    java.lang.String getEventId();
+    String getEventId();
     /**
      * <pre>
      *事件ID
@@ -25842,7 +25842,7 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    java.lang.String getEquipmentId();
+    String getEquipmentId();
     /**
      * <pre>
      *设备唯一标示
@@ -25868,7 +25868,7 @@ public final class MessageProto {
      *
      * <code>required string fileId = 3;</code>
      */
-    java.lang.String getFileId();
+    String getFileId();
     /**
      * <pre>
      *文件ID
@@ -25900,7 +25900,7 @@ public final class MessageProto {
       fileId_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -25960,19 +25960,19 @@ public final class MessageProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_GetPlayProgressNotice_descriptor;
+      return MessageProto.internal_static_netty_GetPlayProgressNotice_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_GetPlayProgressNotice_fieldAccessorTable
+      return MessageProto.internal_static_netty_GetPlayProgressNotice_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.Builder.class);
+              GetPlayProgressNotice.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int EVENTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    private volatile Object eventId_;
     /**
      * <pre>
      *事件ID
@@ -25990,14 +25990,14 @@ public final class MessageProto {
      *
      * <code>required string eventId = 1;</code>
      */
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEventId() {
+      Object ref = eventId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           eventId_ = s;
         }
@@ -26013,11 +26013,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = eventId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         eventId_ = b;
         return b;
       } else {
@@ -26026,7 +26026,7 @@ public final class MessageProto {
     }
 
     public static final int EQUIPMENTID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object equipmentId_;
+    private volatile Object equipmentId_;
     /**
      * <pre>
      *设备唯一标示
@@ -26044,14 +26044,14 @@ public final class MessageProto {
      *
      * <code>required string equipmentId = 2;</code>
      */
-    public java.lang.String getEquipmentId() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEquipmentId() {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           equipmentId_ = s;
         }
@@ -26067,11 +26067,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getEquipmentIdBytes() {
-      java.lang.Object ref = equipmentId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = equipmentId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         equipmentId_ = b;
         return b;
       } else {
@@ -26080,7 +26080,7 @@ public final class MessageProto {
     }
 
     public static final int FILEID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object fileId_;
+    private volatile Object fileId_;
     /**
      * <pre>
      *文件ID
@@ -26098,14 +26098,14 @@ public final class MessageProto {
      *
      * <code>required string fileId = 3;</code>
      */
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getFileId() {
+      Object ref = fileId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           fileId_ = s;
         }
@@ -26121,11 +26121,11 @@ public final class MessageProto {
      */
     public com.google.protobuf.ByteString
         getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = fileId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         fileId_ = b;
         return b;
       } else {
@@ -26189,15 +26189,15 @@ public final class MessageProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice)) {
+      if (!(obj instanceof GetPlayProgressNotice)) {
         return super.equals(obj);
       }
-      com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice other = (com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice) obj;
+      GetPlayProgressNotice other = (GetPlayProgressNotice) obj;
 
       boolean result = true;
       result = result && (hasEventId() == other.hasEventId());
@@ -26219,7 +26219,7 @@ public final class MessageProto {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -26243,58 +26243,58 @@ public final class MessageProto {
       return hash;
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseFrom(
+    public static GetPlayProgressNotice parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseFrom(
+    public static GetPlayProgressNotice parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseFrom(byte[] data)
+    public static GetPlayProgressNotice parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseFrom(
+    public static GetPlayProgressNotice parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseFrom(java.io.InputStream input)
+    public static GetPlayProgressNotice parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseFrom(
+    public static GetPlayProgressNotice parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseDelimitedFrom(java.io.InputStream input)
+    public static GetPlayProgressNotice parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseDelimitedFrom(
+    public static GetPlayProgressNotice parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseFrom(
+    public static GetPlayProgressNotice parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parseFrom(
+    public static GetPlayProgressNotice parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -26306,7 +26306,7 @@ public final class MessageProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice prototype) {
+    public static Builder newBuilder(GetPlayProgressNotice prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -26314,9 +26314,9 @@ public final class MessageProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -26330,17 +26330,17 @@ public final class MessageProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:netty.GetPlayProgressNotice)
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNoticeOrBuilder {
+        GetPlayProgressNoticeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_GetPlayProgressNotice_descriptor;
+        return MessageProto.internal_static_netty_GetPlayProgressNotice_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_GetPlayProgressNotice_fieldAccessorTable
+        return MessageProto.internal_static_netty_GetPlayProgressNotice_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.class, com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.Builder.class);
+                GetPlayProgressNotice.class, Builder.class);
       }
 
       // Construct using com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.newBuilder()
@@ -26349,7 +26349,7 @@ public final class MessageProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -26371,23 +26371,23 @@ public final class MessageProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.internal_static_netty_GetPlayProgressNotice_descriptor;
+        return MessageProto.internal_static_netty_GetPlayProgressNotice_descriptor;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice getDefaultInstanceForType() {
-        return com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.getDefaultInstance();
+      public GetPlayProgressNotice getDefaultInstanceForType() {
+        return GetPlayProgressNotice.getDefaultInstance();
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice build() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice result = buildPartial();
+      public GetPlayProgressNotice build() {
+        GetPlayProgressNotice result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice buildPartial() {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice result = new com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice(this);
+      public GetPlayProgressNotice buildPartial() {
+        GetPlayProgressNotice result = new GetPlayProgressNotice(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -26434,16 +26434,16 @@ public final class MessageProto {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice) {
-          return mergeFrom((com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice)other);
+        if (other instanceof GetPlayProgressNotice) {
+          return mergeFrom((GetPlayProgressNotice)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice other) {
-        if (other == com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice.getDefaultInstance()) return this;
+      public Builder mergeFrom(GetPlayProgressNotice other) {
+        if (other == GetPlayProgressNotice.getDefaultInstance()) return this;
         if (other.hasEventId()) {
           bitField0_ |= 0x00000001;
           eventId_ = other.eventId_;
@@ -26481,11 +26481,11 @@ public final class MessageProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice parsedMessage = null;
+        GetPlayProgressNotice parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice) e.getUnfinishedMessage();
+          parsedMessage = (GetPlayProgressNotice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -26496,7 +26496,7 @@ public final class MessageProto {
       }
       private int bitField0_;
 
-      private java.lang.Object eventId_ = "";
+      private Object eventId_ = "";
       /**
        * <pre>
        *事件ID
@@ -26514,18 +26514,18 @@ public final class MessageProto {
        *
        * <code>required string eventId = 1;</code>
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEventId() {
+        Object ref = eventId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             eventId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -26537,11 +26537,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+        Object ref = eventId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           eventId_ = b;
           return b;
         } else {
@@ -26556,7 +26556,7 @@ public final class MessageProto {
        * <code>required string eventId = 1;</code>
        */
       public Builder setEventId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -26596,7 +26596,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object equipmentId_ = "";
+      private Object equipmentId_ = "";
       /**
        * <pre>
        *设备唯一标示
@@ -26614,18 +26614,18 @@ public final class MessageProto {
        *
        * <code>required string equipmentId = 2;</code>
        */
-      public java.lang.String getEquipmentId() {
-        java.lang.Object ref = equipmentId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEquipmentId() {
+        Object ref = equipmentId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             equipmentId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -26637,11 +26637,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getEquipmentIdBytes() {
-        java.lang.Object ref = equipmentId_;
+        Object ref = equipmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           equipmentId_ = b;
           return b;
         } else {
@@ -26656,7 +26656,7 @@ public final class MessageProto {
        * <code>required string equipmentId = 2;</code>
        */
       public Builder setEquipmentId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -26696,7 +26696,7 @@ public final class MessageProto {
         return this;
       }
 
-      private java.lang.Object fileId_ = "";
+      private Object fileId_ = "";
       /**
        * <pre>
        *文件ID
@@ -26714,18 +26714,18 @@ public final class MessageProto {
        *
        * <code>required string fileId = 3;</code>
        */
-      public java.lang.String getFileId() {
-        java.lang.Object ref = fileId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getFileId() {
+        Object ref = fileId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             fileId_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -26737,11 +26737,11 @@ public final class MessageProto {
        */
       public com.google.protobuf.ByteString
           getFileIdBytes() {
-        java.lang.Object ref = fileId_;
+        Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           fileId_ = b;
           return b;
         } else {
@@ -26756,7 +26756,7 @@ public final class MessageProto {
        * <code>required string fileId = 3;</code>
        */
       public Builder setFileId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -26810,16 +26810,16 @@ public final class MessageProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.GetPlayProgressNotice)
-    private static final com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice DEFAULT_INSTANCE;
+    private static final GetPlayProgressNotice DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice();
+      DEFAULT_INSTANCE = new GetPlayProgressNotice();
     }
 
-    public static com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice getDefaultInstance() {
+    public static GetPlayProgressNotice getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<GetPlayProgressNotice>
+    @Deprecated public static final com.google.protobuf.Parser<GetPlayProgressNotice>
         PARSER = new com.google.protobuf.AbstractParser<GetPlayProgressNotice>() {
       public GetPlayProgressNotice parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -26833,12 +26833,12 @@ public final class MessageProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<GetPlayProgressNotice> getParserForType() {
       return PARSER;
     }
 
-    public com.sd.vr.ctrl.netty.protobuf.MessageProto.GetPlayProgressNotice getDefaultInstanceForType() {
+    public GetPlayProgressNotice getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -26962,7 +26962,7 @@ public final class MessageProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\025MessageProto(7).proto\022\005netty\"\204\004\n\016Messa" +
       "geRequest\022%\n\004type\030\001 \002(\0162\014.netty.Types:\tH" +
       "EARTBEAT\0221\n\020heartBeatRequest\030\002 \001(\0132\027.net" +
@@ -27060,133 +27060,133 @@ public final class MessageProto {
     internal_static_netty_MessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_MessageRequest_descriptor,
-        new java.lang.String[] { "Type", "HeartBeatRequest", "RegisterRequest", "CtrlDictateRequest", "DownLoadRequest", "DeleteRequest", "ReConnectRequest", "PlayProgressRequest", "SetPlayProgressRequest", "DownloadAck", });
+        new String[] { "Type", "HeartBeatRequest", "RegisterRequest", "CtrlDictateRequest", "DownLoadRequest", "DeleteRequest", "ReConnectRequest", "PlayProgressRequest", "SetPlayProgressRequest", "DownloadAck", });
     internal_static_netty_HeartBeatRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_netty_HeartBeatRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_HeartBeatRequest_descriptor,
-        new java.lang.String[] { });
+        new String[] { });
     internal_static_netty_RegisterRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_netty_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_RegisterRequest_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", "RegisterType", });
+        new String[] { "EventId", "EquipmentId", "RegisterType", });
     internal_static_netty_CtrlDictateRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_netty_CtrlDictateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_CtrlDictateRequest_descriptor,
-        new java.lang.String[] { "EventId", "Dictate", "Position", "FileId", });
+        new String[] { "EventId", "Dictate", "Position", "FileId", });
     internal_static_netty_DownLoadRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_netty_DownLoadRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_DownLoadRequest_descriptor,
-        new java.lang.String[] { "EventId", "FileIds", "FileSize", });
+        new String[] { "EventId", "FileIds", "FileSize", });
     internal_static_netty_DeleteRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_netty_DeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_DeleteRequest_descriptor,
-        new java.lang.String[] { "EventId", "FileName", "FileId", });
+        new String[] { "EventId", "FileName", "FileId", });
     internal_static_netty_ReConnectRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_netty_ReConnectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_ReConnectRequest_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", });
+        new String[] { "EventId", "EquipmentId", });
     internal_static_netty_PlayProgressRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_netty_PlayProgressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_PlayProgressRequest_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", });
+        new String[] { "EventId", "EquipmentId", });
     internal_static_netty_SetPlayProgressRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_netty_SetPlayProgressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_SetPlayProgressRequest_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", "Position", "FileId", });
+        new String[] { "EventId", "EquipmentId", "Position", "FileId", });
     internal_static_netty_DownloadAck_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_netty_DownloadAck_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_DownloadAck_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", "FileId", });
+        new String[] { "EventId", "EquipmentId", "FileId", });
     internal_static_netty_MessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_netty_MessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_MessageResponse_descriptor,
-        new java.lang.String[] { "Type", "Status", "StatusCode", "StatusDesc", "RegisterResponse", "CtrlDictateResponse", "DownLoadResponse", "DeleteResponse", "ReConnectResponse", "PlayProgressResponse", "CtrlDictateNotice", "DownLoadNotice", "DeleteNotice", "PlayProgressNotice", "GetPlayProgressNotice", });
+        new String[] { "Type", "Status", "StatusCode", "StatusDesc", "RegisterResponse", "CtrlDictateResponse", "DownLoadResponse", "DeleteResponse", "ReConnectResponse", "PlayProgressResponse", "CtrlDictateNotice", "DownLoadNotice", "DeleteNotice", "PlayProgressNotice", "GetPlayProgressNotice", });
     internal_static_netty_RegisterResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_netty_RegisterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_RegisterResponse_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", });
+        new String[] { "EventId", "EquipmentId", });
     internal_static_netty_CtrlDictateResponse_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_netty_CtrlDictateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_CtrlDictateResponse_descriptor,
-        new java.lang.String[] { "EventId", });
+        new String[] { "EventId", });
     internal_static_netty_DownLoadResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_netty_DownLoadResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_DownLoadResponse_descriptor,
-        new java.lang.String[] { "EventId", });
+        new String[] { "EventId", });
     internal_static_netty_DeleteResponse_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_netty_DeleteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_DeleteResponse_descriptor,
-        new java.lang.String[] { "EventId", });
+        new String[] { "EventId", });
     internal_static_netty_ReConnectResponse_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_netty_ReConnectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_ReConnectResponse_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", });
+        new String[] { "EventId", "EquipmentId", });
     internal_static_netty_PlayProgressResponse_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_netty_PlayProgressResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_PlayProgressResponse_descriptor,
-        new java.lang.String[] { "EventId", "FileId", "Position", });
+        new String[] { "EventId", "FileId", "Position", });
     internal_static_netty_CtrlDictateNotice_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_netty_CtrlDictateNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_CtrlDictateNotice_descriptor,
-        new java.lang.String[] { "EventId", "Dictate", "Position", "FileId", "FileSize", });
+        new String[] { "EventId", "Dictate", "Position", "FileId", "FileSize", });
     internal_static_netty_DownLoadNotice_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_netty_DownLoadNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_DownLoadNotice_descriptor,
-        new java.lang.String[] { "EventId", "FileIds", "FileSize", "FileNames", });
+        new String[] { "EventId", "FileIds", "FileSize", "FileNames", });
     internal_static_netty_DeleteNotice_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_netty_DeleteNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_DeleteNotice_descriptor,
-        new java.lang.String[] { "EventId", "FileIds", });
+        new String[] { "EventId", "FileIds", });
     internal_static_netty_PlayProgressNotice_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_netty_PlayProgressNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_PlayProgressNotice_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", "FileId", "Position", "PlayStatus", });
+        new String[] { "EventId", "EquipmentId", "FileId", "Position", "PlayStatus", });
     internal_static_netty_GetPlayProgressNotice_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_netty_GetPlayProgressNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_netty_GetPlayProgressNotice_descriptor,
-        new java.lang.String[] { "EventId", "EquipmentId", "FileId", });
+        new String[] { "EventId", "EquipmentId", "FileId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
