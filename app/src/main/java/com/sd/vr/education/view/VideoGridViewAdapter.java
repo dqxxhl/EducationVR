@@ -1,9 +1,12 @@
 package com.sd.vr.education.view;
 
+import java.io.File;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +20,7 @@ import android.widget.TextView;
 import com.sd.vr.R;
 import com.sd.vr.education.VREducationMainActivity;
 import com.sd.vr.education.presenter.FilesManager;
+import com.sd.vr.education.utils.Utils;
 import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
 /**
@@ -67,8 +71,24 @@ public class VideoGridViewAdapter extends BaseAdapter {
         shanchu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FilesManager.getInstance().deleteFile(fileId);
-                context.updateUI();
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("提示"); //设置标题
+                builder.setMessage("是否确认删除该视频?");
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() { //设置确定按钮
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        FilesManager.getInstance().deleteFile(fileId);
+                        context.updateUI();
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() { //设置取消按钮
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.create().show();
             }
         });
 

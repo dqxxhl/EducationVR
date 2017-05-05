@@ -322,7 +322,12 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
 
     @Override
     public void uodateUI() {
-        updateUI();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                updateUI();
+            }
+        });
     }
 
     private boolean checkFileDownLoad(String fileName, long size){
@@ -432,8 +437,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             showSetting.setVisibility(View.VISIBLE);
             mainSettingIP.setVisibility(View.GONE);
         }else if (v.getId() == R.id.tuichu){
-            Instrumentation inst = new Instrumentation();
-            inst.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK);
+            finish();
         }else if (v.getId() == R.id.qiehuan){
             //不知道怎么弄
 

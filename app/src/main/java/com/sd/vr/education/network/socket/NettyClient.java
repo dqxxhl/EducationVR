@@ -35,7 +35,7 @@ public class NettyClient {
     private int mPort;
     private ServiceManager.UIhandler mUIHandler;//负责主线程的消息分发
     public ConnectionThread mConnectionThread;
-    private SocketChannel socketChannel;
+    public SocketChannel socketChannel;
 
 
     public NettyClient(String host, int port){
@@ -51,6 +51,15 @@ public class NettyClient {
 
         mConnectionThread = new ConnectionThread(mHost, mPort);
         mConnectionThread.start();
+    }
+
+    public void stop(){
+        if (socketChannel != null) {
+            socketChannel.close();
+        }
+        if (mConnectionThread!=null){
+            mConnectionThread.interrupt();
+        }
     }
 
     /**

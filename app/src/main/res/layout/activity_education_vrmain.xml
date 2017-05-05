@@ -370,7 +370,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/tuichu"
-                android:layout_marginLeft="125dp">
+                android:layout_marginLeft="125dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/icon_qiehuan"
