@@ -11,18 +11,10 @@
         android:text="海南岛风光.mp4"
         android:textSize="15dp"
         android:ellipsize="middle"
-        android:layout_toLeftOf="@+id/bofang"
+        android:layout_toLeftOf="@+id/layout_shanchu"
         android:gravity="center_horizontal"
         android:singleLine="true"
         android:layout_centerInParent="true"/>
-
-    <ImageView
-        android:id="@+id/bofang"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:src="@drawable/selector_video_play"
-        android:layout_toLeftOf="@+id/layout_shanchu"
-        android:layout_centerVertical="true"/>
 
     <RelativeLayout
         android:id="@+id/layout_shanchu"

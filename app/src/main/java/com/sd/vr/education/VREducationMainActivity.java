@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.app.Instrumentation;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,12 +26,14 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sd.vr.R;
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
+import com.sd.vr.education.broadcastreceiver.PowerConnectionReceiver;
 import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.ViewAction;
@@ -71,8 +74,11 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
                     if (apm == 1){
                         AM = "PM";
                     }
-
-                    String timeString = hour+":"+min+" "+AM;
+                    String temp = "";
+                    if (min <10){
+                        temp = "0";
+                    }
+                    String timeString = hour+":"+temp+min+" "+AM;
                     top_time.setText(timeString);
                     break;
                 default:
@@ -116,6 +122,10 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private RelativeLayout pager_index;
     private TextView top_time;
     private Button zidongjiance;
+    private ImageView icon_wifi;
+    private ProgressBar process_dianliang;
+    private TextView text_dianliang;
+    private PowerConnectionReceiver receiver = new PowerConnectionReceiver();
 
 
     @Override
@@ -153,6 +163,9 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         text_cache = (TextView) findViewById(R.id.text_cache);
         top_time = (TextView) findViewById(R.id.top_time);
         zidongjiance = (Button) findViewById(R.id.zidongjiance);
+        icon_wifi = (ImageView) findViewById(R.id.icon_wifi);
+        process_dianliang = (ProgressBar) findViewById(R.id.process_dianliang);
+        text_dianliang = (TextView) findViewById(R.id.text_dianliang);
 
         homeLayout.setOnClickListener(this);
         settingLayout.setOnClickListener(this);
@@ -245,7 +258,42 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         text_ip.setText(ip);
         ServiceManager.getInstance().initSocketClient(ip);
 
+        //设置是否有wifi
+        int netWorkState = Utils.getNetWorkState(this);
+        updateWiFi(netWorkState);
+    }
 
+    @Override
+    public void updateDianliang(float batteryPct){
+        int num = Math.round(batteryPct*100);
+        text_dianliang.setText(num+"%");
+        process_dianliang.setProgress(num);
+    }
+
+    @Override
+    public void updateWiFi(int netWorkState){
+        boolean isWifi = true;
+        if (netWorkState == Utils.NETWORK_NONE){
+            isWifi = false;
+        }
+        if (isWifi){
+            icon_wifi.setImageResource(R.drawable.vr_03);
+        }else {
+            icon_wifi.setImageResource(R.drawable.nowifi);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //设置电量
+        registerReceiver(receiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(receiver);
     }
 
     public void updateUI(){

@@ -96,6 +96,10 @@ public class ServiceManager {
             // 启动下载引擎
             FilesManager.getInstance().startDownLoad();
         }
+
+        if (mAction != null){
+            mAction.updateWiFi(netWorkState);
+        }
     }
 
     public void updateprocess(String process){
@@ -107,6 +111,16 @@ public class ServiceManager {
     public void updateUI(){
         if (mAction != null){
             mAction.uodateUI();
+        }
+    }
+
+    /**
+     * 更新电量数据
+     * @param batteryPct
+     */
+    public void updateDianliang(float batteryPct){
+        if(mAction != null){
+            mAction.updateDianliang(batteryPct);
         }
     }
 

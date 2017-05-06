@@ -18,4 +18,8 @@ public interface ViewAction {
 
     void uodateUI();
 
+    void updateWiFi(int netWorkState);
+
+    void updateDianliang(float batteryPct);
+
 }
