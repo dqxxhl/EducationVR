@@ -400,7 +400,7 @@ public class LoaderTask implements Runnable, BlockTaskListener {
 
     private static class NetFileInfo {
         /**
-         * 服务端提供的名字位于 'Content-Disposition' 中 'fileName' 节点
+         * 服务端提供的名字位于 'Content-Disposition' 中 'fileId' 节点
          */
         private String name;
 
@@ -418,7 +418,7 @@ public class LoaderTask implements Runnable, BlockTaskListener {
         public String toString() {
             StringBuffer sb = new StringBuffer();
 
-            sb.append("{ fileName:").append(name).append(" , fileSize:").append(size).append(" , isSupportPartial:")
+            sb.append("{ fileId:").append(name).append(" , fileSize:").append(size).append(" , isSupportPartial:")
                     .append(isSupportPartial).append(" }");
 
             return sb.toString();

@@ -6,8 +6,9 @@ package com.sd.vr.education.entity;
 
 public class FileDownLoad {
 
-    public String fileName;
+    public String fileId;
     public String fileUrl;
     public long fileSize;
+    public String fileNameShow;
 
 }

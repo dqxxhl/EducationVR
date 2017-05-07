@@ -34,6 +34,8 @@ import android.widget.Toast;
 import com.sd.vr.R;
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
 import com.sd.vr.education.broadcastreceiver.PowerConnectionReceiver;
+import com.sd.vr.education.entity.FileDownLoad;
+import com.sd.vr.education.entity.VideoItem;
 import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.ViewAction;
@@ -91,7 +93,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     int temp = 0;
 
     //=============================UI实现=================================
-    List<List<String>> pagerList = new ArrayList<>();
+    List<List<VideoItem>> pagerList = new ArrayList<>();
     private ViewPager viewPager;
     private LinearLayout numsLayout;
     private int positionSelected;
@@ -307,7 +309,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
      */
     private void initDate(){
         pagerList.clear();
-        List<String> videoList = FilesManager.getInstance().getVideoFiles();
+        List<VideoItem> videoList = FilesManager.getInstance().getVideoFiles();
         if (videoList == null || videoList.size() == 0){
             //无本地视频
             layout_null.setVisibility(View.VISIBLE);
@@ -321,7 +323,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             Log.e(TAG,"yema  ========="+a);
             int pageNum = (int) Math.ceil(a);
             for (int i = 0; i < pageNum; i++ ){
-                List<String> temp = new ArrayList<>();
+                List<VideoItem> temp = new ArrayList<>();
                 for (int j = i*8; j < (i+1)*8; j++){
                     if (j < videoList.size()){
                         temp.add(videoList.get(j));
@@ -485,7 +487,10 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             showSetting.setVisibility(View.VISIBLE);
             mainSettingIP.setVisibility(View.GONE);
         }else if (v.getId() == R.id.tuichu){
-            finish();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            this.startActivity(intent);
         }else if (v.getId() == R.id.qiehuan){
             //不知道怎么弄
 

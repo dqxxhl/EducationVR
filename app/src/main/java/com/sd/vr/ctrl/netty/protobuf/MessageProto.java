@@ -7354,7 +7354,7 @@ public final class MessageProto {
      *文件名
      * </pre>
      *
-     * <code>required string fileName = 2;</code>
+     * <code>required string fileId = 2;</code>
      */
     boolean hasFileName();
     /**
@@ -7362,7 +7362,7 @@ public final class MessageProto {
      *文件名
      * </pre>
      *
-     * <code>required string fileName = 2;</code>
+     * <code>required string fileId = 2;</code>
      */
     String getFileName();
     /**
@@ -7370,7 +7370,7 @@ public final class MessageProto {
      *文件名
      * </pre>
      *
-     * <code>required string fileName = 2;</code>
+     * <code>required string fileId = 2;</code>
      */
     com.google.protobuf.ByteString
         getFileNameBytes();
@@ -7554,7 +7554,7 @@ public final class MessageProto {
      *文件名
      * </pre>
      *
-     * <code>required string fileName = 2;</code>
+     * <code>required string fileId = 2;</code>
      */
     public boolean hasFileName() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
@@ -7564,7 +7564,7 @@ public final class MessageProto {
      *文件名
      * </pre>
      *
-     * <code>required string fileName = 2;</code>
+     * <code>required string fileId = 2;</code>
      */
     public String getFileName() {
       Object ref = fileName_;
@@ -7585,7 +7585,7 @@ public final class MessageProto {
      *文件名
      * </pre>
      *
-     * <code>required string fileName = 2;</code>
+     * <code>required string fileId = 2;</code>
      */
     public com.google.protobuf.ByteString
         getFileNameBytes() {
@@ -8124,7 +8124,7 @@ public final class MessageProto {
        *文件名
        * </pre>
        *
-       * <code>required string fileName = 2;</code>
+       * <code>required string fileId = 2;</code>
        */
       public boolean hasFileName() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
@@ -8134,7 +8134,7 @@ public final class MessageProto {
        *文件名
        * </pre>
        *
-       * <code>required string fileName = 2;</code>
+       * <code>required string fileId = 2;</code>
        */
       public String getFileName() {
         Object ref = fileName_;
@@ -8155,7 +8155,7 @@ public final class MessageProto {
        *文件名
        * </pre>
        *
-       * <code>required string fileName = 2;</code>
+       * <code>required string fileId = 2;</code>
        */
       public com.google.protobuf.ByteString
           getFileNameBytes() {
@@ -8175,7 +8175,7 @@ public final class MessageProto {
        *文件名
        * </pre>
        *
-       * <code>required string fileName = 2;</code>
+       * <code>required string fileId = 2;</code>
        */
       public Builder setFileName(
           String value) {
@@ -8192,7 +8192,7 @@ public final class MessageProto {
        *文件名
        * </pre>
        *
-       * <code>required string fileName = 2;</code>
+       * <code>required string fileId = 2;</code>
        */
       public Builder clearFileName() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -8205,7 +8205,7 @@ public final class MessageProto {
        *文件名
        * </pre>
        *
-       * <code>required string fileName = 2;</code>
+       * <code>required string fileId = 2;</code>
        */
       public Builder setFileNameBytes(
           com.google.protobuf.ByteString value) {

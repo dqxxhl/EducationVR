@@ -194,19 +194,30 @@ public class ServiceManager {
                                 return;
                             }
 
+                            String fileNameShow = downLoadNotice.getFileNames();
+                            String[] fileNameShows = fileNameShow.split(SPLIT);
+                            if (fileNameShows.length != fileSizeDownLoad.length){
+                                return;
+                            }
+                            String fileId = downLoadNotice.getFileIds();
+                            String[] downloadFileIds = fileId.split(SPLIT);
+                            if (downloadFileIds.length != fileSizeDownLoad.length){
+                                return;
+                            }
+
                             if (fileIdsTempDownLoad.length > 0){
                                 List<FileDownLoad> fileIdsList = new ArrayList<>();
                                 for (int i = 0; i < fileIdsTempDownLoad.length; i++){//解析需要下载文件数组
                                     FileDownLoad temp = new FileDownLoad();
                                     temp.fileUrl = fileIdsTempDownLoad[i];
                                     temp.fileSize = Long.valueOf(fileSizeDownLoad[i]);
+                                    temp.fileNameShow = fileNameShows[i];
                                     if (temp.fileUrl != null && !temp.fileUrl.equals("") && temp.fileUrl.endsWith(FilesManager.PATCH_SUFFIX) && temp.fileSize > 0){
-                                        temp.fileName = null;
+                                        temp.fileId = null;
                                         String tempString = "fileId=";
                                         int index = temp.fileUrl.indexOf(tempString);
                                         String target = temp.fileUrl.substring(index+tempString.length(), temp.fileUrl.length());
-                                        Log.e(TAG, "待下载的内容0："+target);
-                                        temp.fileName = target;
+                                        temp.fileId = target;
                                         fileIdsList.add(temp);
                                     }
                                 }

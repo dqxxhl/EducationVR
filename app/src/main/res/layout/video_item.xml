@@ -11,10 +11,27 @@
         android:text="海南岛风光.mp4"
         android:textSize="15dp"
         android:ellipsize="middle"
-        android:layout_toLeftOf="@+id/layout_shanchu"
+        android:layout_toLeftOf="@+id/icon_status"
         android:gravity="center_horizontal"
         android:singleLine="true"
         android:layout_centerInParent="true"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_chongshi"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:id="@+id/chongshi"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/vr_retry"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/layout_shanchu"
@@ -30,5 +47,29 @@
             android:src="@drawable/selector_video_delt"
             android:layout_centerVertical="true"/>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_jindu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+        <TextView
+            android:id="@+id/jindu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="18dp"
+            android:layout_centerVertical="true"
+            android:textSize="12dp"
+            android:text="50%"/>
+    </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/icon_status"
+        android:layout_width="44dp"
+        android:layout_height="11dp"
+        android:src="@drawable/vr_to_dowenload"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/layout_shanchu"/>
 
 </RelativeLayout>
