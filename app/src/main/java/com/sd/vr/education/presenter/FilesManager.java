@@ -342,6 +342,22 @@ public class FilesManager {
         }
     }
 
+    /**
+     * 重试
+     */
+    public void repty(String fileId){
+        Iterator<Map.Entry<FileDownLoad, Integer>> iter = downLoadFiles.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry<FileDownLoad, Integer> entry =  iter.next();
+            FileDownLoad file = entry.getKey();
+            if (file.fileId.equals(fileId)){
+                entry.setValue(STATUS_TO_DOWNLOAD);
+                //刷新UI
+                ServiceManager.getInstance().updateUI();
+            }
+        }
+    }
+
 
 
 

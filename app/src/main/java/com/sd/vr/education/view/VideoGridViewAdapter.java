@@ -73,6 +73,8 @@ public class VideoGridViewAdapter extends BaseAdapter {
             layout_chongshi.setVisibility(View.GONE);
             //显示删除按钮
             shanchu.setVisibility(View.VISIBLE);
+            //Item可点击
+            relativeLayout.setClickable(true);
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_TO_DOWNLOAD){//待下载
             //显示状态图标
             icon_status.setVisibility(View.VISIBLE);
@@ -84,6 +86,8 @@ public class VideoGridViewAdapter extends BaseAdapter {
             //显示删除按钮
             shanchu.setVisibility(View.VISIBLE);
             tip = "是否确认删除该下载任务?";
+            //Item不可点击
+            relativeLayout.setClickable(false);
 
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_DOWNLOADING){//下载中
             //显示状态图标
@@ -96,6 +100,8 @@ public class VideoGridViewAdapter extends BaseAdapter {
             layout_chongshi.setVisibility(View.GONE);
             //隐藏删除按钮
             shanchu.setVisibility(View.INVISIBLE);
+            //Item不可点击
+            relativeLayout.setClickable(false);
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_ERROR_DOWNLOAD){//下载异常
             //显示状态图标
             icon_status.setVisibility(View.VISIBLE);
@@ -106,6 +112,8 @@ public class VideoGridViewAdapter extends BaseAdapter {
             layout_chongshi.setVisibility(View.VISIBLE);
             //隐藏删除按钮
             shanchu.setVisibility(View.INVISIBLE);
+            //Item不可点击
+            relativeLayout.setClickable(false);
         }
 
         final String finalTip = tip;
@@ -134,6 +142,16 @@ public class VideoGridViewAdapter extends BaseAdapter {
                     }
                 });
                 builder.create().show();
+            }
+        });
+
+        /**
+         * 重试
+         */
+        layout_chongshi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FilesManager.getInstance().repty(fileId);
             }
         });
 
