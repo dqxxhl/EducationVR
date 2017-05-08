@@ -59,7 +59,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
         TextView jindu = (TextView) relativeLayout.findViewById(R.id.jindu);//进度
         RelativeLayout layout_chongshi = (RelativeLayout) relativeLayout.findViewById(R.id.layout_chongshi);
 
-        String tip = "是否确认删除该视频?";
+        String tip = "是否确认删除该教学资源?";
 
         final String fileName = listVideo.get(position).fileName;
         final String fileNameShow = listVideo.get(position).fileNameShow;

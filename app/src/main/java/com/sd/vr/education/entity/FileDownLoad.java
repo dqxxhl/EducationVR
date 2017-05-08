@@ -10,5 +10,6 @@ public class FileDownLoad {
     public String fileUrl;
     public long fileSize;
     public String fileNameShow;
+    public float progress;
 
 }

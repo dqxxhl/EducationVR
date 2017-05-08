@@ -53,6 +53,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
 
     private static final String TAG = VREducationMainActivity.class.getName();
     private static final int MSG_KEY_1 = 1;
+    private static final int MSG_KEY_2 = 2;
     ServiceManager serviceManager;
     String separator = ".";
 
@@ -82,6 +83,21 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
                     }
                     String timeString = hour+":"+temp+min+" "+AM;
                     top_time.setText(timeString);
+                    break;
+                case MSG_KEY_2:
+                    List<InetAddress> ipList = (List<InetAddress>) msg.obj;
+                    if (ipList.size() >= 1){
+                        String ip = ipList.get(0).toString();
+                        if (ip != null && !ip.equals("")){
+                            String[] ipNum = ip.split("\\.");
+                            if (ipNum.length == 4){
+                                ip_1.setText(ipNum[0]);
+                                ip_2.setText(ipNum[1]);
+                                ip_3.setText(ipNum[2]);
+                                ip_4.setText(ipNum[3]);
+                            }
+                        }
+                    }
                     break;
                 default:
                     break;
@@ -447,7 +463,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         }else if (v.getId() == R.id.setting_cache){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("提示"); //设置标题
-            builder.setMessage("是否确认清除所有本地视频?");
+            builder.setMessage("是否确认清除所有教学资源?");
             builder.setPositiveButton("确定", new DialogInterface.OnClickListener() { //设置确定按钮
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -484,7 +500,8 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
                 return;
             }
 
-            String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
+//            String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
+            String ip = "172.17.1.55";
             ServiceManager.getInstance().initSocketClient(ip);
 
             text_ip.setText(ip);
@@ -506,19 +523,17 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             viewPager.arrowScroll(66);
             Log.e(TAG, "下一页");
         }else if (v.getId() == R.id.zidongjiance){
-            /*List<InetAddress> ipList = Utils.searchHost();
-            if (ipList.size() >= 1){
-                String ip = ipList.get(0).toString();
-                if (ip != null && !ip.equals("")){
-                    String[] ipNum = ip.split("\\.");
-                    if (ipNum.length == 4){
-                        ip_1.setText(ipNum[0]);
-                        ip_2.setText(ipNum[1]);
-                        ip_3.setText(ipNum[2]);
-                        ip_4.setText(ipNum[3]);
-                    }
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    List<InetAddress> ipList = Utils.searchHost();
+                    Message msg = new Message();
+                    msg.what = MSG_KEY_2;
+                    msg.obj = ipList;
+                    handler.sendMessage(msg);
                 }
-            }*/
+            });
+            thread.start();
         }
     }
 

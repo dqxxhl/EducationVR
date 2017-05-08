@@ -201,10 +201,13 @@ public class FilesManager {
             @Override
             public void onLoad(String url, int size, int totalSize) {
                 //刷新UI
-                ServiceManager.getInstance().updateUI();
+                float temp = (float)size*100/(float) totalSize;
+                float progress = (float)Math.round(temp*10)/10;
+                finalFileDownLoad.progress = progress;
                 Log.e(TAG, "开始,下载......");
                 Log.e(TAG, "总大小："+totalSize+"下载大小:"+size+"下载进度："+((float)size/(float) totalSize));
                 ServiceManager.getInstance().updateprocess("总大小："+totalSize+"下载大小:"+size+"下载进度："+((float)size/(float) totalSize));
+                ServiceManager.getInstance().updateUI();
             }
 
             @Override
@@ -218,6 +221,7 @@ public class FilesManager {
                 //下载完成,发送下载完成指令
                 ServiceManager.getInstance().sendDownloadAck(fileName);
                 //刷新UI
+                finalFileDownLoad.progress = 100f;
                 ServiceManager.getInstance().updateUI();
             }
 
@@ -313,10 +317,10 @@ public class FilesManager {
             item.fileName = file.fileId + FILE_SUFFIX + file.fileNameShow;
             item.fileStatus = entry.getValue();
             if (item.fileStatus == STATUS_DOWNLOADING){//计算进度
-                long size = Utils.getFileSize(new File(DIRECTORY + "/" + item.fileName));
+                /*long size = Utils.getFileSize(new File(DIRECTORY + "/" + item.fileName));
                 float progress = size*100 / file.fileSize;
-                float num = (float)Math.round(progress*10)/10;
-                item.progress = num;
+                float num = (float)Math.round(progress*10)/10;*/
+                item.progress = file.progress;
             }
             items.add(item);
         }
