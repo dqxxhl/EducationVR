@@ -348,10 +348,15 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
 
     @Override
     public void start(String fileId, long size) {
-        String url = FilesManager.DIRECTORY+"/"+ fileId;
+
+        File file = FilesManager.getInstance().getFile(fileId);
+        if (file == null){
+            return;
+        }
+        String url = file.getAbsolutePath();
 //        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/yangli.mp4";
         Log.e(TAG, "URL:"+url);
-        if (checkFileDownLoad(fileId,size)){
+        if (checkFileDownLoad(file.getName(),size)){
             Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
             intent.putExtra("START",url);
             startActivity(intent);

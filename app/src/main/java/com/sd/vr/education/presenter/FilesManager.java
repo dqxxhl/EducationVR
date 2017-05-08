@@ -358,6 +358,16 @@ public class FilesManager {
         }
     }
 
+    public File getFile(String fileId){
+        File fileDir = new File(DIRECTORY);
+        for (File file : fileDir.listFiles()) {
+            if (file.getAbsolutePath().contains(fileId)){
+                return file;
+            }
+        }
+        return null;
+    }
+
 
 
 

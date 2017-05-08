@@ -6,6 +6,7 @@ import static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageRequest;
 import static com.sd.vr.ctrl.netty.protobuf.MessageProto.MessageResponse;
 import static com.sd.vr.ctrl.netty.protobuf.MessageProto.RespStatus;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -281,7 +282,10 @@ public class ServiceManager {
                 case START:
                     if (mVideoAction != null){
                         if (ctrlDictateNotice.getFileId() != null && !ctrlDictateNotice.getFileId().equals("")){
-                            mVideoAction.start(ctrlDictateNotice.getFileId());
+                            File file = FilesManager.getInstance().getFile(ctrlDictateNotice.getFileId());
+                            if (file != null){
+                                mVideoAction.start(file.getName());
+                            }
                         }
                     }else {
                         //打开一个VideoPlayerActivity
