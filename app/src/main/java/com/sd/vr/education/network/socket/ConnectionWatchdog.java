@@ -60,7 +60,7 @@ public class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements 
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         super.channelInactive(ctx);
         Log.e(TAG, "链接关闭");
-        if(reconnect){
+        if(reconnect && nettyClient.isChonglian){
             if (attempts < 12) {
                 attempts++;
             }else {

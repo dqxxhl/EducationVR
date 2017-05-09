@@ -88,6 +88,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
                     List<InetAddress> ipList = (List<InetAddress>) msg.obj;
                     if (ipList.size() >= 1){
                         String ip = ipList.get(0).toString();
+                        ip = ip.substring(1,ip.length());
                         if (ip != null && !ip.equals("")){
                             String[] ipNum = ip.split("\\.");
                             if (ipNum.length == 4){
@@ -149,6 +150,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e(TAG, "VREducationMainActivity:onCreate()");
         requestWindowFeature(Window.FEATURE_NO_TITLE);//无标题
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏幕显示
         setContentView(R.layout.activity_education_vrmain);
@@ -303,6 +305,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
 
     @Override
     protected void onResume() {
+        Log.e(TAG, "onResume()");
         super.onResume();
         //设置电量
         registerReceiver(receiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
@@ -500,8 +503,8 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
                 return;
             }
 
-//            String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
-            String ip = "172.17.1.55";
+            String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
+//            String ip = "172.17.1.55";
             ServiceManager.getInstance().initSocketClient(ip);
 
             text_ip.setText(ip);
@@ -526,7 +529,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             Thread thread = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    List<InetAddress> ipList = Utils.searchHost();
+                    List<InetAddress> ipList = Utils.searchHost(VREducationMainActivity.this);
                     Message msg = new Message();
                     msg.what = MSG_KEY_2;
                     msg.obj = ipList;

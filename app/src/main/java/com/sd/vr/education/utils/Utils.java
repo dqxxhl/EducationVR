@@ -126,13 +126,20 @@ public class Utils {
     }
 
 
-    private static InetAddress getIP(byte i){
+    private static InetAddress getIP(byte i, Context context){
         //传进来的i是用来做最后一个段的
         InetAddress local = null;
         try {
+            WifiManager wifiManager = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+            int ipAddress = wifiInfo.getIpAddress();
+
             local = InetAddress.getLocalHost();//获得本地ip
             byte[]addr=local.getAddress(); //将ip转换为字节数组存入addr
-            addr[3]=i;//修改ip的最后一个段
+            addr[0] = (byte)(ipAddress & 0xff);
+            addr[1] = (byte)(ipAddress>>8 & 0xff);
+            addr[2] = (byte)(ipAddress>>16 & 0xff);
+            addr[3] = i;//修改ip的最后一个段
             local = InetAddress.getByAddress(addr); //将数组转换成IP
         } catch (Exception e){
             e.printStackTrace();
@@ -143,15 +150,16 @@ public class Utils {
     /**
      * 寻找主机
      */
-    public static List<InetAddress> searchHost(){
+    public static List<InetAddress> searchHost(Context context){
         List<InetAddress> ipList = new ArrayList<>();
         int PORT=8011;//定义端口
         for(int i=1;i<=254;i++){
             try {
                 Socket s=new Socket();
-                s.connect(new InetSocketAddress(getIP((byte)i),PORT), 100);//试着连接每一个ip 每个ip延迟时间为100毫秒
-                Log.e(TAG, "连接成功了:"+getIP((byte)i));
-                ipList.add(getIP((byte)i));
+                s.connect(new InetSocketAddress(getIP((byte)i,context),PORT), 100);//试着连接每一个ip 每个ip延迟时间为100毫秒
+                Log.e(TAG, "连接成功了:"+getIP((byte)i,context));
+                ipList.add(getIP((byte)i,context));
+                break;
             } catch (IOException e) {
                 Log.e(TAG, "第 " +i+" 个IP "+(byte)i+"连接尝试失败");
                 continue;

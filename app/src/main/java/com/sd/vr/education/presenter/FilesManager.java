@@ -83,7 +83,7 @@ public class FilesManager {
                 if (file.getAbsolutePath().endsWith(PATCH_SUFFIX)){
                     if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
                         //文件已下载
-                        ServiceManager.getInstance().sendDownloadAck(fileName);
+                        ServiceManager.getInstance().sendDownloadAck(fileDownLoad.fileId);
                         return;
                     }else if (file.getName().equals(fileName) && Utils.getFileSize(file) > size){
                         deleteFile(fileName);

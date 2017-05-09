@@ -36,6 +36,7 @@ public class NettyClient {
     private ServiceManager.UIhandler mUIHandler;//负责主线程的消息分发
     public ConnectionThread mConnectionThread;
     public SocketChannel socketChannel;
+    public boolean isChonglian = true;
 
 
     public NettyClient(String host, int port){
@@ -54,9 +55,12 @@ public class NettyClient {
     }
 
     public void stop(){
+
+        this.isChonglian = false;
         if (socketChannel != null) {
             socketChannel.close();
         }
+
         if (mConnectionThread!=null){
             mConnectionThread.interrupt();
         }
@@ -130,6 +134,7 @@ public class NettyClient {
                     ch.pipeline().addLast(new ProtobufEncoder());
                     ch.pipeline().addLast(new IdleStateHandler(0, 4, 0, TimeUnit.SECONDS));
                     ch.pipeline().addLast(new ClientHandler(NettyClient.this));
+                    isChonglian = true;
                     ch.pipeline().addLast(new ConnectionWatchdog(bootstrap, mHost, mPort,timer, NettyClient.this, true));
                     ch.pipeline().addLast(new HeartBeatClientHandler());
                 }
@@ -138,6 +143,7 @@ public class NettyClient {
             try {
                 ChannelFuture f = bootstrap.connect(mHost, mPort).sync();
                 if (f.isSuccess()){
+                    Log.e(TAG, "连接服务器成功");
                     mUIHandler.sendMessage(mUIHandler.obtainMessage(ServiceManager.SAVE_IP, mHost));
                     socketChannel = (SocketChannel) f.channel();
                 }
