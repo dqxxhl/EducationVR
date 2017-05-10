@@ -74,7 +74,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
             //显示删除按钮
             shanchu.setVisibility(View.VISIBLE);
             //Item可点击
-            relativeLayout.setEnabled(true);
+            relativeLayout.setEnabled(false);
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_TO_DOWNLOAD){//待下载
             //显示状态图标
             icon_status.setVisibility(View.VISIBLE);

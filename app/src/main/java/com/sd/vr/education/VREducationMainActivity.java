@@ -511,10 +511,20 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             showSetting.setVisibility(View.VISIBLE);
             mainSettingIP.setVisibility(View.GONE);
         }else if (v.getId() == R.id.tuichu){
-            Intent intent = new Intent(Intent.ACTION_MAIN);
+            /*Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_HOME);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            this.startActivity(intent);
+            this.startActivity(intent);*/
+            new Thread () {
+                public void run () {
+                    try {
+                        Instrumentation inst= new Instrumentation();
+                        inst.sendKeyDownUpSync(KeyEvent. KEYCODE_BACK);
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
         }else if (v.getId() == R.id.qiehuan){
             //不知道怎么弄
 

@@ -151,9 +151,6 @@ public class ServiceManager {
      * @param fileId
      */
     public void sendDownloadAck(String fileId){
-        if (mVideoAction != null){
-            return;
-        }
         MessageProto.DownloadAck downloadAck = MessageProto.DownloadAck.newBuilder().setEventId("DOWNLOAD_ACK").setEquipmentId(Utils.getDeviceId(mContext)).setFileId(fileId).build();
         MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.DOWNLOAD_ACK).setDownloadAck(downloadAck).build();
         sendRequest(request);
