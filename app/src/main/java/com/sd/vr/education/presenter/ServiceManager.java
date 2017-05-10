@@ -61,11 +61,22 @@ public class ServiceManager {
     //初始化Socket
     public void initSocketClient(String host){
         if (mClient != null){
+            FilesManager.getInstance().stopDownLoad();
             mClient.stop();
         }
         mClient = new NettyClient(host, PORT);
         mClient.setmUIHandler(new UIhandler());
         mClient.start();
+    }
+
+    public void tryInit(String host){
+        if (mClient == null){
+            mClient = new NettyClient(host, PORT);
+            mClient.setmUIHandler(new UIhandler());
+            mClient.start();
+        }else {
+            register();
+        }
     }
 
     public void sendRequest(MessageRequest request){

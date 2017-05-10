@@ -16,6 +16,7 @@ import com.sd.vr.education.network.http.downloader.LoaderError;
 import com.sd.vr.education.network.http.downloader.LoaderExecutor;
 import com.sd.vr.education.network.http.downloader.LoaderListener;
 import com.sd.vr.education.network.http.downloader.entity.LoaderInfo;
+import com.sd.vr.education.network.http.downloader.load.LoaderTask;
 import com.sd.vr.education.utils.Utils;
 
 /**
@@ -29,7 +30,7 @@ public class FilesManager {
     public static final String DIRECTORY = Environment.getExternalStorageDirectory().getAbsolutePath()+"/com.sd.vr";
     public static final String PATCH_SUFFIX = ".mp4";
     public static final String TEMP_SUFFIX = ".cfg";
-    public static final String FILE_SUFFIX = "_";
+    public static final String FILE_SUFFIX = "_@";
 
     //下载状态定义
     public static final int STATUS_TO_DOWNLOAD = 0;//待下载
@@ -41,6 +42,8 @@ public class FilesManager {
 
     public HashMap<FileDownLoad,Integer> downLoadFiles = new HashMap<>();
     private static FilesManager mFilesManager;
+
+    private LoaderTask task;
 
     private FilesManager(){
         Log.i(TAG, "启动文件管理");
@@ -169,7 +172,7 @@ public class FilesManager {
             }
         }
 
-        if (isDownLoading){
+        if (isDownLoading || fileDownLoad == null){
             return;
         }
 
@@ -219,7 +222,7 @@ public class FilesManager {
                 downLoadFiles.remove(finalFileDownLoad);
                 startDownLoad();
                 //下载完成,发送下载完成指令
-                ServiceManager.getInstance().sendDownloadAck(fileName);
+                ServiceManager.getInstance().sendDownloadAck(finalFileDownLoad.fileId);
                 //刷新UI
                 finalFileDownLoad.progress = 100f;
                 ServiceManager.getInstance().updateUI();
@@ -230,9 +233,9 @@ public class FilesManager {
                 super.onCancelled(url);
                 Log.e(TAG, "取消,下载......"+url);
                 //移除下载项
-                downLoadFiles.remove(finalFileDownLoad);
+//                downLoadFiles.remove(finalFileDownLoad);
                 //开始下一项
-                startDownLoad();
+//                startDownLoad();
             }
 
             @Override
@@ -244,6 +247,7 @@ public class FilesManager {
                 downLoadFiles.put(finalFileDownLoad,STATUS_ERROR_DOWNLOAD);
                 //开始下一项
                 startDownLoad();
+                ServiceManager.getInstance().updateUI();
             }
         });
     }
@@ -360,6 +364,8 @@ public class FilesManager {
                 ServiceManager.getInstance().updateUI();
             }
         }
+
+        startDownLoad();
     }
 
     public File getFile(String fileId){
@@ -370,6 +376,17 @@ public class FilesManager {
             }
         }
         return null;
+    }
+
+    /**
+     * 停止下载任务
+     */
+    public void stopDownLoad(){
+
+        LoaderExecutor.cancel(task);
+        downLoadFiles.clear();
+        ServiceManager.getInstance().updateUI();
+
     }
 
 

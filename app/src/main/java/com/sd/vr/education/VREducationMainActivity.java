@@ -276,7 +276,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             return;
         }
         text_ip.setText(ip);
-        ServiceManager.getInstance().initSocketClient(ip);
+        ServiceManager.getInstance().tryInit(ip);
 
         //设置是否有wifi
         int netWorkState = Utils.getNetWorkState(this);
@@ -339,7 +339,6 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             viewPager.setVisibility(View.VISIBLE);
             pager_index.setVisibility(View.VISIBLE);
             float a =(float) videoList.size()/8;
-            Log.e(TAG,"yema  ========="+a);
             int pageNum = (int) Math.ceil(a);
             for (int i = 0; i < pageNum; i++ ){
                 List<VideoItem> temp = new ArrayList<>();
@@ -504,7 +503,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             }
 
             String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
-//            String ip = "172.17.1.55";
+//            String ip = "120.26.141.161";
             ServiceManager.getInstance().initSocketClient(ip);
 
             text_ip.setText(ip);

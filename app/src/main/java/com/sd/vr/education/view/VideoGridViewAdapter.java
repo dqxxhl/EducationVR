@@ -74,7 +74,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
             //显示删除按钮
             shanchu.setVisibility(View.VISIBLE);
             //Item可点击
-            relativeLayout.setClickable(true);
+            relativeLayout.setEnabled(true);
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_TO_DOWNLOAD){//待下载
             //显示状态图标
             icon_status.setVisibility(View.VISIBLE);
@@ -87,7 +87,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
             shanchu.setVisibility(View.VISIBLE);
             tip = "是否确认删除该下载任务?";
             //Item不可点击
-            relativeLayout.setClickable(false);
+            relativeLayout.setEnabled(false);
 
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_DOWNLOADING){//下载中
             //显示状态图标
@@ -101,7 +101,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
             //隐藏删除按钮
             shanchu.setVisibility(View.INVISIBLE);
             //Item不可点击
-            relativeLayout.setClickable(false);
+            relativeLayout.setEnabled(false);
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_ERROR_DOWNLOAD){//下载异常
             //显示状态图标
             icon_status.setVisibility(View.VISIBLE);
@@ -113,7 +113,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
             //隐藏删除按钮
             shanchu.setVisibility(View.INVISIBLE);
             //Item不可点击
-            relativeLayout.setClickable(false);
+            relativeLayout.setEnabled(false);
         }
 
         final String finalTip = tip;
