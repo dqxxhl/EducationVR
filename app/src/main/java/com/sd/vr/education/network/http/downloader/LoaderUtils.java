@@ -1,9 +1,10 @@
-package com.sd.vr.education.network.http.downloader.utils;
+package com.sd.vr.education.network.http.downloader;
 
 import java.net.URLConnection;
 
 /**
- * Created by sk on 15-10-10.
+ * 工具类
+ * Created by hl09287 on 2017/4/14.
  */
 public class LoaderUtils {
     public static void setHeader(URLConnection conn) {

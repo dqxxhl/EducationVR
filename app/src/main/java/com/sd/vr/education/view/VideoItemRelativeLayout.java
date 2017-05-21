@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import com.sd.vr.R;
 
 /**
+ * 每个item的布局文件
  * Created by HL on 2017/5/8.
  */
 

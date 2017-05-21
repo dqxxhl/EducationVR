@@ -1,4 +1,4 @@
-package com.sd.vr.education.network.http.downloader.load;
+package com.sd.vr.education.network.http.downloader.blockload;
 
 import android.util.Log;
 
@@ -9,8 +9,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import com.sd.vr.education.network.http.downloader.entity.LoaderInfo;
+import com.sd.vr.education.network.http.downloader.LoaderInfo;
 
+/**
+ * 下载配置文件
+ * Created by hl09287 on 2017/4/14.
+ */
 public class LoaderConfig {
 
     private final static String SUFFIX = ".cfg";

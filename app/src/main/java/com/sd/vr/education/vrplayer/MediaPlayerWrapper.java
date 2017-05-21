@@ -13,11 +13,8 @@ import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import tv.danmaku.ijk.media.player.misc.IMediaDataSource;
 
 /**
- * Created by hzqiujiadi on 16/4/5.
- * hzqiujiadi ashqalcn@gmail.com
- *
- * http://developer.android.com/intl/zh-cn/reference/android/media/MediaPlayer.html
- * status
+ * player封装类
+ * Created by hl09287 on 2017/4/14.
  */
 public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
 

@@ -11,6 +11,7 @@ import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 
 /**
+ * 心跳包
  * Created by hl09287 on 2017/4/17.
  */
 

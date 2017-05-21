@@ -1,6 +1,7 @@
 package com.sd.vr.education.entity;
 
 /**
+ * 展示实体
  * Created by HL on 2017/5/7.
  */
 

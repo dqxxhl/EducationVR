@@ -12,11 +12,11 @@ import android.util.Log;
 
 import com.sd.vr.education.entity.FileDownLoad;
 import com.sd.vr.education.entity.VideoItem;
-import com.sd.vr.education.network.http.downloader.LoaderError;
+import com.sd.vr.education.network.http.downloader.ErrorCode;
 import com.sd.vr.education.network.http.downloader.LoaderExecutor;
 import com.sd.vr.education.network.http.downloader.LoaderListener;
-import com.sd.vr.education.network.http.downloader.entity.LoaderInfo;
-import com.sd.vr.education.network.http.downloader.load.LoaderTask;
+import com.sd.vr.education.network.http.downloader.LoaderInfo;
+import com.sd.vr.education.network.http.downloader.blockload.LoaderTask;
 import com.sd.vr.education.utils.Utils;
 
 /**
@@ -239,7 +239,7 @@ public class FilesManager {
             }
 
             @Override
-            public void onError(String url, LoaderError err) {
+            public void onError(String url, ErrorCode err) {
                 super.onError(url, err);
                 Log.e(TAG, "异常,下载......"+err.getMsg()+"----错误码:"+err.getCode());
                 ServiceManager.getInstance().updateprocess("异常,下载......");
@@ -387,6 +387,17 @@ public class FilesManager {
         downLoadFiles.clear();
         ServiceManager.getInstance().updateUI();
 
+    }
+
+    public void reStartDownload(){
+        Iterator<Map.Entry<FileDownLoad, Integer>> iter = downLoadFiles.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry<FileDownLoad, Integer> entry =  iter.next();
+            FileDownLoad file = entry.getKey();
+            downLoadFiles.put(file, STATUS_TO_DOWNLOAD);
+        }
+
+        startDownLoad();
     }
 
 

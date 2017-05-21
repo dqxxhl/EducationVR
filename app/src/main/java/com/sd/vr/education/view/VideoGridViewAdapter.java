@@ -23,7 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by hl09287 on 2017/5/3.
+ * 首页视频展示页面适配器
+ * Created by hl09287 on 2017/4/14.
  */
 
 public class VideoGridViewAdapter extends BaseAdapter {

@@ -6,8 +6,8 @@ import com.asha.vrlib.strategy.projection.IMDProjectionFactory;
 import com.asha.vrlib.strategy.projection.MultiFishEyeProjection;
 
 /**
- * Created by hzqiujiadi on 16/8/20.
- * hzqiujiadi ashqalcn@gmail.com
+ * 自定义配置
+ * Created by hl09287 on 2017/4/14.
  */
 public class CustomProjectionFactory implements IMDProjectionFactory {
 

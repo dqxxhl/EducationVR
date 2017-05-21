@@ -1,26 +1,14 @@
-package com.sd.vr.education.network.http.downloader.entity;
+package com.sd.vr.education.network.http.downloader;
 
 import java.io.File;
 
 public class LoaderInfo {
-    /**
-     * 下载所需的url链接
-     */
     private String url;
 
-    /**
-     * 下载文件名
-     */
     private String name;
 
-    /**
-     * 下载的目录
-     */
     private String dir;
 
-    /**
-     * 下载块数量
-     */
     private int splitter;
 
     private LoaderInfo(Builder builder) {

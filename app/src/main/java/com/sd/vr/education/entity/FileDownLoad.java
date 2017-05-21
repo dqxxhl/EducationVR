@@ -1,6 +1,7 @@
 package com.sd.vr.education.entity;
 
 /**
+ * 文件下载实体
  * Created by hl09287 on 2017/4/14.
  */
 

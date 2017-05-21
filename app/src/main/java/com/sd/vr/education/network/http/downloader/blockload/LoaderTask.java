@@ -1,4 +1,4 @@
-package com.sd.vr.education.network.http.downloader.load;
+package com.sd.vr.education.network.http.downloader.blockload;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -9,15 +9,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
-import com.sd.vr.education.network.http.downloader.LoaderError;
+import com.sd.vr.education.network.http.downloader.ErrorCode;
 import com.sd.vr.education.network.http.downloader.LoaderListener;
-import com.sd.vr.education.network.http.downloader.entity.LoaderInfo;
-import com.sd.vr.education.network.http.downloader.utils.LoaderUtils;
+import com.sd.vr.education.network.http.downloader.LoaderInfo;
+import com.sd.vr.education.network.http.downloader.LoaderUtils;
 
 import android.util.Log;
 
 /**
- * Created by sk on 15-8-1.
+ * 下载任务
+ * Created by hl09287 on 2017/4/14.
  */
 public class LoaderTask implements Runnable, BlockTaskListener {
 
@@ -127,7 +128,7 @@ public class LoaderTask implements Runnable, BlockTaskListener {
 
             if (mNetFileInfo.size == -2) {
                 mTaskStatus = STATUS_ERROR;
-                mLoaderListener.onError(mInfo.url(), new LoaderError(LoaderError.CODE_RESPONSE_CODE_ERROR,
+                mLoaderListener.onError(mInfo.url(), new ErrorCode(ErrorCode.CODE_RESPONSE_CODE_ERROR,
                         new RuntimeException("The response code is not HTTP_OK or HTTP_PARTIAL !")));
                 return;
             }
@@ -135,7 +136,7 @@ public class LoaderTask implements Runnable, BlockTaskListener {
             if (mNetFileInfo.size == -1) {
                 // setBlockStatus(STATUS_ERROR);
                 mTaskStatus = STATUS_ERROR;
-                mLoaderListener.onError(mInfo.url(), new LoaderError(LoaderError.CODE_CONNECT_ERROR,
+                mLoaderListener.onError(mInfo.url(), new ErrorCode(ErrorCode.CODE_CONNECT_ERROR,
                         new RuntimeException("Got the error when connect to the server !")));
                 return;
             }
@@ -162,9 +163,9 @@ public class LoaderTask implements Runnable, BlockTaskListener {
             handle_ret(obtain_loader_state());
 
         } catch (IOException e) {
-            mLoaderListener.onError(mInfo.url(), new LoaderError(LoaderError.CODE_LOAD_ERROR, e));
+            mLoaderListener.onError(mInfo.url(), new ErrorCode(ErrorCode.CODE_LOAD_ERROR, e));
         } catch (InterruptedException e) {
-            mLoaderListener.onError(mInfo.url(), new LoaderError(LoaderError.CODE_LOAD_ERROR, e));
+            mLoaderListener.onError(mInfo.url(), new ErrorCode(ErrorCode.CODE_LOAD_ERROR, e));
         }
     }
 
@@ -364,14 +365,14 @@ public class LoaderTask implements Runnable, BlockTaskListener {
                 // 未知错误.
                 mTaskStatus = STATUS_ERROR;
                 printf("Task status : %d", mTaskStatus);
-                mLoaderListener.onError(mInfo.url(), new LoaderError(LoaderError.CODE_UNKNOWN_ERROR,
+                mLoaderListener.onError(mInfo.url(), new ErrorCode(ErrorCode.CODE_UNKNOWN_ERROR,
                         new RuntimeException("unknown err.")));
             }
             break;
         case STATUS_ERROR:
             mTaskStatus = STATUS_ERROR;
             printf("Task status : %d", mTaskStatus);
-            mLoaderListener.onError(mInfo.url(), new LoaderError(LoaderError.CODE_LOAD_ERROR, new RuntimeException(
+            mLoaderListener.onError(mInfo.url(), new ErrorCode(ErrorCode.CODE_LOAD_ERROR, new RuntimeException(
                     "load err.")));
             break;
         case STATUS_CANCELED:

@@ -1,6 +1,7 @@
 package com.sd.vr.education.presenter;
 
 /**
+ * player控制接口
  * Created by hl09287 on 2017/4/11.
  */
 

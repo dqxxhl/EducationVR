@@ -25,6 +25,10 @@ import android.widget.Toast;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
+/**
+ * 视频播放页面
+ * Created by hl09287 on 2017/4/14.
+ */
 public class VideoPlayerActivity extends Activity implements VideoAction {
 
     private static final String TAG =  VideoPlayerActivity.class.getName();

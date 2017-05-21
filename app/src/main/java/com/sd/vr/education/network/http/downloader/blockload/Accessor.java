@@ -1,4 +1,4 @@
-package com.sd.vr.education.network.http.downloader.load;
+package com.sd.vr.education.network.http.downloader.blockload;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

@@ -25,6 +25,7 @@ import io.netty.util.Timer;
 import io.netty.util.TimerTask;
 
 /**
+ * 断线重连
  * Created by hl09287 on 2017/4/17.
  */
 

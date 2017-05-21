@@ -1,4 +1,4 @@
-package com.sd.vr.education.network.http.downloader.load;
+package com.sd.vr.education.network.http.downloader.blockload;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -6,11 +6,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.Callable;
 
-import com.sd.vr.education.network.http.downloader.entity.LoaderInfo;
-import com.sd.vr.education.network.http.downloader.utils.LoaderUtils;
+import com.sd.vr.education.network.http.downloader.LoaderInfo;
+import com.sd.vr.education.network.http.downloader.LoaderUtils;
 
 import android.util.Log;
 
+/**
+ * 块下载
+ * Created by hl09287 on 2017/4/14.
+ */
 class BlockTask implements Callable<Integer> {
     private String url;
     private long startPos;

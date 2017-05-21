@@ -23,6 +23,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 /**
+ * 工具类
  * Created by hl09287 on 2017/3/29.
  */
 

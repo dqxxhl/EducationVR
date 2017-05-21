@@ -49,6 +49,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * 首页，展示视频列表，设置等
+ * Created by hl09287 on 2017/4/14.
+ */
 public class VREducationMainActivity extends Activity implements ViewAction, View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private static final String TAG = VREducationMainActivity.class.getName();

@@ -106,7 +106,7 @@ public class ServiceManager {
                 mClient.notifyNetworkChange();
             }
             // 启动下载引擎
-            FilesManager.getInstance().startDownLoad();
+            FilesManager.getInstance().reStartDownload();
         }
 
         if (mAction != null){

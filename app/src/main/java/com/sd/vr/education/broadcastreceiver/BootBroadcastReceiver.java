@@ -9,6 +9,7 @@ import android.util.Log;
 import com.sd.vr.education.VREducationMainActivity;
 
 /**
+ * 开机启动监控
  * Created by hl09287 on 2017/3/9.
  */
 

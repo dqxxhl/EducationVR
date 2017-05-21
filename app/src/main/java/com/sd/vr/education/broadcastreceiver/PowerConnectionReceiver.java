@@ -9,6 +9,7 @@ import android.util.Log;
 import com.sd.vr.education.presenter.ServiceManager;
 
 /**
+ * 电池状态监控
  * Created by HL on 2017/5/6.
  */
 

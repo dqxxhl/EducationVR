@@ -9,6 +9,7 @@ import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.utils.Utils;
 
 /**
+ * 网络状态监控
  * Created by Administrator on 2017/4/17.
  */
 

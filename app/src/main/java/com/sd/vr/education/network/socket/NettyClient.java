@@ -24,6 +24,7 @@ import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.HashedWheelTimer;
 
 /**
+ * TCP客户端
  * Created by hl09287 on 2017/3/27.
  */
 
@@ -75,6 +76,7 @@ public class NettyClient {
         }
         Thread.State state = mConnectionThread.getState();
         if (state.equals(Thread.State.TERMINATED)){
+            mConnectionThread.getTimer().stop();
             Log.e(TAG, "mConnectionThread已跑完,新建一个线程");
             start();
         }
@@ -111,15 +113,19 @@ public class NettyClient {
         private int mPort;
         private int reconnect;
         private Handler handler = new Handler();
+        private HashedWheelTimer timer = new HashedWheelTimer();
 
         public ConnectionThread(String host, int port) {
             this.mHost = host;
             this.mPort = port;
         }
 
+        public HashedWheelTimer getTimer() {
+            return timer;
+        }
+
         @Override
         public void run() {
-            final HashedWheelTimer timer = new HashedWheelTimer();
             EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
             final Bootstrap bootstrap = new Bootstrap();
             bootstrap.channel(NioSocketChannel.class);
