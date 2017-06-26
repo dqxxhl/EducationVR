@@ -1,5 +1,6 @@
 package com.sd.vr.education.vrplayer;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -7,6 +8,8 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 import android.view.Surface;
+
+import com.sd.vr.education.vrplayer.encrypt.RandomMediaDataSource;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
@@ -94,6 +97,15 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
                 }
             });
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void openLocalFile(String filePath, String key, int len){
+        try{
+            File file = new File(filePath);
+            mPlayer.setDataSource(new RandomMediaDataSource(file, key, len));
+        }catch (Exception e){
             e.printStackTrace();
         }
     }

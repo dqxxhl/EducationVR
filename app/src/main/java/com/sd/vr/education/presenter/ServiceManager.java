@@ -12,8 +12,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
-import com.sd.vr.education.entity.FileDownLoad;
+import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.network.socket.NettyClient;
+import com.sd.vr.education.utils.DatabaseManager;
 import com.sd.vr.education.utils.Utils;
 
 import android.content.Context;
@@ -190,52 +191,35 @@ public class ServiceManager {
                             break;
                         case DOWNLOAD_NOTICE://下载文件
                             MessageProto.DownLoadNotice downLoadNotice = messageResponse.getDownLoadNotice();
-                            String fileIdsDownLoad = downLoadNotice.getFileIds();
-                            if (fileIdsDownLoad == null || fileIdsDownLoad.equals("")){
-                                return;
-                            }
-                            String[] fileIdsTempDownLoad = fileIdsDownLoad.split(SPLIT);
+                            List<MessageProto.MessageInfo> list = downLoadNotice.getMessageInfoList();
+                            String key = downLoadNotice.getKey();
+                            String length = downLoadNotice.getLength();
 
-                            String fileSize = downLoadNotice.getFileSize();
-                            if (fileSize == null || fileSize.equals("")){
-                                return;
-                            }
-                            String[] fileSizeDownLoad = fileSize.split(SPLIT);
-
-                            if (fileIdsTempDownLoad.length != fileSizeDownLoad.length){
-                                return;
-                            }
-
-                            String fileNameShow = downLoadNotice.getFileNames();
-                            String[] fileNameShows = fileNameShow.split(SPLIT);
-                            if (fileNameShows.length != fileSizeDownLoad.length){
-                                return;
-                            }
-                            String fileId = downLoadNotice.getFileIds();
-                            String[] downloadFileIds = fileId.split(SPLIT);
-                            if (downloadFileIds.length != fileSizeDownLoad.length){
-                                return;
-                            }
-
-                            if (fileIdsTempDownLoad.length > 0){
-                                List<FileDownLoad> fileIdsList = new ArrayList<>();
-                                for (int i = 0; i < fileIdsTempDownLoad.length; i++){//解析需要下载文件数组
-                                    FileDownLoad temp = new FileDownLoad();
-                                    temp.fileUrl = fileIdsTempDownLoad[i];
-                                    temp.fileSize = Long.valueOf(fileSizeDownLoad[i]);
-                                    temp.fileNameShow = fileNameShows[i];
-                                    if (temp.fileUrl != null && !temp.fileUrl.equals("") && temp.fileUrl.endsWith(FilesManager.PATCH_SUFFIX) && temp.fileSize > 0){
-                                        temp.fileId = null;
-                                        String tempString = "fileId=";
-                                        int index = temp.fileUrl.indexOf(tempString);
-                                        String target = temp.fileUrl.substring(index+tempString.length(), temp.fileUrl.length());
-                                        temp.fileId = target;
-                                        fileIdsList.add(temp);
-                                    }
+                            List<VideoFile> videoFileList = new ArrayList<>();
+                            for (MessageProto.MessageInfo info : list) {//组装实体
+                                VideoFile file = new VideoFile();
+                                String temp = info.getFileId();
+                                if (temp != null && !temp.equals("") && temp.endsWith(FilesManager.PATCH_SUFFIX)){
+                                    String tempString = "fileId=";
+                                    int index = temp.indexOf(tempString);
+                                    String target = temp.substring(index+tempString.length(), temp.length());
+                                    file.setFileId(target);
                                 }
-                                FilesManager.getInstance().downLoad(fileIdsList);
+                                file.setFileUrl(temp);
+                                file.setFileName(info.getFileName());
+                                file.setFileContent(info.getContent());
+                                file.setFileSize(Utils.stringToLong(info.getFileSize()));
+                                file.setFileTitle(info.getTitle());
+                                file.setImageUrl(info.getImageUrl());
+                                file.setKey(key);
+                                file.setLength(Integer.valueOf(length));
+                                videoFileList.add(file);
+                                List<VideoFile> tempList = DatabaseManager.getInstance().getQueryByWhere(VideoFile.class, "fileId", new String[]{file.getFileId()});
+                                DatabaseManager.getInstance().deleteList(tempList);
+                                DatabaseManager.getInstance().insert(file);
                             }
 
+                            FilesManager.getInstance().downLoad(videoFileList);
                             break;
                         case PLAY_PROGRESS_NOTICE://跳转播放器指定位置,通知事件
                             MessageProto.PlayProgressNotice playProgressNotice = messageResponse.getPlayProgressNotice();
@@ -283,7 +267,6 @@ public class ServiceManager {
 
             }
         }
-
 
         //处理控制指令
         public void handleCtrlDictateNotice(CtrlDictateNotice ctrlDictateNotice){
