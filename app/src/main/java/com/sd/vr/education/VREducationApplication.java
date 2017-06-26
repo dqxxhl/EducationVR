@@ -12,10 +12,18 @@ import com.sd.vr.education.presenter.ServiceManager;
 
 public class VREducationApplication extends Application {
 
+    public static VREducationApplication application;
     @Override
     public void onCreate() {
         super.onCreate();
         Log.e("VREducationApplication","VREducationApplication:onCreate()");
         ServiceManager.getInstance().initContext(this);
+
+        application = this;
     }
+
+    public static VREducationApplication getInstance(){
+        return application;
+    }
+
 }

@@ -13,7 +13,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -34,8 +36,7 @@ import android.widget.Toast;
 import com.sd.vr.R;
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
 import com.sd.vr.education.broadcastreceiver.PowerConnectionReceiver;
-import com.sd.vr.education.entity.FileDownLoad;
-import com.sd.vr.education.entity.VideoItem;
+import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.ViewAction;
@@ -114,7 +115,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     int temp = 0;
 
     //=============================UI实现=================================
-    List<List<VideoItem>> pagerList = new ArrayList<>();
+    List<List<VideoFile>> pagerList = new ArrayList<>();
     private ViewPager viewPager;
     private LinearLayout numsLayout;
     private int positionSelected;
@@ -160,6 +161,22 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         setContentView(R.layout.activity_education_vrmain);
         serviceManager = ServiceManager.getInstance();
         serviceManager.bindAction(this);
+
+        // 方法1 Android获得屏幕的宽和高
+        WindowManager windowManager = getWindowManager();
+        Display display = windowManager.getDefaultDisplay();
+        int screenWidth = screenWidth = display.getWidth();
+        int screenHeight = screenHeight = display.getHeight();
+
+        Log.e(TAG,"方法1："+"宽--"+screenWidth+"===高--"+screenHeight);
+
+        // 方法2
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        float width=dm.widthPixels*dm.density;
+        float height=dm.heightPixels*dm.density;
+        Log.e(TAG,"方法2："+"宽--"+width+"===高--"+height);
+
 
         layout_null = (RelativeLayout) findViewById(R.id.layout_null);
         pager_index = (RelativeLayout) findViewById(R.id.pager_index);
@@ -332,7 +349,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
      */
     private void initDate(){
         pagerList.clear();
-        List<VideoItem> videoList = FilesManager.getInstance().getVideoFiles();
+        List<VideoFile> videoList = FilesManager.getInstance().getVideoFiles();
         if (videoList == null || videoList.size() == 0){
             //无本地视频
             layout_null.setVisibility(View.VISIBLE);
@@ -345,7 +362,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             float a =(float) videoList.size()/8;
             int pageNum = (int) Math.ceil(a);
             for (int i = 0; i < pageNum; i++ ){
-                List<VideoItem> temp = new ArrayList<>();
+                List<VideoFile> temp = new ArrayList<>();
                 for (int j = i*8; j < (i+1)*8; j++){
                     if (j < videoList.size()){
                         temp.add(videoList.get(j));
@@ -506,8 +523,8 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
                 return;
             }
 
-            String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
-//            String ip = "120.26.141.161";
+//            String ip = ip1+separator+ip2+separator+ip3+separator+ip4;
+            String ip = "120.26.141.161";
             ServiceManager.getInstance().initSocketClient(ip);
 
             text_ip.setText(ip);

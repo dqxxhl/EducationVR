@@ -13,13 +13,10 @@ import android.widget.TextView;
 
 import com.sd.vr.R;
 import com.sd.vr.education.VREducationMainActivity;
-import com.sd.vr.education.entity.VideoItem;
+import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,9 +26,9 @@ import java.util.List;
 
 public class VideoGridViewAdapter extends BaseAdapter {
 
-    private List<VideoItem> listVideo;
+    private List<VideoFile> listVideo;
     public VREducationMainActivity context;
-    public VideoGridViewAdapter(List<VideoItem> list, VREducationMainActivity context){
+    public VideoGridViewAdapter(List<VideoFile> list, VREducationMainActivity context){
         listVideo = list;
         this.context = context;
     }
@@ -62,9 +59,8 @@ public class VideoGridViewAdapter extends BaseAdapter {
 
         String tip = "是否确认删除该教学资源?";
 
-        final String fileName = listVideo.get(position).fileName;
-        final String fileNameShow = listVideo.get(position).fileNameShow;
-        final String fileId = listVideo.get(position).fileId;
+        final String fileName = listVideo.get(position).getFileName();
+        final String fileId = listVideo.get(position).getFileId();
         if (listVideo.get(position).fileStatus == FilesManager.STATUS_COMPLETE_DOWNLOAD){//下载完成
             //隐藏状态图标
             icon_status.setVisibility(View.GONE);
@@ -96,7 +92,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
             icon_status.setImageResource(R.drawable.vr_downloading);
             //显示进度
             jindu.setVisibility(View.VISIBLE);
-            jindu.setText(listVideo.get(position).progress+"%");
+            jindu.setText(listVideo.get(position).getProgress()+"%");
             //隐藏重试按钮
             layout_chongshi.setVisibility(View.GONE);
             //隐藏删除按钮
@@ -131,7 +127,7 @@ public class VideoGridViewAdapter extends BaseAdapter {
                         if (listVideo.get(position).fileStatus == FilesManager.STATUS_TO_DOWNLOAD){
                             FilesManager.getInstance().deteTask(fileId);
                         }else {
-                            FilesManager.getInstance().deleteFile(fileName);
+                            FilesManager.getInstance().deleteFile(fileId);
                         }
                         context.updateUI();
                     }
@@ -159,14 +155,14 @@ public class VideoGridViewAdapter extends BaseAdapter {
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = FilesManager.DIRECTORY+"/"+ fileName;
+                String url = FilesManager.DIRECTORY+"/"+ fileId;
                 Intent intent = new Intent(context, VideoPlayerActivity.class);
                 intent.putExtra("START",url);
                 context.startActivity(intent);
             }
         });
 
-        textView.setText(fileNameShow);
+        textView.setText(fileName);
         return relativeLayout;
     }
 }

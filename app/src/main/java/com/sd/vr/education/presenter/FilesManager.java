@@ -10,13 +10,13 @@ import java.util.Map;
 import android.os.Environment;
 import android.util.Log;
 
-import com.sd.vr.education.entity.FileDownLoad;
-import com.sd.vr.education.entity.VideoItem;
+import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.network.http.downloader.ErrorCode;
 import com.sd.vr.education.network.http.downloader.LoaderExecutor;
 import com.sd.vr.education.network.http.downloader.LoaderListener;
 import com.sd.vr.education.network.http.downloader.LoaderInfo;
 import com.sd.vr.education.network.http.downloader.blockload.LoaderTask;
+import com.sd.vr.education.utils.DatabaseManager;
 import com.sd.vr.education.utils.Utils;
 
 /**
@@ -30,7 +30,6 @@ public class FilesManager {
     public static final String DIRECTORY = Environment.getExternalStorageDirectory().getAbsolutePath()+"/com.sd.vr";
     public static final String PATCH_SUFFIX = ".mp4";
     public static final String TEMP_SUFFIX = ".cfg";
-    public static final String FILE_SUFFIX = "_@";
 
     //下载状态定义
     public static final int STATUS_TO_DOWNLOAD = 0;//待下载
@@ -40,7 +39,7 @@ public class FilesManager {
 
 
 
-    public HashMap<FileDownLoad,Integer> downLoadFiles = new HashMap<>();
+    public HashMap<VideoFile,Integer> downLoadFiles = new HashMap<>();
     private static FilesManager mFilesManager;
 
     private LoaderTask task;
@@ -61,8 +60,8 @@ public class FilesManager {
      * 下载文件
      * @param fileDownLoad
      */
-    public void downLoad(FileDownLoad fileDownLoad){
-        if (fileDownLoad == null || fileDownLoad.fileUrl.equals("") || fileDownLoad.fileId.equals("") || fileDownLoad.fileSize == 0){
+    public void downLoad(VideoFile fileDownLoad){
+        if (fileDownLoad == null || fileDownLoad.getFileUrl().equals("") || fileDownLoad.getFileId().equals("") || fileDownLoad.getFileSize() == 0){
             return;
         }
         if (downLoadFiles == null){
@@ -70,23 +69,23 @@ public class FilesManager {
         }
         //如果已存在次下载项不再下载
         if (downLoadFiles.size() > 0){
-            for (Map.Entry<FileDownLoad, Integer> entry : downLoadFiles.entrySet()) {
-                FileDownLoad file = entry.getKey();
-                if (file.fileId.equals(fileDownLoad.fileId)){
+            for (Map.Entry<VideoFile, Integer> entry : downLoadFiles.entrySet()) {
+                VideoFile file = entry.getKey();
+                if (file.getFileId().equals(fileDownLoad.getFileId())){
                     return;
                 }
             }
         }
         //校验本地是否存在这个文件,若文件已存在但是大小校验不通过，需首先删除本地文件
-        String fileName = fileDownLoad.fileId + FILE_SUFFIX + fileDownLoad.fileNameShow;
-        long size = fileDownLoad.fileSize;
+        String fileName = fileDownLoad.getFileId();
+        long size = fileDownLoad.getFileSize();
         File fileDir = new File(DIRECTORY);
         if (fileDir != null && fileDir.listFiles() != null && fileDir.listFiles().length > 0){
             for (File file : fileDir.listFiles()) {
                 if (file.getAbsolutePath().endsWith(PATCH_SUFFIX)){
                     if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
                         //文件已下载
-                        ServiceManager.getInstance().sendDownloadAck(fileDownLoad.fileId);
+                        ServiceManager.getInstance().sendDownloadAck(fileDownLoad.getFileId());
                         return;
                     }else if (file.getName().equals(fileName) && Utils.getFileSize(file) > size){
                         deleteFile(fileName);
@@ -105,11 +104,11 @@ public class FilesManager {
      * 批量下载文件
      * @param files
      */
-    public void downLoad(List<FileDownLoad> files){
+    public void downLoad(List<VideoFile> files){
         if (files == null || files.size() == 0){
             return;
         }
-        for (FileDownLoad file: files) {
+        for (VideoFile file: files) {
             downLoad(file);
         }
     }
@@ -158,10 +157,10 @@ public class FilesManager {
             return;
         }
 
-        FileDownLoad fileDownLoad = null;
+        VideoFile fileDownLoad = null;
         boolean isDownLoading = false;
-        for (Map.Entry<FileDownLoad, Integer> entry : downLoadFiles.entrySet()) {
-            FileDownLoad file = entry.getKey();
+        for (Map.Entry<VideoFile, Integer> entry : downLoadFiles.entrySet()) {
+            VideoFile file = entry.getKey();
             int status = entry.getValue();
             if (status == STATUS_DOWNLOADING){
                 isDownLoading = true;
@@ -176,8 +175,8 @@ public class FilesManager {
             return;
         }
 
-        final String fileName = fileDownLoad.fileId + FILE_SUFFIX + fileDownLoad.fileNameShow;
-        String url = fileDownLoad.fileUrl;
+        final String fileName = fileDownLoad.getFileId();
+        String url = fileDownLoad.getFileUrl();
 
         //校验本地是否存在这个文件,若文件已存在但是大小校验不通过，需首先删除本地文件
         /*File fileDir = new File(DIRECTORY);
@@ -198,7 +197,7 @@ public class FilesManager {
 
 
         LoaderInfo loaderInfo = (new LoaderInfo.Builder()).dir(DIRECTORY).name(fileName).url(url).splitter(5).build();
-        final FileDownLoad finalFileDownLoad = fileDownLoad;
+        final VideoFile finalFileDownLoad = fileDownLoad;
         downLoadFiles.put(finalFileDownLoad,STATUS_DOWNLOADING);//正在下载此文件
         LoaderExecutor.load(loaderInfo, new LoaderListener() {
             @Override
@@ -206,7 +205,7 @@ public class FilesManager {
                 //刷新UI
                 float temp = (float)size*100/(float) totalSize;
                 float progress = (float)Math.round(temp*10)/10;
-                finalFileDownLoad.progress = progress;
+                finalFileDownLoad.setProgress(progress);
                 Log.e(TAG, "开始,下载......");
                 Log.e(TAG, "总大小："+totalSize+"下载大小:"+size+"下载进度："+((float)size/(float) totalSize));
                 ServiceManager.getInstance().updateprocess("总大小："+totalSize+"下载大小:"+size+"下载进度："+((float)size/(float) totalSize));
@@ -222,9 +221,9 @@ public class FilesManager {
                 downLoadFiles.remove(finalFileDownLoad);
                 startDownLoad();
                 //下载完成,发送下载完成指令
-                ServiceManager.getInstance().sendDownloadAck(finalFileDownLoad.fileId);
+                ServiceManager.getInstance().sendDownloadAck(finalFileDownLoad.getFileId());
                 //刷新UI
-                finalFileDownLoad.progress = 100f;
+                finalFileDownLoad.setProgress(100f);
                 ServiceManager.getInstance().updateUI();
             }
 
@@ -272,61 +271,61 @@ public class FilesManager {
 //        }
     }
 
-    public List<VideoItem> getVideoFiles(){
+    public List<VideoFile> getVideoFiles(){
+
+        List<VideoFile> items = new ArrayList<>();
+        List<VideoFile> list = DatabaseManager.getInstance().getQueryAll(VideoFile.class);
+        if (list == null || list.size() == 0){
+            return items;
+        }
+
+        //本地文件，已下载+正在下载+已暂停+遗留文件
         List<String> fileList = new ArrayList<>();
-        List<String> downLoading = new ArrayList<>();
         File fileDir = new File(DIRECTORY);
         if (fileDir != null && fileDir.listFiles() != null && fileDir.listFiles().length > 0){
             for (File file : fileDir.listFiles()) {
                 if (file.getAbsolutePath().endsWith(PATCH_SUFFIX)){
                     fileList.add(file.getName());
-                }else if (file.getAbsolutePath().endsWith(TEMP_SUFFIX)){
-                    downLoading.add(file.getName());
                 }
             }
         }
 
-        //过滤掉正在下载的
-        List<String> list = new ArrayList<>();
-        for (String s:fileList) {
-            boolean is = false;
-            for (String s2:downLoading) {
-                if (s2.equals(s+TEMP_SUFFIX)){
-                    is = true;
+        for (VideoFile videofile : list) {
+            String fileId = videofile.getFileId();
+            boolean isCheck = false;
+            //内存文件，正在下载+等待下载+已暂停(内存搜索)
+            for (Map.Entry<VideoFile, Integer> entry : downLoadFiles.entrySet()) {
+                VideoFile file = entry.getKey();
+                if (fileId.equals(file.getFileId())){
+                    int status = entry.getValue();
+                    videofile.setFileStatus(status);
+                    if (status == STATUS_DOWNLOADING){
+                        long size = Utils.getFileSize(new File(DIRECTORY + "/" + fileId));
+                        float progress = size*100 / file.getFileSize();
+                        float num = (float)Math.round(progress*10)/10;
+                        videofile.setProgress(num);
+                    }
+                }
+                items.add(videofile);
+                isCheck = true;
+            }
+
+            if (isCheck){
+                continue;
+            }
+
+            //本地文件过滤
+            for (String vediofileId:fileList) {
+                if (fileId.equals(vediofileId)){
+                    long size = Utils.getFileSize(new File(DIRECTORY + "/" + fileId));
+                    if (size == videofile.getFileSize()){
+                        videofile.setFileStatus(STATUS_COMPLETE_DOWNLOAD);
+                    }else{
+                        videofile.setFileStatus(STATUS_ERROR_DOWNLOAD);
+                    }
+                    items.add(videofile);
                 }
             }
-            if (is == false){
-                list.add(s);
-            }
-        }
-
-        //搞完本地文件
-        List<VideoItem> items = new ArrayList<>();
-        for (String s:list) {
-            String[] temp = s.split(FILE_SUFFIX);
-            VideoItem item = new VideoItem();
-            item.fileId = temp[0];
-            item.fileName = s;
-            item.fileNameShow = temp[1];
-            item.fileStatus = STATUS_COMPLETE_DOWNLOAD;
-            items.add(item);
-        }
-
-        //正在下载的文件搞进来
-        for (Map.Entry<FileDownLoad, Integer> entry : downLoadFiles.entrySet()) {
-            FileDownLoad file = entry.getKey();
-            VideoItem item = new VideoItem();
-            item.fileId = file.fileId;
-            item.fileNameShow = file.fileNameShow;
-            item.fileName = file.fileId + FILE_SUFFIX + file.fileNameShow;
-            item.fileStatus = entry.getValue();
-            if (item.fileStatus == STATUS_DOWNLOADING){//计算进度
-                /*long size = Utils.getFileSize(new File(DIRECTORY + "/" + item.fileName));
-                float progress = size*100 / file.fileSize;
-                float num = (float)Math.round(progress*10)/10;*/
-                item.progress = file.progress;
-            }
-            items.add(item);
         }
 
         return items;
@@ -338,11 +337,11 @@ public class FilesManager {
      * @param fileId
      */
     public void deteTask(String fileId){
-        Iterator<Map.Entry<FileDownLoad, Integer>> iter = downLoadFiles.entrySet().iterator();
+        Iterator<Map.Entry<VideoFile, Integer>> iter = downLoadFiles.entrySet().iterator();
         while (iter.hasNext()) {
-            Map.Entry<FileDownLoad, Integer> entry =  iter.next();
-            FileDownLoad file = entry.getKey();
-            if (file.fileId.equals(fileId)){
+            Map.Entry<VideoFile, Integer> entry =  iter.next();
+            VideoFile file = entry.getKey();
+            if (file.getFileId().equals(fileId)){
                 iter.remove();
                 //刷新UI
                 ServiceManager.getInstance().updateUI();
@@ -354,11 +353,11 @@ public class FilesManager {
      * 重试
      */
     public void repty(String fileId){
-        Iterator<Map.Entry<FileDownLoad, Integer>> iter = downLoadFiles.entrySet().iterator();
+        Iterator<Map.Entry<VideoFile, Integer>> iter = downLoadFiles.entrySet().iterator();
         while (iter.hasNext()) {
-            Map.Entry<FileDownLoad, Integer> entry =  iter.next();
-            FileDownLoad file = entry.getKey();
-            if (file.fileId.equals(fileId)){
+            Map.Entry<VideoFile, Integer> entry =  iter.next();
+            VideoFile file = entry.getKey();
+            if (file.getFileId().equals(fileId)){
                 entry.setValue(STATUS_TO_DOWNLOAD);
                 //刷新UI
                 ServiceManager.getInstance().updateUI();
@@ -390,10 +389,10 @@ public class FilesManager {
     }
 
     public void reStartDownload(){
-        Iterator<Map.Entry<FileDownLoad, Integer>> iter = downLoadFiles.entrySet().iterator();
+        Iterator<Map.Entry<VideoFile, Integer>> iter = downLoadFiles.entrySet().iterator();
         while (iter.hasNext()) {
-            Map.Entry<FileDownLoad, Integer> entry =  iter.next();
-            FileDownLoad file = entry.getKey();
+            Map.Entry<VideoFile, Integer> entry =  iter.next();
+            VideoFile file = entry.getKey();
             downLoadFiles.put(file, STATUS_TO_DOWNLOAD);
         }
 

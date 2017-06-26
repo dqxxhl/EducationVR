@@ -3,7 +3,88 @@
     android:id="@+id/activity_education_vrmain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/vr">
+    android:background="@drawable/main">
+
+    <!--二期布局 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_bt_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:layout_marginLeft="147dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/video_home"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/button3"
+            android:layout_alignParentLeft="true"/>
+
+        <ImageView
+            android:id="@+id/video_list"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/button2"
+            android:layout_toRightOf="@+id/video_home"
+            android:layout_marginLeft="113dp"/>
+
+        <ImageView
+            android:id="@+id/home_setting"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/button1"
+            android:layout_toLeftOf="@+id/jian_jie"
+            android:layout_marginRight="113dp"/>
+
+        <ImageView
+            android:id="@+id/jian_jie"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/button4"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="145dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="@drawable/top_bg"
+        android:layout_alignParentTop="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_marginRight="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="17dp"/>
+        
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!--测试布局 -->
     <RelativeLayout
@@ -129,6 +210,7 @@
             android:layout_below="@+id/ip"/>
     </RelativeLayout>
 
+    <!--测试布局结束 -->
 
     <!-- 顶部布局 -->
     <RelativeLayout
@@ -136,7 +218,8 @@
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/vr_top">
+        android:background="@drawable/vr_top"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/icon_wifi"
@@ -196,6 +279,7 @@
         </RelativeLayout>
 
     </RelativeLayout>
+    <!-- 顶部布局结束 -->
 
 
     <!--UI  main_layout -->
@@ -205,7 +289,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="84dp"
-        android:visibility="visible">
+        android:visibility="gone">
         <RelativeLayout
             android:id="@+id/image_shouye"
             android:layout_width="128dp"
@@ -265,7 +349,8 @@
         android:layout_toRightOf="@+id/main_layout"
         android:layout_marginTop="84dp"
         android:layout_marginLeft="26dp"
-        android:layout_marginRight="95dp">
+        android:layout_marginRight="95dp"
+        android:visibility="gone">
 
         <RelativeLayout
             android:id="@+id/layout_null"
