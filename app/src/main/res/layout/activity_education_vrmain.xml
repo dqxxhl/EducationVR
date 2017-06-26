@@ -147,7 +147,7 @@
         android:layout_marginLeft="65dp"
         android:layout_marginRight="65dp"
         android:background="@drawable/filter"
-        android:visibility="visible">
+        android:visibility="gone">
             <RelativeLayout
                 android:id="@+id/rl_settingip_layout"
                 android:layout_width="289dp"
@@ -263,7 +263,78 @@
     <!--介绍页面结束 -->
 
 
+    <!--视频详情页 -->
+    <RelativeLayout
+        android:id="@+id/rl_xiangqing_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="109dp"
+        android:layout_marginBottom="101dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginRight="40dp"
+        android:visibility="visible">
+        <RelativeLayout
+            android:id="@+id/rl_xiangqiang_tuwen"
+            android:layout_width="317dp"
+            android:layout_height="178dp"
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:id="@+id/iv_xiangqing_tu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pic2"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/filter"
+                android:layout_alignParentBottom="true">
+                <TextView
+                    android:id="@+id/tv_xiangqing_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="《黄鹤楼送孟浩然之广陵》"
+                    android:textSize="15dp"
+                    android:letterSpacing="0.1"
+                    android:textColor="#ffffff"/>
+            </RelativeLayout>
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="386dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/filter">
+            <TextView
+                android:id="@+id/tv_xiangqing_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《黄鹤楼送孟浩然之广陵》"
+                android:letterSpacing="0.1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_xiangqing_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/tv_xiangqing_title"
+                android:letterSpacing="0.1"
+                android:text="@string/video_content"
+                android:lineSpacingExtra="8dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--视频详情页结束 -->
+
+
+    <!--ip设置页 -->
+        
+    <!--ip设置页结束 -->
 
 
 
