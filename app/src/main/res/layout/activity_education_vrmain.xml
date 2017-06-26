@@ -6,14 +6,15 @@
     android:background="@drawable/main">
 
     <!--二期布局 -->
-
+    <!--固定布局 -->
     <RelativeLayout
         android:id="@+id/rl_bt_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
         android:layout_marginLeft="147dp"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/video_home"
@@ -54,14 +55,225 @@
         android:background="@drawable/top_bg"
         android:layout_alignParentTop="true">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="298dp"
+            android:layout_height="55dp"
             android:src="@drawable/logo"
             android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginTop="17dp"/>
-        
     </RelativeLayout>
+
+    <!--固定布局结束 -->
+
+    <!--首页布局 -->
+    <RelativeLayout
+        android:id="@+id/rl_home_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="126dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginRight="39dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rl_item_first"
+            android:layout_width="368dp"
+            android:layout_height="207dp">
+            <ImageView
+                android:id="@+id/iv_item_first"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pic2"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45.5dp"
+                android:background="@drawable/filter"
+                android:layout_alignParentBottom="true">
+                <TextView
+                    android:id="@+id/tv_item_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="《黄鹤楼送孟浩然之广陵》"
+                    android:textSize="19dp"
+                    android:textColor="#ffffff"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_item_second"
+            android:layout_width="368dp"
+            android:layout_height="207dp"
+            android:layout_toRightOf="@+id/rl_item_first"
+            android:layout_marginLeft="39dp">
+            <ImageView
+                android:id="@+id/iv_item_second"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pic1"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45.5dp"
+                android:background="@drawable/filter"
+                android:layout_alignParentBottom="true">
+                <TextView
+                    android:id="@+id/tv_item_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="《中国空间站》"
+                    android:textSize="19dp"
+                    android:textColor="#ffffff"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--首页布局结束 -->
+
+    <!--视频下载页布局 -->
+
+    <!--视频下载页布局结束-->
+
+
+    <!--设置页面 -->
+    <RelativeLayout
+        android:id="@+id/rl_setting_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="101dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:background="@drawable/filter"
+        android:visibility="visible">
+            <RelativeLayout
+                android:id="@+id/rl_settingip_layout"
+                android:layout_width="289dp"
+                android:layout_height="231dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="26dp"
+                android:background="@drawable/selector_button_dakuang">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+                    <TextView
+                        android:id="@+id/tv_tip_ip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30dp"
+                        android:text="配置主控IP"
+                        android:letterSpacing="0.2"
+                        android:textColor="#00b7ee"/>
+                    <TextView
+                        android:id="@+id/tv_text_ip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:text="0.0.0.0"
+                        android:layout_below="@+id/tv_tip_ip"
+                        android:layout_marginTop="30dp"
+                        android:textColor="#00b7ee"
+                        android:letterSpacing="0.2"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_settingcache_page"
+                android:layout_width="289dp"
+                android:layout_height="231dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="38dp"
+                android:layout_marginTop="26dp"
+                android:background="@drawable/selector_button_dakuang">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+                    <TextView
+                        android:id="@+id/tv_tip_cache"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30dp"
+                        android:text="清除缓存"
+                        android:letterSpacing="0.1"
+                        android:textColor="#00b7ee"/>
+                    <TextView
+                        android:id="@+id/tv_text_cache"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:text="4.5GB"
+                        android:letterSpacing="0.2"
+                        android:layout_below="@+id/tv_tip_cache"
+                        android:layout_marginTop="30dp"
+                        android:textColor="#00b7ee"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    <!--设置页面结束 -->
+
+
+    <!--介绍页面 -->
+    <RelativeLayout
+        android:id="@+id/rl_jianjie_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="101dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/filter"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="47dp"
+            android:layout_marginRight="50dp">
+
+            <TextView
+                android:id="@+id/tv_gongsi_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="云艺通公司简介"
+                android:textSize="18dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_gongsi_name"
+                android:textSize="13dp"
+                android:lineSpacingExtra="10dp"
+                android:textColor="#ffffff"
+                android:text="@string/gongsi_jianjie_text"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="10dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <!--介绍页面结束 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -256,7 +468,7 @@
                 android:textSize="15dp"
                 android:textColor="#FFFFFF"
                 android:text="70%"/>
-            
+
             <ImageView
                 android:id="@+id/icon_dianliang"
                 android:layout_width="33dp"

@@ -152,6 +152,10 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private PowerConnectionReceiver receiver = new PowerConnectionReceiver();
 
 
+    //===================二期UI================================
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -232,6 +236,10 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         new TimeThread().start();
 
 
+        //二期代码
+
+
+
         //=========================================测试用代码=================================
         sendConnectButton = (Button) findViewById(R.id.connect_send);
         sendConnectButton.setOnClickListener(new View.OnClickListener() {
@@ -280,6 +288,31 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             }
         });
     }
+
+    //二期代码
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void initView(){
         //更新文件大小
