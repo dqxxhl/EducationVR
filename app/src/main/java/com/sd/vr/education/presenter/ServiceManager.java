@@ -132,9 +132,6 @@ public class ServiceManager {
      * @param batteryPct
      */
     public void updateDianliang(float batteryPct){
-        if(mAction != null){
-            mAction.updateDianliang(batteryPct);
-        }
     }
 
     /**

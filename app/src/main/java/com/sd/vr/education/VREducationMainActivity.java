@@ -61,67 +61,11 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private static final int MSG_KEY_2 = 2;
     ServiceManager serviceManager;
     String separator = ".";
-
-    //==================测试代码======================================
-    Button sendConnectButton;
-    Button sendRegisterButton;
-    TextView process;
-    Handler handler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what){
-                case MSG_KEY_1:
-                    long time = System.currentTimeMillis();
-                    final Calendar mCalendar = Calendar.getInstance();
-                    mCalendar.setTimeInMillis(time);
-                    int hour = mCalendar.get(Calendar.HOUR);
-                    int min = mCalendar.get(Calendar.MINUTE);
-                    int apm = mCalendar.get(Calendar.AM_PM);
-                    String AM = "AM";
-                    if (apm == 1){
-                        AM = "PM";
-                    }
-                    String temp = "";
-                    if (min <10){
-                        temp = "0";
-                    }
-                    String timeString = hour+":"+temp+min+" "+AM;
-                    top_time.setText(timeString);
-                    break;
-                case MSG_KEY_2:
-                    List<InetAddress> ipList = (List<InetAddress>) msg.obj;
-                    if (ipList.size() >= 1){
-                        String ip = ipList.get(0).toString();
-                        ip = ip.substring(1,ip.length());
-                        if (ip != null && !ip.equals("")){
-                            String[] ipNum = ip.split("\\.");
-                            if (ipNum.length == 4){
-                                ip_1.setText(ipNum[0]);
-                                ip_2.setText(ipNum[1]);
-                                ip_3.setText(ipNum[2]);
-                                ip_4.setText(ipNum[3]);
-                            }
-                        }
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-    };
-    EditText editText;
-    Button lianjie;
-    int temp = 0;
-
     //=============================UI实现=================================
     List<List<VideoFile>> pagerList = new ArrayList<>();
-    private ViewPager viewPager;
     private LinearLayout numsLayout;
     private int positionSelected;
     private VideoPagerAdapter adapter;
-    private ImageView pre;
-    private ImageView next;
     private RelativeLayout homeLayout;
     private RelativeLayout settingLayout;
     private RelativeLayout videoLayout;
@@ -144,15 +88,55 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
     private TextView text_cache;
     private RelativeLayout layout_null;
     private RelativeLayout pager_index;
-    private TextView top_time;
     private Button zidongjiance;
-    private ImageView icon_wifi;
-    private ProgressBar process_dianliang;
-    private TextView text_dianliang;
-    private PowerConnectionReceiver receiver = new PowerConnectionReceiver();
-
-
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case MSG_KEY_2:
+                    List<InetAddress> ipList = (List<InetAddress>) msg.obj;
+                    if (ipList.size() >= 1){
+                        String ip = ipList.get(0).toString();
+                        ip = ip.substring(1,ip.length());
+                        if (ip != null && !ip.equals("")){
+                            String[] ipNum = ip.split("\\.");
+                            if (ipNum.length == 4){
+                                ip_1.setText(ipNum[0]);
+                                ip_2.setText(ipNum[1]);
+                                ip_3.setText(ipNum[2]);
+                                ip_4.setText(ipNum[3]);
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
     //===================二期UI================================
+    //首页四大按钮
+    ImageView video_home;
+    ImageView video_list;
+    ImageView home_setting;
+    ImageView jian_jie;
+    //四大页面
+    RelativeLayout rl_home_page;
+    RelativeLayout rl_videolist_page;
+    RelativeLayout rl_setting_page;
+    RelativeLayout rl_jianjie_page;
+    RelativeLayout rl_xiangqing_page;
+    RelativeLayout rl_ip_page;
+    //组件
+    ViewPager viewpager_list;
+    TextView tv_text_cache;
+    TextView tv_text_ip;
+
+
+    //数据
+    List<VideoFile> listForHomepage = new ArrayList<>();
+
 
 
 
@@ -161,30 +145,12 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         super.onCreate(savedInstanceState);
         Log.e(TAG, "VREducationMainActivity:onCreate()");
         requestWindowFeature(Window.FEATURE_NO_TITLE);//无标题
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏幕显示
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏幕显示
         setContentView(R.layout.activity_education_vrmain);
         serviceManager = ServiceManager.getInstance();
         serviceManager.bindAction(this);
-
-        // 方法1 Android获得屏幕的宽和高
-        WindowManager windowManager = getWindowManager();
-        Display display = windowManager.getDefaultDisplay();
-        int screenWidth = screenWidth = display.getWidth();
-        int screenHeight = screenHeight = display.getHeight();
-
-        Log.e(TAG,"方法1："+"宽--"+screenWidth+"===高--"+screenHeight);
-
-        // 方法2
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        float width=dm.widthPixels*dm.density;
-        float height=dm.heightPixels*dm.density;
-        Log.e(TAG,"方法2："+"宽--"+width+"===高--"+height);
-
-
         layout_null = (RelativeLayout) findViewById(R.id.layout_null);
         pager_index = (RelativeLayout) findViewById(R.id.pager_index);
-        viewPager = (ViewPager) findViewById(R.id.viewpager_test);
         numsLayout = (LinearLayout) findViewById(R.id.num);
         homeLayout = (RelativeLayout) findViewById(R.id.image_shouye);
         settingLayout = (RelativeLayout) findViewById(R.id.image_shezhi);
@@ -206,12 +172,7 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         layout_pre = (RelativeLayout) findViewById(R.id.layout_pre);
         layout_next = (RelativeLayout) findViewById(R.id.layout_next);
         text_cache = (TextView) findViewById(R.id.text_cache);
-        top_time = (TextView) findViewById(R.id.top_time);
         zidongjiance = (Button) findViewById(R.id.zidongjiance);
-        icon_wifi = (ImageView) findViewById(R.id.icon_wifi);
-        process_dianliang = (ProgressBar) findViewById(R.id.process_dianliang);
-        text_dianliang = (TextView) findViewById(R.id.text_dianliang);
-
         homeLayout.setOnClickListener(this);
         settingLayout.setOnClickListener(this);
         setting_ip.setOnClickListener(this);
@@ -224,95 +185,37 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         layout_next.setOnClickListener(this);
         zidongjiance.setOnClickListener(this);
 
+        //二期
+        video_home = (ImageView) findViewById(R.id.video_home);
+        video_list = (ImageView) findViewById(R.id.video_list);
+        home_setting = (ImageView) findViewById(R.id.home_setting);
+        jian_jie = (ImageView) findViewById(R.id.jian_jie);
+
+        rl_home_page = (RelativeLayout) findViewById(R.id.rl_home_page);
+        rl_videolist_page = (RelativeLayout) findViewById(R.id.rl_videolist_page);
+        rl_setting_page = (RelativeLayout) findViewById(R.id.rl_setting_page);
+        rl_jianjie_page = (RelativeLayout) findViewById(R.id.rl_jianjie_page);
+        rl_xiangqing_page = (RelativeLayout) findViewById(R.id.rl_xiangqing_page);
+        rl_ip_page = (RelativeLayout) findViewById(R.id.rl_ip_page);
+
+        viewpager_list = (ViewPager) findViewById(R.id.viewpager_list);
+        tv_text_cache = (TextView) findViewById(R.id.tv_text_cache);
+        tv_text_ip = (TextView) findViewById(R.id.tv_text_ip);
+
+        video_home.setOnClickListener(this);
+        video_list.setOnClickListener(this);
+        home_setting.setOnClickListener(this);
+        jian_jie.setOnClickListener(this);
+
+
+
         initDate();
-
         adapter = new VideoPagerAdapter();
-        viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(this);
+        viewpager_list.setAdapter(adapter);
+        viewpager_list.addOnPageChangeListener(this);
         onPageSelected(0);
-
         initView();
-
-        new TimeThread().start();
-
-
-        //二期代码
-
-
-
-        //=========================================测试用代码=================================
-        sendConnectButton = (Button) findViewById(R.id.connect_send);
-        sendConnectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //向服务端发送数据
-//                MessageProto.ReConnectRequest reConnectRequest = MessageProto.ReConnectRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(VREducationMainActivity.this)).build();
-//                MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.RECONNECT).setReConnectRequest(reConnectRequest).build();
-//                System.out.println("发送数据："+request.toString());
-//                serviceManager.sendRequest(request);
-
-//                serviceManager.requestProgress();
-                start("yangli.mp4",32349087);
-//
-//                long i = Utils.stringToLong("1223123");
-//                Toast.makeText(VREducationMainActivity.this, i+"", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        sendRegisterButton = (Button) findViewById(R.id.register_send);
-        sendRegisterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //向服务端发送数据
-                MessageProto.RegisterRequest registerRequest = MessageProto.RegisterRequest.newBuilder().setEventId("RECONNECT").setEquipmentId(Utils.getDeviceId(VREducationMainActivity.this)).build();
-                MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.REGISTER).setRegisterRequest(registerRequest).build();
-                System.out.println("发送数据："+request.toString());
-                serviceManager.sendRequest(request);
-            }
-        });
-
-        process = (TextView) findViewById(R.id.process);
-
-        editText = (EditText) findViewById(R.id.ip);
-        lianjie = (Button) findViewById(R.id.lianjie);
-        lianjie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String ip = editText.getText().toString();
-                if (ip == null || ip.equals("")){
-                    Toast.makeText(VREducationMainActivity.this, "ip 格式不正确", Toast.LENGTH_LONG).show();
-                }else {
-                    ServiceManager.getInstance().initSocketClient(ip);
-                }
-            }
-        });
     }
-
-    //二期代码
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public void initView(){
         //更新文件大小
@@ -322,53 +225,34 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         long m = k/1024;
         float g = (float) m/1024;
         float num = (float)Math.round(g*100)/100;
-        text_cache.setText(num+"GB");
+        tv_text_cache.setText(num+"GB");
 
         //设置ip
         String ip = Utils.readIP(this);
         if (ip == null || ip.equals("")){
             return;
         }
-        text_ip.setText(ip);
+        tv_text_ip.setText(ip);
         ServiceManager.getInstance().tryInit(ip);
-
-        //设置是否有wifi
-        int netWorkState = Utils.getNetWorkState(this);
-        updateWiFi(netWorkState);
     }
 
     @Override
     public void updateDianliang(float batteryPct){
-        int num = Math.round(batteryPct*100);
-        text_dianliang.setText(num+"%");
-        process_dianliang.setProgress(num);
     }
 
     @Override
     public void updateWiFi(int netWorkState){
-        boolean isWifi = true;
-        if (netWorkState == Utils.NETWORK_NONE){
-            isWifi = false;
-        }
-        if (isWifi){
-            icon_wifi.setImageResource(R.drawable.vr_03);
-        }else {
-            icon_wifi.setImageResource(R.drawable.nowifi);
-        }
     }
 
     @Override
     protected void onResume() {
         Log.e(TAG, "onResume()");
         super.onResume();
-        //设置电量
-        registerReceiver(receiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        unregisterReceiver(receiver);
     }
 
     public void updateUI(){
@@ -385,23 +269,31 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
         List<VideoFile> videoList = FilesManager.getInstance().getVideoFiles();
         if (videoList == null || videoList.size() == 0){
             //无本地视频
-            layout_null.setVisibility(View.VISIBLE);
-            viewPager.setVisibility(View.INVISIBLE);
-            pager_index.setVisibility(View.INVISIBLE);
+
         }else{
-            layout_null.setVisibility(View.GONE);
-            viewPager.setVisibility(View.VISIBLE);
-            pager_index.setVisibility(View.VISIBLE);
-            float a =(float) videoList.size()/8;
+            viewpager_list.setVisibility(View.VISIBLE);
+            float a =(float) videoList.size()/4;
             int pageNum = (int) Math.ceil(a);
             for (int i = 0; i < pageNum; i++ ){
                 List<VideoFile> temp = new ArrayList<>();
-                for (int j = i*8; j < (i+1)*8; j++){
+                for (int j = i*4; j < (i+1)*4; j++){
                     if (j < videoList.size()){
                         temp.add(videoList.get(j));
                     }
                 }
                 pagerList.add(temp);
+            }
+        }
+
+        //准备首页数据源
+        int temp = 0;
+        for (int i = videoList.size()-1; i >= 0; i--){
+            if (videoList.get(i).getFileStatus() == FilesManager.STATUS_COMPLETE_DOWNLOAD){
+                listForHomepage.add(videoList.get(i));
+                temp ++;
+            }
+            if (temp >= 2){
+                break;
             }
         }
 
@@ -439,12 +331,6 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
 
     @Override
     public void updateprocess(final String process) {
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                VREducationMainActivity.this.process.setText(process);
-            }
-        });
     }
 
     @Override
@@ -583,10 +469,10 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             //不知道怎么弄
 
         }else if (v.getId() == R.id.layout_pre){
-            viewPager.arrowScroll(17);
+            viewpager_list.arrowScroll(17);
             Log.e(TAG, "上一页");
         }else if(v.getId() == R.id.layout_next){
-            viewPager.arrowScroll(66);
+            viewpager_list.arrowScroll(66);
             Log.e(TAG, "下一页");
         }else if (v.getId() == R.id.zidongjiance){
             Thread thread = new Thread(new Runnable() {
@@ -600,6 +486,43 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
                 }
             });
             thread.start();
+        }
+
+
+
+        switch (v.getId()){
+            case R.id.video_home:
+                rl_home_page.setVisibility(View.VISIBLE);
+                rl_videolist_page.setVisibility(View.GONE);
+                rl_setting_page.setVisibility(View.GONE);
+                rl_jianjie_page.setVisibility(View.GONE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
+            case R.id.video_list:
+                rl_home_page.setVisibility(View.GONE);
+                rl_videolist_page.setVisibility(View.VISIBLE);
+                rl_setting_page.setVisibility(View.GONE);
+                rl_jianjie_page.setVisibility(View.GONE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
+            case R.id.home_setting:
+                rl_home_page.setVisibility(View.GONE);
+                rl_videolist_page.setVisibility(View.GONE);
+                rl_setting_page.setVisibility(View.VISIBLE);
+                rl_jianjie_page.setVisibility(View.GONE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
+            case R.id.jian_jie:
+                rl_home_page.setVisibility(View.GONE);
+                rl_videolist_page.setVisibility(View.GONE);
+                rl_setting_page.setVisibility(View.GONE);
+                rl_jianjie_page.setVisibility(View.VISIBLE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
         }
     }
 
@@ -668,24 +591,5 @@ public class VREducationMainActivity extends Activity implements ViewAction, Vie
             return POSITION_NONE;
         }
     }
-
-    public class TimeThread extends  Thread{
-        @Override
-        public void run() {
-            super.run();
-            do{
-                try {
-                    Message msg = new Message();
-                    msg.what = MSG_KEY_1;
-                    handler.sendMessage(msg);
-                    Thread.sleep(1000 * 60);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }while (true);
-        }
-    }
-
-
 
 }
