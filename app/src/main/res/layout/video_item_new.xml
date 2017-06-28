@@ -86,7 +86,8 @@
             android:layout_width="168dp"
             android:layout_height="match_parent"
             android:src="@drawable/pic2"
-            android:layout_marginLeft="45dp"/>
+            android:layout_marginLeft="45dp"
+            android:scaleType="fitXY"/>
 
         <TextView
             android:id="@+id/tv_videoitem_title2"
@@ -94,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="《黄鹤楼送孟浩然之广陵》"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textColor="#FFFFFF"
             android:layout_toRightOf="@+id/iv_videoitem_tu"
             android:layout_centerVertical="true"/>

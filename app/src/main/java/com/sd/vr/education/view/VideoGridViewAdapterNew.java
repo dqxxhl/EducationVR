@@ -16,6 +16,7 @@ import com.sd.vr.education.VREducationApplication;
 import com.sd.vr.education.VREducationMainActivity;
 import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.presenter.FilesManager;
+import com.sd.vr.education.utils.DatabaseManager;
 import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 import com.squareup.picasso.Picasso;
 
@@ -133,6 +134,10 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        List<VideoFile> list = DatabaseManager.getInstance().getQueryByWhere(VideoFile.class, "fileId",new String[]{fileId});
+                        if (list.size() > 0){
+                            DatabaseManager.getInstance().delete(list.get(0));
+                        }
                         if (listVideo.get(position).fileStatus == FilesManager.STATUS_COMPLETE_DOWNLOAD){
                             FilesManager.getInstance().deleteFile(fileId);
                         }else {

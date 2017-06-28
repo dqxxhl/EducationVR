@@ -139,23 +139,28 @@
         android:id="@+id/rl_videolist_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="85dp"
-        android:layout_marginBottom="95dp"
         android:visibility="gone">
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager_list"
+        <RelativeLayout
+            android:id="@+id/rl_pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="81dp">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_list"
+                android:layout_width="match_parent"
+                android:layout_height="780dp">
+            </android.support.v4.view.ViewPager>
+        </RelativeLayout>
 
-        </android.support.v4.view.ViewPager>
 
         <!-- 1234页码 -->
         <RelativeLayout
             android:id="@+id/pager_index"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/viewpager_list"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="92dp">
 
             <RelativeLayout
                 android:id="@+id/layout_pre"
@@ -205,11 +210,6 @@
                     android:layout_marginBottom="20dp"/>
             </RelativeLayout>
         </RelativeLayout>
-
-
-
-
-
     </RelativeLayout>
 
     <!--视频下载页布局结束-->
@@ -245,7 +245,8 @@
                         android:textSize="30dp"
                         android:text="配置主控IP"
                         android:letterSpacing="0.2"
-                        android:textColor="#00b7ee"/>
+                        android:textColor="#00b7ee"
+                        android:layout_centerHorizontal="true"/>
                     <TextView
                         android:id="@+id/tv_text_ip"
                         android:layout_width="wrap_content"
@@ -278,7 +279,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="30dp"
                         android:text="清除缓存"
-                        android:letterSpacing="0.1"
+                        android:letterSpacing="0.2"
                         android:textColor="#00b7ee"/>
                     <TextView
                         android:id="@+id/tv_text_cache"

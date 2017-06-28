@@ -290,6 +290,7 @@ public class VREducationMainActivity extends Activity
      */
     private void initDate() {
         pagerList.clear();
+        listForHomepage.clear();
         List<VideoFile> videoList = FilesManager.getInstance().getVideoFiles();
         if (videoList == null || videoList.size() == 0) {
             // 无本地视频
@@ -346,7 +347,7 @@ public class VREducationMainActivity extends Activity
         Log.e(TAG, "URL:" + url);
         if (checkFileDownLoad(file.getName(), size)) {
             Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
-            intent.putExtra("START", url);
+            intent.putExtra("videoFile",fileId);
             startActivity(intent);
         } else {
             Toast.makeText(this, "该视频未下载", Toast.LENGTH_LONG).show();
