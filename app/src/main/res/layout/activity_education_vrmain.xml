@@ -149,6 +149,62 @@
 
         </android.support.v4.view.ViewPager>
 
+        <!-- 1234页码 -->
+        <RelativeLayout
+            android:id="@+id/pager_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewpager_list"
+            android:layout_centerHorizontal="true">
+
+            <RelativeLayout
+                android:id="@+id/layout_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/pre"
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"
+                    android:visibility="visible"
+                    android:src="@drawable/selector_button_pre"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="31dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@+id/layout_pre"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="2dp">
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/num">
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"
+                    android:visibility="visible"
+                    android:src="@drawable/selector_button_next"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="31dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
 
 
 
@@ -506,463 +562,5 @@
 
     </RelativeLayout>
     <!--ip设置页结束 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--UI  main_layout -->
-    <RelativeLayout
-        android:id="@+id/main_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="84dp"
-        android:visibility="gone">
-        <RelativeLayout
-            android:id="@+id/image_shouye"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:background="@drawable/vr_11">
-            <ImageView
-                android:id="@+id/icon_shouye"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/vr_01"
-                android:layout_marginTop="22dp"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="21dp"
-                android:text="首页"
-                android:layout_below="@+id/icon_shouye"
-                android:layout_marginTop="14dp"
-                android:layout_centerHorizontal="true"
-                android:textColor="#FFFFFF"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/image_shezhi"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:layout_below="@+id/image_shouye"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/vr_10_2">
-            <ImageView
-                android:id="@+id/icon_shezhi"
-                android:src="@drawable/vr_02"
-                android:layout_width="54dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="30dp"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="21dp"
-                android:text="设置"
-                android:layout_below="@+id/icon_shezhi"
-                android:layout_marginTop="14dp"
-                android:layout_centerHorizontal="true"
-                android:textColor="#FFFFFF"/>
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <!--  Home 页 -->
-    <RelativeLayout
-        android:id="@+id/video_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/main_layout"
-        android:layout_marginTop="84dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginRight="95dp"
-        android:visibility="gone">
-
-        <RelativeLayout
-            android:id="@+id/layout_null"
-            android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:visibility="gone">
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="100dp"
-                android:src="@drawable/kongtai"
-                android:layout_centerInParent="true"/>
-
-        </RelativeLayout>
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager_test"
-            android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/layout_null">
-
-        </android.support.v4.view.ViewPager>
-
-        <!-- 1234页码 -->
-        <RelativeLayout
-            android:id="@+id/pager_index"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/viewpager_test"
-            android:layout_centerHorizontal="true">
-
-            <RelativeLayout
-                android:id="@+id/layout_pre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/pre"
-                    android:layout_width="9dp"
-                    android:layout_height="14dp"
-                    android:visibility="visible"
-                    android:src="@drawable/selector_button_pre"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="31dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"/>
-            </RelativeLayout>
-
-
-            <LinearLayout
-                android:id="@+id/num"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_toRightOf="@+id/layout_pre"
-                android:layout_centerVertical="true"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="2dp">
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/num">
-                <ImageView
-                    android:id="@+id/next"
-                    android:layout_width="9dp"
-                    android:layout_height="14dp"
-                    android:visibility="visible"
-                    android:src="@drawable/selector_button_next"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="31dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"/>
-            </RelativeLayout>
-        </RelativeLayout>
-
-        <!-- 底部按钮 -->
-        <RelativeLayout
-            android:id="@+id/bottom_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/pager_index"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="7dp">
-
-            <RelativeLayout
-                android:id="@+id/tuichu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/icon_tuichu"
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
-                    android:src="@drawable/selector_button_exit"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="退出"
-                    android:textSize="20dp"
-                    android:layout_toRightOf="@+id/icon_tuichu"
-                    android:textColor="@drawable/selector_text_color"
-                    android:layout_marginLeft="15dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/qiehuan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/tuichu"
-                android:layout_marginLeft="125dp"
-                android:visibility="gone">
-
-                <ImageView
-                    android:id="@+id/icon_qiehuan"
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
-                    android:src="@drawable/selector_button_fuwei"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="视角复位"
-                    android:textSize="20dp"
-                    android:layout_toRightOf="@+id/icon_qiehuan"
-                    android:textColor="@drawable/selector_text_color"
-                    android:layout_marginLeft="15dp"/>
-
-            </RelativeLayout>
-
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-
-    <!-- 页面2 设置主界面  -->
-    <RelativeLayout
-        android:id="@+id/main_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/main_layout"
-        android:visibility="gone">
-
-        <RelativeLayout
-            android:id="@+id/show_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
-            android:layout_marginLeft="23dp">
-            <RelativeLayout
-                android:id="@+id/setting_ip"
-                android:layout_width="270dp"
-                android:layout_height="270dp"
-                android:background="@drawable/selector_button_dakuang">
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true">
-                    <TextView
-                        android:id="@+id/tip_ip"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="21dp"
-                        android:text="配置主控IP"
-                        android:textColor="#FFFFFF"/>
-                    <TextView
-                        android:id="@+id/text_ip"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="21dp"
-                        android:text="0.0.0.0"
-                        android:layout_below="@+id/tip_ip"
-                        android:layout_marginTop="42dp"
-                        android:textColor="#FFFFFF"
-                        android:layout_centerHorizontal="true"/>
-                </RelativeLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/setting_cache"
-                android:layout_width="270dp"
-                android:layout_height="270dp"
-                android:layout_toRightOf="@+id/setting_ip"
-                android:layout_marginLeft="25dp"
-                android:background="@drawable/selector_button_dakuang">
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true">
-                    <TextView
-                        android:id="@+id/tip_cache"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="21dp"
-                        android:text="清除缓存"
-                        android:textColor="#FFFFFF"/>
-                    <TextView
-                        android:id="@+id/text_cache"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="21dp"
-                        android:text="4.5GB"
-                        android:layout_below="@+id/tip_cache"
-                        android:layout_marginTop="42dp"
-                        android:textColor="#FFFFFF"
-                        android:layout_centerHorizontal="true"/>
-                </RelativeLayout>
-            </RelativeLayout>
-        </RelativeLayout>
-
-
-        <!--界面3设置ip -->
-        <RelativeLayout
-            android:id="@+id/main_setting_ip"
-            android:layout_width="606dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="84dp"
-            android:layout_marginLeft="23dp"
-            android:background="@drawable/t8"
-            android:visibility="gone">
-
-            <!--Line 1 -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="9dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="设置主控IP"
-                    android:textSize="25dp"
-                    android:textColor="#FFFFFF"
-                    android:layout_centerInParent="true"/>
-
-                <Button
-                    android:id="@+id/zidongjiance"
-                    android:layout_width="110dp"
-                    android:layout_height="41dp"
-                    android:text="自动检测"
-                    android:textSize="18dp"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginRight="25dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/selector_button_jiance"/>
-            </RelativeLayout>
-
-            <!--Line2 -->
-            <RelativeLayout
-                android:id="@+id/input_ip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp">
-
-                <EditText
-                    android:id="@+id/ip_1"
-                    android:layout_width="75dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/t5"
-                    android:layout_marginLeft="88dp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"
-                    android:maxLines="1"
-                    android:gravity="center"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:inputType="number"
-                    />
-
-                <EditText
-                    android:id="@+id/ip_2"
-                    android:layout_width="75dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/t5"
-                    android:layout_toRightOf="@+id/ip_1"
-                    android:layout_marginLeft="37dp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"
-                    android:maxLines="1"
-                    android:gravity="center"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:inputType="number"/>
-
-                <EditText
-                    android:id="@+id/ip_3"
-                    android:layout_width="75dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/t5"
-                    android:layout_toRightOf="@+id/ip_2"
-                    android:layout_marginLeft="37dp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"
-                    android:maxLines="1"
-                    android:gravity="center"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:inputType="number"/>
-
-                <EditText
-                    android:id="@+id/ip_4"
-                    android:layout_width="75dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/t5"
-                    android:layout_toRightOf="@+id/ip_3"
-                    android:layout_marginLeft="37dp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"
-                    android:maxLines="1"
-                    android:gravity="center"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:inputType="number"/>
-            </RelativeLayout>
-
-            <!--Line3 -->
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="200dp">
-
-                <Button
-                    android:id="@+id/save_ip"
-                    android:layout_width="110dp"
-                    android:layout_height="37dp"
-                    android:background="@drawable/selector_button_save"
-                    android:text="保存"
-                    android:textSize="20dp"
-                    android:textColor="#FFFFFF"/>
-
-                <Button
-                    android:id="@+id/cancel_ip"
-                    android:layout_width="110dp"
-                    android:layout_height="37dp"
-                    android:background="@drawable/selector_button_cencle"
-                    android:text="取消"
-                    android:textSize="20dp"
-                    android:textColor="#FFFFFF"
-                    android:layout_toRightOf="@+id/save_ip"
-                    android:layout_marginLeft="60dp"/>
-            </RelativeLayout>
-        </RelativeLayout>
-    </RelativeLayout>
 
 </RelativeLayout>

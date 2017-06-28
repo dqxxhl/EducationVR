@@ -1,22 +1,33 @@
 package com.sd.vr.education;
 
+import java.io.File;
+import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sd.vr.R;
+import com.sd.vr.education.entity.VideoFile;
+import com.sd.vr.education.presenter.FilesManager;
+import com.sd.vr.education.presenter.ServiceManager;
+import com.sd.vr.education.presenter.ViewAction;
+import com.sd.vr.education.utils.DatabaseManager;
+import com.sd.vr.education.utils.Utils;
+import com.sd.vr.education.view.VideoGridViewAdapterNew;
+import com.sd.vr.education.vrplayer.VideoPlayerActivity;
+import com.squareup.picasso.Picasso;
+
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Instrumentation;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,30 +38,9 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.sd.vr.R;
-import com.sd.vr.ctrl.netty.protobuf.MessageProto;
-import com.sd.vr.education.broadcastreceiver.PowerConnectionReceiver;
-import com.sd.vr.education.entity.VideoFile;
-import com.sd.vr.education.presenter.FilesManager;
-import com.sd.vr.education.presenter.ServiceManager;
-import com.sd.vr.education.presenter.ViewAction;
-import com.sd.vr.education.utils.DatabaseManager;
-import com.sd.vr.education.utils.Utils;
-import com.sd.vr.education.view.VideoGridViewAdapter;
-import com.sd.vr.education.view.VideoGridViewAdapterNew;
-import com.sd.vr.education.vrplayer.VideoPlayerActivity;
-import com.squareup.picasso.Picasso;
-
-import java.io.File;
-import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 /**
  * 首页，展示视频列表，设置等 Created by hl09287 on 2017/4/14.
@@ -59,7 +49,6 @@ public class VREducationMainActivity extends Activity
         implements ViewAction, View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private static final String TAG = VREducationMainActivity.class.getName();
-    private static final int MSG_KEY_1 = 1;
     private static final int MSG_KEY_2 = 2;
     ServiceManager serviceManager;
     String separator = ".";
@@ -68,26 +57,10 @@ public class VREducationMainActivity extends Activity
     private LinearLayout numsLayout;
     private int positionSelected;
     private VideoPagerAdapter adapter;
-    private RelativeLayout homeLayout;
-    private RelativeLayout settingLayout;
-    private RelativeLayout videoLayout;
-    private RelativeLayout mainSetting;
-    private RelativeLayout mainSettingIP;
-    private RelativeLayout showSetting;
-    private RelativeLayout setting_ip;
-    private RelativeLayout setting_cache;
-    private Button save_ip;
-    private Button cancel_ip;
 
-    private TextView text_ip;
-    private RelativeLayout tuichu;
-    private RelativeLayout qiehuan;
     private RelativeLayout layout_pre;
     private RelativeLayout layout_next;
-    private TextView text_cache;
-    private RelativeLayout layout_null;
     private RelativeLayout pager_index;
-    private Button zidongjiance;
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -163,38 +136,13 @@ public class VREducationMainActivity extends Activity
         setContentView(R.layout.activity_education_vrmain);
         serviceManager = ServiceManager.getInstance();
         serviceManager.bindAction(this);
-        layout_null = (RelativeLayout) findViewById(R.id.layout_null);
+
         pager_index = (RelativeLayout) findViewById(R.id.pager_index);
         numsLayout = (LinearLayout) findViewById(R.id.num);
-        homeLayout = (RelativeLayout) findViewById(R.id.image_shouye);
-        settingLayout = (RelativeLayout) findViewById(R.id.image_shezhi);
-        videoLayout = (RelativeLayout) findViewById(R.id.video_main);
-        mainSetting = (RelativeLayout) findViewById(R.id.main_setting);
-        mainSettingIP = (RelativeLayout) findViewById(R.id.main_setting_ip);
-        showSetting = (RelativeLayout) findViewById(R.id.show_setting);
-        setting_ip = (RelativeLayout) findViewById(R.id.setting_ip);
-        setting_cache = (RelativeLayout) findViewById(R.id.setting_cache);
-        save_ip = (Button) findViewById(R.id.save_ip);
-        cancel_ip = (Button) findViewById(R.id.cancel_ip);
-        text_ip = (TextView) findViewById(R.id.text_ip);
-        tuichu = (RelativeLayout) findViewById(R.id.tuichu);
-        qiehuan = (RelativeLayout) findViewById(R.id.qiehuan);
-
         layout_pre = (RelativeLayout) findViewById(R.id.layout_pre);
         layout_next = (RelativeLayout) findViewById(R.id.layout_next);
-        text_cache = (TextView) findViewById(R.id.text_cache);
-        zidongjiance = (Button) findViewById(R.id.zidongjiance);
-        homeLayout.setOnClickListener(this);
-        settingLayout.setOnClickListener(this);
-        setting_ip.setOnClickListener(this);
-        setting_cache.setOnClickListener(this);
-        save_ip.setOnClickListener(this);
-        cancel_ip.setOnClickListener(this);
-        tuichu.setOnClickListener(this);
-        qiehuan.setOnClickListener(this);
         layout_pre.setOnClickListener(this);
         layout_next.setOnClickListener(this);
-        zidongjiance.setOnClickListener(this);
 
         // 二期
         video_home = (ImageView) findViewById(R.id.video_home);
@@ -455,50 +403,9 @@ public class VREducationMainActivity extends Activity
     @Override
     public void onClick(View v) {
         /*
-         * if (v.getId() == R.id.image_shouye){ homeLayout.setBackgroundResource(R.drawable.vr_11);
-         * settingLayout.setBackgroundResource(R.drawable.vr_10_2);
-         * videoLayout.setVisibility(View.VISIBLE); mainSetting.setVisibility(View.GONE); }else if
-         * (v.getId() == R.id.image_shezhi){ homeLayout.setBackgroundResource(R.drawable.vr_10_2);
-         * settingLayout.setBackgroundResource(R.drawable.vr_11);
-         * videoLayout.setVisibility(View.GONE); mainSetting.setVisibility(View.VISIBLE); }else if
-         * (v.getId() == R.id.setting_ip){ showSetting.setVisibility(View.GONE);
-         * mainSettingIP.setVisibility(View.VISIBLE); //同步数据 String ip =
-         * text_ip.getText().toString(); if (ip != null && !ip.equals("")){ String[] ipNum =
-         * ip.split("\\."); if (ipNum.length == 4){ ip_1.setText(ipNum[0]); ip_2.setText(ipNum[1]);
-         * ip_3.setText(ipNum[2]); ip_4.setText(ipNum[3]); } } }else if (v.getId() ==
-         * R.id.setting_cache){ AlertDialog.Builder builder = new AlertDialog.Builder(this);
-         * builder.setTitle("提示"); //设置标题 builder.setMessage("是否确认清除所有教学资源?");
-         * builder.setPositiveButton("确定", new DialogInterface.OnClickListener() { //设置确定按钮
-         * @Override public void onClick(DialogInterface dialog, int which) { dialog.dismiss();
-         * //清楚缓存 File fileDir = new File(FilesManager.DIRECTORY); Utils.deletCache(fileDir);
-         * text_cache.setText("0.0GB"); updateUI(); } }); builder.setNegativeButton("取消", new
-         * DialogInterface.OnClickListener() { //设置取消按钮
-         * @Override public void onClick(DialogInterface dialog, int which) { dialog.dismiss(); }
-         * }); builder.create().show(); }else if(v.getId() == R.id.save_ip){ //保存ip
-         * showSetting.setVisibility(View.VISIBLE); mainSettingIP.setVisibility(View.GONE); //链接网络
-         * String ip1 = ip_1.getText().toString(); String ip2 = ip_2.getText().toString(); String
-         * ip3 = ip_3.getText().toString(); String ip4 = ip_4.getText().toString(); //简单校验 if (ip1
-         * == null || ip1.equals("") || ip2 == null || ip2.equals("") || ip3 == null ||
-         * ip3.equals("") || ip4 == null || ip4.equals("")){ return; } // String ip =
-         * ip1+separator+ip2+separator+ip3+separator+ip4; String ip = "120.26.141.161";
-         * ServiceManager.getInstance().initSocketClient(ip); text_ip.setText(ip); }else if
-         * (v.getId() == R.id.cancel_ip){ showSetting.setVisibility(View.VISIBLE);
-         * mainSettingIP.setVisibility(View.GONE); }else if (v.getId() == R.id.tuichu){
-         */
-        /*
-         * Intent intent = new Intent(Intent.ACTION_MAIN); intent.addCategory(Intent.CATEGORY_HOME);
-         * intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP); this.startActivity(intent);
-         *//*
-           * new Thread () { public void run () { try { Instrumentation inst= new Instrumentation();
-           * inst.sendKeyDownUpSync(KeyEvent. KEYCODE_BACK); } catch(Exception e) {
-           * e.printStackTrace(); } } }.start(); }else if (v.getId() == R.id.qiehuan){ //不知道怎么弄
-           * }else if (v.getId() == R.id.layout_pre){ viewpager_list.arrowScroll(17); Log.e(TAG,
+         }else if (v.getId() == R.id.layout_pre){ viewpager_list.arrowScroll(17); Log.e(TAG,
            * "上一页"); }else if(v.getId() == R.id.layout_next){ viewpager_list.arrowScroll(66);
-           * Log.e(TAG, "下一页"); }else if (v.getId() == R.id.zidongjiance){ Thread thread = new
-           * Thread(new Runnable() {
-           * @Override public void run() { List<InetAddress> ipList =
-           * Utils.searchHost(VREducationMainActivity.this); Message msg = new Message(); msg.what =
-           * MSG_KEY_2; msg.obj = ipList; handler.sendMessage(msg); } }); thread.start(); }
+           * Log.e(TAG, "下一页"); }
            */
 
         switch (v.getId()) {
