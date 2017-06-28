@@ -74,12 +74,13 @@
         android:layout_marginTop="126dp"
         android:layout_marginLeft="39dp"
         android:layout_marginRight="39dp"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <RelativeLayout
             android:id="@+id/rl_item_first"
             android:layout_width="368dp"
-            android:layout_height="207dp">
+            android:layout_height="207dp"
+            android:visibility="gone">
             <ImageView
                 android:id="@+id/iv_item_first"
                 android:layout_width="match_parent"
@@ -106,7 +107,8 @@
             android:layout_width="368dp"
             android:layout_height="207dp"
             android:layout_toRightOf="@+id/rl_item_first"
-            android:layout_marginLeft="39dp">
+            android:layout_marginLeft="39dp"
+            android:visibility="gone">
             <ImageView
                 android:id="@+id/iv_item_second"
                 android:layout_width="match_parent"
@@ -139,7 +141,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="85dp"
         android:layout_marginBottom="95dp"
-        android:visibility="visible">
+        android:visibility="gone">
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager_list"
             android:layout_width="match_parent"
@@ -203,7 +205,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rl_settingcache_page"
+                android:id="@+id/rl_settingcache_layout"
                 android:layout_width="289dp"
                 android:layout_height="231dp"
                 android:layout_alignParentRight="true"

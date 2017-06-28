@@ -5,13 +5,15 @@ import com.litesuits.orm.db.annotation.PrimaryKey;
 import com.litesuits.orm.db.annotation.Table;
 import com.litesuits.orm.db.enums.AssignType;
 
+import java.io.Serializable;
+
 /**
  * 文件实体
  * Created by HL on 2017/6/25.
  */
 
 @Table("test_model")
-public class VideoFile {
+public class VideoFile implements Serializable {
 
     //主键，自增
     @PrimaryKey(AssignType.AUTO_INCREMENT)

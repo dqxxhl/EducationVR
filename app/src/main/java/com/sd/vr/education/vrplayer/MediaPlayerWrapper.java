@@ -101,7 +101,7 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
         }
     }
 
-    private void openLocalFile(String filePath, String key, int len){
+    public void openLocalFile(String filePath, String key, int len){
         try{
             File file = new File(filePath);
             mPlayer.setDataSource(new RandomMediaDataSource(file, key, len));

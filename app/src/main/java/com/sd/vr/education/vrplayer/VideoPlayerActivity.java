@@ -6,9 +6,11 @@ import com.asha.vrlib.MDVRLibrary;
 import com.asha.vrlib.model.BarrelDistortionConfig;
 import com.asha.vrlib.model.MDPinchConfig;
 import com.sd.vr.R;
+import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.VideoAction;
+import com.sd.vr.education.utils.DatabaseManager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -23,6 +25,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.List;
+
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 /**
@@ -34,13 +38,13 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     private static final String TAG =  VideoPlayerActivity.class.getName();
     private MDVRLibrary mVRLibrary;
     private MediaPlayerWrapper mMediaPlayerWrapper = new MediaPlayerWrapper();
-    private String url = null;
     private Button b;
     private Button b1;
     private Button b2;
     private Button end;
     private Button next;
     private Handler handler = new Handler();
+    private String fileId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +99,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
         ServiceManager.getInstance().bindVideoAction(this);
 
-        playVideo(url);//播放视频
+        playVideo(fileId);//播放视频
     }
 
 
@@ -134,7 +138,8 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     private void getdate(){
         Intent intent = getIntent();
-        url = intent.getStringExtra("START");
+        fileId =  intent.getStringExtra("videoFile");
+
 
 //        url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/F5fly.mp4";
 //        url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/ceshi.mp4";
@@ -142,9 +147,16 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 //        url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/yangli.mp4";
     }
 
-    private void playVideo(String url){
-        mMediaPlayerWrapper.openRemoteFile(url);
-        mMediaPlayerWrapper.prepare();
+    private void playVideo(String fileId){
+        String url = FilesManager.DIRECTORY+"/"+ fileId;
+        List<VideoFile> list = DatabaseManager.getInstance().getQueryByWhere(VideoFile.class, "fileId",new String[]{fileId});
+        if (list != null && list.size() > 0){
+            VideoFile file = list.get(0);
+            String key = file.getKey();
+            int length = file.getLength();
+            mMediaPlayerWrapper.openLocalFile(url, key, length);
+            mMediaPlayerWrapper.prepare();
+        }
     }
 
     private void initVRLibrary(){
@@ -209,12 +221,10 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     @Override
     public void start(String fileId) {
-        this.url = FilesManager.DIRECTORY+"/"+ fileId;
-        Log.e(TAG, "播放地址:"+this.url);
         mMediaPlayerWrapper.pause();
         mMediaPlayerWrapper.destroy();
         mMediaPlayerWrapper.init();
-        playVideo(url);
+        playVideo(fileId);
         mMediaPlayerWrapper.pause();
         Log.e(TAG,"向服务器请求目前的播放进度");
         ServiceManager.getInstance().requestProgress();

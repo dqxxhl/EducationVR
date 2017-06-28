@@ -305,9 +305,9 @@ public class FilesManager {
                         float num = (float)Math.round(progress*10)/10;
                         videofile.setProgress(num);
                     }
+                    items.add(videofile);
+                    isCheck = true;
                 }
-                items.add(videofile);
-                isCheck = true;
             }
 
             if (isCheck){
@@ -342,6 +342,9 @@ public class FilesManager {
             Map.Entry<VideoFile, Integer> entry =  iter.next();
             VideoFile file = entry.getKey();
             if (file.getFileId().equals(fileId)){
+                if(file.getFileStatus() == STATUS_DOWNLOADING){
+                    stopDownLoad();
+                }
                 iter.remove();
                 //刷新UI
                 ServiceManager.getInstance().updateUI();
