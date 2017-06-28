@@ -66,24 +66,24 @@ public class VREducationMainActivity extends Activity
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
-            case MSG_KEY_2:
-                List<InetAddress> ipList = (List<InetAddress>) msg.obj;
-                if (ipList.size() >= 1) {
-                    String ip = ipList.get(0).toString();
-                    ip = ip.substring(1, ip.length());
-                    if (ip != null && !ip.equals("")) {
-                        String[] ipNum = ip.split("\\.");
-                        if (ipNum.length == 4) {
-                            ip_1.setText(ipNum[0]);
-                            ip_2.setText(ipNum[1]);
-                            ip_3.setText(ipNum[2]);
-                            ip_4.setText(ipNum[3]);
+                case MSG_KEY_2:
+                    List<InetAddress> ipList = (List<InetAddress>) msg.obj;
+                    if (ipList.size() >= 1) {
+                        String ip = ipList.get(0).toString();
+                        ip = ip.substring(1, ip.length());
+                        if (ip != null && !ip.equals("")) {
+                            String[] ipNum = ip.split("\\.");
+                            if (ipNum.length == 4) {
+                                ip_1.setText(ipNum[0]);
+                                ip_2.setText(ipNum[1]);
+                                ip_3.setText(ipNum[2]);
+                                ip_4.setText(ipNum[3]);
+                            }
                         }
                     }
-                }
-                break;
-            default:
-                break;
+                    break;
+                default:
+                    break;
             }
         }
     };
@@ -347,7 +347,7 @@ public class VREducationMainActivity extends Activity
         Log.e(TAG, "URL:" + url);
         if (checkFileDownLoad(file.getName(), size)) {
             Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
-            intent.putExtra("videoFile",fileId);
+            intent.putExtra("videoFile", fileId);
             startActivity(intent);
         } else {
             Toast.makeText(this, "该视频未下载", Toast.LENGTH_LONG).show();
@@ -403,132 +403,133 @@ public class VREducationMainActivity extends Activity
 
     @Override
     public void onClick(View v) {
-        /*
-         }else if (v.getId() == R.id.layout_pre){ viewpager_list.arrowScroll(17); Log.e(TAG,
-           * "上一页"); }else if(v.getId() == R.id.layout_next){ viewpager_list.arrowScroll(66);
-           * Log.e(TAG, "下一页"); }
-           */
 
         switch (v.getId()) {
-        case R.id.video_home:
-            rl_home_page.setVisibility(View.VISIBLE);
-            rl_videolist_page.setVisibility(View.GONE);
-            rl_setting_page.setVisibility(View.GONE);
-            rl_jianjie_page.setVisibility(View.GONE);
-            rl_xiangqing_page.setVisibility(View.GONE);
-            rl_ip_page.setVisibility(View.GONE);
-            break;
-        case R.id.video_list:
-            rl_home_page.setVisibility(View.GONE);
-            rl_videolist_page.setVisibility(View.VISIBLE);
-            rl_setting_page.setVisibility(View.GONE);
-            rl_jianjie_page.setVisibility(View.GONE);
-            rl_xiangqing_page.setVisibility(View.GONE);
-            rl_ip_page.setVisibility(View.GONE);
-            break;
-        case R.id.home_setting:
-            rl_home_page.setVisibility(View.GONE);
-            rl_videolist_page.setVisibility(View.GONE);
-            rl_setting_page.setVisibility(View.VISIBLE);
-            rl_jianjie_page.setVisibility(View.GONE);
-            rl_xiangqing_page.setVisibility(View.GONE);
-            rl_ip_page.setVisibility(View.GONE);
-            break;
-        case R.id.jian_jie:
-            rl_home_page.setVisibility(View.GONE);
-            rl_videolist_page.setVisibility(View.GONE);
-            rl_setting_page.setVisibility(View.GONE);
-            rl_jianjie_page.setVisibility(View.VISIBLE);
-            rl_xiangqing_page.setVisibility(View.GONE);
-            rl_ip_page.setVisibility(View.GONE);
-            break;
-        case R.id.rl_settingip_layout:
-            rl_home_page.setVisibility(View.GONE);
-            rl_videolist_page.setVisibility(View.GONE);
-            rl_setting_page.setVisibility(View.GONE);
-            rl_jianjie_page.setVisibility(View.GONE);
-            rl_xiangqing_page.setVisibility(View.GONE);
-            rl_ip_page.setVisibility(View.VISIBLE);
-            // 同步数据
-            String ip = tv_text_ip.getText().toString();
-            if (ip != null && !ip.equals("")) {
-                String[] ipNum = ip.split("\\.");
-                if (ipNum.length == 4) {
-                    ip_1.setText(ipNum[0]);
-                    ip_2.setText(ipNum[1]);
-                    ip_3.setText(ipNum[2]);
-                    ip_4.setText(ipNum[3]);
+            case R.id.video_home:
+                rl_home_page.setVisibility(View.VISIBLE);
+                rl_videolist_page.setVisibility(View.GONE);
+                rl_setting_page.setVisibility(View.GONE);
+                rl_jianjie_page.setVisibility(View.GONE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
+            case R.id.video_list:
+                rl_home_page.setVisibility(View.GONE);
+                rl_videolist_page.setVisibility(View.VISIBLE);
+                rl_setting_page.setVisibility(View.GONE);
+                rl_jianjie_page.setVisibility(View.GONE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
+            case R.id.home_setting:
+                rl_home_page.setVisibility(View.GONE);
+                rl_videolist_page.setVisibility(View.GONE);
+                rl_setting_page.setVisibility(View.VISIBLE);
+                rl_jianjie_page.setVisibility(View.GONE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
+            case R.id.jian_jie:
+                rl_home_page.setVisibility(View.GONE);
+                rl_videolist_page.setVisibility(View.GONE);
+                rl_setting_page.setVisibility(View.GONE);
+                rl_jianjie_page.setVisibility(View.VISIBLE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
+            case R.id.rl_settingip_layout:
+                rl_home_page.setVisibility(View.GONE);
+                rl_videolist_page.setVisibility(View.GONE);
+                rl_setting_page.setVisibility(View.GONE);
+                rl_jianjie_page.setVisibility(View.GONE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.VISIBLE);
+                // 同步数据
+                String ip = tv_text_ip.getText().toString();
+                if (ip != null && !ip.equals("")) {
+                    String[] ipNum = ip.split("\\.");
+                    if (ipNum.length == 4) {
+                        ip_1.setText(ipNum[0]);
+                        ip_2.setText(ipNum[1]);
+                        ip_3.setText(ipNum[2]);
+                        ip_4.setText(ipNum[3]);
+                    }
                 }
-            }
-            break;
-        case R.id.rl_settingcache_layout:
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("提示"); // 设置标题
-            builder.setMessage("是否确认清除所有教学资源?");
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() { // 设置确定按钮
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                    // 清楚缓存
-                    File fileDir = new File(FilesManager.DIRECTORY);
-                    DatabaseManager.getInstance().delete(VideoFile.class);// 清除数据库
-                    Utils.deletCache(fileDir);// 清空文件
-                    tv_text_cache.setText("0.0GB");
-                    updateUI();
-                }
-            });
-            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() { // 设置取消按钮
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
-            builder.create().show();
-            break;
-        case R.id.bt_ipsetting_save:
-            // 保存ip
-            rl_setting_page.setVisibility(View.VISIBLE);
-            rl_ip_page.setVisibility(View.GONE);
-            // 链接网络
-            String ip1 = ip_1.getText().toString();
-            String ip2 = ip_2.getText().toString();
-            String ip3 = ip_3.getText().toString();
-            String ip4 = ip_4.getText().toString();
+                break;
+            case R.id.rl_settingcache_layout:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("提示"); // 设置标题
+                builder.setMessage("是否确认清除所有教学资源?");
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() { // 设置确定按钮
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        // 清楚缓存
+                        File fileDir = new File(FilesManager.DIRECTORY);
+                        DatabaseManager.getInstance().delete(VideoFile.class);// 清除数据库
+                        Utils.deletCache(fileDir);// 清空文件
+                        tv_text_cache.setText("0.0GB");
+                        updateUI();
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() { // 设置取消按钮
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.create().show();
+                break;
+            case R.id.bt_ipsetting_save:
+                // 保存ip
+                rl_setting_page.setVisibility(View.VISIBLE);
+                rl_ip_page.setVisibility(View.GONE);
+                // 链接网络
+                String ip1 = ip_1.getText().toString();
+                String ip2 = ip_2.getText().toString();
+                String ip3 = ip_3.getText().toString();
+                String ip4 = ip_4.getText().toString();
 
-            // 简单校验
-            /*
-             * if (ip1 == null || ip1.equals("") || ip2 == null || ip2.equals("") || ip3 == null ||
-             * ip3.equals("") || ip4 == null || ip4.equals("")){ return; }
-             */
-
-            // String ipNew = ip1+separator+ip2+separator+ip3+separator+ip4;
-            String ipNew = "120.26.141.161";
-            ServiceManager.getInstance().initSocketClient(ipNew);
-            tv_text_ip.setText(ipNew);
-            break;
-        case R.id.bt_ipsetting_cencle:
-            rl_setting_page.setVisibility(View.VISIBLE);
-            rl_ip_page.setVisibility(View.GONE);
-            break;
-        case R.id.bt_ip_auto:
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    List<InetAddress> ipList = Utils.searchHost(VREducationMainActivity.this);
-                    Message msg = new Message();
-                    msg.what = MSG_KEY_2;
-                    msg.obj = ipList;
-                    handler.sendMessage(msg);
+                // 简单校验
+                if (ip1 == null || ip1.equals("") || ip2 == null || ip2.equals("") || ip3 == null ||
+                        ip3.equals("") || ip4 == null || ip4.equals("")) {
+                    return;
                 }
-            });
-            thread.start();
-            break;
+
+                 String ipNew = ip1+separator+ip2+separator+ip3+separator+ip4;
+//                String ipNew = "120.26.141.161";
+                ServiceManager.getInstance().initSocketClient(ipNew);
+                tv_text_ip.setText(ipNew);
+                break;
+            case R.id.bt_ipsetting_cencle:
+                rl_setting_page.setVisibility(View.VISIBLE);
+                rl_ip_page.setVisibility(View.GONE);
+                break;
+            case R.id.bt_ip_auto:
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        List<InetAddress> ipList = Utils.searchHost(VREducationMainActivity.this);
+                        Message msg = new Message();
+                        msg.what = MSG_KEY_2;
+                        msg.obj = ipList;
+                        handler.sendMessage(msg);
+                    }
+                });
+                thread.start();
+                break;
+            case R.id.layout_pre:
+                viewpager_list.arrowScroll(17);
+                break;
+            case R.id.layout_next:
+                viewpager_list.arrowScroll(66);
+                break;
         }
     }
 
     /**
      * 进入
-     * 
+     *
      * @param file
      */
     public void openVideo(final VideoFile file) {
