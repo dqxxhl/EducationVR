@@ -404,6 +404,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_below="@+id/tv_xiangqing_title"
                 android:letterSpacing="0.1"
+                android:textColor="#ffffff"
                 android:text="@string/video_content"
                 android:lineSpacingExtra="8dp"/>
         </RelativeLayout>

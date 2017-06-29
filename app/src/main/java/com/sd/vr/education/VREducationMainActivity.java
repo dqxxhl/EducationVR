@@ -26,6 +26,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.Html;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -173,7 +174,7 @@ public class VREducationMainActivity extends Activity
         iv_xiangqing_tu = (ImageView) findViewById(R.id.iv_xiangqing_tu);
         tv_xiangqing_text = (TextView) findViewById(R.id.tv_xiangqing_text);
         tv_xiangqing_title = (TextView) findViewById(R.id.tv_xiangqing_title);
-        tv_xiangqing_content = (TextView) findViewById(R.id.tv_xiangqing_title);
+        tv_xiangqing_content = (TextView) findViewById(R.id.tv_xiangqing_content);
         iv_item_first = (ImageView) findViewById(R.id.iv_item_first);
         tv_item_first = (TextView) findViewById(R.id.tv_item_first);
         iv_item_second = (ImageView) findViewById(R.id.iv_item_second);
@@ -230,9 +231,7 @@ public class VREducationMainActivity extends Activity
             if (picUrl != null && !"".equals(picUrl)) {
                 Picasso.with(this).load(file.getImageUrl()).into(iv_item_first);
             }
-            String titleTemp = file.getFileName();
-            String title2Name = "《" + titleTemp + "》";
-            tv_item_first.setText(title2Name);
+            tv_item_first.setText(Utils.subName(file.getFileName()));
             rl_item_first.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -247,9 +246,7 @@ public class VREducationMainActivity extends Activity
             if (picUrl != null && !"".equals(picUrl)) {
                 Picasso.with(this).load(file.getImageUrl()).into(iv_item_second);
             }
-            String titleTemp = file.getFileName();
-            String title2Name = "《" + titleTemp + "》";
-            tv_item_second.setText(title2Name);
+            tv_item_second.setText(Utils.subName(file.getFileName()));
             rl_item_second.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -543,11 +540,9 @@ public class VREducationMainActivity extends Activity
         if (picUrl != null && !"".equals(picUrl)) {
             Picasso.with(this).load(picUrl).into(iv_xiangqing_tu);
         }
-        String titleTemp = file.getFileName();
-        String title2Name = "《" + titleTemp + "》";
-        tv_xiangqing_text.setText(title2Name);
-        tv_xiangqing_title.setText(title2Name);
-        tv_xiangqing_content.setText(file.getFileContent());
+        tv_xiangqing_text.setText(Utils.subName(file.getFileName()));
+        tv_xiangqing_title.setText(Utils.subName(file.getFileName()));
+        tv_xiangqing_content.setText(Html.fromHtml(file.getFileContent()));
 
         iv_xiangqing_tu.setOnClickListener(new View.OnClickListener() {
             @Override

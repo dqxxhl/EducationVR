@@ -240,4 +240,13 @@ public class Utils {
         return ip;
     }
 
+    public static String subName(String fileName){
+        String temp = "《" + fileName + "》";
+        String[] strs = fileName.split("\\.");
+        if(strs.length > 0){
+            temp = "《" + strs[0] + "》";
+        }
+        return temp;
+    }
+
 }

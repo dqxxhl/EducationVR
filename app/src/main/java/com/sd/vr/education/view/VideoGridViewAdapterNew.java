@@ -17,6 +17,7 @@ import com.sd.vr.education.VREducationMainActivity;
 import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.utils.DatabaseManager;
+import com.sd.vr.education.utils.Utils;
 import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 import com.squareup.picasso.Picasso;
 
@@ -173,10 +174,8 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
             }
         });
 
-        title.setText(fileName+".MP4");
-        String titleTemp = listVideo.get(position).getFileName();
-        String title2Name = "《"+titleTemp+"》";
-        title2.setText(title2Name);
+        title.setText(fileName);
+        title2.setText(Utils.subName(listVideo.get(position).getFileName()));
         String picUrl = listVideo.get(position).getImageUrl();
         if (picUrl != null && !"".equals(picUrl)){
             Picasso.with(VREducationApplication.getInstance()).load(picUrl).into(tupian);
