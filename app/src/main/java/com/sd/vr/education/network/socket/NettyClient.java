@@ -149,7 +149,7 @@ public class NettyClient {
             try {
                 ChannelFuture f = bootstrap.connect(mHost, mPort).sync();
                 if (f.isSuccess()){
-                    Log.e(TAG, "连接服务器成功");
+                    Log.e(TAG, "连接服务器成功"+"mHost:"+mHost);
                     mUIHandler.sendMessage(mUIHandler.obtainMessage(ServiceManager.SAVE_IP, mHost));
                     socketChannel = (SocketChannel) f.channel();
                 }

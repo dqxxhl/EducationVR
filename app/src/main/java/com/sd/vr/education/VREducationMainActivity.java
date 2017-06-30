@@ -213,6 +213,7 @@ public class VREducationMainActivity extends Activity
 
         // 设置ip
         String ip = Utils.readIP(this);
+        Log.e(TAG, "读取上次IP："+ip);
         if (ip == null || ip.equals("")) {
             return;
         }
@@ -586,6 +587,20 @@ public class VREducationMainActivity extends Activity
                 textView.setTextColor(Color.parseColor("#FFFFFF"));
             }
             numsLayout.addView(textView);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (rl_xiangqing_page.getVisibility()  == View.VISIBLE){
+            rl_home_page.setVisibility(View.VISIBLE);
+            rl_videolist_page.setVisibility(View.GONE);
+            rl_setting_page.setVisibility(View.GONE);
+            rl_jianjie_page.setVisibility(View.GONE);
+            rl_xiangqing_page.setVisibility(View.GONE);
+            rl_ip_page.setVisibility(View.GONE);
+        }else {
+            super.onBackPressed();
         }
     }
 
