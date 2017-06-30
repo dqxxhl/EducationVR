@@ -8,6 +8,7 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -82,7 +83,8 @@ public class Utils {
             FileInputStream fis = null;
             try {
                 fis = new FileInputStream(file);
-                size = fis.available();
+                FileChannel fileChannel = fis.getChannel();
+                size = fileChannel.size();
             } catch (IOException e) {
                 e.printStackTrace();
             }

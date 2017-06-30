@@ -199,7 +199,7 @@ public class FilesManager {
         LoaderInfo loaderInfo = (new LoaderInfo.Builder()).dir(DIRECTORY).name(fileName).url(url).splitter(5).build();
         final VideoFile finalFileDownLoad = fileDownLoad;
         downLoadFiles.put(finalFileDownLoad,STATUS_DOWNLOADING);//正在下载此文件
-        LoaderExecutor.load(loaderInfo, new LoaderListener() {
+        task = LoaderExecutor.load(loaderInfo, new LoaderListener() {
             @Override
             public void onLoad(String url, int size, int totalSize) {
                 //刷新UI
@@ -303,7 +303,20 @@ public class FilesManager {
                         long size = Utils.getFileSize(new File(DIRECTORY + "/" + fileId));
                         float progress = size*100 / file.getFileSize();
                         float num = (float)Math.round(progress*10)/10;
-                        videofile.setProgress(num);
+                        Log.e(TAG, "size:"+size+"fileSize:"+file.getFileSize()+"process:"+num);
+
+                        float newNum = 0.0f;
+                        if (task != null && task.getmConfigDesc() != null){
+                            long fileSize = (long) task.getmConfigDesc().fileSize();
+                            long length = (long)task.getmConfigDesc().loadedLength();
+                            if (fileSize > 0){
+                                newNum = length*100/fileSize;
+                                Log.e(TAG, "进度-------："+newNum+"baifenbi:"+newNum+"loadedLength()"+task.getmConfigDesc().loadedLength()+"fileSize()"+task.getmConfigDesc().fileSize());
+                            }
+                        }
+                        videofile.setProgress(newNum);
+
+
                     }
                     items.add(videofile);
                     isCheck = true;

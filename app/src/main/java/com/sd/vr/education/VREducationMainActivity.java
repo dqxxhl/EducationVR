@@ -27,6 +27,7 @@ import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -542,6 +543,7 @@ public class VREducationMainActivity extends Activity
         }
         tv_xiangqing_text.setText(Utils.subName(file.getFileName()));
         tv_xiangqing_title.setText(Utils.subName(file.getFileName()));
+        tv_xiangqing_content.setMovementMethod(ScrollingMovementMethod.getInstance());//滚动
         tv_xiangqing_content.setText(Html.fromHtml(file.getFileContent()));
 
         iv_xiangqing_tu.setOnClickListener(new View.OnClickListener() {

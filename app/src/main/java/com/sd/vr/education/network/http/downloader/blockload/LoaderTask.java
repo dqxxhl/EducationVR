@@ -53,6 +53,9 @@ public class LoaderTask implements Runnable, BlockTaskListener {
         printf("Task status : %d", mTaskStatus);
     }
 
+    public LoaderConfig.ConfigDesc getmConfigDesc(){
+        return mConfigDesc;
+    }
     /**
      * 获取配置文件信息
      * 
