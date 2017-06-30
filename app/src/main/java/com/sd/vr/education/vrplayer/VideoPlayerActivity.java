@@ -268,4 +268,17 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
             mMediaPlayerWrapper.seekTo(l);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if (mMediaPlayerWrapper.getPlayer().isPlaying()){
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            this.startActivity(intent);
+        }else {
+            super.onBackPressed();
+        }
+
+    }
 }
