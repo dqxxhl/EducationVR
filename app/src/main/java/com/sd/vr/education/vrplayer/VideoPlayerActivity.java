@@ -15,6 +15,7 @@ import com.sd.vr.education.utils.DatabaseManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -105,9 +106,9 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     private void initMediaPlayer(){
         mMediaPlayerWrapper.init();
-        mMediaPlayerWrapper.setPreparedListener(new IMediaPlayer.OnPreparedListener() {
+        mMediaPlayerWrapper.setPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
-            public void onPrepared(IMediaPlayer mp) {
+            public void onPrepared(MediaPlayer mediaPlayer) {
                 Log.e(TAG,"播放器准备就绪");
                 if (mVRLibrary != null){
                     mVRLibrary.notifyPlayerChanged();
@@ -116,24 +117,16 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
                 // 播放器准备就绪，向服务器请求目前的播放进度
                 Log.e(TAG,"向服务器请求目前的播放进度");
                 ServiceManager.getInstance().requestProgress();
-
             }
         });
 
-        mMediaPlayerWrapper.getPlayer().setOnVideoSizeChangedListener(new IMediaPlayer.OnVideoSizeChangedListener() {
+        mMediaPlayerWrapper.getPlayer().setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
             @Override
-            public void onVideoSizeChanged(IMediaPlayer mp, int width, int height, int sar_num, int sar_den) {
-                mVRLibrary.onTextureResize(width, height);
+            public void onVideoSizeChanged(MediaPlayer mediaPlayer, int i, int i1) {
+                mVRLibrary.onTextureResize(i, i1);
             }
         });
 
-        mMediaPlayerWrapper.getPlayer().setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(IMediaPlayer iMediaPlayer) {
-//                mMediaPlayerWrapper.getPlayer().start();
-//                mMediaPlayerWrapper.getPlayer().setLooping(true);
-            }
-        });
     }
 
     private void getdate(){
@@ -152,9 +145,10 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         List<VideoFile> list = DatabaseManager.getInstance().getQueryByWhere(VideoFile.class, "fileId",new String[]{fileId});
         if (list != null && list.size() > 0){
             VideoFile file = list.get(0);
-            String key = file.getKey();
-            int length = file.getLength();
-            mMediaPlayerWrapper.openLocalFile(url, key, length);
+//            String key = file.getKey();
+//            int length = file.getLength();
+//            mMediaPlayerWrapper.openLocalFile(url, key, length);
+            mMediaPlayerWrapper.openRemoteFile(url);
             mMediaPlayerWrapper.prepare();
         }
     }
@@ -263,8 +257,8 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
 
     @Override
     public void stop() {
-        Long l = mMediaPlayerWrapper.getPlayer().getDuration();
-        if (l != null && l > 0){
+        int l = mMediaPlayerWrapper.getPlayer().getDuration();
+        if (l > 0){
             mMediaPlayerWrapper.seekTo(l);
         }
     }

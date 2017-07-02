@@ -6,6 +6,7 @@ import java.io.InputStream;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.Surface;
 
@@ -19,11 +20,11 @@ import tv.danmaku.ijk.media.player.misc.IMediaDataSource;
  * player封装类
  * Created by hl09287 on 2017/4/14.
  */
-public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
+public class MediaPlayerWrapper implements MediaPlayer.OnPreparedListener {
 
     private static final String TAG = MediaPlayerWrapper.class.getName();
-    protected IMediaPlayer mPlayer;
-    private IjkMediaPlayer.OnPreparedListener mPreparedListener;
+    protected MediaPlayer mPlayer;
+    private MediaPlayer.OnPreparedListener mPreparedListener;
     private static final int STATUS_IDLE = 0;
     private static final int STATUS_PREPARING = 1;
     private static final int STATUS_PREPARED = 2;
@@ -36,11 +37,11 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
 
     public void init(){
         mStatus = STATUS_IDLE;
-        mPlayer = new IjkMediaPlayer();
+        mPlayer = new MediaPlayer();
         mPlayer.setOnPreparedListener(this);
-        mPlayer.setOnInfoListener(new IMediaPlayer.OnInfoListener() {
+        mPlayer.setOnInfoListener(new MediaPlayer.OnInfoListener() {
             @Override
-            public boolean onInfo(IMediaPlayer mp, int what, int extra) {
+            public boolean onInfo(MediaPlayer mediaPlayer, int i, int i1) {
                 return false;
             }
         });
@@ -50,15 +51,6 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
     }
 
     private void enableHardwareDecoding(){
-        if (mPlayer instanceof IjkMediaPlayer){
-            IjkMediaPlayer player = (IjkMediaPlayer) mPlayer;
-            player.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "mediacodec", 1);
-            player.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "mediacodec-auto-rotate", 1);
-            player.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "overlay-format", IjkMediaPlayer.SDL_FCC_RV32);
-            player.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "framedrop", 60);
-            player.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "max-fps", 0);
-            player.setOption(IjkMediaPlayer.OPT_CATEGORY_CODEC, "skip_loop_filter", 48);
-        }
     }
 
     public void setSurface(Surface surface){
@@ -76,41 +68,7 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
         }
     }
 
-    public void openAssetFile(Context context, String assetPath) {
-        try {
-            AssetManager am = context.getResources().getAssets();
-            final InputStream is = am.open(assetPath);
-            mPlayer.setDataSource(new IMediaDataSource() {
-                @Override
-                public int readAt(long position, byte[] buffer, int offset, int size) throws IOException {
-                    return is.read(buffer, offset, size);
-                }
-
-                @Override
-                public long getSize() throws IOException {
-                    return is.available();
-                }
-
-                @Override
-                public void close() throws IOException {
-                    is.close();
-                }
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void openLocalFile(String filePath, String key, int len){
-        try{
-            File file = new File(filePath);
-            mPlayer.setDataSource(new RandomMediaDataSource(file, key, len));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    public IMediaPlayer getPlayer() {
+    public MediaPlayer getPlayer() {
         return mPlayer;
     }
 
@@ -147,22 +105,8 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
 
     }
 
-    public void setPreparedListener(IMediaPlayer.OnPreparedListener mPreparedListener) {
+    public void setPreparedListener(MediaPlayer.OnPreparedListener mPreparedListener) {
         this.mPreparedListener = mPreparedListener;
-    }
-
-    @Override
-    public void onPrepared(IMediaPlayer mp) {
-        mStatus = STATUS_PREPARED;
-        mPlayer.setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(IMediaPlayer iMediaPlayer) {
-                Log.e(TAG, "播放完成");
-                mStatus = STATUS_COMPLET;
-            }
-        });
-        start();
-        if (mPreparedListener != null) mPreparedListener.onPrepared(mp);
     }
 
     public void resume() {
@@ -180,6 +124,20 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
 
     public void seekTo(long l){
         pause();
-        mPlayer.seekTo(l);
+        mPlayer.seekTo((int) l);
+    }
+
+    @Override
+    public void onPrepared(MediaPlayer mediaPlayer) {
+        mStatus = STATUS_PREPARED;
+        mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                Log.e(TAG, "播放完成");
+                mStatus = STATUS_COMPLET;
+            }
+        });
+        start();
+        if (mPreparedListener != null) mPreparedListener.onPrepared(mediaPlayer);
     }
 }
