@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.sd.vr.R;
 import com.sd.vr.education.entity.VideoFile;
+import com.sd.vr.education.gvrplayer.Player;
 import com.sd.vr.education.presenter.FilesManager;
 import com.sd.vr.education.presenter.ServiceManager;
 import com.sd.vr.education.presenter.ViewAction;
@@ -345,7 +346,7 @@ public class VREducationMainActivity extends Activity
         // String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/yangli.mp4";
         Log.e(TAG, "URL:" + url);
         if (checkFileDownLoad(file.getName(), size)) {
-            Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
+            Intent intent = new Intent(VREducationMainActivity.this, Player.class);
             intent.putExtra("videoFile", fileId);
             startActivity(intent);
         } else {
@@ -550,7 +551,7 @@ public class VREducationMainActivity extends Activity
         iv_xiangqing_tu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VREducationMainActivity.this, VideoPlayerActivity.class);
+                Intent intent = new Intent(VREducationMainActivity.this, Player.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("videoFile", file.getFileId());
                 intent.putExtras(bundle);

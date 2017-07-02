@@ -31,4 +31,6 @@ dependencies {
     compile 'tv.danmaku.ijk.media:ijkplayer-java:0.6.0'
     compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.google.vr:sdk-base:1.60.1'
+    compile 'com.google.vr:sdk-common:1.60.1'
 }

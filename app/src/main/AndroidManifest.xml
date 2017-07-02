@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +32,12 @@
         </activity>
 
         <activity android:name=".education.vrplayer.VideoPlayerActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="landscape">
+
+        </activity>
+
+        <activity android:name=".education.gvrplayer.Player"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="landscape">
 

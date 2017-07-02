@@ -2,4 +2,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <eat-comment/>
+    <dimen name="alignment_marker_height">0mm</dimen>
+    <dimen name="alignment_marker_thickness">0dip</dimen>
+    <dimen name="transition_bottom_bar_height">112dip</dimen>
 </resources>
