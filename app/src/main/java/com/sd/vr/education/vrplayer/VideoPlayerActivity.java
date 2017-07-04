@@ -65,7 +65,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pause();
+                pause(1);
             }
         });
 
@@ -236,7 +236,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     }
 
     @Override
-    public void pause() {
+    public void pause(long position) {
         mMediaPlayerWrapper.pause();
     }
 
@@ -250,7 +250,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
             mMediaPlayerWrapper.start();
 //            mMediaPlayerWrapper.start();
         }else{
-            pause();
+            pause(1);
         }
 
     }
@@ -261,6 +261,11 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
         if (l > 0){
             mMediaPlayerWrapper.seekTo(l);
         }
+    }
+
+    @Override
+    public void shutdown() {
+
     }
 
     @Override

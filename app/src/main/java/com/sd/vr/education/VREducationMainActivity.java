@@ -264,6 +264,11 @@ public class VREducationMainActivity extends Activity
     }
 
     @Override
+    public void shutdown() {
+        finish();
+    }
+
+    @Override
     public void updateWiFi(int netWorkState) {
     }
 

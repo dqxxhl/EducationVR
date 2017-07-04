@@ -92,6 +92,7 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
     protected void onDestroy() {
         renderer.stop();
         super.onDestroy();
+        ServiceManager.getInstance().unBindVideoAction();
     }
 
     @Override
@@ -230,8 +231,8 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
     }
 
     @Override
-    public void pause() {
-        renderer.pause();
+    public void pause(long position) {
+        renderer.seekTo(position);
     }
 
     @Override
@@ -247,20 +248,25 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
     @Override
     public void stop() {
         int l = renderer.getPlayer().getDuration();
-        if (l > 0){
+        if (l>=0){
             renderer.seekTo(l);
         }
     }
 
     @Override
+    public void shutdown() {
+        renderer.pause();
+        finish();
+    }
+
+    @Override
     public void onBackPressed() {
-        if (renderer.getPlayer().isPlaying()){
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            this.startActivity(intent);
+        if (renderer.getPlayer().isPlaying() || renderer.getPlayer().getCurrentPosition() > 0){
+            ServiceManager.getInstance().finish();
         }else {
-            super.onBackPressed();
+            ServiceManager.getInstance().unBindVideoAction();
+            renderer.pause();
+            finish();
         }
     }
 

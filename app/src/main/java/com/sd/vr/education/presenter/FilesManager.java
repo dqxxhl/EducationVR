@@ -9,6 +9,7 @@ import java.util.Map;
 
 import android.os.Environment;
 import android.util.Log;
+import android.widget.VideoView;
 
 import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.network.http.downloader.ErrorCode;
@@ -337,8 +338,13 @@ public class FilesManager {
                         videofile.setFileStatus(STATUS_ERROR_DOWNLOAD);
                     }
                     items.add(videofile);
+                    isCheck = true;
                 }
             }
+
+
+
+
         }
 
         return items;
@@ -370,17 +376,27 @@ public class FilesManager {
      */
     public void repty(String fileId){
         Iterator<Map.Entry<VideoFile, Integer>> iter = downLoadFiles.entrySet().iterator();
+        boolean isIn = false;
         while (iter.hasNext()) {
             Map.Entry<VideoFile, Integer> entry =  iter.next();
             VideoFile file = entry.getKey();
             if (file.getFileId().equals(fileId)){
                 entry.setValue(STATUS_TO_DOWNLOAD);
+                isIn = true;
                 //刷新UI
                 ServiceManager.getInstance().updateUI();
             }
         }
 
-        startDownLoad();
+        if (isIn){
+            startDownLoad();
+        }else {
+            List<VideoFile> files = DatabaseManager.getInstance().getQueryByWhere(VideoFile.class, "fileId",new String[]{fileId});
+            if (files.size() > 0){
+                downLoad(files);
+            }
+        }
+
     }
 
     public File getFile(String fileId){

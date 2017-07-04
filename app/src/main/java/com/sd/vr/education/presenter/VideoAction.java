@@ -11,10 +11,12 @@ public interface VideoAction {
 
     void play(long position);//播放视频
 
-    void pause();//暂停播放
+    void pause(long position);//暂停播放
 
     void seekTo(long position, int status);//跳转到指定位置0：暂停，1：播放。
 
     void stop();//停止播放视频
+
+    void shutdown();
 
 }

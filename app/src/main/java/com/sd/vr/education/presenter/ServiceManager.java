@@ -295,7 +295,13 @@ public class ServiceManager {
                     break;
                 case STOP:
                     if (mVideoAction != null){
-                        mVideoAction.pause();
+                            if (ctrlDictateNotice.getPosition() != null && !ctrlDictateNotice.getPosition().equals("")){
+                                String positionString =  ctrlDictateNotice.getPosition();
+                                long position =Utils.stringToLong(positionString);
+                                if (position >= 0){
+                                    mVideoAction.pause(position);
+                                }
+                            }
                     }
                     break;
                 case PLAY:
@@ -324,6 +330,16 @@ public class ServiceManager {
         }
     }
 
+    public void finish(){
+        if (mAction != null){
+            mAction.shutdown();
+            mAction = null;
+        }
+        if (mVideoAction != null){
+            mVideoAction.shutdown();
+            mVideoAction = null;
+        }
+    }
 
 
 

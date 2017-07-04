@@ -250,9 +250,11 @@ public class SceneRenderer implements GvrView.StereoRenderer, SurfaceTexture.OnF
                     new MediaPlayer.OnPreparedListener() {
                         @Override
                         public void onPrepared(MediaPlayer mp) {
+                            start();
                             seekTo(0);
                             ServiceManager.getInstance().requestProgress();
                         }
+
                     });
             player.prepareAsync();
         } catch (IOException e) {

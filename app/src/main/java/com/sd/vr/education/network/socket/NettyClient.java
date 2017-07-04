@@ -155,17 +155,19 @@ public class NettyClient {
                 }
                 f.channel().closeFuture().sync();
             } catch (Exception e) {
-                Log.e(TAG, "连接服务器失败,尝试重连");
-                e.printStackTrace();
-                //连接不成功，继续尝试连接
-                reconnect++;
-                if (reconnect < 200){
-                    try {
-                        Thread.sleep(5000);
-                    } catch (InterruptedException e1) {
-                        e1.printStackTrace();
+                if (isChonglian){
+                    Log.e(TAG, "连接服务器失败,尝试重连");
+                    e.printStackTrace();
+                    //连接不成功，继续尝试连接
+                    reconnect++;
+                    if (reconnect < 200){
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e1) {
+                            e1.printStackTrace();
+                        }
+                        run();
                     }
-                    run();
                 }
             }
         }

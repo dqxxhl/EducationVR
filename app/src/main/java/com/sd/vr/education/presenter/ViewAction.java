@@ -23,4 +23,6 @@ public interface ViewAction {
 
     void updateDianliang(float batteryPct);
 
+    void shutdown();
+
 }
