@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:drawable="@drawable/t3" android:state_pressed="false"/>
-    <item android:drawable="@drawable/vr_12" android:state_pressed="true"/>
-    <item android:drawable="@drawable/t3"/>
-
-</selector>
