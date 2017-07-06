@@ -215,9 +215,13 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
 
     @Override
     public void start(String url) {
-        renderer.pause();
-        renderer.prepareVideo(FilesManager.DIRECTORY+"/"+ url);
-        ServiceManager.getInstance().requestProgress();
+        if(url.equals(fileId)){
+            ServiceManager.getInstance().requestProgress();
+        }else{
+            fileId = url;
+            renderer.pause();
+            renderer.prepareVideo(FilesManager.DIRECTORY+"/"+ url);
+        }
     }
 
     @Override

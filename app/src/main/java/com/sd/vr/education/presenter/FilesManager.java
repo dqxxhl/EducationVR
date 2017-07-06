@@ -342,9 +342,11 @@ public class FilesManager {
                 }
             }
 
-
-
-
+            if (isCheck){
+                continue;
+            }
+            videofile.setFileStatus(STATUS_ERROR_DOWNLOAD);
+            items.add(videofile);
         }
 
         return items;
@@ -362,9 +364,10 @@ public class FilesManager {
             VideoFile file = entry.getKey();
             if (file.getFileId().equals(fileId)){
                 if(file.getFileStatus() == STATUS_DOWNLOADING){
-                    stopDownLoad();
+                    task.stop();
                 }
                 iter.remove();
+                startDownLoad();
                 //刷新UI
                 ServiceManager.getInstance().updateUI();
             }
