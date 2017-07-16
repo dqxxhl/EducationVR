@@ -145,7 +145,10 @@ public class NettyClient {
                     ch.pipeline().addLast(new HeartBeatClientHandler());
                 }
             });
+            connect(bootstrap);
+        }
 
+        private void connect(Bootstrap bootstrap){
             try {
                 ChannelFuture f = bootstrap.connect(mHost, mPort).sync();
                 if (f.isSuccess()){
@@ -166,7 +169,7 @@ public class NettyClient {
                         } catch (InterruptedException e1) {
                             e1.printStackTrace();
                         }
-                        run();
+                        connect(bootstrap);
                     }
                 }
             }
