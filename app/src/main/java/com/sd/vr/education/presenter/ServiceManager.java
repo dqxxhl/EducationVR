@@ -139,7 +139,7 @@ public class ServiceManager {
      */
     public void register(){
         //向服务端发送数据
-        MessageProto.RegisterRequest registerRequest = MessageProto.RegisterRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(mContext)).build();
+        MessageProto.RegisterRequest registerRequest = MessageProto.RegisterRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(mContext)).setEquipmentName(Utils.getEquipmentName()).build();
         MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.REGISTER).setRegisterRequest(registerRequest).build();
         sendRequest(request);
     }
@@ -160,6 +160,12 @@ public class ServiceManager {
     public void requestProgress(){
         MessageProto.PlayProgressRequest playProgressRequest = MessageProto.PlayProgressRequest .newBuilder().setEventId("PLAY_PROGRESS").setEquipmentId(Utils.getDeviceId(mContext)).build();
         MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.PLAY_PROGRESS).setPlayProgressRequest(playProgressRequest).build();
+        sendRequest(request);
+    }
+
+    public void saveEquipmentNameRequest(String name){
+        MessageProto.SaveEquipmentNameRequest saveEquipmentNameRequest = MessageProto.SaveEquipmentNameRequest.newBuilder().setEventId("SET_EQUIPMETN_NAME").setEquipmentId(Utils.getDeviceId(mContext)).setEquipmentName(name).build();
+        MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.SET_EQUIPMETN_NAME).setSaveEquipmentNameRequest(saveEquipmentNameRequest).build();
         sendRequest(request);
     }
 

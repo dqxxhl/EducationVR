@@ -19,6 +19,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Environment;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -33,6 +34,8 @@ public class Utils {
     private static final String TAG = Utils.class.getName();
     private static final String SAVE_IP = "save_ip";
     private static final String IP = "ip";
+    private static final String SAVE_EQUIPMENT_NAME = "save_equipment_name";
+    private static final String DIRECTORY_NAME = Environment.getExternalStorageDirectory().getAbsolutePath()+"/com.sd.vrname";
 
     public static String getDeviceId(Context context) {
         String deviceId = "";
@@ -249,6 +252,27 @@ public class Utils {
             temp = "《" + strs[0] + "》";
         }
         return temp;
+    }
+
+    /**
+     *本地保存设备名称
+     */
+    public static void saveEquipmentName(String name){
+        ACache mCache = ACache.get(new File(DIRECTORY_NAME));
+        mCache.put(SAVE_EQUIPMENT_NAME,name);
+    }
+
+    /**
+     * 获取设备名称
+     * @return 设备名称
+     */
+    public static String getEquipmentName(){
+        ACache mCache = ACache.get(new File(DIRECTORY_NAME));
+        String name = mCache.getAsString(SAVE_EQUIPMENT_NAME);
+        if (name == null){
+            name = "";
+        }
+        return name;
     }
 
 }
