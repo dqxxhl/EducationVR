@@ -265,7 +265,7 @@
             <RelativeLayout
                 android:id="@+id/rl_settingcache_layout"
                 android:layout_width="289dp"
-                android:layout_height="231dp"
+                android:layout_height="110dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="38dp"
                 android:layout_marginTop="26dp"
@@ -290,13 +290,47 @@
                         android:text="4.5GB"
                         android:letterSpacing="0.2"
                         android:layout_below="@+id/tv_tip_cache"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#00b7ee"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_settingname_layout"
+                android:layout_width="289dp"
+                android:layout_height="110dp"
+                android:layout_marginRight="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="18dp"
+                android:layout_below="@+id/rl_settingcache_layout"
+                android:background="@drawable/selector_button_dakuang">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+                    <TextView
+                        android:id="@+id/tv_tip_setname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30dp"
+                        android:text="设备名称"
+                        android:letterSpacing="0.2"
+                        android:textColor="#00b7ee"/>
+                    <TextView
+                        android:id="@+id/tv_text_setname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:text="未命名"
+                        android:letterSpacing="0.2"
+                        android:layout_below="@+id/tv_tip_setname"
+                        android:layout_marginTop="10dp"
                         android:textColor="#00b7ee"
                         android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
             </RelativeLayout>
         </RelativeLayout>
-
     <!--设置页面结束 -->
 
 
@@ -565,5 +599,77 @@
 
     </RelativeLayout>
     <!--ip设置页结束 -->
+
+    <!--设备名称设置页面-->
+    <RelativeLayout
+        android:id="@+id/rl_name_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="101dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginRight="66dp"
+        android:background="@drawable/filter"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="37dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/ip_kuang">
+
+            <TextView
+                android:id="@+id/tv_namesetting_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:letterSpacing="0.2"
+                android:textColor="#00b7ee"
+                android:text="设备名称"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="19.3dp"/>
+            <RelativeLayout
+                android:id="@+id/rl_namesetting_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="86dp"
+                android:layout_marginLeft="42dp">
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ip_input"
+                    android:textColor="#00b7ee"
+                    android:textSize="30dp"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/bt_namesetting_save"
+                android:layout_width="131dp"
+                android:layout_height="73dp"
+                android:background="@drawable/save_erqi"
+                android:layout_marginLeft="165dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="7dp"/>
+
+            <Button
+                android:id="@+id/bt_namesetting_cencle"
+                android:layout_width="131dp"
+                android:layout_height="73dp"
+                android:background="@drawable/cancle_erqi"
+                android:layout_toRightOf="@+id/bt_namesetting_save"
+                android:layout_marginLeft="64dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="7dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <!--设备名称设置页面结束-->
 
 </RelativeLayout>
