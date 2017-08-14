@@ -651,6 +651,13 @@ public class VREducationMainActivity extends Activity
         numsLayout.removeAllViews();
 
         int page = adapter.getCount();
+        if (page == 0){
+            layout_pre.setVisibility(View.INVISIBLE);
+            layout_next.setVisibility(View.INVISIBLE);
+        }else {
+            layout_pre.setVisibility(View.VISIBLE);
+            layout_next.setVisibility(View.VISIBLE);
+        }
         for (int i = 0; i < page; i++) {
             TextView textView = new TextView(VREducationMainActivity.this);
             textView.setText(i + 1 + "");
@@ -715,6 +722,7 @@ public class VREducationMainActivity extends Activity
             View view = LayoutInflater.from(VREducationMainActivity.this)
                     .inflate(R.layout.pager_item, container, false);
             GridView gridView = (GridView) view.findViewById(R.id.photo);
+            gridView.setFocusable(false);
             gridView.setAdapter(new VideoGridViewAdapterNew(pagerList.get(position), VREducationMainActivity.this));
             container.addView(view);
             return view;
