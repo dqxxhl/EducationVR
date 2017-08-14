@@ -14,7 +14,6 @@ import com.sd.vr.education.presenter.ViewAction;
 import com.sd.vr.education.utils.DatabaseManager;
 import com.sd.vr.education.utils.Utils;
 import com.sd.vr.education.view.VideoGridViewAdapterNew;
-import com.sd.vr.education.vrplayer.VideoPlayerActivity;
 import com.squareup.picasso.Picasso;
 
 import android.app.Activity;
@@ -41,6 +40,8 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,6 +71,9 @@ public class VREducationMainActivity extends Activity
             super.handleMessage(msg);
             switch (msg.what) {
                 case MSG_KEY_2:
+                    if (pop.isShowing()){
+                        pop.dismiss();
+                    }
                     List<InetAddress> ipList = (List<InetAddress>) msg.obj;
                     if (ipList.size() >= 1) {
                         String ip = ipList.get(0).toString();
@@ -103,6 +107,7 @@ public class VREducationMainActivity extends Activity
     RelativeLayout rl_jianjie_page;
     RelativeLayout rl_xiangqing_page;
     RelativeLayout rl_ip_page;
+    RelativeLayout rl_name_page;
     // 组件
     ViewPager viewpager_list;
     TextView tv_text_cache;
@@ -126,6 +131,13 @@ public class VREducationMainActivity extends Activity
     TextView tv_item_second;
     RelativeLayout rl_item_first;
     RelativeLayout rl_item_second;
+    RelativeLayout rl_settingname_layout;
+    TextView tv_text_setname;
+
+    EditText et_name;
+    Button bt_namesetting_cencle;
+    Button bt_namesetting_save;
+    PopupWindow pop;
 
     // 数据
     List<VideoFile> listForHomepage = new ArrayList<>();
@@ -159,6 +171,7 @@ public class VREducationMainActivity extends Activity
         rl_jianjie_page = (RelativeLayout) findViewById(R.id.rl_jianjie_page);
         rl_xiangqing_page = (RelativeLayout) findViewById(R.id.rl_xiangqing_page);
         rl_ip_page = (RelativeLayout) findViewById(R.id.rl_ip_page);
+        rl_name_page = (RelativeLayout) findViewById(R.id.rl_name_page);
 
         viewpager_list = (ViewPager) findViewById(R.id.viewpager_list);
         tv_text_cache = (TextView) findViewById(R.id.tv_text_cache);
@@ -184,6 +197,15 @@ public class VREducationMainActivity extends Activity
         rl_item_first = (RelativeLayout) findViewById(R.id.rl_item_first);
         rl_item_second = (RelativeLayout) findViewById(R.id.rl_item_second);
 
+        rl_settingname_layout = (RelativeLayout) findViewById(R.id.rl_settingname_layout);
+        tv_text_setname = (TextView) findViewById(R.id.tv_text_setname);
+        et_name = (EditText) findViewById(R.id.et_name);
+        bt_namesetting_save = (Button) findViewById(R.id.bt_namesetting_save);
+        bt_namesetting_cencle = (Button) findViewById(R.id.bt_namesetting_cencle);
+
+        bt_namesetting_save.setOnClickListener(this);
+        bt_namesetting_cencle.setOnClickListener(this);
+
         video_home.setOnClickListener(this);
         video_list.setOnClickListener(this);
         home_setting.setOnClickListener(this);
@@ -193,6 +215,16 @@ public class VREducationMainActivity extends Activity
         bt_ipsetting_save.setOnClickListener(this);
         bt_ipsetting_cencle.setOnClickListener(this);
         bt_ip_auto.setOnClickListener(this);
+        rl_settingname_layout.setOnClickListener(this);
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        // 引入窗口配置文件
+        View view = inflater.inflate(R.layout.pop_layout, null);
+        // 创建PopupWindow对象
+        pop = new PopupWindow(view, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT, false);
+        pop.setOutsideTouchable(false);
+        pop.setFocusable(true);
+        pop.setAnimationStyle(R.style.ListphotoSelect);
 
         initDate();
         adapter = new VideoPagerAdapter();
@@ -219,6 +251,10 @@ public class VREducationMainActivity extends Activity
             return;
         }
         tv_text_ip.setText(ip);
+        String name = Utils.getEquipmentName();
+        if (!name.equals("")){
+            tv_text_setname.setText(name);
+        }
         ServiceManager.getInstance().tryInit(ip);
         updateHomePage();
     }
@@ -417,6 +453,7 @@ public class VREducationMainActivity extends Activity
                 rl_jianjie_page.setVisibility(View.GONE);
                 rl_xiangqing_page.setVisibility(View.GONE);
                 rl_ip_page.setVisibility(View.GONE);
+                rl_name_page.setVisibility(View.GONE);
                 break;
             case R.id.video_list:
                 rl_home_page.setVisibility(View.GONE);
@@ -425,6 +462,7 @@ public class VREducationMainActivity extends Activity
                 rl_jianjie_page.setVisibility(View.GONE);
                 rl_xiangqing_page.setVisibility(View.GONE);
                 rl_ip_page.setVisibility(View.GONE);
+                rl_name_page.setVisibility(View.GONE);
                 break;
             case R.id.home_setting:
                 rl_home_page.setVisibility(View.GONE);
@@ -433,6 +471,7 @@ public class VREducationMainActivity extends Activity
                 rl_jianjie_page.setVisibility(View.GONE);
                 rl_xiangqing_page.setVisibility(View.GONE);
                 rl_ip_page.setVisibility(View.GONE);
+                rl_name_page.setVisibility(View.GONE);
                 break;
             case R.id.jian_jie:
                 rl_home_page.setVisibility(View.GONE);
@@ -441,6 +480,7 @@ public class VREducationMainActivity extends Activity
                 rl_jianjie_page.setVisibility(View.VISIBLE);
                 rl_xiangqing_page.setVisibility(View.GONE);
                 rl_ip_page.setVisibility(View.GONE);
+                rl_name_page.setVisibility(View.GONE);
                 break;
             case R.id.rl_settingip_layout:
                 rl_home_page.setVisibility(View.GONE);
@@ -449,6 +489,7 @@ public class VREducationMainActivity extends Activity
                 rl_jianjie_page.setVisibility(View.GONE);
                 rl_xiangqing_page.setVisibility(View.GONE);
                 rl_ip_page.setVisibility(View.VISIBLE);
+                rl_name_page.setVisibility(View.GONE);
                 // 同步数据
                 String ip = tv_text_ip.getText().toString();
                 if (ip != null && !ip.equals("")) {
@@ -511,6 +552,9 @@ public class VREducationMainActivity extends Activity
                 rl_ip_page.setVisibility(View.GONE);
                 break;
             case R.id.bt_ip_auto:
+                if (!pop.isShowing()){
+                    pop.showAtLocation(v,Gravity.NO_GRAVITY, 0, 0);
+                }
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -529,6 +573,35 @@ public class VREducationMainActivity extends Activity
             case R.id.layout_next:
                 viewpager_list.arrowScroll(66);
                 break;
+            case R.id.rl_settingname_layout:
+                rl_home_page.setVisibility(View.GONE);
+                rl_videolist_page.setVisibility(View.GONE);
+                rl_setting_page.setVisibility(View.GONE);
+                rl_jianjie_page.setVisibility(View.GONE);
+                rl_xiangqing_page.setVisibility(View.GONE);
+                rl_ip_page.setVisibility(View.GONE);
+                rl_name_page.setVisibility(View.VISIBLE);
+                if (!tv_text_setname.getText().equals("未命名")){
+                    et_name.setText(tv_text_setname.getText());
+                }
+                break;
+            case R.id.bt_namesetting_save:
+                rl_setting_page.setVisibility(View.VISIBLE);
+                rl_name_page.setVisibility(View.GONE);
+                String name = et_name.getText().toString();
+                if (name != null && !name.equals("")){
+                    String preName = Utils.getEquipmentName();
+                    if (!preName.equals(name)){
+                        Utils.saveEquipmentName(name);
+                        ServiceManager.getInstance().saveEquipmentNameRequest(name);
+                        tv_text_setname.setText(name);
+                    }
+                }
+                break;
+            case R.id.bt_namesetting_cencle:
+                rl_setting_page.setVisibility(View.VISIBLE);
+                rl_name_page.setVisibility(View.GONE);
+                break;
         }
     }
 
@@ -544,6 +617,7 @@ public class VREducationMainActivity extends Activity
         rl_jianjie_page.setVisibility(View.GONE);
         rl_xiangqing_page.setVisibility(View.VISIBLE);
         rl_ip_page.setVisibility(View.GONE);
+        rl_name_page.setVisibility(View.GONE);
         String picUrl = file.getImageUrl();
         if (picUrl != null && !"".equals(picUrl)) {
             Picasso.with(this).load(picUrl).into(iv_xiangqing_tu);
@@ -605,6 +679,7 @@ public class VREducationMainActivity extends Activity
             rl_jianjie_page.setVisibility(View.GONE);
             rl_xiangqing_page.setVisibility(View.GONE);
             rl_ip_page.setVisibility(View.GONE);
+            rl_name_page.setVisibility(View.GONE);
         }else {
             super.onBackPressed();
         }
