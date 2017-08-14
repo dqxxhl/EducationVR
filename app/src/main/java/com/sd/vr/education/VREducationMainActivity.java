@@ -40,6 +40,8 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,6 +71,9 @@ public class VREducationMainActivity extends Activity
             super.handleMessage(msg);
             switch (msg.what) {
                 case MSG_KEY_2:
+                    if (pop.isShowing()){
+                        pop.dismiss();
+                    }
                     List<InetAddress> ipList = (List<InetAddress>) msg.obj;
                     if (ipList.size() >= 1) {
                         String ip = ipList.get(0).toString();
@@ -132,6 +137,7 @@ public class VREducationMainActivity extends Activity
     EditText et_name;
     Button bt_namesetting_cencle;
     Button bt_namesetting_save;
+    PopupWindow pop;
 
     // 数据
     List<VideoFile> listForHomepage = new ArrayList<>();
@@ -210,6 +216,15 @@ public class VREducationMainActivity extends Activity
         bt_ipsetting_cencle.setOnClickListener(this);
         bt_ip_auto.setOnClickListener(this);
         rl_settingname_layout.setOnClickListener(this);
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        // 引入窗口配置文件
+        View view = inflater.inflate(R.layout.pop_layout, null);
+        // 创建PopupWindow对象
+        pop = new PopupWindow(view, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT, false);
+        pop.setOutsideTouchable(false);
+        pop.setFocusable(true);
+        pop.setAnimationStyle(R.style.ListphotoSelect);
 
         initDate();
         adapter = new VideoPagerAdapter();
@@ -537,6 +552,9 @@ public class VREducationMainActivity extends Activity
                 rl_ip_page.setVisibility(View.GONE);
                 break;
             case R.id.bt_ip_auto:
+                if (!pop.isShowing()){
+                    pop.showAtLocation(v,Gravity.NO_GRAVITY, 0, 0);
+                }
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {

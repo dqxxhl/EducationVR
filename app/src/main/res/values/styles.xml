@@ -16,4 +16,18 @@
         <item name="android:visibility">gone</item>
     </style>
 
+    <style name="ProgressBar.Loading" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/animation_loading</item>
+        <item name="android:minWidth">28dp</item>
+        <item name="android:minHeight">28dp</item>
+        <item name="android:maxWidth">28dp</item>
+        <item name="android:maxHeight">28dp</item>
+        <item name="android:indeterminateDuration">700</item>
+    </style>
+
+    <style name="ListphotoSelect">
+        <item name="android:windowEnterAnimation">@anim/animshow</item>
+        <item name="android:windowExitAnimation">@anim/animdismiss</item>
+    </style>
+
 </resources>

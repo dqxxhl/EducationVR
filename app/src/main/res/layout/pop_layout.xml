@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--进度条-->
+    <RelativeLayout
+        android:id="@+id/rl_progress_bar_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+        <ProgressBar
+            android:id="@+id/pb_part_loading"
+            style="@style/ProgressBar.Loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pb_part_loading"
+            android:textSize="11dp"
+            android:text="正在搜索主机,请稍等..."
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <!--进度条结束-->
+
+</RelativeLayout>
