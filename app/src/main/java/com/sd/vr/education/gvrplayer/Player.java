@@ -91,6 +91,7 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
     @Override
     protected void onDestroy() {
         renderer.stop();
+        view.shutdown();
         super.onDestroy();
         ServiceManager.getInstance().unBindVideoAction();
     }
