@@ -87,6 +87,8 @@ public class FilesManager {
                     if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
                         //文件已下载
                         ServiceManager.getInstance().sendDownloadAck(fileDownLoad.getFileId());
+                        //更新UI
+                        ServiceManager.getInstance().updateUI();
                         return;
                     }else if (file.getName().equals(fileName) && Utils.getFileSize(file) > size){
                         deleteFile(fileName);

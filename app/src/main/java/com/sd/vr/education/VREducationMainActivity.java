@@ -244,6 +244,13 @@ public class VREducationMainActivity extends Activity
         float num = (float) Math.round(g * 100) / 100;
         tv_text_cache.setText(num + "GB");
 
+        String name = Utils.getEquipmentName();
+        if (!name.equals("")){
+            tv_text_setname.setText(name);
+        }
+
+        updateHomePage();
+
         // 设置ip
         String ip = Utils.readIP(this);
         Log.e(TAG, "读取上次IP："+ip);
@@ -251,12 +258,8 @@ public class VREducationMainActivity extends Activity
             return;
         }
         tv_text_ip.setText(ip);
-        String name = Utils.getEquipmentName();
-        if (!name.equals("")){
-            tv_text_setname.setText(name);
-        }
         ServiceManager.getInstance().tryInit(ip);
-        updateHomePage();
+
     }
 
     private void updateHomePage() {
@@ -584,6 +587,7 @@ public class VREducationMainActivity extends Activity
                 if (!tv_text_setname.getText().equals("未命名")){
                     et_name.setText(tv_text_setname.getText());
                 }
+                et_name.setSelection(et_name.getText().length());
                 break;
             case R.id.bt_namesetting_save:
                 rl_setting_page.setVisibility(View.VISIBLE);
