@@ -226,7 +226,7 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
     }
 
     @Override
-    public void play(final long position) {
+    public void play(final long position, String fileId) {
         handler.post(new Runnable() {
             @Override
             public void run() {

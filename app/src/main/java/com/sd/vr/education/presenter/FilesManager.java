@@ -208,11 +208,13 @@ public class FilesManager {
                 //刷新UI
                 float temp = (float)size*100/(float) totalSize;
                 float progress = (float)Math.round(temp*10)/10;
-                finalFileDownLoad.setProgress(progress);
+                if (Math.abs(finalFileDownLoad.getProgress() - progress) > 1){
+                    finalFileDownLoad.setProgress(progress);
+                    ServiceManager.getInstance().updateUI();
+                }
+
                 Log.e(TAG, "开始,下载......");
                 Log.e(TAG, "总大小："+totalSize+"下载大小:"+size+"下载进度："+((float)size/(float) totalSize));
-                ServiceManager.getInstance().updateprocess("总大小："+totalSize+"下载大小:"+size+"下载进度："+((float)size/(float) totalSize));
-                ServiceManager.getInstance().updateUI();
             }
 
             @Override

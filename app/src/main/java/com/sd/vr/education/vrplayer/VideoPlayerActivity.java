@@ -57,7 +57,6 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
             @Override
             public void onClick(View view) {
 //                ServiceManager.getInstance().requestProgress();
-                play(0);
             }
         });
 
@@ -225,7 +224,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     }
 
     @Override
-    public void play(final long position) {
+    public void play(final long position, String fileId) {
         handler.post(new Runnable() {
             @Override
             public void run() {

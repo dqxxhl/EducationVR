@@ -649,7 +649,8 @@
                     android:singleLine="true"
                     android:gravity="center"
                     android:focusable="true"
-                    android:focusableInTouchMode="true" />
+                    android:focusableInTouchMode="true"
+                    android:inputType="textNoSuggestions"/>
             </RelativeLayout>
 
             <Button

@@ -9,7 +9,7 @@ public interface VideoAction {
 
     void start(String url);//开始播放某个视频
 
-    void play(long position);//播放视频
+    void play(long position, String fileId);//播放视频
 
     void pause(long position);//暂停播放
 

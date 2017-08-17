@@ -32,6 +32,15 @@ public class NettyClient {
 
     private static final String TAG = NettyClient.class.getName();
     public static final int RECEIVE_RESPONSE = 1;
+
+    public String getmHost() {
+        return mHost;
+    }
+
+    public void setmHost(String mHost) {
+        this.mHost = mHost;
+    }
+
     private String mHost = null;
     private int mPort;
     private ServiceManager.UIhandler mUIHandler;//负责主线程的消息分发

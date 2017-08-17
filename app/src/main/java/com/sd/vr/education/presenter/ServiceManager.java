@@ -61,6 +61,9 @@ public class ServiceManager {
 
     //初始化Socket
     public void initSocketClient(String host){
+        if (mClient != null && host.equals(mClient.getmHost())){
+            return;
+        }
         if (mClient != null){
             FilesManager.getInstance().stopDownLoad();
             mClient.stop();
@@ -314,9 +317,10 @@ public class ServiceManager {
                     if (mVideoAction != null){
                         if (ctrlDictateNotice.getPosition() != null && !ctrlDictateNotice.getPosition().equals("")){
                             String positionString =  ctrlDictateNotice.getPosition();
+                            String fileId = ctrlDictateNotice.getFileId();
                             long position =Utils.stringToLong(positionString);
                             if (position >= 0){
-                                mVideoAction.play(position);
+                                mVideoAction.play(position, fileId);
                             }
                         }
                     }

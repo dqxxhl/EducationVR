@@ -60,14 +60,31 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
 
     @Override
     public View getView(final int position, final View convertView, ViewGroup parent) {
-        RelativeLayout relativeLayout = (RelativeLayout) LayoutInflater.from(activity).inflate(R.layout.video_item_new, parent, false);
-        TextView title = (TextView) relativeLayout.findViewById(R.id.tv_videoitem_title);//标题
-        TextView title2 = (TextView) relativeLayout.findViewById(R.id.tv_videoitem_title2);//标题
-        ImageView tupian = (ImageView) relativeLayout.findViewById(R.id.iv_videoitem_tu);//主图
-        ImageView shanchu = (ImageView) relativeLayout.findViewById(R.id.iv_videoitem_delet);//删除
-        TextView jindu = (TextView) relativeLayout.findViewById(R.id.tv_videoitem_progress);//进度
-        ImageView layout_chongshi = (ImageView) relativeLayout.findViewById(R.id.iv_videoitem_repty);//
-        TextView statusTips = (TextView) relativeLayout.findViewById(R.id.tv_videoitem_status);
+
+        View view;
+        ViewHolder viewHolder;
+        if (convertView == null){
+            view = LayoutInflater.from(activity).inflate(R.layout.video_item_new, parent, false);
+            viewHolder = new ViewHolder();
+            viewHolder.title = (TextView) view.findViewById(R.id.tv_videoitem_title);//标题
+            viewHolder.title2 = (TextView) view.findViewById(R.id.tv_videoitem_title2);//标题
+            viewHolder.tupian = (ImageView) view.findViewById(R.id.iv_videoitem_tu);//主图
+            viewHolder.shanchu = (ImageView) view.findViewById(R.id.iv_videoitem_delet);//删除
+            viewHolder.jindu = (TextView) view.findViewById(R.id.tv_videoitem_progress);//进度
+            viewHolder.layout_chongshi = (ImageView) view.findViewById(R.id.iv_videoitem_repty);//
+            viewHolder.statusTips = (TextView) view.findViewById(R.id.tv_videoitem_status);
+            view.setTag(viewHolder);
+        }else{
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
+        }
+        TextView title = viewHolder.title;//标题
+        TextView title2 = viewHolder.title2;//标题
+        ImageView tupian = viewHolder.tupian;//主图
+        ImageView shanchu = viewHolder.shanchu;//删除
+        TextView jindu = viewHolder.jindu;//进度
+        ImageView layout_chongshi = viewHolder.layout_chongshi;//
+        TextView statusTips = viewHolder.statusTips;
 
         String tip = "是否确认删除该教学资源?";
 
@@ -83,7 +100,7 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
             //显示删除按钮
             shanchu.setVisibility(View.VISIBLE);
             //Item可点击
-            relativeLayout.setEnabled(true);
+            view.setEnabled(true);
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_TO_DOWNLOAD){//待下载
             //显示状态图标
             statusTips.setText(TIP_DOWN_WAITTING);
@@ -95,7 +112,7 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
             shanchu.setVisibility(View.VISIBLE);
             tip = "是否确认删除该下载任务?";
             //Item不可点击
-            relativeLayout.setEnabled(false);
+            view.setEnabled(false);
 
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_DOWNLOADING){//下载中
             //显示状态图标
@@ -108,7 +125,7 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
             //显示删除按钮
             shanchu.setVisibility(View.VISIBLE);
             //Item不可点击
-            relativeLayout.setEnabled(false);
+            view.setEnabled(false);
             tip = "是否确认删除该下载任务?";
         }else if (listVideo.get(position).fileStatus == FilesManager.STATUS_ERROR_DOWNLOAD){//下载异常
             //显示状态图标
@@ -120,7 +137,7 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
             //显示删除按钮
             shanchu.setVisibility(View.VISIBLE);
             //Item不可点击
-            relativeLayout.setEnabled(false);
+            view.setEnabled(false);
             tip = "是否确认删除该下载任务?";
         }
 
@@ -167,7 +184,7 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
             }
         });
 
-        relativeLayout.setOnClickListener(new View.OnClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 activity.openVideo(listVideo.get(position));
@@ -181,6 +198,6 @@ public class VideoGridViewAdapterNew extends BaseAdapter {
             Picasso.with(VREducationApplication.getInstance()).load(picUrl).into(tupian);
         }
 
-        return relativeLayout;
+        return view;
     }
 }
