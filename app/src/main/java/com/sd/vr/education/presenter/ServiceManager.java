@@ -236,8 +236,8 @@ public class ServiceManager {
                                     if (playStatus != null && playStatus.equals(MessageProto.PlayStatus.PLAYI_ING)){
                                         status = 1;
                                     }
-
-                                    mVideoAction.seekTo(Long.valueOf(playProgressNotice.getPosition()), status);
+                                    String fileId = playProgressNotice.getFileId();
+                                    mVideoAction.seekTo(Long.valueOf(playProgressNotice.getPosition()), status, fileId);
                                 }
                             }
                             break;
@@ -255,13 +255,14 @@ public class ServiceManager {
                             break;
                         case PLAY_PROGRESS://请求的状态
                             MessageProto.PlayProgressResponse playProgressResponse = messageResponse.getPlayProgressResponse();
+                            String fileId = playProgressResponse.getFileId();
                             String progress = playProgressResponse.getPosition();
                             if (progress == null || progress.equals("")){
                                 return;
                             }
                             long progressLong = Long.valueOf(progress);
                             if (progressLong >= 0 && mVideoAction != null){
-                                mVideoAction.seekTo(progressLong,1);
+                                mVideoAction.seekTo(progressLong,1,fileId);
                             }
                             break;
                         default:
@@ -282,10 +283,10 @@ public class ServiceManager {
                 case START:
                     if (mVideoAction != null){
                         if (ctrlDictateNotice.getFileId() != null && !ctrlDictateNotice.getFileId().equals("")){
-                            File file = FilesManager.getInstance().getFile(ctrlDictateNotice.getFileId());
-                            if (file != null){
-                                mVideoAction.start(file.getName());
-                            }
+                            String fileId = ctrlDictateNotice.getFileId();
+                            String sizeString = ctrlDictateNotice.getFileSize();
+                            long size = Long.valueOf(sizeString);
+                            mVideoAction.start(fileId, size);
                         }
                     }else {
                         //打开一个VideoPlayerActivity
@@ -306,9 +307,10 @@ public class ServiceManager {
                     if (mVideoAction != null){
                             if (ctrlDictateNotice.getPosition() != null && !ctrlDictateNotice.getPosition().equals("")){
                                 String positionString =  ctrlDictateNotice.getPosition();
+                                String fileId = ctrlDictateNotice.getFileId();
                                 long position =Utils.stringToLong(positionString);
                                 if (position >= 0){
-                                    mVideoAction.pause(position);
+                                    mVideoAction.pause(position, fileId);
                                 }
                             }
                     }
@@ -327,7 +329,8 @@ public class ServiceManager {
                     break;
                 case END:
                     if (mVideoAction != null){
-                        mVideoAction.stop();
+                        String fileId = ctrlDictateNotice.getFileId();
+                        mVideoAction.stop(fileId);
                     }
                     break;
                 case CLOSE:

@@ -215,33 +215,46 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
     }
 
     @Override
-    public void start(String url) {
+    public void start(String url, long size) {
         if(url.equals(fileId)){
             ServiceManager.getInstance().requestProgress();
         }else{
-            fileId = url;
             renderer.pause();
-            renderer.prepareVideo(FilesManager.DIRECTORY+"/"+ url);
+            if (FilesManager.getInstance().getFile(url) != null){
+                if (FilesManager.checkFileDownLoad(url, size)){
+                    fileId = url;
+                    renderer.prepareVideo(FilesManager.DIRECTORY+"/"+ url);
+                }
+            }
         }
     }
 
     @Override
-    public void play(final long position, String fileId) {
+    public void play(final long position, final String fileId) {
+        if (!fileId.equals(this.fileId)){
+            return;
+        }
         handler.post(new Runnable() {
             @Override
             public void run() {
-                seekTo(position,1);
+                seekTo(position,1,fileId);
             }
         });
     }
 
     @Override
-    public void pause(long position) {
+    public void pause(long position, String fileId) {
+        if (!fileId.equals(this.fileId)){
+            return;
+        }
         renderer.seekTo(position);
     }
 
     @Override
-    public void seekTo(long position, int status) {
+    public void seekTo(final long position, final int status, final String fileId) {
+        if (!fileId.equals(this.fileId)){
+            return;
+        }
         renderer.seekTo(position);
         if (status == 1){
             renderer.start();
@@ -251,7 +264,10 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
     }
 
     @Override
-    public void stop() {
+    public void stop(String fileId) {
+        if (!fileId.equals(this.fileId)){
+            return;
+        }
         int l = renderer.getPlayer().getDuration();
         if (l>=0){
             renderer.seekTo(l);

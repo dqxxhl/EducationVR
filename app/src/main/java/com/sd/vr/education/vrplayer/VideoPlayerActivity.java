@@ -60,35 +60,11 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
             }
         });
 
-        b1= (Button) findViewById(R.id.text2);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pause(1);
-            }
-        });
-
-        b2= (Button) findViewById(R.id.text3);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                seekTo(2000, 1);
-            }
-        });
-
-        end = (Button) findViewById(R.id.end);
-        end.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stop();
-            }
-        });
-
         next = (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                start("F5fly.mp4");
+//                start("F5fly.mp4");
             }
         });
 
@@ -213,7 +189,7 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     }
 
     @Override
-    public void start(String fileId) {
+    public void start(String fileId, long size) {
         mMediaPlayerWrapper.pause();
         mMediaPlayerWrapper.destroy();
         mMediaPlayerWrapper.init();
@@ -224,23 +200,23 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
     }
 
     @Override
-    public void play(final long position, String fileId) {
+    public void play(final long position, final String fileId) {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                seekTo(position,1);
+                seekTo(position,1,fileId);
             }
         });
 //        seekTo(position,1);
     }
 
     @Override
-    public void pause(long position) {
+    public void pause(long position, String fileId) {
         mMediaPlayerWrapper.pause();
     }
 
     @Override
-    public void seekTo(long position, int status) {
+    public void seekTo(long position, int status, String fileId) {
         Log.e(TAG, "跳转到："+position+"--------"+"状态："+status);
         mMediaPlayerWrapper.seekTo(position);
 
@@ -249,13 +225,13 @@ public class VideoPlayerActivity extends Activity implements VideoAction {
             mMediaPlayerWrapper.start();
 //            mMediaPlayerWrapper.start();
         }else{
-            pause(1);
+            pause(1,fileId);
         }
 
     }
 
     @Override
-    public void stop() {
+    public void stop(String fileId) {
         int l = mMediaPlayerWrapper.getPlayer().getDuration();
         if (l > 0){
             mMediaPlayerWrapper.seekTo(l);

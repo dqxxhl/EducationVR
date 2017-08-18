@@ -416,6 +416,23 @@ public class FilesManager {
         return null;
     }
 
+    public static boolean checkFileDownLoad(String fileName, long size) {
+        File fileDir = new File(FilesManager.DIRECTORY);
+        if (fileDir != null && fileDir.listFiles() != null && fileDir.listFiles().length > 0) {
+            for (File file : fileDir.listFiles()) {
+                if (file.getAbsolutePath().endsWith(FilesManager.PATCH_SUFFIX)) {
+                    if (file.getName().equals(fileName) && Utils.getFileSize(file) == size) {
+                        return true;
+                    } else if (file.getName().equals(fileName) && Utils.getFileSize(file) > size) {
+//                        deleteFile(fileName);
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
     /**
      * 停止下载任务
      */
