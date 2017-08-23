@@ -41,6 +41,7 @@ class BlockTask implements Callable<Integer> {
                Log.e("sdadas","dasdasd");
                 HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
                 conn.setConnectTimeout(5 * 1000);
+                conn.setReadTimeout(20*1000);
                 conn.setRequestMethod("GET");
                 conn.setRequestProperty("Range", "bytes=" + startPos + "-" + endPos);
                 Log.e("BlockTask", "Range:"+ "bytes=" + startPos + "-" + endPos);

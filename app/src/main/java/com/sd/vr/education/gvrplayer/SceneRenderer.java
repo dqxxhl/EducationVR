@@ -241,7 +241,9 @@ public class SceneRenderer implements GvrView.StereoRenderer, SurfaceTexture.OnF
         }
 
         try {
-            player = new MediaPlayer();
+            if (player == null){
+                player = new MediaPlayer();
+            }
             player.setSurface(getVideoDecodeSurface());
             player.setAudioStreamType(AudioManager.STREAM_MUSIC);
             player.setDataSource(videoPath);
@@ -316,6 +318,21 @@ public class SceneRenderer implements GvrView.StereoRenderer, SurfaceTexture.OnF
 
     public MediaPlayer getPlayer(){
         return player;
+    }
+
+    public void releasePlayer() {
+        if (player != null) {
+            player.stop();
+            player.release();
+            player = null;
+        }
+    }
+
+    public void reset(){
+        if (player != null) {
+            player.stop();
+            player.reset();
+        }
     }
 
 }

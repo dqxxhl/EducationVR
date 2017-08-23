@@ -3,6 +3,7 @@ package com.sd.vr.education.network.socket;
 import android.util.Log;
 
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
+import com.sd.vr.education.presenter.FilesManager;
 
 import java.util.concurrent.TimeUnit;
 
@@ -66,6 +67,10 @@ public class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements 
                 attempts++;
             }else {
                 return;
+            }
+            if (attempts == 3){
+                //尝试3次断开下载，更新状态
+//                FilesManager.getInstance().stopAll();
             }
             Log.e(TAG, "链接关闭,将进行重连");
             int timeout = 2 * attempts;

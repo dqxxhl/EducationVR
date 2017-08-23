@@ -37,10 +37,6 @@ public class NettyClient {
         return mHost;
     }
 
-    public void setmHost(String mHost) {
-        this.mHost = mHost;
-    }
-
     private String mHost = null;
     private int mPort;
     private ServiceManager.UIhandler mUIHandler;//负责主线程的消息分发

@@ -19,7 +19,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-        android:name=".education.VREducationApplication">
+        android:name=".education.VREducationApplication"
+        android:largeHeap="true">
         <activity
             android:name=".education.VREducationMainActivity"
             android:configChanges="screenSize|orientation"

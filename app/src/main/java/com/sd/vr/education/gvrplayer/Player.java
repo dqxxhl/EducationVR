@@ -90,7 +90,7 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
 
     @Override
     protected void onDestroy() {
-        renderer.stop();
+        renderer.releasePlayer();
         view.shutdown();
         super.onDestroy();
         ServiceManager.getInstance().unBindVideoAction();
@@ -219,7 +219,7 @@ public class Player extends GvrActivity implements SensorEventListener, VideoAct
         if(url.equals(fileId)){
             ServiceManager.getInstance().requestProgress();
         }else{
-            renderer.pause();
+            renderer.reset();
             if (FilesManager.getInstance().getFile(url) != null){
                 if (FilesManager.checkFileDownLoad(url, size)){
                     fileId = url;

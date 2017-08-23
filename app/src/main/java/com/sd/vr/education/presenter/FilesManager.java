@@ -180,22 +180,6 @@ public class FilesManager {
 
         final String fileName = fileDownLoad.getFileId();
         String url = fileDownLoad.getFileUrl();
-
-        //校验本地是否存在这个文件,若文件已存在但是大小校验不通过，需首先删除本地文件
-        /*File fileDir = new File(DIRECTORY);
-        if (fileDir != null && fileDir.listFiles() != null && fileDir.listFiles().length > 0){
-            for (File file : fileDir.listFiles()) {
-                if (file.getAbsolutePath().endsWith(PATCH_SUFFIX)){
-                    if (file.getName().equals(fileName) && Utils.getFileSize(file) == size){
-                        //文件已下载
-                        ServiceManager.getInstance().sendDownloadAck(fileName);
-                        return;
-                    }else if (file.getName().equals(fileName) && Utils.getFileSize(file) > size){
-                        deleteFile(fileName);
-                    }
-                }
-            }
-        }*/
         Log.e(TAG, "待下载的内容："+url);
 
 
@@ -246,7 +230,6 @@ public class FilesManager {
             public void onError(String url, ErrorCode err) {
                 super.onError(url, err);
                 Log.e(TAG, "异常,下载......"+err.getMsg()+"----错误码:"+err.getCode());
-                ServiceManager.getInstance().updateprocess("异常,下载......");
                 //更新状态
                 downLoadFiles.put(finalFileDownLoad,STATUS_ERROR_DOWNLOAD);
                 //开始下一项
@@ -442,6 +425,19 @@ public class FilesManager {
         downLoadFiles.clear();
         ServiceManager.getInstance().updateUI();
 
+    }
+
+    /**
+     * 停止下载，更新状态
+     */
+    public void stopAll(){
+        LoaderExecutor.cancel(task);
+        Iterator<Map.Entry<VideoFile, Integer>> iter = downLoadFiles.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry<VideoFile, Integer> entry =  iter.next();
+            VideoFile file = entry.getKey();
+            downLoadFiles.put(file, STATUS_ERROR_DOWNLOAD);
+        }
     }
 
     public void reStartDownload(){

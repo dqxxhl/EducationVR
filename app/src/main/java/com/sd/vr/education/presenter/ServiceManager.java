@@ -61,7 +61,7 @@ public class ServiceManager {
 
     //初始化Socket
     public void initSocketClient(String host){
-        if (mClient != null && host.equals(mClient.getmHost())){
+        if (mClient != null && host.equals(mClient.getmHost()) && mClient.socketChannel.isActive()){
             return;
         }
         if (mClient != null){
@@ -74,12 +74,12 @@ public class ServiceManager {
     }
 
     public void tryInit(String host){
-        if (mClient == null){
+        if (mClient!= null && host.equals(mClient.getmHost()) && mClient.socketChannel.isActive()){
+            register();
+        }else{
             mClient = new NettyClient(host, PORT);
             mClient.setmUIHandler(new UIhandler());
             mClient.start();
-        }else {
-            register();
         }
     }
 
@@ -145,6 +145,7 @@ public class ServiceManager {
         MessageProto.RegisterRequest registerRequest = MessageProto.RegisterRequest.newBuilder().setEventId("REGISTER").setEquipmentId(Utils.getDeviceId(mContext)).setEquipmentName(Utils.getEquipmentName()).build();
         MessageProto.MessageRequest request = MessageProto.MessageRequest.newBuilder().setType(MessageProto.Types.REGISTER).setRegisterRequest(registerRequest).build();
         sendRequest(request);
+//        FilesManager.getInstance().startDownLoad();
     }
 
     /**
