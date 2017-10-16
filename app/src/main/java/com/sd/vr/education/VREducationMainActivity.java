@@ -1,25 +1,12 @@
 package com.sd.vr.education;
 
-import java.io.File;
-import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.sd.vr.R;
-import com.sd.vr.education.entity.VideoFile;
-import com.sd.vr.education.gvrplayer.Player;
-import com.sd.vr.education.presenter.FilesManager;
-import com.sd.vr.education.presenter.ServiceManager;
-import com.sd.vr.education.presenter.ViewAction;
-import com.sd.vr.education.utils.DatabaseManager;
-import com.sd.vr.education.utils.Utils;
-import com.sd.vr.education.view.VideoGridViewAdapterNew;
-import com.squareup.picasso.Picasso;
-
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -41,10 +28,28 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.sd.vr.R;
+import com.sd.vr.education.entity.VideoFile;
+import com.sd.vr.education.gvrplayer.Player;
+import com.sd.vr.education.presenter.FilesManager;
+import com.sd.vr.education.presenter.ServiceManager;
+import com.sd.vr.education.presenter.ViewAction;
+import com.sd.vr.education.utils.DatabaseManager;
+import com.sd.vr.education.utils.Utils;
+import com.sd.vr.education.view.VideoGridViewAdapterNew;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.List;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 /**
  * 首页，展示视频列表，设置等 Created by hl09287 on 2017/4/14.
@@ -87,6 +92,25 @@ public class VREducationMainActivity extends Activity
                                 ip_4.setText(ipNum[3]);
                             }
                         }
+                    }else {//没有搜索到提示
+                        AlertDialog.Builder builder = new AlertDialog.Builder(VREducationMainActivity.this);
+                        builder.setTitle("提示"); // 设置标题
+                        builder.setMessage("未搜索到控制主机，请确认网络连接是否正常");
+                        builder.setPositiveButton("取消", new DialogInterface.OnClickListener() { // 设置确定按钮
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+
+                            }
+                        });
+                        builder.setNegativeButton("再试试", new DialogInterface.OnClickListener() { // 设置取消按钮
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                searchIP(bt_ip_auto);
+                            }
+                        });
+                        builder.create().show();
                     }
                     break;
                 default:
@@ -141,6 +165,7 @@ public class VREducationMainActivity extends Activity
 
     // 数据
     List<VideoFile> listForHomepage = new ArrayList<>();
+    private boolean isRegester = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -232,6 +257,53 @@ public class VREducationMainActivity extends Activity
         viewpager_list.addOnPageChangeListener(this);
         onPageSelected(0);
         initView();
+        if (! isRegester){
+            broadcastReceiver();
+        }
+    }
+
+    private void broadcastReceiver(){
+
+        final IntentFilter filter = new IntentFilter();
+        // 屏幕灭屏广播
+        filter.addAction(Intent.ACTION_SCREEN_OFF);
+        // 屏幕亮屏广播
+        filter.addAction(Intent.ACTION_SCREEN_ON);
+        // 屏幕解锁广播
+        filter.addAction(Intent.ACTION_USER_PRESENT);
+        // 当长按电源键弹出“关机”对话或者锁屏时系统会发出这个广播
+        // example：有时候会用到系统对话框，权限可能很高，会覆盖在锁屏界面或者“关机”对话框之上，
+        // 所以监听这个广播，当收到时就隐藏自己的对话，如点击pad右下角部分弹出的对话框
+        filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+
+        BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(final Context context, final Intent intent) {
+                Log.d(TAG, "onReceive");
+                String action = intent.getAction();
+
+                if (Intent.ACTION_SCREEN_ON.equals(action)) {
+                    Log.d(TAG, "screen on");
+                    // 设置ip
+                    String ip = Utils.readIP(VREducationMainActivity.this);
+                    Log.e(TAG, "读取上次IP："+ip);
+                    if (ip == null || ip.equals("")) {
+                        return;
+                    }
+                    tv_text_ip.setText(ip);
+                    ServiceManager.getInstance().tryInit(ip);
+                } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+                    Log.d(TAG, "screen off");
+                } else if (Intent.ACTION_USER_PRESENT.equals(action)) {
+                    Log.d(TAG, "screen unlock");
+                } else if (Intent.ACTION_CLOSE_SYSTEM_DIALOGS.equals(intent.getAction())) {
+                    Log.i(TAG, " receive Intent.ACTION_CLOSE_SYSTEM_DIALOGS");
+                }
+            }
+        };
+        Log.d(TAG, "registerReceiver");
+        isRegester = true;
+        registerReceiver(mBatInfoReceiver, filter);
     }
 
     public void initView() {
@@ -259,7 +331,6 @@ public class VREducationMainActivity extends Activity
         }
         tv_text_ip.setText(ip);
         ServiceManager.getInstance().tryInit(ip);
-
     }
 
     private void updateHomePage() {
@@ -555,20 +626,7 @@ public class VREducationMainActivity extends Activity
                 rl_ip_page.setVisibility(View.GONE);
                 break;
             case R.id.bt_ip_auto:
-                if (!pop.isShowing()){
-                    pop.showAtLocation(v,Gravity.NO_GRAVITY, 0, 0);
-                }
-                Thread thread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        List<InetAddress> ipList = Utils.searchHost(VREducationMainActivity.this);
-                        Message msg = new Message();
-                        msg.what = MSG_KEY_2;
-                        msg.obj = ipList;
-                        handler.sendMessage(msg);
-                    }
-                });
-                thread.start();
+                searchIP(v);
                 break;
             case R.id.layout_pre:
                 viewpager_list.arrowScroll(17);
@@ -609,6 +667,23 @@ public class VREducationMainActivity extends Activity
         }
     }
 
+
+    public void searchIP(View v){
+        if (!pop.isShowing()){
+            pop.showAtLocation(v,Gravity.NO_GRAVITY, 0, 0);
+        }
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<InetAddress> ipList = Utils.searchHost(VREducationMainActivity.this);
+                Message msg = new Message();
+                msg.what = MSG_KEY_2;
+                msg.obj = ipList;
+                handler.sendMessage(msg);
+            }
+        });
+        thread.start();
+    }
     /**
      * 进入
      *
@@ -732,6 +807,20 @@ public class VREducationMainActivity extends Activity
         public int getItemPosition(Object object) {
             return POSITION_NONE;
         }
+    }
+
+    @Override
+    public void showTip(final String str){
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                Crouton.makeText(VREducationMainActivity.this, //上下文
+                        str, //Crouton要显示的文字
+                        Style.INFO) //显示Crouton的布局ID，不写时默认为根布局
+                        .show();
+            }
+        });
+
     }
 
 }

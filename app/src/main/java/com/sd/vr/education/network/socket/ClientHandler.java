@@ -2,6 +2,8 @@ package com.sd.vr.education.network.socket;
 
 import android.util.Log;
 
+import com.sd.vr.education.presenter.ServiceManager;
+
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -35,6 +37,7 @@ public class ClientHandler extends SimpleChannelInboundHandler {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
         Log.e(TAG, "链接成功");
+        ServiceManager.getInstance().showTips("链接主控成功");
         mNettyClient.register();
     }
 

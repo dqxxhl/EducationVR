@@ -11,16 +11,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.sd.vr.R;
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
+import com.sd.vr.education.VREducationMainActivity;
 import com.sd.vr.education.entity.VideoFile;
 import com.sd.vr.education.network.socket.NettyClient;
 import com.sd.vr.education.utils.DatabaseManager;
 import com.sd.vr.education.utils.Utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 /**
  * 网络请求管理类
@@ -61,7 +67,7 @@ public class ServiceManager {
 
     //初始化Socket
     public void initSocketClient(String host){
-        if (mClient != null && host.equals(mClient.getmHost()) && mClient.socketChannel.isActive()){
+        if (mClient != null && host.equals(mClient.getmHost()) && mClient.socketChannel != null && mClient.socketChannel.isActive()){
             return;
         }
         if (mClient != null){
@@ -74,7 +80,7 @@ public class ServiceManager {
     }
 
     public void tryInit(String host){
-        if (mClient!= null && host.equals(mClient.getmHost()) && mClient.socketChannel.isActive()){
+        if (mClient!= null && host.equals(mClient.getmHost()) && mClient.socketChannel != null && mClient.socketChannel.isActive()){
             register();
         }else{
             mClient = new NettyClient(host, PORT);
@@ -355,6 +361,16 @@ public class ServiceManager {
         }
     }
 
+    /**
+     * 显示提示信息
+     */
+    public void showTips(String string){
+
+        if (mAction != null){
+            mAction.showTip(string);
+        }
+
+    }
 
 
 }

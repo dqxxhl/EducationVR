@@ -162,9 +162,11 @@ public class NettyClient {
                     socketChannel = (SocketChannel) f.channel();
                 }
                 f.channel().closeFuture().sync();
+                ServiceManager.getInstance().showTips("链接主控成功");
             } catch (Exception e) {
                 if (isChonglian){
-                    Log.e(TAG, "连接服务器失败,尝试重连");
+                    Log.e(TAG, "连接主控失败,尝试重连");
+                    ServiceManager.getInstance().showTips("链接主控失败，请确认网络连接");
                     e.printStackTrace();
                     //连接不成功，继续尝试连接
                     reconnect++;

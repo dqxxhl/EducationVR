@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.sd.vr.ctrl.netty.protobuf.MessageProto;
 import com.sd.vr.education.presenter.FilesManager;
+import com.sd.vr.education.presenter.ServiceManager;
 
 import java.util.concurrent.TimeUnit;
 
@@ -105,9 +106,11 @@ public class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements 
                 boolean succeed = f.isSuccess();
                 if (!succeed) {
                     Log.e(TAG, "重连失败");
+                    ServiceManager.getInstance().showTips("链接主控失败，请确认网络连接");
                     f.channel().pipeline().fireChannelInactive();
                 }else{
                     Log.e(TAG, "重连成功");
+                    ServiceManager.getInstance().showTips("链接主控成功");
                     SocketChannel socketChannel = (SocketChannel) f.channel();
                     nettyClient.setSocketChannel(socketChannel);
                 }

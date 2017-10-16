@@ -25,4 +25,6 @@ public interface ViewAction {
 
     void shutdown();
 
+    void showTip(String str);
+
 }
