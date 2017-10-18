@@ -42,6 +42,7 @@ public class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements 
     private volatile boolean reconnect = true;
     private int attempts;
     private NettyClient nettyClient;
+    private boolean isShowTips = false;
 
     public ConnectionWatchdog(Bootstrap bootstrap, String host, int port, Timer timer, NettyClient nettyClient, boolean reconnect){
         this.bootstrap = bootstrap;
@@ -65,6 +66,9 @@ public class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements 
         Log.e(TAG, "链接关闭");
         if(reconnect && nettyClient.isChonglian){
             if (attempts < 12) {
+                if (attempts < 1){
+                    isShowTips = true;
+                }
                 attempts++;
             }else {
                 return;
@@ -106,7 +110,9 @@ public class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements 
                 boolean succeed = f.isSuccess();
                 if (!succeed) {
                     Log.e(TAG, "重连失败");
-                    ServiceManager.getInstance().showTips("链接主控失败，请确认网络连接");
+                    if (isShowTips){
+                        ServiceManager.getInstance().showTips("链接主控失败，请确认网络连接");
+                    }
                     f.channel().pipeline().fireChannelInactive();
                 }else{
                     Log.e(TAG, "重连成功");
@@ -116,5 +122,11 @@ public class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements 
                 }
             }
         });
+    }
+
+    public void stopTimer(){
+        if (timer != null){
+            timer.stop();
+        }
     }
 }

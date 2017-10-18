@@ -69,7 +69,11 @@ public class NettyClient {
 
         if (mConnectionThread!=null){
             mConnectionThread.interrupt();
+            mConnectionThread.clearThread();
         }
+
+
+
     }
 
     /**
@@ -120,6 +124,10 @@ public class NettyClient {
         private Handler handler = new Handler();
         private HashedWheelTimer timer = new HashedWheelTimer();
 
+        EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
+        final Bootstrap bootstrap = new Bootstrap();
+        private ConnectionWatchdog watchdog = new ConnectionWatchdog(bootstrap, mHost, mPort,timer, NettyClient.this, true);
+
         public ConnectionThread(String host, int port) {
             this.mHost = host;
             this.mPort = port;
@@ -129,10 +137,15 @@ public class NettyClient {
             return timer;
         }
 
+        public void clearThread(){
+            if (watchdog != null){
+                watchdog.stopTimer();
+            }
+        }
+
         @Override
         public void run() {
-            EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
-            final Bootstrap bootstrap = new Bootstrap();
+
             bootstrap.channel(NioSocketChannel.class);
             bootstrap.option(ChannelOption.SO_KEEPALIVE, true);
             bootstrap.group(eventLoopGroup);
@@ -146,7 +159,7 @@ public class NettyClient {
                     ch.pipeline().addLast(new IdleStateHandler(0, 4, 0, TimeUnit.SECONDS));
                     ch.pipeline().addLast(new ClientHandler(NettyClient.this));
                     isChonglian = true;
-                    ch.pipeline().addLast(new ConnectionWatchdog(bootstrap, mHost, mPort,timer, NettyClient.this, true));
+                    ch.pipeline().addLast(watchdog);
                     ch.pipeline().addLast(new HeartBeatClientHandler());
                 }
             });
@@ -166,7 +179,9 @@ public class NettyClient {
             } catch (Exception e) {
                 if (isChonglian){
                     Log.e(TAG, "连接主控失败,尝试重连");
-                    ServiceManager.getInstance().showTips("链接主控失败，请确认网络连接");
+                    if (reconnect <= 1){
+                        ServiceManager.getInstance().showTips("链接主控失败，请确认网络连接");
+                    }
                     e.printStackTrace();
                     //连接不成功，继续尝试连接
                     reconnect++;
